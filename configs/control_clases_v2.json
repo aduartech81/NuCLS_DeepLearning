@@ -1,0 +1,33 @@
+{
+  "fuente": "paciente_clase.csv del inventario aportado",
+  "sha256": "85d72f80f0f1557e4daac6831cc8f68ecb6dd21b49f6854e10684b7e6b43e64b",
+  "conteos": {
+    "train": {
+      "lymphocyte": 9946,
+      "nonTILnonMQ_stromal": 6608,
+      "tumor_nonMitotic": 14187
+    },
+    "excluido_por_procedencia_de_reserva": {
+      "lymphocyte": 2136,
+      "nonTILnonMQ_stromal": 1714,
+      "tumor_nonMitotic": 3505
+    },
+    "reserva_candidata": {
+      "lymphocyte": 221,
+      "nonTILnonMQ_stromal": 100,
+      "tumor_nonMitotic": 1035
+    },
+    "validation": {
+      "lymphocyte": 1327,
+      "nonTILnonMQ_stromal": 710,
+      "tumor_nonMitotic": 2340
+    }
+  },
+  "unidad": "Anotaciones originales; no recortes definitivos",
+  "verificaciones": [
+    "Asignación invariante al orden de entrada",
+    "Rechazo de pacientes duplicados",
+    "Tres clases presentes en train, validation y reserva candidata",
+    "Sin intersección TSS entre las tres particiones"
+  ]
+}

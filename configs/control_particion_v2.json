@@ -1,0 +1,40 @@
+{
+  "estado": "ASIGNACION_REPRODUCIBLE_PREVIA_A_RECORTES",
+  "objetivo_validation": 0.2,
+  "criterio": "Minimizar desviación del 20% de pacientes, mínimo dos TSS en validación; desempate SHA256 con identificador fijo.",
+  "sha256_entrada": "8531da5ff3ab8a418a66450a23c8784a0997f2e3a36460d7480c76cf236014f9",
+  "sha256_particion": "2366c63a248ca9b77fe9e6a9abf6163954496c1a5cc2a8edb13da5d2cd69eaac",
+  "pacientes": {
+    "train": 83,
+    "excluido_por_procedencia_de_reserva": 14,
+    "reserva_candidata": 6,
+    "validation": 21
+  },
+  "tss": {
+    "train": [
+      "A1",
+      "A2",
+      "AC",
+      "AR",
+      "C8",
+      "D8",
+      "E2",
+      "EW",
+      "GI",
+      "GM",
+      "LL",
+      "S3"
+    ],
+    "validation": [
+      "AQ",
+      "BH",
+      "OL"
+    ],
+    "reserva_candidata": [
+      "A7",
+      "AN",
+      "AO"
+    ]
+  },
+  "limitacion": "No borra exposición histórica. Reserva candidata pequeña; verificar recortes y representación de clases en desarrollo antes de entrenar. No se seleccionó la partición por resultados de modelos."
+}
