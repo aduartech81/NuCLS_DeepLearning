@@ -1,0 +1,19 @@
+{
+  "archivo_fuente": "EDA_PIXELES_V2_20261107_104054.zip",
+  "sha256_zip": "130428c3b3f9b7fbe81742f7a456c8d87549bf6e28233fa4e84e2c918c028ccd",
+  "recortes_verificados": 16588,
+  "pacientes": 104,
+  "script_coincide": true,
+  "manifiesto_coincide": true,
+  "media_sd_rgb_recalculadas": true,
+  "histogramas_conteos_correctos": true,
+  "diagnosticos": {
+    "diagnostico_dominio": "Matriz y balanced accuracy recalculadas",
+    "diagnostico_sitio": "Matriz y balanced accuracy recalculadas"
+  },
+  "similitud_hamming_recalculada": {
+    "pares": 29790411,
+    "candidatos": 0
+  },
+  "alcance": "Se recalcularon resultados desde descriptores y hashes; no se recibieron ni decodificaron los píxeles. AUC adversarial registrada por el script, no recalculable desde predicciones duras exportadas."
+}

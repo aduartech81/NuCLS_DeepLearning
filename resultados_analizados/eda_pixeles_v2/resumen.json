@@ -1,0 +1,1253 @@
+{
+  "estado": "EDA_PIXELES_COMPLETADO",
+  "fecha_utc": "2026-11-07T15:42:08Z",
+  "manifiesto_sha256": "623adf36520751addc324e44cd1b89d95e47842e53cda494914c0248a8be86d4",
+  "script_sha256": "13b930f9912ab9b4d9eaa959cc2d483ce781ce9447e42088f4273756a179aad3",
+  "python": "3.11.18",
+  "numpy": "2.4.6",
+  "scikit_learn": "1.9.1",
+  "Pillow": "13.0.0",
+  "recortes": 16588,
+  "normalizacion_train": {
+    "media_RGB_0_1": [
+      0.6392034726251884,
+      0.45917053999289786,
+      0.6277451963521469
+    ],
+    "sd_RGB_0_1": [
+      0.2139743515891908,
+      0.22149669223009963,
+      0.1742893379690752
+    ],
+    "pixeles": 238206976,
+    "uso": "Estimaciones de entrenamiento; no se aplica ni decide normalización de tinción"
+  },
+  "diagnostico_dominio": {
+    "estado": "Calculado",
+    "unidad": "Paciente; mediana de descriptores de sus recortes",
+    "n_pacientes": 104,
+    "clases": [
+      "train",
+      "validation"
+    ],
+    "balanced_accuracy": 0.6769936890418818,
+    "confusion": [
+      [
+        61,
+        22
+      ],
+      [
+        8,
+        13
+      ]
+    ],
+    "validacion": "3 pliegues estratificados por etiqueta y agrupados por paciente; escalado dentro de cada entrenamiento",
+    "configuracion": "Regresión logística C=1, pesos balanceados, sin búsqueda",
+    "predicciones": [
+      {
+        "paciente": "TCGA-A2-A04T",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A0YE",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A0YM",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A2-A3XX",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A3XY",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-AC-A6IW",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-AQ-A54N",
+        "fold": 1,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-AR-A1AQ",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-AR-A1AR",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-AR-A256",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A0AV",
+        "fold": 1,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-BH-A0B9",
+        "fold": 1,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A0E0",
+        "fold": 1,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A0E6",
+        "fold": 1,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A1EW",
+        "fold": 1,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-C8-A27B",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A13Z",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A143",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A1JF",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A1JG",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A1JL",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A1XQ",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A14R",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-E2-A1AZ",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A1B6",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A1L7",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-E2-A1LS",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-E2-A573",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-EW-A1OW",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-EW-A1P1",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-GI-A2C9",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-GM-A2DF",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-LL-A5YO",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-OL-A66P",
+        "fold": 1,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-S3-AA15",
+        "fold": 1,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A1-A0SP",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A2-A04Q",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A2-A0CM",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A2-A0D2",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A2-A0ST",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A0T0",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A0T2",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A1G6",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-AC-A2BK",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-AR-A0TU",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-AR-A1AY",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A0BG",
+        "fold": 2,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-BH-A0BL",
+        "fold": 2,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-BH-A0WA",
+        "fold": 2,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-BH-A18V",
+        "fold": 2,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-C8-A12V",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-C8-A1HJ",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A1XK",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-D8-A27F",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A14X",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A150",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A158",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-EW-A1OV",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-EW-A1P7",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-EW-A1PB",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-EW-A1PH",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-EW-A3U0",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-GM-A2DB",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-GM-A2DD",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-GM-A2DH",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-GM-A2DI",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-GM-A3XL",
+        "fold": 2,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-OL-A5D7",
+        "fold": 2,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-OL-A5RW",
+        "fold": 2,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-OL-A6VO",
+        "fold": 2,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A2-A04P",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-A2-A0D0",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A0SX",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A3XS",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A3XT",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-A2-A3XU",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-AQ-A04J",
+        "fold": 3,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-AR-A0TS",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-AR-A0U1",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-AR-A0U4",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A0B3",
+        "fold": 3,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A0BW",
+        "fold": 3,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-BH-A18G",
+        "fold": 3,
+        "real": "validation",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-BH-A1F6",
+        "fold": 3,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-C8-A131",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-C8-A26Y",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A142",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A147",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A27H",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-D8-A27M",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A14N",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-E2-A159",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A1LH",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A1LI",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-E2-A1LK",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-E2-A574",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-EW-A1P8",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-EW-A6SB",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-LL-A441",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-LL-A73Y",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-LL-A740",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      },
+      {
+        "paciente": "TCGA-OL-A5D6",
+        "fold": 3,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-OL-A66I",
+        "fold": 3,
+        "real": "validation",
+        "prediccion": "validation"
+      },
+      {
+        "paciente": "TCGA-S3-AA10",
+        "fold": 3,
+        "real": "train",
+        "prediccion": "train"
+      }
+    ],
+    "auc_validation": 0.7096959265633964
+  },
+  "diagnostico_sitio": {
+    "estado": "Calculado",
+    "unidad": "Paciente; mediana de descriptores de sus recortes",
+    "n_pacientes": 77,
+    "clases": [
+      "A2",
+      "AR",
+      "C8",
+      "D8",
+      "E2",
+      "EW",
+      "GM",
+      "LL"
+    ],
+    "balanced_accuracy": 0.39826388888888886,
+    "confusion": [
+      [
+        10,
+        0,
+        2,
+        1,
+        1,
+        3,
+        0,
+        1
+      ],
+      [
+        0,
+        3,
+        2,
+        0,
+        0,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        2,
+        3,
+        5,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        5,
+        7,
+        1,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        1,
+        0,
+        0,
+        2,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        3
+      ]
+    ],
+    "validacion": "3 pliegues estratificados por etiqueta y agrupados por paciente; escalado dentro de cada entrenamiento",
+    "configuracion": "Regresión logística C=1, pesos balanceados, sin búsqueda",
+    "predicciones": [
+      {
+        "paciente": "TCGA-A2-A04T",
+        "fold": 1,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A0CM",
+        "fold": 1,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A0D0",
+        "fold": 1,
+        "real": "A2",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-A2-A0ST",
+        "fold": 1,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A1G6",
+        "fold": 1,
+        "real": "A2",
+        "prediccion": "LL"
+      },
+      {
+        "paciente": "TCGA-A2-A3XU",
+        "fold": 1,
+        "real": "A2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-AR-A0TS",
+        "fold": 1,
+        "real": "AR",
+        "prediccion": "GM"
+      },
+      {
+        "paciente": "TCGA-AR-A0TU",
+        "fold": 1,
+        "real": "AR",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-AR-A1AY",
+        "fold": 1,
+        "real": "AR",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-C8-A12V",
+        "fold": 1,
+        "real": "C8",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-C8-A26Y",
+        "fold": 1,
+        "real": "C8",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-D8-A1JF",
+        "fold": 1,
+        "real": "D8",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-D8-A1JG",
+        "fold": 1,
+        "real": "D8",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-D8-A1XQ",
+        "fold": 1,
+        "real": "D8",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-D8-A27F",
+        "fold": 1,
+        "real": "D8",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-E2-A14N",
+        "fold": 1,
+        "real": "E2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-E2-A158",
+        "fold": 1,
+        "real": "E2",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-E2-A1LH",
+        "fold": 1,
+        "real": "E2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-E2-A1LI",
+        "fold": 1,
+        "real": "E2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-E2-A1LS",
+        "fold": 1,
+        "real": "E2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-EW-A1P7",
+        "fold": 1,
+        "real": "EW",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-EW-A1PH",
+        "fold": 1,
+        "real": "EW",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-EW-A6SB",
+        "fold": 1,
+        "real": "EW",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-GM-A2DB",
+        "fold": 1,
+        "real": "GM",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-GM-A2DD",
+        "fold": 1,
+        "real": "GM",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-LL-A73Y",
+        "fold": 1,
+        "real": "LL",
+        "prediccion": "LL"
+      },
+      {
+        "paciente": "TCGA-A2-A0SX",
+        "fold": 2,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A0T2",
+        "fold": 2,
+        "real": "A2",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-A2-A0YE",
+        "fold": 2,
+        "real": "A2",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-A2-A0YM",
+        "fold": 2,
+        "real": "A2",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-A2-A3XS",
+        "fold": 2,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A3XY",
+        "fold": 2,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-AR-A1AR",
+        "fold": 2,
+        "real": "AR",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-AR-A256",
+        "fold": 2,
+        "real": "AR",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-C8-A1HJ",
+        "fold": 2,
+        "real": "C8",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-C8-A27B",
+        "fold": 2,
+        "real": "C8",
+        "prediccion": "LL"
+      },
+      {
+        "paciente": "TCGA-D8-A13Z",
+        "fold": 2,
+        "real": "D8",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-D8-A147",
+        "fold": 2,
+        "real": "D8",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-D8-A1XK",
+        "fold": 2,
+        "real": "D8",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-D8-A27H",
+        "fold": 2,
+        "real": "D8",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-E2-A14R",
+        "fold": 2,
+        "real": "E2",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-E2-A1AZ",
+        "fold": 2,
+        "real": "E2",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-E2-A1B6",
+        "fold": 2,
+        "real": "E2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-E2-A573",
+        "fold": 2,
+        "real": "E2",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-E2-A574",
+        "fold": 2,
+        "real": "E2",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-EW-A1OV",
+        "fold": 2,
+        "real": "EW",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-EW-A1PB",
+        "fold": 2,
+        "real": "EW",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-EW-A3U0",
+        "fold": 2,
+        "real": "EW",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-GM-A2DF",
+        "fold": 2,
+        "real": "GM",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-GM-A2DI",
+        "fold": 2,
+        "real": "GM",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-LL-A5YO",
+        "fold": 2,
+        "real": "LL",
+        "prediccion": "LL"
+      },
+      {
+        "paciente": "TCGA-LL-A740",
+        "fold": 2,
+        "real": "LL",
+        "prediccion": "GM"
+      },
+      {
+        "paciente": "TCGA-A2-A04P",
+        "fold": 3,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A04Q",
+        "fold": 3,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A0D2",
+        "fold": 3,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-A2-A0T0",
+        "fold": 3,
+        "real": "A2",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-A2-A3XT",
+        "fold": 3,
+        "real": "A2",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-A2-A3XX",
+        "fold": 3,
+        "real": "A2",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-AR-A0U1",
+        "fold": 3,
+        "real": "AR",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-AR-A0U4",
+        "fold": 3,
+        "real": "AR",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-AR-A1AQ",
+        "fold": 3,
+        "real": "AR",
+        "prediccion": "GM"
+      },
+      {
+        "paciente": "TCGA-C8-A131",
+        "fold": 3,
+        "real": "C8",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-D8-A142",
+        "fold": 3,
+        "real": "D8",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-D8-A143",
+        "fold": 3,
+        "real": "D8",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-D8-A1JL",
+        "fold": 3,
+        "real": "D8",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-D8-A27M",
+        "fold": 3,
+        "real": "D8",
+        "prediccion": "C8"
+      },
+      {
+        "paciente": "TCGA-E2-A14X",
+        "fold": 3,
+        "real": "E2",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-E2-A150",
+        "fold": 3,
+        "real": "E2",
+        "prediccion": "AR"
+      },
+      {
+        "paciente": "TCGA-E2-A159",
+        "fold": 3,
+        "real": "E2",
+        "prediccion": "D8"
+      },
+      {
+        "paciente": "TCGA-E2-A1L7",
+        "fold": 3,
+        "real": "E2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-E2-A1LK",
+        "fold": 3,
+        "real": "E2",
+        "prediccion": "E2"
+      },
+      {
+        "paciente": "TCGA-EW-A1OW",
+        "fold": 3,
+        "real": "EW",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-EW-A1P1",
+        "fold": 3,
+        "real": "EW",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-EW-A1P8",
+        "fold": 3,
+        "real": "EW",
+        "prediccion": "A2"
+      },
+      {
+        "paciente": "TCGA-GM-A2DH",
+        "fold": 3,
+        "real": "GM",
+        "prediccion": "LL"
+      },
+      {
+        "paciente": "TCGA-GM-A3XL",
+        "fold": 3,
+        "real": "GM",
+        "prediccion": "EW"
+      },
+      {
+        "paciente": "TCGA-LL-A441",
+        "fold": 3,
+        "real": "LL",
+        "prediccion": "LL"
+      }
+    ],
+    "restriccion": "Solo TSS de entrenamiento con >=3 pacientes; no mide transferencia a centros nuevos."
+  },
+  "similitud": {
+    "metodo": "dHash 64 bits, distancia Hamming <=4, entre train y validation",
+    "pares_examinados": 29790411,
+    "candidatos": 0,
+    "filas_exportadas": 0,
+    "limite_exportacion": 500,
+    "interpretacion": "Candidatos a inspección visual; no prueba duplicación. No detecta todas las rotaciones, escalas o solapamientos. No elimina imágenes."
+  },
+  "limites": [
+    "Descriptores de color y textura no prueban calidad diagnóstica ni desenfoque.",
+    "Predicción de partición puede reflejar composición de clases, pacientes, tejido o adquisición; no identifica por sí sola la causa.",
+    "Predicción de TSS muestra señal disponible, no que la CNN vaya a utilizarla.",
+    "No se abre ninguna imagen de reserva; no se entrena ni selecciona un modelo de clasificación nuclear."
+  ]
+}
