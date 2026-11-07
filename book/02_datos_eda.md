@@ -21,7 +21,7 @@ El conjunto noQC contó 2.200 imágenes RGB y presentó discrepancia con el cont
 |---|---|---|
 | `tumor_nonMitotic` | Tumoral | Núcleo tumoral no mitótico anotado. |
 | `lymphocyte` | Linfocito | Categoría linfocitaria anotada. |
-| `nonTILnonMQ_stromal` | Estromal | Categoría estromal de la selección; no identifica telocitos. |
+| `nonTILnonMQ_stromal` | Estromal | Categoría estromal anotada, distinta de linfocitos infiltrantes del tumor y macrófagos. |
 
 Se conserva trazabilidad **recorte → anotación → campo → paciente → partición**. La supervisión procede de etiquetas publicadas; estas no se han revalidado individualmente para este proyecto.
 

@@ -27,7 +27,7 @@ MobileNetV2 utiliza menos parámetros que ResNet18, pero registró mayor tiempo 
 - **Selección del modelo:** la mejor época se eligió con la validación que después se resume. Los intervalos exploratorios no eliminan ese optimismo.
 - **Incertidumbre:** el bootstrap conserva fijas las cinco corridas y no reproduce nuevos entrenamientos. Sus intervalos marginales no tienen corrección múltiple.
 - **Literatura:** la síntesis narrativa contextualiza las familias de redes, pero no estima la frecuencia de uso de las tres arquitecturas exactas. La selección se interpreta como exploratoria.
-- **Alcance:** se clasifican ventanas previamente localizadas. No se ha evaluado detección en lámina completa, identificación de telocitos ni uso clínico.
+- **Alcance:** se clasifican ventanas previamente localizadas. No se ha evaluado detección en lámina completa ni uso clínico.
 
 ## Conclusión
 

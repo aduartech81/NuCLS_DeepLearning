@@ -11,7 +11,7 @@ Comparación exploratoria de CNN local, ResNet18 y MobileNetV2 para clasificar r
 
 ## Alcance científico
 
-El piloto compara desempeño, variabilidad entre semillas y tiempo de entrenamiento. La selección de épocas utiliza la validación; los resultados no constituyen evaluación externa. La revisión narrativa contextualiza las familias de redes, pero no demuestra que las tres implementaciones sean los modelos base más recurrentes de la literatura. El sistema clasifica recortes previamente localizados y no identifica telocitos ni detecta núcleos en lámina completa.
+El piloto compara desempeño, variabilidad entre semillas y tiempo de entrenamiento. La selección de épocas utiliza la validación; los resultados no constituyen evaluación externa. La revisión narrativa contextualiza las familias de redes, pero no demuestra que las tres implementaciones sean los modelos base más recurrentes de la literatura. El sistema clasifica recortes nucleares previamente localizados de NuCLS. La detección en lámina completa no forma parte de la evaluación.
 
 ## Dashboard
 

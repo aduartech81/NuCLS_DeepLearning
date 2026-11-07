@@ -19,7 +19,7 @@
 | La apariencia cambia entre pacientes y ejemplos. | La separación por paciente es necesaria para evaluar generalización. |
 | Las tres categorías conservan variabilidad interna. | No se puede justificar una clasificación perfecta a partir de unos pocos ejemplos visuales. |
 
-La galería ilustra el problema, pero no establece que una etiqueta sea correcta o incorrecta. Tampoco acredita capacidad para reconocer telocitos.
+La galería ilustra el problema, pero no establece que una etiqueta sea correcta o incorrecta.
 
 ## Preprocesamiento aplicado
 

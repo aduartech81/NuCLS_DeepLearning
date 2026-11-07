@@ -47,6 +47,6 @@
 
 ## Alcance científico
 
-La entrada es un recorte centrado en un núcleo previamente anotado, no una lámina completa. El sistema clasifica las tres categorías seleccionadas de NuCLS: no detecta automáticamente todos los núcleos ni identifica telocitos. La investigación utiliza datos histológicos anotados disponibles y mantiene separadas estas tareas.
+El estudio evalúa la clasificación de recortes centrados en núcleos previamente anotados de NuCLS. La salida corresponde a las tres categorías seleccionadas: tumoral no mitótica, linfocitaria y estromal. La localización previa del núcleo forma parte de la preparación de los datos; la detección en lámina completa no se evaluó.
 
 El estudio presenta una comparación exploratoria reproducible. La revisión bibliográfica contextualiza las familias de modelos, sin establecer que las tres implementaciones sean las arquitecturas más frecuentes de la literatura. Las conclusiones se circunscriben a la selección de datos y al protocolo evaluados.
