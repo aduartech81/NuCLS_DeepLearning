@@ -1,0 +1,480 @@
+{
+  "estado": "VERIFICACION_TECNICA_NO_EVALUACION",
+  "pacientes_esperados": [
+    "TCGA-A7-A6VY",
+    "TCGA-AN-A0AR",
+    "TCGA-AO-A0J2",
+    "TCGA-AO-A0J6",
+    "TCGA-AO-A124",
+    "TCGA-AO-A129"
+  ],
+  "pacientes_encontrados": [
+    "TCGA-A7-A6VY",
+    "TCGA-AN-A0AR",
+    "TCGA-AO-A0J2",
+    "TCGA-AO-A0J6",
+    "TCGA-AO-A124",
+    "TCGA-AO-A129"
+  ],
+  "errores": [],
+  "copias_repetidas": 0,
+  "campos": [
+    {
+      "paciente": "TCGA-A7-A6VY",
+      "campo": "TCGA-A7-A6VY-DX1_id-5ea409efddda5f83989881bd_left-10358_top-30693_bottom-30979_right-10645",
+      "ancho": 352,
+      "alto": 351,
+      "anotaciones": {
+        "lymphocyte": 2,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 16
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 1,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 8
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "95bf3be2a2428413653e5df5ea50924f5418fdef31e558592b15be60e2f421ce",
+      "sha_csv": "cba5e841fd13d9359e50d0102c42f07d9ff5c71a25e72018a639547f8a4d18e6"
+    },
+    {
+      "paciente": "TCGA-AN-A0AR",
+      "campo": "TCGA-AN-A0AR-DX1_id-5ea40994ddda5f8398980909_left-10755_top-21653_bottom-21964_right-11043",
+      "ancho": 357,
+      "alto": 385,
+      "anotaciones": {
+        "lymphocyte": 19,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 20
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 10,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 8
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "a105784ce451f6829bca4b5b230346d116428b730f133f32221768b27d1fe5d0",
+      "sha_csv": "f68f6055939fecf2b65810fc5cdea02b02d77e4ad3cb08c284427b9f8d1966ff"
+    },
+    {
+      "paciente": "TCGA-AN-A0AR",
+      "campo": "TCGA-AN-A0AR-DX1_id-5ea40994ddda5f8398980909_left-11017_top-21658_bottom-21943_right-11284",
+      "ancho": 331,
+      "alto": 353,
+      "anotaciones": {
+        "lymphocyte": 15,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 37
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 3,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 20
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "c378a3058b15535c815e5758b50f37d91646b592d3916b881d177b498168c9a4",
+      "sha_csv": "caadb09e58e5119ae21c764885d32d1915c56754717ef93e8b94271cf5eee256"
+    },
+    {
+      "paciente": "TCGA-AN-A0AR",
+      "campo": "TCGA-AN-A0AR-DX1_id-5ea40994ddda5f8398980909_left-8717_top-21403_bottom-21697_right-9005",
+      "ancho": 357,
+      "alto": 364,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 19
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 12
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "8eb1336ea13eba4de33a5e8f5a139f2c6c680fc8bc3ef2f101d769dd0bd009a3",
+      "sha_csv": "82da007f212ce02f109c05e5b05a73ce727089f7b7b57466eb7a1d845d49f6d2"
+    },
+    {
+      "paciente": "TCGA-AN-A0AR",
+      "campo": "TCGA-AN-A0AR-DX1_id-5ea40994ddda5f8398980909_left-8959_top-25516_bottom-25800_right-9273",
+      "ancho": 389,
+      "alto": 352,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 19
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 8
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "9d940143250606d25fd46d0cf2213e2ee7bd5d5fd8c32b604b00749887b64de1",
+      "sha_csv": "ed981c9ccf14b3762d9e9cf0938744aa5a4e35c51e039b895115b4127d9f8b19"
+    },
+    {
+      "paciente": "TCGA-AN-A0AR",
+      "campo": "TCGA-AN-A0AR-DX1_id-5ea40994ddda5f8398980909_left-8966_top-25253_bottom-25527_right-9261",
+      "ancho": 365,
+      "alto": 339,
+      "anotaciones": {
+        "lymphocyte": 1,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 22
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 12
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "bbda895893ff2774e38c1381ac5466ae31439735d2aa7d134d9a5c4274c77885",
+      "sha_csv": "6b8005f2d6528be9e11042e06ef83b96d7a2a3341bb7ce276746804c1e88fdbd"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-34569_top-14762_bottom-15049_right-34843",
+      "ancho": 683,
+      "alto": 716,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 16,
+        "tumor_nonMitotic": 38
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 15,
+        "tumor_nonMitotic": 28
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "0907ffe8d9b7fde6420636335e65260457d226c72cef1be99ac9ee9805c60338",
+      "sha_csv": "276f8f70728e8f60996672ba232e236a7e542bcb511bb04b82f2c841fdf39d17"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-34825_top-15019_bottom-15313_right-35111",
+      "ancho": 713,
+      "alto": 733,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 13,
+        "tumor_nonMitotic": 47
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 10,
+        "tumor_nonMitotic": 34
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "2bdce45ed931958522be07e5e8962661e53878c3ff369f0bdaae38de7383d4bf",
+      "sha_csv": "6db6cd0b51dffb2e4c75916ee94a44b95b060c18b9e6355f8f75456e989a2697"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-34840_top-14753_bottom-15027_right-35097",
+      "ancho": 641,
+      "alto": 683,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 4,
+        "tumor_nonMitotic": 31
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 3,
+        "tumor_nonMitotic": 25
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "4f11e0070a358e2a4244b85690f6169ee608cb37147183f39d9bd3d932fab4c4",
+      "sha_csv": "210cdc297c824b78aa309fa02b10b7d993605a05e03038855d07ed511b535a19"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-35075_top-15531_bottom-15805_right-35353",
+      "ancho": 693,
+      "alto": 683,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 56
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 50
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "e2f9960b41939258a310389cf6a6760fcd514b30cf837f7307281d443eb2eed3",
+      "sha_csv": "51ede1e563e942619fdd26e31a7fc5d9dbf89a51dbfd57e3ab287f20b47b3ede"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-35096_top-14748_bottom-15027_right-35384",
+      "ancho": 718,
+      "alto": 696,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 2,
+        "tumor_nonMitotic": 42
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 38
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "e708a92c5cbcb1a29c591d223dff8b9eb8fee00acf823af9087596bcde847b7e",
+      "sha_csv": "8224e6869c8cfd45b1cad479d394bb17ee133ce2e5c0ae0164789ecf0632cf42"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-35340_top-15009_bottom-15313_right-35634",
+      "ancho": 733,
+      "alto": 758,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 63
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 57
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "a2f607106015176596e809d972de575ef0bfc59b7c97f7c8a017993160e53d44",
+      "sha_csv": "c9c80759b000e1402532f2cdaa2517cfe3fc385f53175d6c25eeeb818954cc04"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-35344_top-15538_bottom-15811_right-35619",
+      "ancho": 686,
+      "alto": 681,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 5,
+        "tumor_nonMitotic": 56
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 5,
+        "tumor_nonMitotic": 40
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "71468e03c97584befa2dc568d1a489885db0e4a09a0e6029ce51cad17ed98334",
+      "sha_csv": "4e1aeb65ea09022b5e0c7f3117c3d343afedaf253e0e4583c66058415ea644a0"
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campo": "TCGA-AO-A0J2-DX1_id-5ea409e8ddda5f8398987c41_left-35588_top-14760_bottom-15053_right-35875",
+      "ancho": 716,
+      "alto": 731,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 12,
+        "tumor_nonMitotic": 26
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 8,
+        "tumor_nonMitotic": 18
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "054941426b0b94aff7754bda1e4e8a8c1f020c07116a95e68a668c8e95bfb729",
+      "sha_csv": "b88414cfaeac70c3c718861d591b13cb1df2945a1fa44fb81d56514a7541d7c8"
+    },
+    {
+      "paciente": "TCGA-AO-A0J6",
+      "campo": "TCGA-AO-A0J6-DX1_id-5ea4098bddda5f839897f771_left-41290_top-11375_bottom-11658_right-41586",
+      "ancho": 738,
+      "alto": 706,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 63
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 51
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "d36bd649d7ea785d04de0729b20b4fca2c33f4be7772aea6c098248b2116d66c",
+      "sha_csv": "9ac1d75395b026e826de1b4a35d42348a5da9fd88290167356e7dc6768dc7803"
+    },
+    {
+      "paciente": "TCGA-AO-A0J6",
+      "campo": "TCGA-AO-A0J6-DX1_id-5ea4098bddda5f839897f771_left-42567_top-11629_bottom-11918_right-42873",
+      "ancho": 763,
+      "alto": 721,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 84
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 70
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "b5b23d64ef257096c040a2fda5353a1dfab2311f2955072a41d09a75051808f4",
+      "sha_csv": "45241ef830a8ad2af007441a4c62f73948527ef4051354796f038c48111bd581"
+    },
+    {
+      "paciente": "TCGA-AO-A0J6",
+      "campo": "TCGA-AO-A0J6-DX1_id-5ea4098bddda5f839897f771_left-42838_top-11887_bottom-12176_right-43123",
+      "ancho": 711,
+      "alto": 721,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 102
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 80
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "a58347a5511e71921443d52b5381f82b12d768ba6bc9f5fff9c27d5d8f124a35",
+      "sha_csv": "228a0509a1d9e4213f0d972b0c250ba02baa9d4455a2e4cf35b26acc202c2c2e"
+    },
+    {
+      "paciente": "TCGA-AO-A0J6",
+      "campo": "TCGA-AO-A0J6-DX1_id-5ea4098bddda5f839897f771_left-43346_top-12405_bottom-12687_right-43619",
+      "ancho": 681,
+      "alto": 703,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 76
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 56
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "4b3b17a5c8802d25ecca4c364546ef5843b6a811e9e8e6843fd87563d11778fb",
+      "sha_csv": "7fdd8625c3728e3c9fc9a57490e323034a6c370ce8f71e0aa738a0611cbf2cad"
+    },
+    {
+      "paciente": "TCGA-AO-A124",
+      "campo": "TCGA-AO-A124-DX1_id-5ea40989ddda5f839897f196_left-16691_top-3020_bottom-3295_right-16955",
+      "ancho": 658,
+      "alto": 686,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 5,
+        "tumor_nonMitotic": 70
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 3,
+        "tumor_nonMitotic": 53
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "b79ee2e0404c8a6025ebf1105928cb254f91fe1182d8f077b56073bf11e9f672",
+      "sha_csv": "f0a461d06499a0d56dcbfcfbfc2738580394dd2599f945d47ccefc1128451e17"
+    },
+    {
+      "paciente": "TCGA-AO-A124",
+      "campo": "TCGA-AO-A124-DX1_id-5ea40989ddda5f839897f196_left-16708_top-2004_bottom-2192_right-16902",
+      "ancho": 484,
+      "alto": 469,
+      "anotaciones": {
+        "lymphocyte": 86,
+        "nonTILnonMQ_stromal": 16,
+        "tumor_nonMitotic": 0
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 54,
+        "nonTILnonMQ_stromal": 8,
+        "tumor_nonMitotic": 0
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "1ed70c9bf902f0b817fe70b198cda272254700c4f14fb35e702b6e1a3f8cb45f",
+      "sha_csv": "5764da90a469feb3443dd59ab4c0532c45fd0e5701d861fb6698142bfd67f239"
+    },
+    {
+      "paciente": "TCGA-AO-A124",
+      "campo": "TCGA-AO-A124-DX1_id-5ea40989ddda5f839897f196_left-16955_top-2766_bottom-3000_right-17204",
+      "ancho": 621,
+      "alto": 584,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 2,
+        "tumor_nonMitotic": 41
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 24
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "5bb5bab128e9de12cab97839b3a01ef9de8767f0de58a205ee969657f518fb6f",
+      "sha_csv": "aa73ff1067aeb3b798f7d6dffd6459c5b5701f014a97d0461977b47cdc3a77c1"
+    },
+    {
+      "paciente": "TCGA-AO-A129",
+      "campo": "TCGA-AO-A129-DX1_id-5ea40986ddda5f839897ecc9_left-38245_top-13772_bottom-14053_right-38537",
+      "ancho": 728,
+      "alto": 701,
+      "anotaciones": {
+        "lymphocyte": 2,
+        "nonTILnonMQ_stromal": 11,
+        "tumor_nonMitotic": 51
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 2,
+        "nonTILnonMQ_stromal": 8,
+        "tumor_nonMitotic": 43
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "e2a8d5653e04dcb967aaa681f3be039eab233101d1b7ab49a6f7425fc962476d",
+      "sha_csv": "e5a4d76adc5879d39341c36497e43d85a6187d09b33c21df274bef40ecea8654"
+    },
+    {
+      "paciente": "TCGA-AO-A129",
+      "campo": "TCGA-AO-A129-DX1_id-5ea40986ddda5f839897ecc9_left-38268_top-13268_bottom-13537_right-38536",
+      "ancho": 668,
+      "alto": 671,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 6,
+        "tumor_nonMitotic": 53
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 5,
+        "tumor_nonMitotic": 32
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "e75638afdcaeb8636933d5c10409d64aec8bc76ca1ae5cae1534578ee0615ba7",
+      "sha_csv": "f938d76ccdefe4519a6ead69411b86b10460849d12abc872068f9e2caa51aa9a"
+    },
+    {
+      "paciente": "TCGA-AO-A129",
+      "campo": "TCGA-AO-A129-DX1_id-5ea40986ddda5f839897ecc9_left-39794_top-13411_bottom-13656_right-40017",
+      "ancho": 556,
+      "alto": 611,
+      "anotaciones": {
+        "lymphocyte": 96,
+        "nonTILnonMQ_stromal": 5,
+        "tumor_nonMitotic": 3
+      },
+      "ventana128_geometricamente_posible": {
+        "lymphocyte": 60,
+        "nonTILnonMQ_stromal": 3,
+        "tumor_nonMitotic": 2
+      },
+      "cajas_invalidas": 0,
+      "sha_png": "dec482de7eee11214eb075126e5cd95fe73a3b2aac65c56c45a3168fa4667053",
+      "sha_csv": "3984bb348b699b3aa214498df2af4ac37dbc29b81eeaf2e2df7a450332565271"
+    }
+  ],
+  "limitacion": "Se verifican encabezados y hashes; no se decodifican todos los píxeles ni se comprueba identidad biológica. Conteo geométrico orientativo, no manifiesto final."
+}

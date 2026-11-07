@@ -1,0 +1,106 @@
+{
+  "fuente": "CONTROL_RESERVA_20261107_091059.zip",
+  "sha256": "f624c78bf8ba9586bd963f6f6ddd178ccf38925694f3b71d67f9b7affb3a3180",
+  "pacientes": 6,
+  "campos": 24,
+  "errores": [],
+  "anotaciones": {
+    "lymphocyte": 221,
+    "nonTILnonMQ_stromal": 100,
+    "tumor_nonMitotic": 1035
+  },
+  "candidatos_geometricos_128": {
+    "lymphocyte": 130,
+    "nonTILnonMQ_stromal": 70,
+    "tumor_nonMitotic": 769
+  },
+  "total_candidatos": 969,
+  "por_paciente": [
+    {
+      "paciente": "TCGA-A7-A6VY",
+      "campos": 1,
+      "anotaciones": {
+        "lymphocyte": 2,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 16
+      },
+      "candidatos_geometricos_128": {
+        "lymphocyte": 1,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 8
+      }
+    },
+    {
+      "paciente": "TCGA-AN-A0AR",
+      "campos": 5,
+      "anotaciones": {
+        "lymphocyte": 35,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 117
+      },
+      "candidatos_geometricos_128": {
+        "lymphocyte": 13,
+        "nonTILnonMQ_stromal": 0,
+        "tumor_nonMitotic": 60
+      }
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "campos": 8,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 53,
+        "tumor_nonMitotic": 359
+      },
+      "candidatos_geometricos_128": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 42,
+        "tumor_nonMitotic": 290
+      }
+    },
+    {
+      "paciente": "TCGA-AO-A0J6",
+      "campos": 4,
+      "anotaciones": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 325
+      },
+      "candidatos_geometricos_128": {
+        "lymphocyte": 0,
+        "nonTILnonMQ_stromal": 1,
+        "tumor_nonMitotic": 257
+      }
+    },
+    {
+      "paciente": "TCGA-AO-A124",
+      "campos": 3,
+      "anotaciones": {
+        "lymphocyte": 86,
+        "nonTILnonMQ_stromal": 23,
+        "tumor_nonMitotic": 111
+      },
+      "candidatos_geometricos_128": {
+        "lymphocyte": 54,
+        "nonTILnonMQ_stromal": 11,
+        "tumor_nonMitotic": 77
+      }
+    },
+    {
+      "paciente": "TCGA-AO-A129",
+      "campos": 3,
+      "anotaciones": {
+        "lymphocyte": 98,
+        "nonTILnonMQ_stromal": 22,
+        "tumor_nonMitotic": 107
+      },
+      "candidatos_geometricos_128": {
+        "lymphocyte": 62,
+        "nonTILnonMQ_stromal": 16,
+        "tumor_nonMitotic": 77
+      }
+    }
+  ],
+  "alcance": "Se verifican encabezados y hashes; no se decodifican todos los píxeles ni se comprueba identidad biológica. Conteo geométrico orientativo, no manifiesto final.",
+  "estado": "Reserva candidata; no se ha evaluado ningún modelo sobre estos datos."
+}
