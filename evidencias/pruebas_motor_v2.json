@@ -1,0 +1,17 @@
+{
+  "tipo": "Verificación técnica, no resultados del conjunto NuCLS",
+  "pruebas": [
+    "Propagación y gradientes finitos para cuatro candidatos RGB 128×128",
+    "Conteo de 899200 parámetros de softmaxCNN RGB a cuatro clases coincide con RCCNet",
+    "Adaptador de pooling es identidad para entrada 27×27",
+    "Entrenamiento sintético de una época: checkpoint, predicciones, latencia y resumen",
+    "Una corrida completada no se vuelve a ejecutar al reanudar",
+    "Planificación de R aumenta con la dispersión a delta constante"
+  ],
+  "no_ejecutado": [
+    "Búsqueda de hiperparámetros con imágenes reales v2",
+    "Piloto y corridas definitivas v2",
+    "Evaluación real de la reserva",
+    "Flujo completo en CUDA o MPS"
+  ]
+}

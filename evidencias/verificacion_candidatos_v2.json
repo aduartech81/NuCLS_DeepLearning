@@ -1,0 +1,74 @@
+{
+  "tipo": "Prueba técnica con tensores sintéticos; no entrenamiento NuCLS",
+  "torch": "2.15.0+cpu",
+  "torchvision": "0.29.2+cpu",
+  "softmaxcnn_original_4_clases_parametros": 899200,
+  "coincide_con_tabla_RCCNet": true,
+  "adaptador_identidad_en_entrada_27": true,
+  "modelos": [
+    {
+      "modelo": "softmaxcnn_bn",
+      "parametros_tres_clases": 898687,
+      "entrada": [
+        2,
+        3,
+        128,
+        128
+      ],
+      "salida": [
+        2,
+        3
+      ],
+      "forward_backward_finito": true
+    },
+    {
+      "modelo": "densenet121",
+      "parametros_tres_clases": 6956931,
+      "entrada": [
+        2,
+        3,
+        128,
+        128
+      ],
+      "salida": [
+        2,
+        3
+      ],
+      "forward_backward_finito": true
+    },
+    {
+      "modelo": "resnet18",
+      "parametros_tres_clases": 11178051,
+      "entrada": [
+        2,
+        3,
+        128,
+        128
+      ],
+      "salida": [
+        2,
+        3
+      ],
+      "forward_backward_finito": true
+    },
+    {
+      "modelo": "resnet50",
+      "parametros_tres_clases": 23514179,
+      "entrada": [
+        2,
+        3,
+        128,
+        128
+      ],
+      "salida": [
+        2,
+        3
+      ],
+      "forward_backward_finito": true
+    }
+  ],
+  "limitaciones": [
+    "Prueba ejecutada en CPU; no mide desempeño ni tiempos sobre GPU/MPS.",
+    "La adaptación de pooling para 128 píxeles no constituye reproducción exacta del experimento de 27 píxeles."
+  ]
+}

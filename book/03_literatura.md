@@ -156,3 +156,22 @@ Frei et al. (2026) evaluaron ResNet18 aislada en la ablación de GrEp, una propu
 La implementación parte de ImageNet, incorpora pooling adaptativo y salida binaria, y utiliza AdamW con tasa 10⁻⁶ durante 150 épocas. Este antecedente acredita el uso de ResNet18 como referencia de clasificación nuclear, además de su papel como extractor. Sin embargo, no reproduce el entrenamiento desde cero ni las tres categorías del piloto NuCLS. El valor del sistema completo con grafos no se atribuye a ResNet18 aislada.
 
 Fuente: [Frei et al., texto completo de autor, sección 3.3 y tabla 4](https://aibex.ch/research/papers/Frei2025.pdf); [DOI](https://doi.org/10.1016/j.patcog.2025.112197).
+
+
+## Frecuencia de comparadores y selección operativa v2
+
+La extracción estructurada cuenta una vez cada DOI por arquitectura y separa variantes adaptadas de versiones estándar. En cuatro textos con comparaciones verificadas, ResNet50 aparece en dos estudios; las restantes arquitecturas identificadas aparecen en uno. Estas frecuencias describen el subconjunto extraído y no todo el corpus recuperado. La [tabla completa de comparadores](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/comparadores_texto_completo.csv) conserva problema, conjunto, modelo, métricas y valores por fuente.
+
+| Selección v2 | Estudios verificados | Parámetros, tres clases | Rasgo estructural |
+|---|---:|---:|---|
+| softmaxCNN con BatchNorm, adaptada | 1 | 898.687 | Convoluciones secuenciales y clasificador pequeño |
+| DenseNet121 | 1 | 6.956.931 | Concatenación densa de representaciones |
+| ResNet50 | 2 | 23.514.179 | Conexiones residuales bottleneck |
+
+ResNet50 se prioriza por recurrencia exacta en clasificación nuclear multiclase. La CNN pequeña aporta una referencia de menor capacidad; DenseNet121 añade otro tipo de conectividad con menos parámetros que las variantes VGG/AlexNet registradas. Esta selección combina frecuencia, complejidad y diversidad estructural; no supone que las tres minimicen simultáneamente todos los criterios. DenseNet121 tiene más profundidad nominal que ResNet50, aunque menos parámetros.
+
+La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro clases y entrada 27×27. Para utilizar las ventanas comunes 128×128 se incorpora pooling adaptativo 5×5 sin parámetros, conservando las dimensiones del clasificador. Esa adaptación modifica la agregación espacial y se declara explícitamente; no constituye reproducción exacta del experimento original. Las tres implementaciones superaron pruebas de propagación y gradientes con tensores sintéticos, sin entrenamiento sobre NuCLS v2.
+
+El protocolo contempla inicialización desde cero y condiciones comunes, a diferencia de algunos estudios que emplean transferencia. La función de estas redes como referencia es comparable a la de un modelo logístico en una evaluación clásica: establecer un desempeño reproducible que deba superarse. No implica igualdad de capacidad ni supuestos lineales.
+
+La selección y sus adaptaciones se describen en [el protocolo v2](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/seleccion_modelos_v2.md). El [flujo experimental](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/ejecucion_integrada_v2.md) separa búsqueda, piloto, planificación de corridas, evaluación final y reserva. Los resultados de CNN local, ResNet18 y MobileNetV2 siguen correspondiendo al piloto anterior.
