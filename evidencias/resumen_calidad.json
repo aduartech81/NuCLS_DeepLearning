@@ -1,0 +1,185 @@
+{
+  "n_imagenes": 1182,
+  "n_pacientes": 79,
+  "numpy": "2.0.2",
+  "pillow": "11.3.0",
+  "metricas": {
+    "gris_media": {
+      "n": 1182,
+      "p05": 103.30885882883844,
+      "mediana": 142.10435333850984,
+      "p95": 185.16269689280762,
+      "limite_inferior": 69.13382092233408,
+      "limite_superior": 214.71882911639298
+    },
+    "gris_sd": {
+      "n": 1182,
+      "p05": 31.898907294887987,
+      "mediana": 43.444166284189926,
+      "p95": 62.071831733908645,
+      "limite_inferior": 20.78415591892012,
+      "limite_superior": 67.61531100121469
+    },
+    "gris_p05": {
+      "n": 1182,
+      "p05": 31.72415750000001,
+      "mediana": 66.75184999999999,
+      "p95": 109.050815,
+      "limite_inferior": 4.833625000000012,
+      "limite_superior": 131.11862499999998
+    },
+    "gris_p95": {
+      "n": 1182,
+      "p05": 173.613615,
+      "mediana": 222.061875,
+      "p95": 242.12944499999998,
+      "limite_inferior": 146.4222499999999,
+      "limite_superior": 288.0506500000001
+    },
+    "saturacion_media": {
+      "n": 1182,
+      "p05": 0.1682961783565788,
+      "mediana": 0.3307169280558827,
+      "p95": 0.49652040742271975,
+      "limite_inferior": 0.04361249722508451,
+      "limite_superior": 0.6277002869798994
+    },
+    "laplaciano_var": {
+      "n": 1182,
+      "p05": 51.62898108033873,
+      "mediana": 107.29637675348144,
+      "p95": 199.44458532136758,
+      "limite_inferior": -13.081633824071517,
+      "limite_superior": 232.7308832714465
+    },
+    "laplaciano_var_tejido": {
+      "n": 1182,
+      "p05": 51.634725945771926,
+      "mediana": 107.82450871239278,
+      "p95": 198.20832211940007,
+      "limite_inferior": -11.438976467414719,
+      "limite_superior": 231.66725762801332
+    },
+    "fraccion_canal_255": {
+      "n": 1182,
+      "p05": 3.695007050566151e-05,
+      "mediana": 0.0011112454665818186,
+      "p95": 0.005977781178668487,
+      "limite_inferior": -0.0030867497074529133,
+      "limite_superior": 0.006092578939621243
+    },
+    "entropia_gris": {
+      "n": 1182,
+      "p05": 6.895610324565143,
+      "mediana": 7.3522641908616135,
+      "p95": 7.699318047687144,
+      "limite_inferior": 6.7154777215967965,
+      "limite_superior": 7.981403490995996
+    },
+    "entropia_lbp_tejido": {
+      "n": 1182,
+      "p05": 5.5246228155360315,
+      "mediana": 5.757758488842494,
+      "p95": 5.945817839068924,
+      "limite_inferior": 5.483923444425438,
+      "limite_superior": 6.027241024900688
+    },
+    "glcm_contraste": {
+      "n": 1182,
+      "p05": 0.30810459702790494,
+      "mediana": 0.48238008215734196,
+      "p95": 0.7889407338041879,
+      "limite_inferior": 0.07994649394941328,
+      "limite_superior": 0.9200939445576639
+    },
+    "glcm_homogeneidad": {
+      "n": 1182,
+      "p05": 0.7361006631549961,
+      "mediana": 0.8012623947397464,
+      "p95": 0.8580255479738689,
+      "limite_inferior": 0.6896171983709336,
+      "limite_superior": 0.9095551596152749
+    },
+    "fondo_claro_220": {
+      "n": 1182,
+      "p05": 0.00036180470755520835,
+      "mediana": 0.037262032990723074,
+      "p95": 0.25072130657511327,
+      "limite_inferior": -0.13618697647799757,
+      "limite_superior": 0.2545089098408202
+    },
+    "fondo_claro_235": {
+      "n": 1182,
+      "p05": 0.0,
+      "mediana": 0.008627249280744188,
+      "p95": 0.1195492395896622,
+      "limite_inferior": -0.04294466290593772,
+      "limite_superior": 0.07434193838392067
+    },
+    "fondo_claro_245": {
+      "n": 1182,
+      "p05": 0.0,
+      "mediana": 0.00041730943959154983,
+      "p95": 0.011298752510264826,
+      "limite_inferior": -0.002932840456929771,
+      "limite_superior": 0.004968226738261614
+    },
+    "R_media": {
+      "n": 1182,
+      "p05": 133.3684078567466,
+      "mediana": 170.80216206271422,
+      "p95": 205.52392407927272,
+      "limite_inferior": 105.91788959242992,
+      "limite_superior": 236.5820322489309
+    },
+    "R_sd": {
+      "n": 1182,
+      "p05": 33.14894451246305,
+      "mediana": 44.159706719271554,
+      "p95": 64.44380784019513,
+      "limite_inferior": 21.849577707889846,
+      "limite_superior": 69.0923656335432
+    },
+    "G_media": {
+      "n": 1182,
+      "p05": 80.5819911873095,
+      "mediana": 122.33061950941598,
+      "p95": 175.11383502650924,
+      "limite_inferior": 41.20024230896191,
+      "limite_superior": 204.31532195384162
+    },
+    "G_sd": {
+      "n": 1182,
+      "p05": 32.45090893217194,
+      "mediana": 46.00451217193286,
+      "p95": 65.14523965666548,
+      "limite_inferior": 19.758469729226874,
+      "limite_superior": 73.63262183950798
+    },
+    "B_media": {
+      "n": 1182,
+      "p05": 127.11333445421505,
+      "mediana": 167.8996079103019,
+      "p95": 198.8731089204316,
+      "limite_inferior": 101.84569532344722,
+      "limite_superior": 227.12510460703106
+    },
+    "B_sd": {
+      "n": 1182,
+      "p05": 25.544729490254277,
+      "mediana": 35.0848346660993,
+      "p95": 52.13383668528304,
+      "limite_inferior": 17.06685593673528,
+      "limite_superior": 54.840776634218855
+    }
+  },
+  "notas": [
+    "Solo entrenamiento; sin modificaciones de p\u00edxeles para medir.",
+    "No se mide calidad dentro de cada n\u00facleo; textura del campo completo.",
+    "Fondo claro definido por los tres canales RGB mayores o iguales al umbral.",
+    "GLCM sim\u00e9trica: 16 niveles, vecinos horizontales y verticales a un p\u00edxel, ambos fuera del fondo claro 235.",
+    "LBP: 8 vecinos inmediatos, comparaci\u00f3n >=; se excluyen centros con vecindad de fondo claro.",
+    "At\u00edpicos univariados por IQR: revisi\u00f3n, no exclusi\u00f3n. Sin inferencia estad\u00edstica ni comparaci\u00f3n de clases.",
+    "Las medianas por paciente reducen la dominancia de pacientes con muchos campos."
+  ]
+}

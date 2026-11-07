@@ -1,0 +1,54 @@
+{
+  "estado": "Preparado para configurar piloto; modelos a\u00fan no entrenados",
+  "carpeta": "/Users/andresduarte/Desktop/Proyecto_Deep_Learning/NuCLS_DL_Entregable1/data/piloto_interior128/20261105_225210",
+  "seleccion": [
+    {
+      "particion": "entrenamiento",
+      "clase": "tumor_nonMitotic",
+      "origen": 13826,
+      "incluidas": 7089
+    },
+    {
+      "particion": "entrenamiento",
+      "clase": "lymphocyte",
+      "origen": 9036,
+      "incluidas": 4162
+    },
+    {
+      "particion": "entrenamiento",
+      "clase": "nonTILnonMQ_stromal",
+      "origen": 6607,
+      "incluidas": 3177
+    },
+    {
+      "particion": "validacion",
+      "clase": "tumor_nonMitotic",
+      "origen": 3485,
+      "incluidas": 1646
+    },
+    {
+      "particion": "validacion",
+      "clase": "lymphocyte",
+      "origen": 2629,
+      "incluidas": 1196
+    },
+    {
+      "particion": "validacion",
+      "clase": "nonTILnonMQ_stromal",
+      "origen": 1582,
+      "incluidas": 729
+    }
+  ],
+  "pacientes_incluidos": {
+    "entrenamiento": 79,
+    "validacion": 19
+  },
+  "grupos_duplicados_exactos": 0,
+  "duplicados_entre_grupos": 0,
+  "limitaciones": [
+    "La elegibilidad favorece n\u00facleos interiores. No representa todos los n\u00facleos.",
+    "Sin detecci\u00f3n de casi duplicados. Recortes vecinos pueden solaparse dentro de un paciente.",
+    "Prueba y reserva no le\u00eddas. Sin ajuste de filtros ni normalizaci\u00f3n de tinci\u00f3n.",
+    "Las clases proceden de las anotaciones publicadas; no validadas de nuevo."
+  ]
+}

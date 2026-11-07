@@ -1,0 +1,17 @@
+{
+  "corridas_verificadas": 15,
+  "recortes_por_corrida": 3571,
+  "pacientes_validacion": 19,
+  "semillas": [
+    4101,
+    4102,
+    4103,
+    4104,
+    4105
+  ],
+  "bootstrap_replicas": 5000,
+  "bootstrap_semilla": 4101,
+  "fuente": "resultados_RESULTADOS.zip",
+  "naturaleza": "piloto exploratorio; no evaluaci\u00f3n confirmatoria",
+  "zip_sha256": "ba14b538b856ee5640b40b67e1a699ed98e078b0fee6ecca0559a758c279c8b2"
+}

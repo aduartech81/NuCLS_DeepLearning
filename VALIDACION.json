@@ -1,0 +1,9 @@
+{
+  "jbook": "HTML compilado",
+  "notebook": "8 celdas ejecutadas; EDA y resultados",
+  "dashboard": "HTTP /, /health, /_dash-layout, /_dash-dependencies: 200; callbacks y filtros probados",
+  "render": "Configurado, no desplegado",
+  "github": "Sin publicación; requiere repositorio nuevo",
+  "entrenamiento": "15 corridas completas; métricas recalculadas y verificadas",
+  "revision_visual_dashboard": "Pendiente"
+}

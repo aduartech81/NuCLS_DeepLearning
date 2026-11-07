@@ -1,0 +1,4 @@
+modelo_A,modelo_B,diferencia,ic95_inferior,ic95_superior,alcance
+resnet18,cnn_local,0.09871148765752413,0.06818410248797346,0.14275139350635835,Exploratorio; validación usada para elegir época; 19 pacientes; cinco semillas fijas; IC marginal sin ajuste múltiple
+mobilenet_v2,cnn_local,0.10358838544088445,0.07923843238870511,0.14284284183235954,Exploratorio; validación usada para elegir época; 19 pacientes; cinco semillas fijas; IC marginal sin ajuste múltiple
+mobilenet_v2,resnet18,0.004876897783360312,-0.010805154116753585,0.02008757362689358,Exploratorio; validación usada para elegir época; 19 pacientes; cinco semillas fijas; IC marginal sin ajuste múltiple

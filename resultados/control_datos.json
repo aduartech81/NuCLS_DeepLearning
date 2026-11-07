@@ -1,0 +1,20 @@
+{
+  "entrenamiento": {
+    "n": 14428,
+    "pacientes": 79,
+    "clases": {
+      "tumor_nonMitotic": 7089,
+      "nonTILnonMQ_stromal": 3177,
+      "lymphocyte": 4162
+    }
+  },
+  "validacion": {
+    "n": 3571,
+    "pacientes": 19,
+    "clases": {
+      "tumor_nonMitotic": 1646,
+      "nonTILnonMQ_stromal": 729,
+      "lymphocyte": 1196
+    }
+  }
+}

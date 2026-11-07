@@ -1,0 +1,55 @@
+{
+  "modelo": "mobilenet_v2",
+  "semilla": 4104,
+  "mejor_epoca": 19,
+  "epocas_ejecutadas": 24,
+  "parametros": 2227715,
+  "segundos": 4302.433461748005,
+  "validacion": {
+    "macro_f1": 0.8297258981904588,
+    "accuracy": 0.8574628955474657,
+    "balanced_accuracy": 0.8217971627978744,
+    "confusion": [
+      [
+        1502,
+        68,
+        76
+      ],
+      [
+        61,
+        1096,
+        39
+      ],
+      [
+        147,
+        118,
+        464
+      ]
+    ],
+    "clases": [
+      {
+        "clase": "tumor_nonMitotic",
+        "precision": 0.8783625730994152,
+        "recall": 0.9125151883353585,
+        "f1": 0.8951132300357569,
+        "soporte": 1646
+      },
+      {
+        "clase": "lymphocyte",
+        "precision": 0.8549141965678627,
+        "recall": 0.9163879598662207,
+        "f1": 0.8845843422114609,
+        "soporte": 1196
+      },
+      {
+        "clase": "nonTILnonMQ_stromal",
+        "precision": 0.8013816925734024,
+        "recall": 0.6364883401920439,
+        "f1": 0.709480122324159,
+        "soporte": 729
+      }
+    ]
+  },
+  "val_loss": 0.3653826506349911,
+  "estado": "COMPLETO_EXPLORATORIO"
+}

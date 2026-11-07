@@ -1,0 +1,23 @@
+{
+  "centrado128": {
+    "n": 29394,
+    "con_relleno": 14961,
+    "caja_no_contenida": 7,
+    "descentrado_mediana": 0.5,
+    "descentrado_maximo": 0.7071067811865476
+  },
+  "interior128": {
+    "n": 29394,
+    "con_relleno": 0,
+    "caja_no_contenida": 7,
+    "descentrado_mediana": 1.5811388300841898,
+    "descentrado_maximo": 77.79460135510689
+  },
+  "centrado96": {
+    "n": 29394,
+    "con_relleno": 10966,
+    "caja_no_contenida": 111,
+    "descentrado_mediana": 0.5,
+    "descentrado_maximo": 0.7071067811865476
+  }
+}

@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/andresduarte/Desktop/Proyecto_Deep_Learning/NuCLS_Piloto_V1/entrenar.py", line 236, in main
+    for name in config['modelos']:run_one(name,seed,groups,args,device)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andresduarte/Desktop/Proyecto_Deep_Learning/NuCLS_Piloto_V1/entrenar.py", line 156, in run_one
+    for step,(x,y) in enumerate(tr,1):
+  File "/opt/miniconda3/envs/nucls_dl/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 725, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/nucls_dl/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 785, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/nucls_dl/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/nucls_dl/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 54, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/Users/andresduarte/Desktop/Proyecto_Deep_Learning/NuCLS_Piloto_V1/entrenar.py", line 71, in __getitem__
+    with Image.open(self.root/r['archivo']) as im: x=np.asarray(im).copy()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/envs/nucls_dl/lib/python3.11/site-packages/PIL/Image.py", line 3665, in open
+    prefix = fp.read(16)
+             ^^^^^^^^^^^
+TimeoutError: [Errno 60] Operation timed out

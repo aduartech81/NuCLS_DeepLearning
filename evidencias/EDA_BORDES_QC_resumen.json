@@ -1,0 +1,53 @@
+{
+  "tumor_nonMitotic": {
+    "estados": {
+      "interior": 13551,
+      "parcial": 264,
+      "caja_vacia_o_invertida": 11
+    },
+    "lado_mayor_px_percentiles": {
+      "1": 22.0,
+      "5": 28.0,
+      "25": 40.0,
+      "50": 49.0,
+      "75": 58.0,
+      "95": 75.0,
+      "99": 89.0
+    },
+    "nota": "Percentiles de cajas positivas y finitas, incluidas las parcialmente visibles; medidas en p\u00edxeles, sin calibraci\u00f3n f\u00edsica."
+  },
+  "lymphocyte": {
+    "estados": {
+      "interior": 8884,
+      "parcial": 89,
+      "caja_vacia_o_invertida": 63
+    },
+    "lado_mayor_px_percentiles": {
+      "1": 15.0,
+      "5": 19.0,
+      "25": 24.0,
+      "50": 27.0,
+      "75": 31.0,
+      "95": 38.0,
+      "99": 45.0
+    },
+    "nota": "Percentiles de cajas positivas y finitas, incluidas las parcialmente visibles; medidas en p\u00edxeles, sin calibraci\u00f3n f\u00edsica."
+  },
+  "nonTILnonMQ_stromal": {
+    "estados": {
+      "interior": 6497,
+      "parcial": 109,
+      "caja_vacia_o_invertida": 1
+    },
+    "lado_mayor_px_percentiles": {
+      "1": 20.0,
+      "5": 25.0,
+      "25": 32.0,
+      "50": 40.0,
+      "75": 51.0,
+      "95": 72.0,
+      "99": 91.94999999999982
+    },
+    "nota": "Percentiles de cajas positivas y finitas, incluidas las parcialmente visibles; medidas en p\u00edxeles, sin calibraci\u00f3n f\u00edsica."
+  }
+}

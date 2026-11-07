@@ -1,0 +1,55 @@
+{
+  "modelo": "resnet18",
+  "semilla": 4101,
+  "mejor_epoca": 3,
+  "epocas_ejecutadas": 8,
+  "parametros": 11178051,
+  "segundos": 1093.0574168739986,
+  "validacion": {
+    "macro_f1": 0.8108096973907806,
+    "accuracy": 0.8336600392047046,
+    "balanced_accuracy": 0.8174990682644364,
+    "confusion": [
+      [
+        1367,
+        114,
+        165
+      ],
+      [
+        18,
+        1095,
+        83
+      ],
+      [
+        92,
+        122,
+        515
+      ]
+    ],
+    "clases": [
+      {
+        "clase": "tumor_nonMitotic",
+        "precision": 0.9255247122545701,
+        "recall": 0.830498177399757,
+        "f1": 0.8754402817803394,
+        "soporte": 1646
+      },
+      {
+        "clase": "lymphocyte",
+        "precision": 0.8226897069872277,
+        "recall": 0.9155518394648829,
+        "f1": 0.8666402849228334,
+        "soporte": 1196
+      },
+      {
+        "clase": "nonTILnonMQ_stromal",
+        "precision": 0.6749672346002621,
+        "recall": 0.7064471879286695,
+        "f1": 0.6903485254691689,
+        "soporte": 729
+      }
+    ]
+  },
+  "val_loss": 0.4238855228708492,
+  "estado": "COMPLETO_EXPLORATORIO"
+}

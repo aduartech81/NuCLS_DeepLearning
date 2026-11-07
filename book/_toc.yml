@@ -1,0 +1,12 @@
+format: jb-book
+root: intro
+chapters:
+  - file: 01_problema
+  - file: 02_datos_eda
+  - file: 02_resultados_eda
+  - file: 03_literatura
+  - file: 04_protocolo
+  - file: 05_estadistica
+  - file: 06_control
+  - file: 07_analisis_ejecutado
+  - file: 08_resultados_piloto
