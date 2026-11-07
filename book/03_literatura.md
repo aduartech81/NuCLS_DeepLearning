@@ -1,5 +1,8 @@
 # Estado del arte: clasificación nuclear en histología
 
+La evidencia revisada sitúa el problema en tres líneas: clasificación por textura local, incorporación del contexto alrededor del núcleo y uso de relaciones entre células. La comparación de arquitecturas solo es interpretable si se distinguen estas representaciones y se mantiene una evaluación independiente del ajuste. El presente estudio adopta recortes RGB con contexto y tres categorías; no evalúa segmentación ni reconstrucción de relaciones celulares.
+
+
 La revisión distingue clasificación de recortes nucleares, segmentación y detección. El 7 de noviembre de 2026 se recibieron exportaciones de Scopus, Web of Science e IEEE Xplore obtenidas mediante acceso institucional. La síntesis de antecedentes se complementa con un inventario reproducible de registros y decisiones de lectura.
 
 ## Recuperación y depuración bibliográfica
@@ -175,3 +178,30 @@ La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro
 El protocolo contempla inicialización desde cero y condiciones comunes, a diferencia de algunos estudios que emplean transferencia. La función de estas redes como referencia es comparable a la de un modelo logístico en una evaluación clásica: establecer un desempeño reproducible que deba superarse. No implica igualdad de capacidad ni supuestos lineales.
 
 La selección y sus adaptaciones se describen en [el protocolo v2](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/seleccion_modelos_v2.md). El [flujo experimental](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/ejecucion_integrada_v2.md) separa búsqueda, piloto, planificación de corridas, evaluación final y reserva. Los resultados de CNN local, ResNet18 y MobileNetV2 siguen correspondiendo al piloto anterior.
+
+## Evaluación crítica de los antecedentes principales
+
+La evaluación se organiza por aspectos que afectan la comparabilidad; no se asigna una puntuación agregada que convierta información no reportada en un defecto demostrado.
+
+| Estudio | Aporte verificable | Aspecto que limita la comparación | Consecuencia para NuCLS |
+|---|---|---|---|
+| Basha et al., RCCNet (2018) | CNN compacta y comparadores adaptados; arquitectura y conteo de parámetros descritos | F1 ponderado, cuatro clases y resolución distinta; agrupación por paciente no establecida en la descripción revisada | Declarar la adaptación a 128×128 y mantener separación por paciente; no comparar directamente el F1 publicado con macro-F1 |
+| OLConvNet, DOI 10.1145/3345318 | Separa clasificadores CNN de sistemas híbridos con características manuales | Generación sintética descrita antes de la división; riesgo de dependencia entre particiones; agrupación por paciente no establecida | Evitar generación previa a la partición y atribuir a ResNet50 aislada únicamente su resultado de la tabla correspondiente |
+| Sánchez-Torres et al. (2026) | Comparación de contexto frente a núcleo aislado con cinco categorías PanNuke | La tabla comparativa no informa dispersión; distintas tablas combinan tratamientos diferentes | Conservar una configuración por comparación y estudiar los recortes con contexto como una entrada definida, sin mezclar resultados |
+| Frei et al., GrEp (2026) | Ablación que identifica ResNet18 sin refinamiento por grafo | Subclasificación epitelial binaria y transferencia desde ImageNet; tarea distinta de las tres categorías de NuCLS | Utilizarlo como evidencia de una referencia residual, sin trasladar su puntuación a clasificación multiclase desde cero |
+
+Las referencias y las tablas de origen se identifican en las secciones anteriores. La incertidumbre por semillas, la separación por paciente y la unidad de cálculo del F1 no se consideran intercambiables entre publicaciones.
+
+## Síntesis de la evidencia y brecha de investigación
+
+Los clasificadores convolucionales constituyen referencias pertinentes porque aprenden características locales directamente de los píxeles. Sin embargo, la evidencia revisada no sostiene una arquitectura universalmente superior. Las puntuaciones dependen del tejido, de las categorías, del contexto incluido, del preentrenamiento y de la forma de dividir los datos. El resultado de un sistema híbrido tampoco equivale al de su red extractora utilizada aisladamente.
+
+La comparación de PanNuke muestra que retirar contexto puede disminuir el F1 de determinadas categorías; esto justifica declarar con precisión qué información contiene cada ventana. No permite afirmar que todo contexto sea beneficioso: el fondo y las características de adquisición también pueden introducir señales de procedencia. El diagnóstico de desplazamiento de NuCLS indica que las particiones son parcialmente distinguibles mediante descriptores sencillos, lo que refuerza la necesidad de separación por paciente y TSS y de una interpretación prudente de la generalización.
+
+La brecha que aborda este entregable es una comparación controlada de tres referencias sobre la misma selección de recortes NuCLS, con preprocesamiento ajustado en entrenamiento, esfuerzo de búsqueda común y variabilidad entre ejecuciones. Se trata de una contribución experimental dentro del proyecto académico, no de una afirmación de novedad mundial ni de una arquitectura original. El baseline resultante deberá expresarse con su incertidumbre y su alcance poblacional.
+
+## Conclusión de la revisión dirigida
+
+La extracción disponible respalda el uso de una CNN compacta con BatchNorm y de redes con conexiones densas o residuales como comparadores técnicamente diferenciados. La selección v2 queda vinculada a implementaciones concretas y adaptaciones explícitas. Su respaldo documental no demuestra que sean los tres modelos más básicos o más frecuentes de todo el campo: esa afirmación requeriría completar el cribado y contrastar las alternativas del corpus.
+
+La síntesis permite fundamentar el diseño actual y formular sus límites. El inventario bibliográfico permanece como un proceso de selección parcial; los registros aún no evaluados no se cuentan como exclusiones ni como estudios incluidos. Por tanto, el flujo de identificación y depuración no se presenta como un PRISMA completo.

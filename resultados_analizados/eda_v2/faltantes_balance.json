@@ -1,0 +1,43 @@
+{
+  "manifest_sha256": "623adf36520751addc324e44cd1b89d95e47842e53cda494914c0248a8be86d4",
+  "resultados": {
+    "train": {
+      "n": 14539,
+      "clases": {
+        "tumor_nonMitotic": 6977,
+        "nonTILnonMQ_stromal": 3102,
+        "lymphocyte": 4460
+      },
+      "entropia_bits": 1.5067845961325368,
+      "entropia_normalizada": 0.9506752339231695,
+      "faltantes": {
+        "paciente": 0,
+        "tss": 0,
+        "particion": 0,
+        "clase": 0,
+        "archivo": 0,
+        "sha_pixeles": 0,
+        "sha_archivo": 0
+      }
+    },
+    "validation": {
+      "n": 2049,
+      "clases": {
+        "tumor_nonMitotic": 1108,
+        "nonTILnonMQ_stromal": 344,
+        "lymphocyte": 597
+      },
+      "entropia_bits": 1.4302069986378396,
+      "entropia_normalizada": 0.902360149206746,
+      "faltantes": {
+        "paciente": 0,
+        "tss": 0,
+        "particion": 0,
+        "clase": 0,
+        "archivo": 0,
+        "sha_pixeles": 0,
+        "sha_archivo": 0
+      }
+    }
+  }
+}

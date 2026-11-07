@@ -68,3 +68,9 @@ Se compararon 29.790.411 pares de recortes mediante dHash de 64 bits. No se iden
 El procesamiento de píxeles se ejecutó en el equipo del autor. La segunda verificación contrastó los 16.588 registros con el manifiesto, recalculó medias y desviaciones RGB mediante los descriptores, comprobó los conteos de los histogramas y reconstruyó las matrices de confusión y sus exactitudes balanceadas. La AUC adversarial se conserva tal como la registró el script: el archivo exporta etiquetas predichas, pero no sus probabilidades, por lo que esa AUC no se recalculó de forma independiente. No se recibieron los píxeles en esta segunda revisión.
 
 No se utilizaron imágenes de reserva. Las mediciones de calidad de campos del piloto se conservan en su apartado original y no se atribuyen a los recortes de esta nueva partición.
+
+## Completitud del manifiesto y entropía de clases
+
+Se verificaron los campos paciente, TSS, partición, clase, ruta de archivo y las dos huellas digitales en los 16.588 registros de desarrollo: cada campo presenta **0 valores vacíos (0 %)**. Este resultado describe el manifiesto de recortes seleccionados, no la completitud de todos los metadatos originales de NuCLS. Tampoco demuestra que una etiqueta no vacía sea correcta.
+
+La entropía de las tres clases es **1.5068 bits** en entrenamiento y **1.4302 bits** en validación; normalizada por log₂(3), corresponde a **0.9507** y **0.9024**, respectivamente. El máximo normalizado es uno. La menor entropía de validación confirma una composición más concentrada, coherente con su mayor proporción tumoral. La entropía resume balance; no mide dificultad visual ni independencia entre recortes.
