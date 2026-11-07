@@ -11,6 +11,7 @@ parts:
   - caption: Fundamento y experimentación
     chapters:
       - file: 03_literatura
+      - file: 04_metodologia_v2
       - file: 04_protocolo
       - file: 05_estadistica
   - caption: Evidencia e interpretación

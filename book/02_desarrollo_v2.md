@@ -1,26 +1,24 @@
-# Desarrollo v2: composición y retención
+# Desarrollo v2: calidad, balance y distribución
 
 La nueva partición contiene 14.539 recortes de entrenamiento, correspondientes a 83 pacientes, y 2.049 de validación, de 21 pacientes. Los pacientes y los códigos TSS son disjuntos entre grupos. Este análisis utiliza metadatos de esas dos particiones y no calcula predicciones ni medidas de rendimiento sobre la reserva.
 
 ![Composición por clase, retención e imágenes aportadas por paciente.](figuras/eda_desarrollo_v2.svg)
 
+## Calidad de datos y tratamiento de faltantes
+
+La unidad de entrada es una ventana RGB de 128×128 píxeles vinculada a una anotación, una clase y un paciente. En los 16.588 recortes de desarrollo se completó la lectura y verificación de formato, dimensiones y huellas digitales. La ausencia de fallos en ese conjunto procesado no acredita por sí sola que todos los archivos originales de NuCLS estén completos ni que sus anotaciones sean correctas.
+
+Los faltantes deben distinguirse de las exclusiones geométricas: una ventana que exige relleno no es un valor ausente imputable. El conjunto analítico conserva únicamente recortes elegibles y no incorpora píxeles sintéticos para completar bordes. Las etiquetas no se imputan. Tampoco se imputa la identidad del paciente, indispensable para separar las particiones. Las entradas del clasificador son los píxeles, no metadatos clínicos; por ello no se aplica imputación tabular al modelo actual. No se ha establecido un mecanismo MCAR, MAR o MNAR para los metadatos originales.
+
+La verificación de integridad y la evaluación de calidad visual responden a preguntas distintas. Una imagen puede abrir correctamente y presentar artefactos o una anotación discutible. Los descriptores de color y textura caracterizan heterogeneidad; no constituyen un diagnóstico automático de desenfoque ni validan las etiquetas. La concordancia entre anotadores requiere un análisis específico de anotaciones comparables.
+
 ## Composición de los grupos
 
-| Clase | Entrenamiento | Proporción | Validación | Proporción |
-|---|---:|---:|---:|---:|
-| Tumoral no mitótica | 6.977 | 47,99% | 1.108 | 54,08% |
-| Linfocito | 4.460 | 30,68% | 597 | 29,14% |
-| Estromal | 3.102 | 21,34% | 344 | 16,79% |
+La razón entre la clase más frecuente y la menos frecuente es 2,25 en entrenamiento y 3,22 en validación. Existe desequilibrio; las clases no tienen igual representación. El protocolo mantiene entropía cruzada sin ponderación para los tres candidatos, con macro-F1 como criterio de selección y métricas por clase para identificar pérdidas de sensibilidad. Esta elección constituye una condición común del experimento, no una demostración de que el desequilibrio esté resuelto.
 
 La proporción tumoral aumenta 6,09 puntos porcentuales en validación y la estromal disminuye 4,55. Por tanto, la exactitud global depende de una composición distinta en cada grupo. Macro-F1 conserva el mismo peso para las tres categorías, pero no elimina cambios de dominio ni diferencias entre pacientes. Su interpretación debe acompañarse de sensibilidad, precisión y F1 por clase.
 
 ## Selección de ventanas interiores
-
-| Clase | Retención en entrenamiento | IC95% por paciente | Retención en validación | IC95% por paciente |
-|---|---:|---:|---:|---:|
-| Tumoral no mitótica | 49,18% | 47,64–50,51% | 47,35% | 43,15–51,83% |
-| Linfocito | 44,84% | 43,44–46,29% | 44,99% | 38,72–49,80% |
-| Estromal | 46,94% | 44,98–48,87% | 48,45% | 43,83–53,03% |
 
 La retención se calcula sobre las anotaciones de cada clase antes de las exclusiones geométricas. En entrenamiento se conserva una proporción menor de linfocitos que de núcleos tumorales: una diferencia descriptiva de 4,34 puntos. La regla espacial modifica así la composición de la muestra. Los resultados posteriores corresponderán a núcleos con una ventana interior elegible, sin generalización automática a núcleos periféricos.
 
