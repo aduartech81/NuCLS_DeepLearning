@@ -37,13 +37,23 @@ Las decisiones individuales y su fundamento se conservan en [el registro de lect
 | Nuclei Classification in ER-IHC Stained Histopathology Images using Deep Learning Models. https://shdl.mmu.edu.my/11229/ | Resumen institucional: comparación de 32 modelos preentrenados; familias MobileNet y ResNet entre otras, intensidad ER-IHC. | Tinción y objetivo distintos; el resumen consultado no permite establecer la lista exacta de arquitecturas comparadas. |
 | SENUCLS, implementación oficial. https://github.com/Lewislou/SENUCLS | GNN con máscaras de instancia y contexto estructural. | Sesgo distinto pero requiere otro pipeline y no es automáticamente baseline simple. |
 
-## Relación entre antecedentes y modelos evaluados
-CNN pequeña: convoluciones convencionales y bajo número de parámetros. ResNet18: conexiones residuales. MobileNetV2: convoluciones separables, bottlenecks y residuales invertidos. Estas diferencias permiten explorar la relación entre capacidad, aprendizaje y costo. Sin embargo, la evidencia recopilada no establece que sean los tres modelos exactos más frecuentes de la tarea. En particular, el uso de MobileNetV2 como extractor en segmentación no valida por sí solo su selección como referencia de clasificación nuclear.
+## Antecedentes del piloto exploratorio
+El piloto histórico contrastó una CNN local de baja capacidad, ResNet18 con conexiones residuales y MobileNetV2 con convoluciones separables y bloques residuales invertidos. Estas diferencias permiten explorar la relación entre capacidad, aprendizaje y costo. Sin embargo, la evidencia recopilada no establece que sean los tres modelos exactos más frecuentes de la tarea. En particular, el uso de MobileNetV2 como extractor en segmentación no valida por sí solo su selección como referencia de clasificación nuclear.
 
-## Delimitación bibliográfica
-La cadena temática que delimita el alcance de esta revisión es: ("nucleus classification" OR "nuclei classification" OR "cell type classification") AND (histopatholog* OR histolog*) AND ("deep learning" OR CNN OR "convolutional neural network") AND (baseline OR compar*).
+## Alcance y criterios de selección de estudios
 
-Esta cadena expresa el alcance temático y no se presenta como una consulta ejecutada en las bases mencionadas. La clasificación de núcleos aislados se distingue de la segmentación, la detección y la clasificación de parches tumorales. La comparación entre estudios también está condicionada por la tinción, el tejido, las etiquetas y la unidad de partición. En consecuencia, los resultados publicados no se consideran directamente comparables con el macro-F1 de las tres categorías del presente piloto.
+La revisión se centra en modelos que asignan una categoría celular a un núcleo previamente localizado en una imagen histológica. Este alcance permite identificar referencias comparables con la tarea NuCLS y distinguirlas de sistemas cuyo resultado principal es detectar núcleos, delimitar sus contornos o diagnosticar una imagen completa.
+
+| Criterio | Aplicación en la revisión |
+|---|---|
+| Pertinencia de la tarea | Priorizar clasificación de tipos nucleares a partir de imágenes histológicas; registrar por separado subclasificación binaria, mitosis e intensidad inmunohistoquímica |
+| Función de la arquitectura | Identificar si actúa como clasificador independiente, extractor de características o componente de un sistema híbrido |
+| Información de entrada | Documentar tejido, tinción, resolución, contexto, máscaras y otras entradas necesarias |
+| Evidencia extraíble | Registrar arquitectura exacta, dataset, partición, métrica y valor; conservar como no reportado aquello que la fuente no permite verificar |
+| Periodo de identificación | Aplicar la ventana 2018–2026 a las exportaciones; distinguir los antecedentes fundacionales anteriores utilizados para contextualizar el problema |
+| Comparabilidad | Evitar ordenar conjuntamente resultados con distintas clases, métricas, tratamientos o unidades de partición |
+
+Los estudios de tareas adyacentes pueden fundamentar el contexto metodológico, pero no se contabilizan automáticamente como usos de un clasificador nuclear independiente. La selección por pertinencia tampoco equivale a una evaluación de calidad: ambas decisiones se documentan por separado. Estos criterios organizan la lectura dirigida realizada; no se presentan como criterios prerregistrados antes de las búsquedas ni como evidencia de que todos los registros recuperados hayan sido evaluados.
 
 ## Evidencia cuantitativa y comparabilidad
 
@@ -173,7 +183,7 @@ La extracción estructurada cuenta una vez cada DOI por arquitectura y separa va
 
 ResNet50 se prioriza por recurrencia exacta en clasificación nuclear multiclase. La CNN pequeña aporta una referencia de menor capacidad; DenseNet121 añade otro tipo de conectividad con menos parámetros que las variantes VGG/AlexNet registradas. Esta selección combina frecuencia, complejidad y diversidad estructural; no supone que las tres minimicen simultáneamente todos los criterios. DenseNet121 tiene más profundidad nominal que ResNet50, aunque menos parámetros.
 
-La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro clases y entrada 27×27. Para utilizar las ventanas comunes 128×128 se incorpora pooling adaptativo 5×5 sin parámetros, conservando las dimensiones del clasificador. Esa adaptación modifica la agregación espacial y se declara explícitamente; no constituye reproducción exacta del experimento original. Las tres implementaciones superaron pruebas de propagación y gradientes con tensores sintéticos, sin entrenamiento sobre NuCLS v2.
+La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro clases y entrada 27×27. Para utilizar las ventanas comunes de 128×128 se reduce el mapa de 30×30 a una cuadrícula de 5×5 mediante promedios en bloques disjuntos de 6×6, equivalentes al pooling adaptativo de esas dimensiones. Se conservan las dimensiones del clasificador sin añadir parámetros. Esa adaptación modifica la agregación espacial y se declara explícitamente; no constituye reproducción exacta del experimento original. Las tres implementaciones superaron pruebas de propagación y gradientes con tensores sintéticos, sin entrenamiento sobre NuCLS v2.
 
 El protocolo contempla inicialización desde cero y condiciones comunes, a diferencia de algunos estudios que emplean transferencia. La función de estas redes como referencia es comparable a la de un modelo logístico en una evaluación clásica: establecer un desempeño reproducible que deba superarse. No implica igualdad de capacidad ni supuestos lineales.
 
