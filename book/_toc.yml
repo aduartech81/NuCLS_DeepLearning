@@ -1,12 +1,17 @@
 format: jb-book
 root: intro
-chapters:
-  - file: 01_problema
-  - file: 02_datos_eda
-  - file: 02_resultados_eda
-  - file: 03_literatura
-  - file: 04_protocolo
-  - file: 05_estadistica
-  - file: 06_control
-  - file: 07_analisis_ejecutado
-  - file: 08_resultados_piloto
+parts:
+  - caption: Pregunta y datos
+    chapters:
+      - file: 01_problema
+      - file: 02_datos_eda
+      - file: 02_resultados_eda
+  - caption: Fundamento y experimentación
+    chapters:
+      - file: 03_literatura
+      - file: 04_protocolo
+      - file: 05_estadistica
+  - caption: Evidencia e interpretación
+    chapters:
+      - file: 08_resultados_piloto
+      - file: 07_analisis_ejecutado

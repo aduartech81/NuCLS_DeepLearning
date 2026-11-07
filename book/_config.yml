@@ -1,4 +1,8 @@
-title: "NuCLS — Entregable 1 — Avance"
+title: "NuCLS | Aprendizaje profundo en histología"
 author: "Andrés Duarte Chaves"
 execute:
   execute_notebooks: "off"
+sphinx:
+  config:
+    html_static_path: ["_static"]
+    html_css_files: ["informe.css"]

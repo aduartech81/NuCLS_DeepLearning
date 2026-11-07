@@ -13,7 +13,7 @@ Se integran los archivos aportados por el autor: `CONTROL_PILOTO_QC_20261105_225
 | validacion | lymphocyte | 2629 | 1196 | 45.49 % | 33.49 % |
 | validacion | nonTILnonMQ_stromal | 1582 | 729 | 46.08 % | 20.41 % |
 
-![Composición y retención](figuras/seleccion.png)
+![Número y proporción de recortes por clase, separados por partición.](figuras/visual_balance.svg)
 
 **Resultado:** el piloto contiene 14.428 recortes de entrenamiento y 3.571 de validación. La clase mayoritaria no alcanza el 50 % en ninguna partición. La razón mayoritaria/minoritaria es 2.23 en entrenamiento y 2.26 en validación. La retención difiere entre clases, por lo que el conjunto de recortes no representa automáticamente la distribución original.
 
@@ -33,6 +33,8 @@ La comparación sobre 29.394 cajas válidas de entrenamiento encontró:
 La auditoría geométrica original señaló 462 cajas parcialmente fuera de campo y 75 vacías/invertidas. Los percentiles se expresan en píxeles: una caja delimitadora no es el contorno nuclear ni permite calcular circularidad biológica. Los totales de ensayos anteriores no se mezclan: 14.961 corresponde específicamente a la comparación de alternativas sobre 29.394 cajas.
 
 ## Intensidad, contraste y textura
+
+![Distribuciones de intensidad, saturación y textura de los campos de entrenamiento. La línea discontinua indica la mediana.](figuras/visual_calidad.svg)
 | Indicador de campo | P5 | Mediana | P95 |
 |---|---:|---:|---:|
 | gris_media | 103.309 | 142.104 | 185.163 |
