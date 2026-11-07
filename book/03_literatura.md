@@ -1,4 +1,4 @@
-# Revisión rápida de pertinencia — 2026-11-06
+# Estado del arte: clasificación nuclear en histología
 
 Esta revisión orienta candidatos, no constituye búsqueda sistemática completa. No se han ejecutado búsquedas autenticadas en WoS o Scopus ni se ha generado un PRISMA verificable. No se inventan frecuencias de uso.
 

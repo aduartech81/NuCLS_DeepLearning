@@ -1,0 +1,127 @@
+{
+  "fuente_sha256": "c7992c50c039b3739691a3cb73b40e9ba7e1d66d1bc4d3e90cc61c59642ba9f1",
+  "seleccion": "Los 12 ejemplos ya incluidos en galeria_train.html; selección ilustrativa, no muestra aleatoria nueva.",
+  "entrada": "RGB 128x128; etiquetas originales; sin predicciones.",
+  "registros": [
+    {
+      "archivo": "tumor_nonMitotic_00.png",
+      "clase": "tumor_nonMitotic",
+      "paciente": "TCGA-A2-A04Q",
+      "fila": "fila 1",
+      "particion": "entrenamiento",
+      "sha256": "590bb856348a9b444a7a4d9256d7e6c0cad07d8ce8c55a9dc16cf98b5c1966ef",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "nonTILnonMQ_stromal_01.png",
+      "clase": "nonTILnonMQ_stromal",
+      "paciente": "TCGA-A2-A04Q",
+      "fila": "fila 9",
+      "particion": "entrenamiento",
+      "sha256": "94979b2585a8734febc3ee04daf82824a513a5b76978f0dec96b4b168ac21fcf",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "lymphocyte_02.png",
+      "clase": "lymphocyte",
+      "paciente": "TCGA-A2-A04Q",
+      "fila": "fila 14",
+      "particion": "entrenamiento",
+      "sha256": "855390de8a5b7925c248d3aa72a5cc29405e67a9bc748addd0057cbaf8137a00",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "tumor_nonMitotic_03.png",
+      "clase": "tumor_nonMitotic",
+      "paciente": "TCGA-A2-A04T",
+      "fila": "fila 0",
+      "particion": "entrenamiento",
+      "sha256": "aceaa3e33fb696ad410f3df565c2cfe724c15c9f927757bd205cac02bbc5def0",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "nonTILnonMQ_stromal_04.png",
+      "clase": "nonTILnonMQ_stromal",
+      "paciente": "TCGA-A2-A04T",
+      "fila": "fila 7",
+      "particion": "entrenamiento",
+      "sha256": "79754cc934443c2221cc42b48d510d2fc5f165ca0b1938d9d48f702bfcc0b037",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "lymphocyte_05.png",
+      "clase": "lymphocyte",
+      "paciente": "TCGA-A2-A04T",
+      "fila": "fila 15",
+      "particion": "entrenamiento",
+      "sha256": "333a1d1f93078428e87fa0c418c27c4754790665fc2bcf6c7befbd2e51366511",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "nonTILnonMQ_stromal_06.png",
+      "clase": "nonTILnonMQ_stromal",
+      "paciente": "TCGA-A2-A0CM",
+      "fila": "fila 0",
+      "particion": "entrenamiento",
+      "sha256": "a90e1637eeeb471fd3afffa77e513371284269378e6761b7b67ded896e4eea49",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "lymphocyte_07.png",
+      "clase": "lymphocyte",
+      "paciente": "TCGA-A2-A0CM",
+      "fila": "fila 7",
+      "particion": "entrenamiento",
+      "sha256": "d8f805628c91245b9d29ac1fd19636beeb486d8b57302d3db060b4453d3b1447",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "tumor_nonMitotic_08.png",
+      "clase": "tumor_nonMitotic",
+      "paciente": "TCGA-A2-A0CM",
+      "fila": "fila 2",
+      "particion": "entrenamiento",
+      "sha256": "b7aca0e9182e9a30a9e252e41ebef6f3714d0ea02c4ee5028a5a7d9d53059b0b",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "tumor_nonMitotic_09.png",
+      "clase": "tumor_nonMitotic",
+      "paciente": "TCGA-A2-A0D2",
+      "fila": "fila 1",
+      "particion": "entrenamiento",
+      "sha256": "7cf98c58eea43b3813b3ada3bb30bda2a184bb05373ce1ee362829dc2f5cfb4b",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "nonTILnonMQ_stromal_10.png",
+      "clase": "nonTILnonMQ_stromal",
+      "paciente": "TCGA-A2-A0D2",
+      "fila": "fila 7",
+      "particion": "entrenamiento",
+      "sha256": "f7d7ba739aeda9e3c65a1552b74fea8a5178a3c1f174dd3ccedd7e307790d486",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    },
+    {
+      "archivo": "lymphocyte_11.png",
+      "clase": "lymphocyte",
+      "paciente": "TCGA-A2-A0ST",
+      "fila": "fila 29",
+      "particion": "entrenamiento",
+      "sha256": "f29506a67dd42c2d50f93704214453703566bb3a631efa4ffaff6b435b062462",
+      "fuente": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "miembro": "galeria_train.html"
+    }
+  ]
+}

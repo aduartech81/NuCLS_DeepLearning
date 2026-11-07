@@ -5,6 +5,7 @@ parts:
     chapters:
       - file: 01_problema
       - file: 02_datos_eda
+      - file: 02_galeria
       - file: 02_resultados_eda
   - caption: Fundamento y experimentación
     chapters:
@@ -14,4 +15,5 @@ parts:
   - caption: Evidencia e interpretación
     chapters:
       - file: 08_resultados_piloto
+      - file: 09_discusion
       - file: 07_analisis_ejecutado
