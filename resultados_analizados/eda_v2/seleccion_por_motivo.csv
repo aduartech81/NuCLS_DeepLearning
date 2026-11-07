@@ -1,0 +1,11 @@
+particion,estado,anotaciones
+train,caja_fuera_de_imagen,441
+train,caja_invalida,84
+train,caja_no_contenida,4
+train,incluida,14539
+train,requiere_relleno,15673
+validation,caja_fuera_de_imagen,56
+validation,caja_invalida,2
+validation,caja_no_contenida,4
+validation,incluida,2049
+validation,requiere_relleno,2266

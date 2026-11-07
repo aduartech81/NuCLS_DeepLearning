@@ -19,7 +19,7 @@ La extracción distingue arquitectura exacta, función del modelo, representaci�
 
 ## Alcance de la lectura documental
 
-Se documentaron decisiones para 34 registros del inventario, incluidas 24 lecturas adicionales de resúmenes. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.296 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
+Se documentaron decisiones para 35 registros del inventario, incluidas 24 lecturas adicionales de resúmenes. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.295 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
 
 Las decisiones individuales y su fundamento se conservan en [el registro de lectura](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/revision_adicional_24.csv). La evaluación de calidad distingue información ausente de un defecto demostrado; un resumen insuficiente no constituye evidencia de fuga de datos.
 
@@ -143,3 +143,16 @@ Fuente: [texto de autor, sección 4.1 y tablas 1–4](https://arxiv.org/pdf/2202
 La evidencia permite formular tres decisiones para NuCLS. Primero, las comparaciones deben mantener la misma unidad de entrada y salida: recortes RGB y categorías nucleares. Segundo, las transformaciones aprendidas y el balanceo se estiman únicamente con entrenamiento, después de fijar la partición. Tercero, la complejidad y el rendimiento se documentan para la implementación exacta; una familia residual no equivale a una profundidad concreta ni un extractor a un sistema completo.
 
 El aporte del experimento se sitúa en una comparación reproducible bajo separación por paciente y centro de origen, con incertidumbre entre ejecuciones y entre pacientes. Esta delimitación evita presentar diferencias entre publicaciones como superioridad de una red, cuando también cambian el tejido, las etiquetas, el contexto, el balanceo y la evaluación.
+
+
+## Referencia residual explícita: GrEp
+
+Frei et al. (2026) evaluaron ResNet18 aislada en la ablación de GrEp, una propuesta de refinamiento mediante grafos. La comparación corresponde a células epiteliales normales y malignas.
+
+| Referencia | Problema | Dataset de evaluación | Modelo de referencia | Métricas | Valores (%) |
+|---|---|---|---|---|---|
+| Frei et al., tabla 4 | Subclasificación epitelial binaria | TCGA | ResNet18 sin grafo ni filtro mediano | F epitelial / F maligno / F normal | 87,58 ± 0,97 / 90,83 ± 0,84 / 82,01 ± 1,22 |
+
+La implementación parte de ImageNet, incorpora pooling adaptativo y salida binaria, y utiliza AdamW con tasa 10⁻⁶ durante 150 épocas. Este antecedente acredita el uso de ResNet18 como referencia de clasificación nuclear, además de su papel como extractor. Sin embargo, no reproduce el entrenamiento desde cero ni las tres categorías del piloto NuCLS. El valor del sistema completo con grafos no se atribuye a ResNet18 aislada.
+
+Fuente: [Frei et al., texto completo de autor, sección 3.3 y tabla 4](https://aibex.ch/research/papers/Frei2025.pdf); [DOI](https://doi.org/10.1016/j.patcog.2025.112197).

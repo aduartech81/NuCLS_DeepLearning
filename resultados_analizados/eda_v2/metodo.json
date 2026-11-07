@@ -1,0 +1,27 @@
+{
+  "fuente_sha256": "4e1574051a66740c050c3cd66fb11d423f2c57f313a4d71c02f9b2f3a913c77c",
+  "alcance": "Solo entrenamiento y validación; metadatos, sin análisis de píxeles ni predicciones de reserva",
+  "bootstrap": {
+    "repeticiones": 5000,
+    "semilla": 4101,
+    "unidad": "paciente dentro de cada partición",
+    "intervalo": "percentil 95%; razón de totales de los pacientes remuestreados",
+    "limitacion": "Condicional a los TSS observados; no estima incertidumbre entre centros ni corrige decisiones históricas"
+  },
+  "pacientes": {
+    "train": 83,
+    "validation": 21
+  },
+  "resumen_recortes_por_paciente": {
+    "train": {
+      "min": 7,
+      "mediana": 121.0,
+      "max": 547
+    },
+    "validation": {
+      "min": 2,
+      "mediana": 79.0,
+      "max": 231
+    }
+  }
+}

@@ -2,15 +2,15 @@
   "fecha": "2026-11-07",
   "registros": 1330,
   "decisiones": {
-    "por_revisar": 1296,
+    "por_revisar": 1295,
+    "texto_completo_extraido": 2,
     "recuperar_texto_completo": 15,
     "contexto_tarea_distinta": 13,
     "fuente_metodologica": 3,
     "revision_secundaria": 1,
-    "texto_completo_extraido": 1,
     "texto_completo_revisado": 1
   },
-  "registros_con_decision": 34,
+  "registros_con_decision": 35,
   "resumenes_adicionales_leidos": 24,
   "alcance": "Selección dirigida de candidatos; no cribado completo ni estimación de frecuencia del corpus",
   "olconvnet": {
@@ -19,5 +19,13 @@
     "version": "Preprint 22 febrero 2022 correspondiente al artículo DOI 10.1145/3345318; una sola unidad de estudio",
     "particion_seccion_4_1": "70/15/15 después de generación sintética; no se asume independencia por paciente",
     "tabla": "1; valores del clasificador aislado"
+  },
+  "grep": {
+    "fuente": "https://aibex.ch/research/papers/Frei2025.pdf",
+    "doi": "10.1016/j.patcog.2025.112197",
+    "publicacion": "Pattern Recognition 171 (2026) 112197",
+    "sha256_pdf": "d34945b6f34d504681b9510e3ccfdbbda5b3f096b1941614700d248b421f25ca",
+    "secciones": "3.3, 5.3, tabla 4",
+    "alcance": "Referencia de clasificación epitelial binaria; no equivalencia exacta con tres categorías NuCLS"
   }
 }
