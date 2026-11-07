@@ -64,3 +64,31 @@ La auditoría se limita a igualdad exacta de archivos y mediciones de campos. No
 
 ## Reproducibilidad
 El script `scripts/consolidar_eda.py` reproduce las tablas y gráficas a partir de las evidencias incluidas. El registro `evidencias/procedencia.json` conserva hashes de los archivos fuente. Ninguna medición del EDA se presenta como desempeño del clasificador.
+
+## Balance informacional y estadísticos RGB
+
+La entropía de las clases, $H=-\sum_k p_k\log_2p_k$, es **1,5018 bits** en entrenamiento y **1,5115 bits** en validación. Respecto al máximo $\log_2(3)$, corresponden al 94,75% y 95,37%. Existe desbalance, aunque ninguna clase concentra la mayor parte de la distribución. La similitud de estas entropías no demuestra igualdad de distribuciones de imagen ni ausencia de cambio de dominio.
+
+Se reconstruyeron los momentos RGB de **161.115.264 píxeles** de los 1.182 campos de entrenamiento, ponderando cada campo por su número de píxeles. Para pesos $n_j$, medias $\mu_j$ y desviaciones poblacionales $s_j$, se utilizó $\mu=\sum n_j\mu_j/\sum n_j$ y $\sigma^2=\sum n_j(s_j^2+\mu_j^2)/\sum n_j-\mu^2$.
+
+| Canal | Media (0–255) | DE (0–255) | Media (0–1) | DE (0–1) |
+|---|---:|---:|---:|---:|
+| Rojo | 169,99 | 51,55 | 0,6666 | 0,2021 |
+| Verde | 123,65 | 56,17 | 0,4849 | 0,2203 |
+| Azul | 164,05 | 43,21 | 0,6434 | 0,1695 |
+
+El canal verde presenta menor media y mayor dispersión que los otros canales. Estos resultados describen los campos completos, incluido el fondo, y **no son los estadísticos de los recortes utilizados para entrenar**. No se emplearon para normalizar retrospectivamente el piloto. El cálculo se reproduce con `scripts/ampliar_eda.py`; las tablas están en `evidencias/rgb_campos_train.csv` y `entropia_clases.csv`.
+
+## Consecuencias técnicas del EDA
+
+| Análisis | Decisión de preprocesamiento aplicada | Impacto en la arquitectura | Riesgo identificado |
+|---|---|---|---|
+| Agrupación por paciente | Separación de pacientes entre entrenamiento y validación | La red recibe recortes; la evaluación conserva agrupación clínica | Recortes de un mismo paciente no son observaciones independientes |
+| Balance y retención | Selección documentada; sin sobremuestreo ni ponderación de pérdida | Tres salidas y evaluación macro-F1, sin alterar el cabezal por prevalencia | La retención diferencial modifica la población de recortes |
+| Geometría | Ventana centrada 128×128 sin relleno | Entrada fija; contexto alrededor del núcleo | Exclusión de bordes y presencia de núcleos vecinos |
+| Intensidad y RGB | División fija por 255; sin realce ni normalización de tinción | Conservación de tres canales de color | Dependencia de apariencia de tinción; los momentos de campo no sustituyen los de recorte |
+| Textura y contraste | Conservación de imágenes sin exclusión por estos indicadores | Convoluciones sobre textura original | Las métricas mezclan morfología y calidad; no diagnostican desenfoque |
+| Distancias multivariadas | Sin exclusión automática de los cuatro pacientes señalados | Sin modificación de arquitectura o pérdida | Un valor extremo no acredita defecto; la agregación puede ocultar anomalías locales |
+| Duplicados exactos | Verificación de identidad de archivos | Sin cambio de red | La igualdad de hash no detecta recortes visualmente similares |
+
+Los estadísticos de intensidad proceden exclusivamente de entrenamiento. La inspección de proporciones de validación describe la partición ya utilizada y no se empleó para reajustar transformaciones o pérdidas.

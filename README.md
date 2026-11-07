@@ -1,57 +1,65 @@
-# NuCLS · Entregable 1 · Andrés Duarte Chaves
+# NuCLS · Aprendizaje profundo en histología
 
-Avance funcional con Jupyter Book, notebook ejecutado y dashboard Dash Plotly. No es todavía la entrega académica final: la literatura, revisión de calidad pendiente, diseño confirmatorio e inferencia final deben cerrarse.
+**Andrés Duarte Chaves · Maestría en Ingeniería Biomédica · Entregable 1**
 
-## Revisar ahora sin instalar
-El notebook ejecutado está en `book/07_analisis_ejecutado.ipynb`. El workflow compila el JBook desde los capítulos fuente; el HTML generado no se versiona.
+Comparación exploratoria de CNN local, ResNet18 y MobileNetV2 para clasificar recortes nucleares en tres categorías de NuCLS. El análisis comprende 17.999 recortes, 98 pacientes y quince entrenamientos registrados. La partición por paciente separa entrenamiento y validación.
 
-## Dashboard en Mac, separado del entrenamiento
-Descomprima esta carpeta dentro de `~/Desktop/Proyecto_Deep_Learning/`. En otra terminal:
+- [Informe Jupyter Book](https://aduartech81.github.io/NuCLS_DeepLearning/intro.html)
+- [Notebook ejecutado](https://aduartech81.github.io/NuCLS_DeepLearning/07_analisis_ejecutado.html)
+- [Archivo notebook](book/07_analisis_ejecutado.ipynb)
+- [Resultados e incertidumbre](https://aduartech81.github.io/NuCLS_DeepLearning/08_resultados_piloto.html)
+
+## Alcance científico
+
+El piloto compara desempeño, variabilidad entre semillas y tiempo de entrenamiento. La selección de épocas utiliza la validación; los resultados no constituyen evaluación externa. La revisión narrativa contextualiza las familias de redes, pero no demuestra que las tres implementaciones sean los modelos base más recurrentes de la literatura. El sistema clasifica recortes previamente localizados y no identifica telocitos ni detecta núcleos en lámina completa.
+
+## Dashboard
+
+El dashboard Dash Plotly presenta siete pestañas: problema, imágenes, estado del arte, EDA, modelos y resultados, discusión y reproducibilidad. Consume evidencias y predicciones ya calculadas; no entrena modelos.
+
+Desde la raíz de una copia de este repositorio, con Python 3.12:
+
 ```bash
-cd "$HOME/Desktop/Proyecto_Deep_Learning/NuCLS_Entregable1_ConResultados"
-conda run -n nucls_dl python -m venv .venv_dashboard
+python3 -m venv .venv_dashboard
 source .venv_dashboard/bin/activate
 python -m pip install -r requirements.txt
 python app.py
 ```
-Abra http://127.0.0.1:8050/ en el navegador. No se inicia ningún entrenamiento.
 
-## Publicar en GitHub y Render
-1. Crear un repositorio independiente para Deep Learning. Colocar el contenido de esta carpeta en la raíz, conservando `.github/workflows` y `.gitignore`.
-2. En GitHub, Settings > Pages > Source: GitHub Actions. Ejecutar el workflow `Publicar Jupyter Book`.
-3. En Render, New > Blueprint y conectar el repositorio: detectará `render.yaml`. Alternativa: Web Service Python, build `pip install -r requirements.txt`, start `gunicorn app:server --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120`.
-4. Confirmar `/health`, las cinco pestañas, los filtros y el enlace público del JBook. La configuración no equivale a un despliegue confirmado.
+Dirección local: http://127.0.0.1:8050/.
 
-Documentación oficial: https://render.com/docs/deploy-flask y https://dash.plotly.com/deployment
+`render.yaml` define un servicio gratuito con verificación `/health`. La configuración está preparada para conectar este repositorio mediante Render Blueprint. El repositorio no registra una URL pública de dashboard verificada.
 
-## Incorporar resultados reales
-Con el ZIP del entrenador original:
+## Reproducción del análisis
+
+En un entorno separado del entrenamiento:
+
 ```bash
-python scripts/importar_resultados.py /ruta/resultados_RESULTADOS.zip
-```
-El importador conserva evidencia y rechaza sobreescrituras. Revisar cinco corridas por modelo, fallos y configuración antes de inferir. El dashboard mostrará medias y desviaciones de validación, claramente rotuladas como piloto.
-
-## Reproducir documentación
-En un entorno separado del entrenamiento, con Python 3.12:
-```bash
-python -m pip install -r requirements_book.txt
+python -m pip install -r requirements_book.txt -r requirements_eda.txt
 python scripts/consolidar_eda.py
+python scripts/analizar_piloto.py
+python scripts/presentacion_visual.py
+python scripts/generar_galeria.py
+python scripts/ampliar_eda.py
+python scripts/planificar_piloto.py
 jupyter nbconvert --to notebook --execute --inplace book/07_analisis_ejecutado.ipynb
 jupyter-book build book
 ```
-Los estadísticos y el notebook utilizan las evidencias incluidas. No descargan imágenes originales ni abren prueba/reserva. `requirements_entorno_verificado.txt` registra las versiones de este entorno Linux; no obliga a alterar el entorno del piloto Mac.
 
-## Entrenamiento
-`modelos/` conserva copias de los scripts originales del piloto para trazabilidad. Continúe usando la carpeta original `NuCLS_Piloto_V1` para reanudar las corridas actuales: no mueva checkpoints ni cambie su entorno. Los datos originales y pesos no se incluyen en el paquete de publicación.
+El notebook contiene salidas de cálculos ejecutados. La publicación conserva esas salidas y compila el libro sin ejecutar nuevos entrenamientos. Los scripts analíticos no acceden a imágenes de prueba o reserva.
 
-## Verificación realizada
-- Notebook: ocho celdas de código ejecutadas con IPython en proceso y salidas reales capturadas. Este entorno no permite abrir sockets de un kernel separado. El notebook conserva código estándar, ejecutable con Jupyter en Mac/Colab.
-- Jupyter Book compilado a HTML.
-- Dashboard: respuestas HTTP de raíz, health, layout y dependencias; cinco pestañas y seis combinaciones de filtros verificadas programáticamente.
-- La revisión visual en navegador y el despliegue externo están pendientes.
+## Organización y procedencia
 
-## Actualización: piloto completo
-Las quince corridas fueron incorporadas y verificadas. El notebook fue reejecutado y el JBook reconstruido. El dashboard lee resultados/resumen_modelos.csv. Ver book/08_resultados_piloto.md. GitHub y Render siguen pendientes de publicación; no se modificaron repositorios existentes.
+- `book/`: capítulos, notebook y figuras.
+- `app.py`, `assets/`: dashboard.
+- `modelos/`: implementaciones y entrenador del piloto.
+- `resultados/`: predicciones comprimidas, curvas y configuración de quince corridas.
+- `resultados_analizados/`: métricas recalculadas, incertidumbre y planificación.
+- `evidencias/`: auditorías, selección, trazabilidad y hashes.
+- `scripts/`: análisis y generación de figuras.
 
-## Evidencias en GitHub
-Las predicciones por corrida se conservan como CSV gzip sin pérdida; pandas las lee directamente. De los archivos ZIP de auditoría se incluyen sus resúmenes JSON utilizados en los cálculos. Los paquetes originales se mantienen como evidencias del autor. El repositorio no redistribuye imágenes histológicas ni pesos.
+La galería contiene doce ejemplos ilustrativos de entrenamiento, con trazabilidad en `evidencias/galeria_train.json`. El conjunto completo de imágenes y los pesos no se incluyen. Los estadísticos RGB describen campos completos; no son parámetros de normalización de recortes.
+
+## Comprobaciones
+
+Se verificaron las predicciones, las métricas, el emparejamiento de semillas y el cálculo exacto de Wilcoxon mediante enumeración de signos. El JBook compila sin advertencias. El dashboard fue comprobado con el cliente de pruebas de Flask y funciones de sus siete pestañas. Estas pruebas locales no acreditan un despliegue público en Render.

@@ -18,3 +18,23 @@ CNN pequeña: convoluciones convencionales y bajo número de parámetros. ResNet
 La cadena temática que delimita el alcance de esta revisión es: ("nucleus classification" OR "nuclei classification" OR "cell type classification") AND (histopatholog* OR histolog*) AND ("deep learning" OR CNN OR "convolutional neural network") AND (baseline OR compar*).
 
 Esta cadena expresa el alcance temático y no se presenta como una consulta ejecutada en las bases mencionadas. La clasificación de núcleos aislados se distingue de la segmentación, la detección y la clasificación de parches tumorales. La comparación entre estudios también está condicionada por la tinción, el tejido, las etiquetas y la unidad de partición. En consecuencia, los resultados publicados no se consideran directamente comparables con el macro-F1 de las tres categorías del presente piloto.
+
+## Evidencia cuantitativa y comparabilidad
+
+Sánchez-Torres et al. (2026) compararon ResNet50 y ViT en PanNuke con cinco clases. La tabla 6 distingue núcleos con contexto y núcleos aislados:
+
+| Modelo y entrada | F1 neoplásico (%) | F1 conectivo (%) | F1 inflamatorio (%) | F1 epitelial (%) | F1 muerto (%) |
+|---|---:|---:|---:|---:|---:|
+| ResNet50 con contexto | 82,90 | 71,49 | 71,98 | 71,49 | 49,39 |
+| ResNet50 sin contexto | 78,71 | 63,21 | 68,99 | 64,39 | 41,13 |
+| ViT con contexto | 82,19 | 69,01 | 70,19 | 71,59 | 47,93 |
+
+La tabla no presenta dispersión. La mejora conectiva de ResNet50 al conservar contexto es de 8,28 puntos; su extrapolación a NuCLS requiere cautela. Las clases, particiones y redes difieren. Además, la tabla 14 combina valores de distintos tratamientos: para núcleos muertos muestra 51,66%, asociado al sobremuestreo en la tabla 11, frente a 49,39% en la tabla 6. Se conserva una única configuración para esta extracción.
+
+Fuente: [Sánchez-Torres et al., tablas 6, 11 y 14](https://doi.org/10.1155/acis/4540418).
+
+### Implicación para el presente estudio
+
+El piloto utiliza ventanas que incluyen contexto, pero no contiene una ablación que separe núcleo y entorno. En consecuencia, no permite determinar qué proporción del desempeño procede de morfología nuclear, células vecinas o tinción. Tampoco se interpreta la proximidad numérica con un resultado publicado como reproducción: una comparación válida requiere coincidencia de etiquetas, partición, métrica y tratamiento de imágenes.
+
+La evidencia consultada respalda el interés de estudiar representaciones convolucionales y contexto. No proporciona una frecuencia verificable de CNN local, ResNet18 y MobileNetV2 como las tres referencias más utilizadas. Esta distinción delimita la fuerza de la justificación bibliográfica del experimento.
