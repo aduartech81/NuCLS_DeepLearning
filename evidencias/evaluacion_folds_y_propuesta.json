@@ -1,0 +1,54 @@
+{
+  "estado": "PROPUESTA_NO_CONGELADA",
+  "fuente": "particiones_oficiales.csv del archivo TABLAS_QC.zip aportado; no revalidado byte a byte contra descarga remota",
+  "sha256_fuente": "92babaa7a9d0c5f69875fcad3a6d91e0a2985bb29a6241baf71174a75213b31d",
+  "folds": [
+    {
+      "fold": 1,
+      "pacientes_train": 102,
+      "pacientes_test": 22,
+      "tss_compartidos": [],
+      "test_sin_registro_previo": 0
+    },
+    {
+      "fold": 2,
+      "pacientes_train": 97,
+      "pacientes_test": 27,
+      "tss_compartidos": [],
+      "test_sin_registro_previo": 1
+    },
+    {
+      "fold": 3,
+      "pacientes_train": 92,
+      "pacientes_test": 32,
+      "tss_compartidos": [],
+      "test_sin_registro_previo": 4
+    },
+    {
+      "fold": 4,
+      "pacientes_train": 99,
+      "pacientes_test": 25,
+      "tss_compartidos": [],
+      "test_sin_registro_previo": 0
+    },
+    {
+      "fold": 5,
+      "pacientes_train": 106,
+      "pacientes_test": 18,
+      "tss_compartidos": [],
+      "test_sin_registro_previo": 1
+    }
+  ],
+  "roles": {
+    "desarrollo": 104,
+    "excluido_por_procedencia_de_reserva": 14,
+    "reserva_candidata": 6
+  },
+  "tss_reserva": [
+    "A7",
+    "AN",
+    "AO"
+  ],
+  "limitacion": "La exclusión por TSS evita compartir procedencia en el nuevo entrenamiento, pero no revierte exposición ni decisiones históricas. La reserva candidata requiere control de disponibilidad, clases y acceso previo antes de definir test.",
+  "sin_acceso_a_imagenes": true
+}
