@@ -1,0 +1,8 @@
+referencia,problema,dataset,modelo_basico,metricas,valores,tabla,funcion
+OLConvNet; DOI 10.1145/3345318,Clasificación nuclear; cuatro clases,Colon; recortes 27×27,CNN3L,F1; AUC multiclase,0.8040; 0.9441,1,"Clasificador CNN con softmax, sin rama de características manuales"
+OLConvNet; DOI 10.1145/3345318,Clasificación nuclear; cuatro clases,Colon; recortes 27×27,AlexNet,F1; AUC multiclase,0.8216; 0.9386,1,"Clasificador CNN con softmax, sin rama de características manuales"
+OLConvNet; DOI 10.1145/3345318,Clasificación nuclear; cuatro clases,Colon; recortes 27×27,VGG16,F1; AUC multiclase,0.8689; 0.9757,1,"Clasificador CNN con softmax, sin rama de características manuales"
+OLConvNet; DOI 10.1145/3345318,Clasificación nuclear; cuatro clases,Colon; recortes 27×27,VGG19,F1; AUC multiclase,0.8578; 0.9701,1,"Clasificador CNN con softmax, sin rama de características manuales"
+OLConvNet; DOI 10.1145/3345318,Clasificación nuclear; cuatro clases,Colon; recortes 27×27,ResNet50,F1; AUC multiclase,0.8892; 0.9799,1,"Clasificador CNN con softmax, sin rama de características manuales"
+OLConvNet; DOI 10.1145/3345318,Clasificación nuclear; cuatro clases,Colon; recortes 27×27,InceptionV3,F1; AUC multiclase,0.8175; 0.9538,1,"Clasificador CNN con softmax, sin rama de características manuales"
+OLConvNet; DOI 10.1145/3345318,Clasificación nuclear; cuatro clases,Colon; recortes 27×27,DenseNet121,F1; AUC multiclase,0.8706; 0.9756,1,"Clasificador CNN con softmax, sin rama de características manuales"

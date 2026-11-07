@@ -17,6 +17,12 @@ La consulta comunicada para la búsqueda fue `(nucle* AND classif*) AND (histolo
 
 La extracción distingue arquitectura exacta, función del modelo, representación de entrada, conjunto de datos, unidad de partición y métrica. La lectura de títulos y resúmenes identifica candidatos para texto completo; la prioridad automática no determina exclusión ni calidad. La revisión asistida por IA no representa dos revisores independientes.
 
+## Alcance de la lectura documental
+
+Se documentaron decisiones para 34 registros del inventario, incluidas 24 lecturas adicionales de resúmenes. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.296 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
+
+Las decisiones individuales y su fundamento se conservan en [el registro de lectura](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/revision_adicional_24.csv). La evaluación de calidad distingue información ausente de un defecto demostrado; un resumen insuficiente no constituye evidencia de fuga de datos.
+
 ## Antecedentes y comparabilidad
 
 | Fuente primaria | Tarea / evidencia identificada | Consecuencia |
@@ -110,3 +116,30 @@ En CRCHistoPhenotypes se informa una partición 80/20 de 22.444 recortes y un F1
 El estudio aporta una arquitectura verificable y comparadores concretos, pero su métrica, resolución, tejido y clases difieren del piloto NuCLS. Su presencia no prueba que RCCNet sea uno de los tres modelos más frecuentes.
 
 Fuente: Basha et al., ICARCV 2018, [texto completo de autor, secciones II–IV](https://arxiv.org/html/1810.02797v3), [DOI](https://doi.org/10.1109/ICARCV.2018.8581147).
+
+
+## Clasificadores independientes y sistemas híbridos: OLConvNet
+
+El texto de autor de OLConvNet permite separar dos resultados: CNN con salida softmax y fusión de características profundas con descriptores manuales. La tabla 1 corresponde al primer caso.
+
+| Referencia | Problema | Datos | Modelo básico | Métricas | Valores publicados |
+|---|---|---|---|---|---|
+| OLConvNet, tabla 1 | Clasificación nuclear, cuatro clases | Colon; recortes 27×27 | CNN3L | F1 / AUC multiclase | 0,8040 / 0,9441 |
+| OLConvNet, tabla 1 | Igual | Igual | AlexNet | F1 / AUC multiclase | 0,8216 / 0,9386 |
+| OLConvNet, tabla 1 | Igual | Igual | VGG16 | F1 / AUC multiclase | 0,8689 / 0,9757 |
+| OLConvNet, tabla 1 | Igual | Igual | VGG19 | F1 / AUC multiclase | 0,8578 / 0,9701 |
+| OLConvNet, tabla 1 | Igual | Igual | ResNet50 | F1 / AUC multiclase | 0,8892 / 0,9799 |
+| OLConvNet, tabla 1 | Igual | Igual | InceptionV3 | F1 / AUC multiclase | 0,8175 / 0,9538 |
+| OLConvNet, tabla 1 | Igual | Igual | DenseNet121 | F1 / AUC multiclase | 0,8706 / 0,9756 |
+
+ResNet50 aislada obtiene F1 0,8892; el 0,9677 publicado para su variante híbrida incorpora otra representación y otro clasificador. Atribuir ambos resultados a la misma configuración confundiría el efecto de la arquitectura con el de la fusión.
+
+La sección 4.1 describe generación sintética antes de una división 70/15/15. Ese orden introduce riesgo de dependencia entre subconjuntos; la descripción tampoco establece agrupación por paciente. No se traslada este procedimiento al experimento NuCLS. El artículo y su preprint se consideran una sola unidad bibliográfica.
+
+Fuente: [texto de autor, sección 4.1 y tablas 1–4](https://arxiv.org/pdf/2202.10177); [DOI 10.1145/3345318](https://doi.org/10.1145/3345318).
+
+## Justificación metodológica derivada de la revisión
+
+La evidencia permite formular tres decisiones para NuCLS. Primero, las comparaciones deben mantener la misma unidad de entrada y salida: recortes RGB y categorías nucleares. Segundo, las transformaciones aprendidas y el balanceo se estiman únicamente con entrenamiento, después de fijar la partición. Tercero, la complejidad y el rendimiento se documentan para la implementación exacta; una familia residual no equivale a una profundidad concreta ni un extractor a un sistema completo.
+
+El aporte del experimento se sitúa en una comparación reproducible bajo separación por paciente y centro de origen, con incertidumbre entre ejecuciones y entre pacientes. Esta delimitación evita presentar diferencias entre publicaciones como superioridad de una red, cuando también cambian el tejido, las etiquetas, el contexto, el balanceo y la evaluación.
