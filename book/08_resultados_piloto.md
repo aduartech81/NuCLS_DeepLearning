@@ -67,3 +67,33 @@ El piloto distingue descriptivamente a ResNet18 y MobileNetV2 de la CNN local, p
 Fuentes reproducibles: `resultados/`, `resultados_analizados/` y `scripts/analizar_piloto.py`. No se usaron imágenes de prueba/reserva.
 
 Las figuras de esta presentación se reproducen con `python scripts/presentacion_visual.py`, después de `python scripts/analizar_piloto.py`. Las tablas numéricas completas permanecen en `resultados_analizados/`.
+
+## Referencia descriptiva e intervalos entre semillas
+
+MobileNetV2 constituye la referencia descriptiva del piloto por presentar la mayor media de macro-F1. Esta designación permite cuantificar el desempeño observado sin afirmar superioridad estadística ni convertirlo en uno de los tres modelos definitivos exigidos por la revisión bibliográfica.
+
+| Modelo | Macro-F1, media ± DE | IC 95% t entre semillas | MCC | AP macro | ECE |
+|---|---|---|---:|---:|---:|
+| CNN local | 0,7203 ± 0,0106 | 0,7072–0,7335 | 0,6290 | 0,7862 | 0,0361 |
+| ResNet18 | 0,8191 ± 0,0106 | 0,8059–0,8322 | 0,7544 | 0,8973 | 0,0198 |
+| MobileNetV2 | 0,8239 ± 0,0078 | 0,8142–0,8336 | 0,7638 | 0,9020 | 0,0165 |
+
+Los intervalos t describen variación entre cinco semillas sobre la misma validación. No sustituyen los intervalos agrupados por paciente ni eliminan el optimismo asociado a seleccionar checkpoints con esa validación. AP corresponde a *average precision*, promediada entre las tres clases; no es el área trapezoidal bajo la curva precisión–recobrado. MCC complementa la exactitud al considerar conjuntamente los aciertos y errores multiclase.
+
+## Calibración de las probabilidades
+
+![Fiabilidad del piloto](figuras/fiabilidad_piloto.svg)
+
+El error de calibración esperado se calculó con diez intervalos uniformes de confianza. El gráfico agrupa las observaciones de las cinco semillas para describir confianza frente a fracción correcta; no representa un ensamble ni añade pacientes independientes. MobileNetV2 presenta el menor ECE promedio, aunque esta diferencia descriptiva no demuestra que sus probabilidades sean fiables en otra población. La pérdida de Brier multiclase fue 0,3314, 0,2268 y 0,2154 para CNN local, ResNet18 y MobileNetV2, respectivamente. No se aplicó recalibración.
+
+## Comparaciones pareadas exploratorias
+
+La prueba t pareada con corrección de Holm produjo p = 0,000366 para CNN local–ResNet18, p = 0,000405 para CNN local–MobileNetV2 y p = 0,4261 para ResNet18–MobileNetV2. Wilcoxon exacto produjo p ajustados de 0,1875, 0,1875 y 0,6250. La discrepancia refleja diferencias de supuestos y resolución con solo cinco pares; no se elige retrospectivamente el resultado más favorable.
+
+Friedman produjo un estadístico de 7,60 y p asintótico de 0,0224. Este contraste global no identifica por sí solo qué par difiere y su aproximación es limitada con cinco bloques. Estos análisis son post hoc y no constituyen pruebas confirmatorias del nuevo diseño.
+
+![Cuantiles de las diferencias pareadas](figuras/qq_piloto.svg)
+
+Shapiro–Wilk produjo p de 0,5347, 0,7400 y 0,2472 en las diferencias de los tres pares, en el orden anterior. La ausencia de rechazo no acredita normalidad con cinco observaciones. Los tamaños de efecto pareados y las coordenadas Q-Q se conservan en las tablas reproducibles. Su magnitud se refiere a la variabilidad entre semillas, no a un efecto clínico ni a variación poblacional entre pacientes.
+
+El análisis se reproduce con `python scripts/estadistica_complementaria_piloto.py`. Las probabilidades exportadas se verificaron y renormalizaron por fila para corregir redondeo numérico. No se accedió a la reserva de la partición v2.
