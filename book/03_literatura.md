@@ -38,3 +38,48 @@ Fuente: [Sánchez-Torres et al., tablas 6, 11 y 14](https://doi.org/10.1155/acis
 El piloto utiliza ventanas que incluyen contexto, pero no contiene una ablación que separe núcleo y entorno. En consecuencia, no permite determinar qué proporción del desempeño procede de morfología nuclear, células vecinas o tinción. Tampoco se interpreta la proximidad numérica con un resultado publicado como reproducción: una comparación válida requiere coincidencia de etiquetas, partición, métrica y tratamiento de imágenes.
 
 La evidencia consultada respalda el interés de estudiar representaciones convolucionales y contexto. No proporciona una frecuencia verificable de CNN local, ResNet18 y MobileNetV2 como las tres referencias más utilizadas. Esta distinción delimita la fuerza de la justificación bibliográfica del experimento.
+
+## Modelos comparativos en estudios de clasificación nuclear
+
+### Supervisión limitada y transferencia entre tejidos
+
+Jacobs, Brostow, Freeman, Alexander y Panagiotaki (2017), en *Detecting and Classifying Nuclei on a Budget*, compararon una CNN supervisada, su ajuste por transferencia y una CNN Γ-ladder semisupervisada. La clasificación utiliza ventanas de 27×27 píxeles y tres categorías prostáticas. Se incluye como antecedente metodológico anterior al intervalo reciente de búsqueda.
+
+| Proporción etiquetada | Macro-F1 CNN supervisada | Macro-F1 CNN ajustada | Macro-F1 Γ-ladder |
+|---|---:|---:|---:|
+| 1% | 0,639 ± 0,021 | 0,695 ± 0,061 | 0,738 ± 0,019 |
+| 3% | 0,725 ± 0,012 | 0,752 ± 0,008 | 0,762 ± 0,010 |
+| 5% | 0,761 ± 0,003 | 0,769 ± 0,007 | 0,765 ± 0,008 |
+| 100% | 0,820 ± 0,005 | 0,819 ± 0,002 | 0,825 ± 0,004 |
+
+La ventaja Γ-ladder frente a supervisión completa pasa de 9,9 puntos con 1% etiquetado a 0,5 puntos con todos los datos. La ventaja arquitectónica depende, por tanto, del régimen de supervisión. La dispersión publicada no debe confundirse con un intervalo de confianza. La CNN de este estudio no es idéntica a la CNN local implementada en NuCLS.
+
+Fuente: [texto completo institucional, tabla 3](https://discovery.ucl.ac.uk/id/eprint/1573202/1/LABELS2017_7.pdf).
+
+### Conexiones densas y recurrencia convolucional
+
+Alom, Asari, Parwani y Taha (2022) evaluaron clasificación, segmentación y detección en experimentos separados. Para clasificación de núcleos de colon compararon DenseNet y DCRN, con resultados F1 de **0,7941** y **0,8111**, respectivamente, en el apartado de análisis. La diferencia es de 1,70 puntos. El trabajo describe validación cruzada de cinco particiones.
+
+Su comparación incluye la referencia softmax CNN con predictor de vecindad; no corresponde a una evaluación de MobileNetV2 como clasificador aislado. Los resultados de Dice de R2U-Net y F1 de detección de UD-Net pertenecen a otras tareas y se excluyen de la comparación de clasificación. Las cinco particiones no equivalen a cinco semillas y, sin equiparar agrupación y protocolo, la diferencia publicada no es directamente comparable con el piloto NuCLS.
+
+Referencia: Alom, Z., Asari, V. K., Parwani, A. y Taha, T. M. (2022). *Microscopic nuclei classification, segmentation, and detection with improved deep convolutional neural networks (DCNN).* Diagnostic Pathology, 17, 38. [doi:10.1186/s13000-022-01189-5](https://doi.org/10.1186/s13000-022-01189-5).
+
+## Síntesis crítica de los protocolos
+
+| Estudio | Problema y conjunto | Comparadores identificados | Evidencia cuantitativa | Condición que limita la comparación |
+|---|---|---|---|---|
+| Jacobs et al. (2017) | Clasificación prostática; tres clases | CNN supervisada, ajuste por transferencia y Γ-ladder | Macro-F1 y dispersión, tabla anterior | Cambia la fracción etiquetada; tamaño de ventana y tejido distintos de NuCLS |
+| Alom et al. (2022) | Clasificación nuclear de colon | DenseNet, DCRN y referencia CNN con vecindad | F1 0,7941 y 0,8111 para DenseNet y DCRN | Cinco particiones de validación cruzada; no son repeticiones por semilla |
+| Sánchez-Torres et al. (2026) | Clasificación PanNuke; cinco clases | ResNet50 y ViT | F1 por clase, tabla anterior | Contexto y balance cambian los resultados; sin dispersión en la tabla extraída |
+| Amgad et al. (2022), NuCLS | Clasificación, localización y segmentación mamaria | Adaptación de Mask R-CNN | Fuente de datos y diseño de tareas | Un detector con clasificación no equivale a un clasificador de recortes |
+| NDG-CAM (2022) | Detección mediante segmentación | U-Net, SegNet y DeepLab v3+ con diferentes extractores | No se incorpora su Dice al F1 de clasificación | ResNet18 y MobileNetV2 aparecen como componentes de otra tarea |
+
+La coincidencia de un nombre de familia no acredita coincidencia de arquitectura. Una CNN supervisada con ventanas de 27×27 no constituye evidencia específica de la configuración 32–64–128 implementada aquí. De igual modo, los resultados de ResNet50 no se trasladan a ResNet18. Tampoco se interpreta la existencia de comparadores publicados como ausencia demostrada de fuga de datos: la unidad de partición, el acceso a validación y la selección de hiperparámetros deben establecerse para cada protocolo.
+
+## Relación con la selección del piloto
+
+La literatura examinada muestra tres dimensiones relevantes: capacidad de representación, aprovechamiento del contexto y cantidad de supervisión. El piloto estudia principalmente la primera mediante tres redes convolucionales entrenadas desde cero, manteniendo fijos contexto y etiquetas. No reproduce las comparaciones semisupervisadas ni las arquitecturas con grafos o máscaras de instancia.
+
+El hallazgo bibliográfico central es una limitación de correspondencia: **la evidencia recuperada no sustenta todavía una selección por frecuencia de las tres arquitecturas exactas del piloto**. No se convierte una frecuencia de familias en frecuencia de modelos, ni se sustituye una revisión sistemática por el número de enlaces recuperados. En consecuencia, estos resultados establecen una referencia experimental para las implementaciones evaluadas, sin acreditar que constituyan las tres referencias más recurrentes del campo.
+
+La búsqueda adicional del 7 de noviembre de 2026 utilizó las consultas web `"nuclei classification" "ResNet18" baseline NuCLS`, `"nuclei classification" "MobileNetV2"` y `"nucleus classification" "CNN" comparative baseline histology`. Estas consultas complementan la revisión narrativa y no se presentan como búsquedas ejecutadas dentro de WoS, Scopus o IEEE Xplore. La selección no contó con un segundo revisor independiente; no se atribuye un procedimiento de consenso inexistente.
