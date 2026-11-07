@@ -6,11 +6,20 @@ from torch import nn
 from torchvision import models
 CLASSES=['tumor_nonMitotic','lymphocyte','nonTILnonMQ_stromal']
 
+class NativeGridPool(nn.Module):
+    """30x30 -> 5x5: bloques 6x6 disjuntos; 5x5 -> identidad."""
+    def forward(self, x):
+        if x.shape[-2:] == (30, 30):
+            return nn.functional.avg_pool2d(x, kernel_size=6, stride=6)
+        if x.shape[-2:] == (5, 5):
+            return x
+        raise ValueError('Se esperan mapas 30x30 (entrada 128) o 5x5 (entrada 27).')
+
 class SoftmaxCNN(nn.Module):
     def __init__(self,n_classes=3,adapt_native=True):
         super().__init__()
         self.features=nn.Sequential(nn.Conv2d(3,36,4),nn.ReLU(),nn.BatchNorm2d(36),nn.MaxPool2d(2),nn.Conv2d(36,48,3),nn.ReLU(),nn.BatchNorm2d(48),nn.MaxPool2d(2))
-        self.adapter=nn.AdaptiveAvgPool2d((5,5)) if adapt_native else nn.Identity()
+        self.adapter=NativeGridPool() if adapt_native else nn.Identity()
         self.classifier=nn.Sequential(nn.Flatten(),nn.Linear(1200,512),nn.ReLU(),nn.BatchNorm1d(512),nn.Dropout(.5),nn.Linear(512,512),nn.ReLU(),nn.BatchNorm1d(512),nn.Dropout(.5),nn.Linear(512,n_classes))
     def forward(self,x):return self.classifier(self.adapter(self.features(x)))
 
