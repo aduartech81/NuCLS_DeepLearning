@@ -25,11 +25,11 @@ El conjunto noQC contó 2.200 imágenes RGB y presentó discrepancia con el cont
 
 Se conserva trazabilidad **recorte → anotación → campo → paciente → partición**. La supervisión procede de etiquetas publicadas; estas no se han revalidado individualmente para este proyecto.
 
-## Qué datos responden cada pregunta
+## Función de las particiones
 
 - **Entrenamiento:** EDA, diagnóstico de calidad y ajuste de parámetros. Los aumentos se aplican solo aquí.
 - **Validación:** selección de la mejor época y comparación exploratoria de las corridas.
-- **Prueba independiente:** no se reporta un resultado confirmatorio. La prueba histórica ya expuesta no se considera virgen.
+- **Prueba independiente:** no se reporta un resultado confirmatorio. La consulta previa de la prueba histórica impide considerarla una evaluación no expuesta.
 
 Las cinco semillas generan cinco entrenamientos sobre la misma partición; no multiplican por cinco el número de pacientes. El remuestreo por paciente utilizado en los resultados reconoce la dependencia de los recortes de un mismo sujeto.
 
@@ -37,4 +37,4 @@ Las cinco semillas generan cinco entrenamientos sobre la misma partición; no mu
 
 El [EDA](02_resultados_eda.md) cuantifica balance, retención, geometría y calidad de los campos. La [galería](02_galeria.md) muestra ejemplos reales y el tratamiento de imagen aplicado. No se presupone que más filtros produzcan mejores predicciones; una modificación de tinción o contraste requiere evaluación bajo un protocolo definido.
 
-Los hashes de las evidencias están en `evidencias/procedencia.json`. El inventario y los hashes facilitan la reproducibilidad, pero no sustituyen la verificación de licencia, versión, calidad de etiquetas o representatividad. La documentación de procedencia y permisos debe completarse antes de redistribuir el conjunto íntegro.
+Los hashes de las evidencias están en `evidencias/procedencia.json`. El inventario y los hashes facilitan la reproducibilidad, pero no sustituyen la verificación de licencia, versión, calidad de etiquetas o representatividad. El inventario no constituye una autorización de redistribución del conjunto íntegro.

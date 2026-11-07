@@ -17,7 +17,7 @@ Se integran los archivos aportados por el autor: `CONTROL_PILOTO_QC_20261105_225
 
 **Resultado:** el piloto contiene 14.428 recortes de entrenamiento y 3.571 de validación. La clase mayoritaria no alcanza el 50 % en ninguna partición. La razón mayoritaria/minoritaria es 2.23 en entrenamiento y 2.26 en validación. La retención difiere entre clases, por lo que el conjunto de recortes no representa automáticamente la distribución original.
 
-**Interpretación y decisión:** usar macro-F1 y métricas por clase. La selección sin padding resuelve el artefacto de borde, pero introduce sesgo hacia núcleos interiores. Deben reportarse los denominadores y tasas de exclusión, no únicamente el número final. No se modifica la pérdida del piloto ya en curso; cualquier ponderación futura debe calcularse en train y compararse bajo un protocolo nuevo.
+**Interpretación y decisión:** se utiliza macro-F1 para asignar el mismo peso a cada clase en la evaluación, junto con métricas específicas por categoría. La selección sin relleno evita ese artefacto, pero introduce sesgo hacia núcleos interiores. La retención de núcleos tumorales en entrenamiento supera en 5,21 puntos porcentuales la de linfocitos. Por ello, el desempeño describe la población de recortes seleccionados y no la totalidad de las anotaciones originales. El entrenamiento empleó entropía cruzada sin ponderación; no se evaluó una variante con pesos de clase.
 
 ## Geometría y alternativas de recorte
 La comparación sobre 29.394 cajas válidas de entrenamiento encontró:
@@ -28,7 +28,7 @@ La comparación sobre 29.394 cajas válidas de entrenamiento encontró:
 | Ventana 128 desplazada al interior | 0 | 7 | 77,79 |
 | Centrada 96 | 10.966 (37.31 %) | 111 | 0,71 |
 
-**Interpretación:** desplazar la ventana evita relleno pero puede alejar el objetivo del centro; reducirla a 96 no elimina el relleno y aumenta cajas no contenidas. El piloto conserva ventanas centradas de 128 que caben en la imagen. No confundir esa selección con desplazar todas las ventanas hacia el interior.
+**Interpretación:** desplazar la ventana evita relleno pero puede alejar el objetivo del centro; reducirla a 96 no elimina el relleno y aumenta cajas no contenidas. El piloto conserva ventanas centradas de 128 que caben en la imagen. Este procedimiento excluye ventanas no admisibles, en lugar de desplazar su centro.
 
 La auditoría geométrica original señaló 462 cajas parcialmente fuera de campo y 75 vacías/invertidas. Los percentiles se expresan en píxeles: una caja delimitadora no es el contorno nuclear ni permite calcular circularidad biológica. Los totales de ensayos anteriores no se mezclan: 14.961 corresponde específicamente a la comparación de alternativas sobre 29.394 cajas.
 
@@ -46,21 +46,21 @@ La auditoría geométrica original señaló 462 cajas parcialmente fuera de camp
 
 **Interpretación:** existe heterogeneidad de intensidad, textura y fondo. La varianza del Laplaciano combina estructura y nitidez, por lo que un valor bajo no confirma desenfoque. El fondo claro se define mediante umbrales RGB y puede omitir espacios rosados. Estas métricas no justifican eliminar campos automáticamente.
 
-**Decisión:** conservar los píxeles originales para la auditoría y evitar filtros de realce no evaluados. La división por 255 del piloto es reescalado fijo; aún se debe documentar media y desviación globales por canal en los recortes train si se adopta estandarización. Las medianas de medias por campo no sustituyen esos estadísticos de píxeles.
+**Decisión:** conservar los píxeles originales para la auditoría y evitar filtros de realce no evaluados. La división por 255 del piloto es reescalado fijo; no se aplicó estandarización mediante medias y desviaciones por canal. Las medianas de medias por campo no sustituyen esos estadísticos de píxeles.
 
-## Revisión multivariada nueva
+## Análisis multivariado de calidad
 Se agregaron por paciente las medianas de seis indicadores: gris medio, desviación de gris, saturación, Laplaciano en tejido, fondo claro 235 y entropía. Se transformó el Laplaciano con log(1+x), se centró por mediana y escaló por IQR. Se ajustó covarianza robusta Minimum Covariance Determinant con semilla 4101 y se calcularon distancias cuadradas.
 
 ![Calidad y distancias robustas](figuras/calidad.png)
 
 **Resultado:** el percentil empírico 95 de las distancias es 571.393; **4 de 79 pacientes** quedan priorizados para inspección. El archivo `evidencias/calidad_multivariada_pacientes.csv` conserva el orden y sus indicadores.
 
-**Interpretación:** el 5 % superior es un criterio exploratorio de priorización elegido para esta revisión, no una prevalencia estimada de mala calidad ni un umbral clínico. No se aplican p-valores o exclusiones. La inspección visual de esos pacientes sigue pendiente. La agregación por paciente reduce la dominancia de sujetos con más campos, aunque puede ocultar anomalías de campos individuales.
+**Interpretación:** el 5 % superior es un criterio exploratorio de priorización elegido para esta revisión, no una prevalencia estimada de mala calidad ni un umbral clínico. No se aplican p-valores o exclusiones. Las distancias no se contrastaron con una adjudicación visual de calidad, por lo que no permiten clasificar esos pacientes como defectuosos. La agregación por paciente reduce la dominancia de sujetos con más campos, aunque puede ocultar anomalías de campos individuales.
 
 ## Duplicados y límites
 El control del piloto reporta cero grupos de duplicados exactos y cero duplicados exactos entre grupos. Esto no descarta casi duplicados, campos solapados ni atajos visuales. Las clases proceden de anotaciones publicadas y no se han revalidado individualmente.
 
-Quedan pendientes: revisión visual de casos priorizados, casi duplicados perceptuales, calidad a nivel nuclear, acuerdo/ruido de etiquetas y desplazamiento train-validación con incertidumbre. No se han abierto imágenes de prueba o reserva para este análisis nuevo.
+La auditoría se limita a igualdad exacta de archivos y mediciones de campos. No cuantifica similitud perceptual entre imágenes, concordancia entre anotadores ni desplazamiento de distribución entre particiones. En consecuencia, no permite descartar redundancia visual residual, errores de etiqueta o diferencias de dominio. Las imágenes de prueba y reserva no se utilizaron en este análisis.
 
 ## Reproducibilidad
 El script `scripts/consolidar_eda.py` reproduce las tablas y gráficas a partir de las evidencias incluidas. El registro `evidencias/procedencia.json` conserva hashes de los archivos fuente. Ninguna medición del EDA se presenta como desempeño del clasificador.

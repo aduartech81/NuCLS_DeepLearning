@@ -5,7 +5,7 @@
 <div class="nucls-hero">
 <p class="nucls-kicker">NuCLS · Entregable 1 · Estudio exploratorio</p>
 <h2>De una imagen nuclear a una predicción de clase</h2>
-<p>Comparamos tres redes neuronales para distinguir núcleos tumorales no mitóticos, linfocitos y núcleos estromales anotados. La pregunta central es cuánto mejora la clasificación al cambiar de arquitectura y cuán estable es esa mejora.</p>
+<p>Se comparan tres redes neuronales para distinguir núcleos tumorales no mitóticos, linfocitos y núcleos estromales anotados. La pregunta central es cuánto mejora la clasificación al cambiar de arquitectura y cuán estable es esa mejora.</p>
 </div>
 
 <div class="nucls-grid">
@@ -14,7 +14,7 @@
 <div class="nucls-card"><strong>15</strong><span>entrenamientos: tres modelos × cinco semillas</span></div>
 </div>
 
-## Primero, veamos las imágenes
+## Imágenes histológicas y unidad de análisis
 
 ![Ejemplos reales de entrenamiento de las tres categorías de NuCLS.](figuras/galeria_train.jpg)
 
@@ -28,7 +28,7 @@
 
 <div class="nucls-note"><strong>Cómo leer estos resultados.</strong> Son resultados de validación de un piloto; esta misma partición seleccionó las mejores épocas. No representan desempeño confirmado en pacientes nuevos ni una demostración de superioridad clínica.</div>
 
-## Elige cómo explorar el trabajo
+## Organización del informe
 
 <div class="nucls-grid">
 <div class="nucls-card"><strong>Entender</strong><span>Problema, imágenes y hallazgo principal.</span><p><a href="02_galeria.html">Ver qué recibe la red →</a></p></div>
@@ -40,13 +40,13 @@
 
 - **[Problema y alcance](01_problema.md):** qué predice el modelo y cuál es su unidad de análisis.
 - **[EDA y preprocesamiento](02_resultados_eda.md):** balance, selección de recortes y calidad de imagen, con decisiones derivadas de los datos.
-- **[Estado del arte](03_literatura.md):** antecedentes y fundamento de las arquitecturas candidatas; revisión todavía preliminar.
+- **[Estado del arte](03_literatura.md):** antecedentes y alcance de la evidencia sobre las arquitecturas evaluadas.
 - **[Resultados del piloto](08_resultados_piloto.md):** desempeño, errores por clase, aprendizaje, costo e incertidumbre.
-- **[Discusión y conclusiones](09_discusion.md):** qué se puede defender y qué limita la generalización.
+- **[Discusión y conclusiones](09_discusion.md):** hallazgos principales y límites de generalización.
 - **[Análisis ejecutado](07_analisis_ejecutado.ipynb):** cálculos reproducibles y evidencia de ejecución.
 
 ## Alcance científico
 
 La entrada es un recorte centrado en un núcleo previamente anotado, no una lámina completa. El sistema clasifica las tres categorías seleccionadas de NuCLS: no detecta automáticamente todos los núcleos ni identifica telocitos. La investigación utiliza datos histológicos anotados disponibles y mantiene separadas estas tareas.
 
-El piloto está completo. La justificación bibliográfica definitiva de los tres baselines y el experimento confirmatorio aún requieren desarrollo; los capítulos metodológicos explican sus límites sin atribuir al estudio resultados que no se han obtenido.
+El estudio presenta una comparación exploratoria reproducible. La revisión bibliográfica contextualiza las familias de modelos, sin establecer que las tres implementaciones sean las arquitecturas más frecuentes de la literatura. Las conclusiones se circunscriben a la selección de datos y al protocolo evaluados.

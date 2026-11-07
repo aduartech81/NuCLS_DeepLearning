@@ -10,18 +10,18 @@
 
 **Selección:** se muestran los doce ejemplos ya disponibles en la galería, cuatro por clase. No constituyen una muestra aleatoria nueva ni permiten estimar la frecuencia de artefactos del conjunto completo. Los hashes y las etiquetas están en `evidencias/galeria_train.json`.
 
-## Qué podemos observar y qué implica
+## Características visuales e implicaciones metodológicas
 
 | Observación visible | Implicación para el experimento |
 |---|---|
-| Los recortes contienen distintas cantidades de tejido y fondo claro. | El modelo puede aprovechar contexto además del núcleo; debemos estudiar posibles atajos. |
+| Los recortes contienen distintas cantidades de tejido y fondo claro. | La ventana aporta información del contexto además del núcleo; su contribución no se separó mediante ablaciones. |
 | Aparecen varios núcleos en una misma ventana. | Clasificar la ventana no equivale a localizar o segmentar cada núcleo. |
 | La apariencia cambia entre pacientes y ejemplos. | La separación por paciente es necesaria para evaluar generalización. |
 | Las tres categorías conservan variabilidad interna. | No se puede justificar una clasificación perfecta a partir de unos pocos ejemplos visuales. |
 
 La galería ilustra el problema, pero no establece que una etiqueta sea correcta o incorrecta. Tampoco acredita capacidad para reconocer telocitos.
 
-## Preparación que realmente se ejecutó
+## Preprocesamiento aplicado
 
 <div class="nucls-grid">
 <div class="nucls-card"><strong>128 × 128</strong><span>Ventana centrada y completamente contenida en la imagen. Se descartan recortes que necesitan relleno.</span></div>
@@ -31,8 +31,8 @@ La galería ilustra el problema, pero no establece que una etiqueta sea correcta
 
 **Decisión y costo:** conservar el centro evita desplazar el objetivo. Excluir ventanas que requieren relleno evita ese artefacto, pero reduce la muestra y favorece núcleos interiores. El [EDA cuantifica esa retención](02_resultados_eda.md); no se presenta la selección como neutra.
 
-## Qué falta para una galería de errores
+## Alcance de la evidencia visual
 
-Para mostrar aciertos y fallos se debe unir cada predicción con **su recorte exacto**, modelo, semilla, clase de referencia y probabilidad. Las imágenes de esta página son de entrenamiento y no se asociarán a predicciones de validación de otros archivos. La inspección de errores requiere recuperar los recortes correspondientes; las [matrices de confusión](08_resultados_piloto.md) ya resumen los errores medidos sin simular ejemplos.
+La galería contiene imágenes de entrenamiento y no constituye un análisis visual de errores de validación. Las [matrices de confusión](08_resultados_piloto.md) cuantifican esos errores a partir de las predicciones registradas. La ausencia de una revisión conjunta de cada predicción y su recorte limita la atribución de los fallos a características morfológicas concretas.
 
-La atribución visual —por ejemplo, Grad-CAM— necesitará además los pesos del modelo correspondiente y verificación de la capa utilizada. No se presenta un mapa decorativo como explicación del clasificador.
+El estudio no incluye mapas de atribución, como Grad-CAM. Por tanto, las imágenes ilustran la entrada del sistema, pero no identifican las regiones que determinaron sus predicciones.

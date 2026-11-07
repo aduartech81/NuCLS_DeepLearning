@@ -1,6 +1,6 @@
 # Resultados verificados del piloto
 
-**Estado:** quince corridas completas, cinco por modelo. Se recalcularon macro-F1 y matrices de confusión a partir de 3.571 predicciones por corrida; coinciden con los informes originales. Se verificaron identidad de recortes/pacientes/etiquetas entre corridas, probabilidades y mejor época.
+El análisis comprende quince corridas completas, cinco por modelo. Se recalcularon macro-F1 y matrices de confusión a partir de 3.571 predicciones por corrida; coinciden con los informes originales. Se verificaron identidad de recortes/pacientes/etiquetas entre corridas, probabilidades y mejor época.
 
 ## ¿Qué modelo clasifica mejor?
 
@@ -20,19 +20,19 @@ Los puntos muestran las cinco semillas; las barras indican dispersión entre ent
 
 ![F1 medio por clase y arquitectura en porcentaje.](figuras/visual_clases.svg)
 
-La clase estromal presenta el menor F1 promedio en los tres modelos. El análisis de errores debe priorizar esta categoría, sin atribuir automáticamente los fallos a ruido de anotación o mecanismos biológicos.
+La clase estromal presenta el menor F1 medio: 53,69% con la CNN local, 69,85% con ResNet18 y 70,24% con MobileNetV2. La mejora de MobileNetV2 respecto a la CNN local alcanza 16,56 puntos en esta categoría, frente a 10,77 en linfocitos y 3,75 en núcleos tumorales. La ganancia global se acompaña, por tanto, de una mejora especialmente marcada en la clase de menor desempeño, aunque no elimina la desigualdad entre categorías. Estas cifras no identifican la causa biológica o técnica de los errores.
 
 ## ¿Dónde se producen los errores?
 
 ![Matrices de confusión normalizadas por etiqueta real y promediadas entre las cinco semillas.](figuras/visual_confusion.svg)
 
-**Lectura:** cada fila corresponde a una clase de referencia y suma 100 %. La diagonal indica aciertos; las otras celdas muestran hacia dónde se desplazan los errores. Las cifras son porcentajes medios entre semillas, no conteos de pacientes independientes. Esta figura permite identificar confusiones que un promedio global oculta.
+**Lectura:** cada fila corresponde a una clase de referencia y suma 100 %. La diagonal indica aciertos; las otras celdas muestran hacia dónde se desplazan los errores. Las cifras son porcentajes medios entre semillas, no conteos de pacientes independientes. En la CNN local, el 49,85% de los núcleos estromales se clasifica correctamente, el 27,11% se asigna a linfocitos y el 23,05% a núcleos tumorales. ResNet18 eleva la sensibilidad estromal al 71,91%, frente al 66,97% de MobileNetV2. Por ello, el mayor F1 global de MobileNetV2 no implica mayor sensibilidad en todas las clases.
 
 ## Aprendizaje y costo
 
 ![Trayectorias de macro-F1 de validación por época. Cada línea es una semilla; cada punto marca su mejor época.](figuras/visual_aprendizaje.svg)
 
-**Lectura:** las trayectorias se detienen en épocas distintas por parada temprana. El punto señala la época seleccionada con esta validación; no se interpreta como evidencia independiente del desempeño final.
+**Lectura:** las trayectorias se detienen en épocas distintas por parada temprana. Las mejores épocas se situaron entre la 6 y la 10 para la CNN local, entre la 3 y la 15 para ResNet18 y entre la 5 y la 19 para MobileNetV2. La variación entre semillas muestra que una duración fija corta no habría seleccionado el mismo punto de aprendizaje en todas las corridas. Estos máximos se eligieron con la propia validación y no constituyen evidencia independiente del desempeño final.
 
 | Modelo | Tiempo registrado medio por corrida |
 |---|---:|
@@ -60,9 +60,9 @@ Se remuestrearon 19 pacientes con reemplazo, 5.000 veces; cada selección se apl
 
 La validación ya seleccionó la mejor época: este remuestreo no elimina ese optimismo. Tampoco incorpora incertidumbre por reentrenar en nuevas muestras de entrenamiento. No se reportan pruebas confirmatorias ni equivalencia.
 
-## Decisión para el siguiente experimento
+## Síntesis de la comparación
 
-El piloto permite estimar variación entre semillas y priorizar la comparación MobileNetV2–ResNet18. La selección bibliográfica de los tres baselines, el diseño con potencia suficiente y la protección del conjunto de prueba siguen pendientes. Las cinco semillas cumplen el mínimo del piloto, no garantizan potencia estadística.
+El piloto distingue descriptivamente a ResNet18 y MobileNetV2 de la CNN local, pero no establece una ventaja concluyente entre las dos primeras. El [análisis estadístico](05_estadistica.md) muestra que cinco pares ofrecen sensibilidad limitada para diferencias de dos puntos porcentuales. La comparación sustenta una evaluación exploratoria de precisión, variabilidad y costo; no una selección confirmatoria de un modelo ganador.
 
 Fuentes reproducibles: `resultados/`, `resultados_analizados/` y `scripts/analizar_piloto.py`. No se usaron imágenes de prueba/reserva.
 
