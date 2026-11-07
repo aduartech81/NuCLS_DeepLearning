@@ -48,7 +48,7 @@ Los modelos paran en diferentes épocas. Los tiempos son los acumulados registra
 
 ![Diferencias de macro-F1 e intervalos exploratorios del 95 % obtenidos remuestreando pacientes.](figuras/visual_incertidumbre.svg)
 
-**Lectura:** un valor positivo favorece al primer modelo. La línea vertical representa diferencia cero. El intervalo MobileNetV2–ResNet18 cruza cero: estos datos no permiten afirmar una ventaja clara de uno sobre el otro. Los intervalos son exploratorios y marginales, sin corrección múltiple.
+Un valor positivo favorece al primer modelo. La línea vertical representa diferencia cero. El intervalo MobileNetV2–ResNet18 cruza cero: estos datos no permiten afirmar una ventaja clara de uno sobre el otro. Los intervalos son exploratorios y marginales, sin corrección múltiple.
 
 | Comparación | Diferencia | IC exploratorio 95 % |
 |---|---:|---:|
@@ -97,3 +97,34 @@ Friedman produjo un estadístico de 7,60 y p asintótico de 0,0224. Este contras
 Shapiro–Wilk produjo p de 0,5347, 0,7400 y 0,2472 en las diferencias de los tres pares, en el orden anterior. La ausencia de rechazo no acredita normalidad con cinco observaciones. Los tamaños de efecto pareados y las coordenadas Q-Q se conservan en las tablas reproducibles. Su magnitud se refiere a la variabilidad entre semillas, no a un efecto clínico ni a variación poblacional entre pacientes.
 
 El análisis se reproduce con `python scripts/estadistica_complementaria_piloto.py`. Las probabilidades exportadas se verificaron y renormalizaron por fila para corregir redondeo numérico. No se accedió a la reserva de la partición v2.
+
+
+## Contrastes globales y discriminación
+
+El ANOVA de medidas repetidas, con la semilla como bloque, produjo F(2, 8) = 147,95. La corrección de Greenhouse–Geisser estimó ε = 0,852 y p = 0,00000306. El contraste describe variación entre arquitecturas sobre la misma validación; no incorpora la incertidumbre de nuevos pacientes. Con cinco bloques, la estimación de covarianza y los supuestos deben interpretarse con cautela.
+
+El análisis de rangos de Nemenyi complementa Friedman:
+
+| Comparación | Rango promedio del primer modelo | Rango promedio del segundo | p de Nemenyi |
+|---|---:|---:|---:|
+| CNN local – ResNet18 | 3,0 | 1,6 | 0,0689 |
+| CNN local – MobileNetV2 | 3,0 | 1,4 | 0,0307 |
+| ResNet18 – MobileNetV2 | 1,6 | 1,4 | 0,9464 |
+
+El menor rango indica mayor macro-F1. Estos resultados no convierten la falta de significación en equivalencia: el número de ejecuciones es pequeño y cada contraste impone supuestos diferentes.
+
+La AUC macro uno-contra-resto, promediada entre las cinco redes de cada arquitectura, fue 0,8925 para CNN local, 0,9516 para ResNet18 y 0,9531 para MobileNetV2. Se conservaron las predicciones de cada red por separado; no se construyó un ensamble de probabilidades. Los intervalos de diferencias se calcularon mediante 2.000 remuestreos pareados de pacientes.
+
+| Diferencia de AUC macro | Estimación | IC95% por paciente |
+|---|---:|---:|
+| CNN local − ResNet18 | −0,05916 | −0,08322 a −0,04526 |
+| CNN local − MobileNetV2 | −0,06058 | −0,08591 a −0,04734 |
+| ResNet18 − MobileNetV2 | −0,00142 | −0,00499 a +0,00137 |
+
+La diferencia entre las dos arquitecturas con mayor AUC continúa siendo pequeña y compatible con cero. Los intervalos son marginales, sin corrección por comparaciones múltiples, y mantienen fijas las redes entrenadas. Su naturaleza es exploratoria porque la validación también seleccionó los checkpoints.
+
+## Concordancia de errores
+
+Se calcularon las tablas de discordancias de McNemar para cada pareja y semilla. Por ejemplo, en la semilla 4101, ResNet18 acertó 171 recortes que MobileNetV2 clasificó incorrectamente, mientras que MobileNetV2 acertó 198 errores de ResNet18. El contraste exacto nominal produjo p = 0,1758. Los recortes están agrupados por paciente, por lo que la independencia requerida por ese valor nominal no se cumple; no se utiliza como prueba confirmatoria. El registro completo se conserva en [las tablas de discordancias](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/resultados_analizados/contrastes_ampliados/mcnemar_nominal.csv).
+
+La interpretación conjunta prioriza el tamaño de las diferencias y la incertidumbre por paciente. El acuerdo entre macro-F1, AUC y calibración favorece descriptivamente las redes residuales y separables frente a la CNN local del piloto, sin demostrar superioridad entre ResNet18 y MobileNetV2 en una población externa.

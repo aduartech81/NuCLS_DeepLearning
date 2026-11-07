@@ -1,0 +1,31 @@
+{
+  "naturaleza": "Post hoc, validación seleccionó checkpoints; no confirma generalización",
+  "ANOVA_medidas_repetidas": {
+    "bloque": "semilla",
+    "F": 147.94737635767137,
+    "gl_modelo": 2,
+    "gl_error": 8,
+    "p_sin_correccion": 4.802497449203719e-07,
+    "epsilon_Greenhouse_Geisser": 0.8520330633706611,
+    "p_GG": 3.0594484482518e-06
+  },
+  "AUC_macro_media_cinco_semillas": {
+    "cnn_local": 0.8924740643739362,
+    "resnet18": 0.9516328633360928,
+    "mobilenet_v2": 0.9530517246827033
+  },
+  "bootstrap": {
+    "B": 2000,
+    "semilla": 4101,
+    "unidad": "paciente",
+    "predicciones": "Fijas las cinco redes por modelo; promedio de sus AUC, no ensemble de probabilidades",
+    "clases_ausentes": "Repetición excluida si alguna AUC no es estimable"
+  },
+  "limites": [
+    "ANOVA y Nemenyi describen cinco ejecuciones condicionadas a una misma validación.",
+    "Greenhouse-Geisser corrige grados de libertad por esfericidad; no soluciona tamaño pequeño ni selección de checkpoints.",
+    "Nemenyi controla comparaciones de rangos en su aproximación de rango studentizado; n=5 limita su precisión.",
+    "McNemar nominal supone independencia entre recortes; la correlación por paciente impide interpretarlo como prueba confirmatoria.",
+    "IC de diferencias AUC marginales sin ajuste múltiple; exploratorios."
+  ]
+}

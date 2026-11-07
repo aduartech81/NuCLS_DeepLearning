@@ -1,0 +1,16 @@
+semilla,A,B,A_acierta_B_falla,A_falla_B_acierta,p_McNemar_nominal,interpretacion
+4101,cnn_local,resnet18,183,381,5.194531697951753e-17,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4101,cnn_local,mobilenet_v2,179,404,5.644966627235404e-21,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4101,resnet18,mobilenet_v2,171,198,0.1758130529880711,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4102,cnn_local,resnet18,200,487,1.594367171007866e-28,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4102,cnn_local,mobilenet_v2,169,536,2.5864432711763705e-45,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4102,resnet18,mobilenet_v2,135,215,2.2354995700437956e-05,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4103,cnn_local,resnet18,182,468,5.9038841917110605e-30,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4103,cnn_local,mobilenet_v2,151,436,5.060038577409122e-33,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4103,resnet18,mobilenet_v2,131,130,1.0,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4104,cnn_local,resnet18,168,482,4.810607790706066e-36,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4104,cnn_local,mobilenet_v2,169,515,1.5892561007248335e-41,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4104,resnet18,mobilenet_v2,181,213,0.11823313016051282,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4105,cnn_local,resnet18,231,497,2.950327304334076e-23,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4105,cnn_local,mobilenet_v2,176,453,4.3911116232752425e-29,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
+4105,resnet18,mobilenet_v2,186,197,0.6094255935834159,Nominal: independencia de recortes no satisfecha; no usar como inferencia confirmatoria
