@@ -1,0 +1,88 @@
+{
+  "estado": "MANIFIESTO_VERIFICADO",
+  "fuente": "NuCLS_RECORTES_V2_20261107_092836_248533_CONTROL.zip",
+  "sha256_zip": "4e1574051a66740c050c3cd66fb11d423f2c57f313a4d71c02f9b2f3a913c77c",
+  "hashes_archivos": {
+    "manifiesto.csv": "623adf36520751addc324e44cd1b89d95e47842e53cda494914c0248a8be86d4",
+    "seleccion_y_exclusiones.csv": "5e148803a53ae25e12df93eaef49335ee7a0b8868610c86435e3f3d26419a1d2",
+    "campos.csv": "6931d3b97768f87b93c22d6098703c3946db650ac0bc38b7408865748d93d94a",
+    "particion.csv": "2366c63a248ca9b77fe9e6a9abf6163954496c1a5cc2a8edb13da5d2cd69eaac",
+    "resumen.json": "d64e23b95a3410481c6f4f6419239adc3954df34ffe7b077940dc1925b0ca4a2",
+    "duplicados.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+  },
+  "pacientes": {
+    "reserva_candidata": 6,
+    "train": 83,
+    "validation": 21
+  },
+  "recortes_por_particion": {
+    "train": 14539,
+    "reserva_candidata": 969,
+    "validation": 2049
+  },
+  "conteos": [
+    {
+      "particion": "reserva_candidata",
+      "clase": "lymphocyte",
+      "recortes": 130
+    },
+    {
+      "particion": "reserva_candidata",
+      "clase": "nonTILnonMQ_stromal",
+      "recortes": 70
+    },
+    {
+      "particion": "reserva_candidata",
+      "clase": "tumor_nonMitotic",
+      "recortes": 769
+    },
+    {
+      "particion": "train",
+      "clase": "lymphocyte",
+      "recortes": 4460
+    },
+    {
+      "particion": "train",
+      "clase": "nonTILnonMQ_stromal",
+      "recortes": 3102
+    },
+    {
+      "particion": "train",
+      "clase": "tumor_nonMitotic",
+      "recortes": 6977
+    },
+    {
+      "particion": "validation",
+      "clase": "lymphocyte",
+      "recortes": 597
+    },
+    {
+      "particion": "validation",
+      "clase": "nonTILnonMQ_stromal",
+      "recortes": 344
+    },
+    {
+      "particion": "validation",
+      "clase": "tumor_nonMitotic",
+      "recortes": 1108
+    }
+  ],
+  "anotaciones_clases_objetivo": 36474,
+  "retencion_global": 0.4813565827712891,
+  "exclusiones": {
+    "requiere_relleno": 18299,
+    "clase_fuera_del_objetivo": 13342,
+    "caja_invalida": 86,
+    "caja_fuera_de_imagen": 523,
+    "caja_no_contenida": 9
+  },
+  "verificaciones": [
+    "Partición coincide byte a byte con versión publicada",
+    "Coordenadas 128x128 contenidas en el campo y caja incluida",
+    "Conteos y exclusiones recalculados",
+    "Identificadores y hashes de origen coherentes",
+    "Sin pacientes ni TSS compartidos",
+    "Sin hashes de píxeles repetidos en manifiesto"
+  ],
+  "limitacion": "ZIP contiene metadatos; la decodificación y los hashes de imágenes se ejecutaron en el Mac y no se repitieron sobre píxeles en esta revisión. No detecta casi duplicados. No demuestra rendimiento de modelos."
+}
