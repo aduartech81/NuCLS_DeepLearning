@@ -1,0 +1,19 @@
+{
+  "unidad": "anotaciones oficiales agregadas; no recortes utilizables confirmados",
+  "totales": {
+    "lymphocyte": 221,
+    "nonTILnonMQ_stromal": 100,
+    "tumor_nonMitotic": 1035
+  },
+  "total": 1356,
+  "pacientes_con_anotaciones": 6,
+  "pacientes_con_cada_clase": {
+    "tumor_nonMitotic": 6,
+    "lymphocyte": 4,
+    "nonTILnonMQ_stromal": 5
+  },
+  "tres_clases_globales": true,
+  "sha256_conteos": "85d72f80f0f1557e4daac6831cc8f68ecb6dd21b49f6854e10684b7e6b43e64b",
+  "decision": "Factible como reserva pequeña para clasificación de tres clases, sujeta a disponibilidad e integridad de imágenes y elegibilidad geométrica. No prueba suficiente de potencia ni validación clínica; mantener todas las clases en macro-F1 por paciente aunque falte alguna en su soporte.",
+  "no_ejecutado": "No se evaluaron modelos, no se inspeccionaron píxeles, no se verificaron recortes de reserva."
+}
