@@ -1,0 +1,61 @@
+{
+  "hallazgo": "Los cuadernos históricos conservan celdas ejecutadas de predicción y métricas sobre test; no fue únicamente inspección de conteos.",
+  "decision": "No considerar la prueba histórica como holdout no expuesto para decisiones nuevas. Verificar IDs de pacientes y centros antes de designar cualquier reserva.",
+  "evidencia": [
+    {
+      "archivo": "NuCLS_Integrado_V1/referencia_vision/NuCLS_Prueba_CNN_Ligera.ipynb",
+      "sha256": "2e31aaa9aa248824065288417de09e1806fe1715ebfaa8be8b877f2e5b226969",
+      "indice_celda_base_cero": 7,
+      "ejecucion": 7,
+      "codigo": "test_rows = []\ntest_predictions = {}\nfor name, model in models.items():\n    pred = model.predict(test_ds, verbose=0).argmax(axis=1)\n    test_predictions[name] = pred\n    test_rows.append({'model': name, **scores(y_test, pred)})\n\ntest_results = pd.DataFrame(test_rows).set_index('model')\nselected_pred = test_predictions[selected_model]\nreport = pd.DataFrame(classification_report(\n    y_test, selected_pred,\n    labels=np.arange(3), target_names=class_names,\n    output_dict=True, zero_division=0\n)).T\n\ndisplay(test_results.round(3))\ndisplay(report.round(3))\n",
+      "resultados_guardados": [
+        [
+          "                  accuracy  balanced_accuracy  macro_F1\n",
+          "model                                                  \n",
+          "CNN simple           0.668              0.582     0.583\n",
+          "CNN regularizada     0.764              0.680     0.677"
+        ],
+        [
+          "                     precision  recall  f1-score  support\n",
+          "tumor_nonMitotic         0.813   0.838     0.826  260.000\n",
+          "lymphocyte               0.698   0.921     0.794  151.000\n",
+          "nonTILnonMQ_stromal      0.758   0.281     0.410   89.000\n",
+          "accuracy                 0.764   0.764     0.764    0.764\n",
+          "macro avg                0.757   0.680     0.677  500.000\n",
+          "weighted avg             0.769   0.764     0.742  500.000"
+        ]
+      ]
+    },
+    {
+      "archivo": "NuCLS_Integrado_V1/referencia_vision/NuCLS_ML_Ampliado.ipynb",
+      "sha256": "febec2d0d9ffb29be5035ab290246f02f98286d2d3469272952b89f8e60ce2ad",
+      "indice_celda_base_cero": 9,
+      "ejecucion": 6,
+      "codigo": "test_predictions = {}\ntest_rows = []\n\nfor name, (group_name, model) in trained.items():\n    columns = groups[group_name]\n    predicted = model.predict(X.iloc[test_idx][columns])\n    test_predictions[name] = predicted\n    test_rows.append({\n        'model': name, 'features': group_name,\n        **calculate_scores(y[test_idx], predicted)\n    })\n\ntest_results = pd.DataFrame(test_rows).set_index('model')\nselected_prediction = test_predictions[selected_model]\nclass_report = pd.DataFrame(classification_report(\n    y[test_idx], selected_prediction,\n    labels=np.arange(3), target_names=class_names,\n    output_dict=True, zero_division=0)).T\n\ndisplay(test_results.sort_values('macro_F1', ascending=False).round(3))\ndisplay(class_report.round(3))\n",
+      "resultados_guardados": [
+        [
+          "                                features  accuracy  balanced_accuracy  macro_F1\n",
+          "model                                                                          \n",
+          "SVM Todas + ANOVA75                Todas     0.792              0.766     0.752\n",
+          "RF Base + ANOVA50                   Base     0.822              0.723     0.731\n",
+          "SVM Todas                          Todas     0.784              0.734     0.727\n",
+          "SVM Base + GLCM + FFT  Base + GLCM + FFT     0.782              0.732     0.727\n",
+          "SVM Base + GLCM              Base + GLCM     0.782              0.730     0.725\n",
+          "SVM Base                            Base     0.782              0.727     0.723\n",
+          "RF Todas                           Todas     0.798              0.695     0.691\n",
+          "RF Todas + ANOVA75                 Todas     0.796              0.688     0.690\n",
+          "Control mayoritario                Todas     0.520              0.333     0.228"
+        ],
+        [
+          "                     precision  recall  f1-score  support\n",
+          "tumor_nonMitotic         0.884   0.819     0.850  260.000\n",
+          "lymphocyte               0.773   0.901     0.832  151.000\n",
+          "nonTILnonMQ_stromal      0.518   0.483     0.500   89.000\n",
+          "accuracy                 0.784   0.784     0.784    0.784\n",
+          "macro avg                0.725   0.734     0.727  500.000\n",
+          "weighted avg             0.785   0.784     0.782  500.000"
+        ]
+      ]
+    }
+  ]
+}

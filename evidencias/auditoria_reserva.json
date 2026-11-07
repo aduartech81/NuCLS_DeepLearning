@@ -1,0 +1,53 @@
+{
+  "procedencia": [
+    {
+      "archivo": "metadatos_historicos.csv",
+      "sha256": "9240ec35f71c2671a79d678e78dcf600bc33e9922309fc7ef11828bd27bae21b"
+    },
+    {
+      "archivo": "particion_NuCLS_QC_v1.csv",
+      "sha256": "d83b2c82f2be53af866fb5a6e2e2c49b8e3dfb15d05d4faa6877d0005191670d"
+    },
+    {
+      "archivo": "CONTROL_PILOTO_QC_20261105_225210.zip",
+      "sha256": "c7992c50c039b3739691a3cb73b40e9ba7e1d66d1bc4d3e90cc61c59642ba9f1"
+    }
+  ],
+  "pacientes_historicos": 112,
+  "pacientes_piloto_train": 79,
+  "pacientes_piloto_validacion": 19,
+  "pacientes_reserva": [
+    "TCGA-A7-A6VY",
+    "TCGA-AN-A0AR",
+    "TCGA-AO-A0J2",
+    "TCGA-AO-A0J6",
+    "TCGA-AO-A124",
+    "TCGA-AO-A129"
+  ],
+  "reserva_en_historico": [],
+  "reserva_en_manifiesto_piloto": [],
+  "sitios_reserva": {
+    "AO": 4,
+    "A7": 1,
+    "AN": 1
+  },
+  "sitios_reserva_compartidos_con_desarrollo": [
+    "A7",
+    "AN",
+    "AO"
+  ],
+  "sitios_train_validacion_compartidos": [
+    "A2",
+    "A7",
+    "AN",
+    "AR",
+    "D8",
+    "E2",
+    "EW",
+    "GM",
+    "LL",
+    "S3"
+  ],
+  "alcance": "Ausencia en estos manifiestos, no prueba de ausencia de exposición en toda actividad previa. Códigos TCGA TSS son procedencia; requieren contraste con folds oficiales antes de equipararlos a hospitales o adquisición.",
+  "decision": "Reserva candidata, no test definitivo ni validación externa por centro. No se abrieron imágenes, etiquetas individuales de reserva ni predicciones de reserva."
+}
