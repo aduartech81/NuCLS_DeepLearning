@@ -1,6 +1,23 @@
 # Estado del arte: clasificación nuclear en histología
 
-Se presenta una revisión narrativa de antecedentes de clasificación nuclear. Su propósito es distinguir evidencia directamente relacionada con la clasificación de recortes y trabajos sobre tareas adyacentes. La revisión no incluye una búsqueda sistemática autenticada en WoS o Scopus; por tanto, no estima exhaustividad, frecuencias de uso ni un flujo PRISMA.
+La revisión distingue clasificación de recortes nucleares, segmentación y detección. El 7 de noviembre de 2026 se recibieron exportaciones de Scopus, Web of Science e IEEE Xplore obtenidas mediante acceso institucional. La síntesis de antecedentes se complementa con un inventario reproducible de registros y decisiones de lectura.
+
+## Recuperación y depuración bibliográfica
+
+| Base | Exportación original | Publicación 2018–2026 |
+|---|---:|---:|
+| Scopus | 1.097 | 1.057 |
+| Web of Science | 328 | 318 |
+| IEEE Xplore | 292 | 273 |
+| Total | 1.717 | 1.648 |
+
+Se separaron 69 registros por año de publicación fuera de la ventana analítica. La normalización del DOI permitió agrupar 318 registros repetidos y producir 1.330 unidades para cribado: 1.287 con DOI distinto y 43 sin DOI. Siete grupos presentan títulos normalizados coincidentes; no se fusionaron automáticamente porque un título puede corresponder a versiones o documentos distintos. Estas cifras describen identificación y depuración, no inclusión de estudios ni un flujo PRISMA completo.
+
+La consulta comunicada para la búsqueda fue `(nucle* AND classif*) AND (histolog* OR histopatholog*) AND ("deep learning" OR "convolutional neural network" OR CNN OR transformer*)`, con adaptación por campo en cada plataforma. Las exportaciones permiten verificar registros y fechas de publicación, pero no reconstruyen por sí solas todos los filtros de la interfaz. El historial de consultas constituye una evidencia independiente.
+
+La extracción distingue arquitectura exacta, función del modelo, representación de entrada, conjunto de datos, unidad de partición y métrica. La lectura de títulos y resúmenes identifica candidatos para texto completo; la prioridad automática no determina exclusión ni calidad. La revisión asistida por IA no representa dos revisores independientes.
+
+## Antecedentes y comparabilidad
 
 | Fuente primaria | Tarea / evidencia identificada | Consecuencia |
 |---|---|---|
@@ -83,3 +100,13 @@ La literatura examinada muestra tres dimensiones relevantes: capacidad de repres
 El hallazgo bibliográfico central es una limitación de correspondencia: **la evidencia recuperada no sustenta todavía una selección por frecuencia de las tres arquitecturas exactas del piloto**. No se convierte una frecuencia de familias en frecuencia de modelos, ni se sustituye una revisión sistemática por el número de enlaces recuperados. En consecuencia, estos resultados establecen una referencia experimental para las implementaciones evaluadas, sin acreditar que constituyan las tres referencias más recurrentes del campo.
 
 La búsqueda adicional del 7 de noviembre de 2026 utilizó las consultas web `"nuclei classification" "ResNet18" baseline NuCLS`, `"nuclei classification" "MobileNetV2"` y `"nucleus classification" "CNN" comparative baseline histology`. Estas consultas complementan la revisión narrativa y no se presentan como búsquedas ejecutadas dentro de WoS, Scopus o IEEE Xplore. La selección no contó con un segundo revisor independiente; no se atribuye un procedimiento de consenso inexistente.
+
+## CNN de complejidad moderada: RCCNet
+
+Basha et al. compararon RCCNet con softmaxCNN_IN27, una variante softmaxCNN, AlexNet adaptada, CIFAR-VGG, GoogLeNet adaptada y WRN. RCCNet utiliza entradas RGB de 32×32, cuatro convoluciones de 32, 32, 64 y 64 filtros, dos reducciones espaciales y capas densas de 512, 512 y cuatro salidas. El entrenamiento incorpora BatchNorm y dropout.
+
+En CRCHistoPhenotypes se informa una partición 80/20 de 22.444 recortes y un F1 ponderado de 0,7887. El texto no establece en esa descripción separación por paciente; tampoco presenta dispersión entre semillas en la tabla comparativa. Además, muestra curvas de exactitud de prueba durante el entrenamiento. Estos aspectos limitan la interpretación de generalización y requieren distinguir seguimiento de prueba de selección de modelos.
+
+El estudio aporta una arquitectura verificable y comparadores concretos, pero su métrica, resolución, tejido y clases difieren del piloto NuCLS. Su presencia no prueba que RCCNet sea uno de los tres modelos más frecuentes.
+
+Fuente: Basha et al., ICARCV 2018, [texto completo de autor, secciones II–IV](https://arxiv.org/html/1810.02797v3), [DOI](https://doi.org/10.1109/ICARCV.2018.8581147).

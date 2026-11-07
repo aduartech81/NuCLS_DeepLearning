@@ -1,0 +1,10 @@
+{
+  "exportados": 1717,
+  "en_periodo": 1648,
+  "fuera_periodo": 69,
+  "duplicados_por_doi_retirados": 318,
+  "registros_para_cribado": 1330,
+  "sin_doi": 43,
+  "grupos_titulo_repetido_por_revisar": 7,
+  "estado": "Depuración por DOI; coincidencias por título requieren revisión. Ningún registro excluido por pertinencia todavía."
+}

@@ -1,0 +1,43 @@
+{
+  "fuente": "Scopus",
+  "archivo_original": "export_ffbfc8d4-7498-40b8-a656-5075c99e2758_2026-11-07T110435.838331344.csv",
+  "sha256": "f7b0c651b337c5ebd62324126030a85d362453d99b23b11d74ddd5aaed045449",
+  "registros": 1097,
+  "periodo_analitico": [
+    2018,
+    2026
+  ],
+  "dentro_periodo": 1057,
+  "por_ano": {
+    "1976": 1,
+    "2013": 2,
+    "2014": 1,
+    "2015": 3,
+    "2016": 10,
+    "2017": 16,
+    "2018": 29,
+    "2019": 51,
+    "2020": 71,
+    "2021": 88,
+    "2022": 114,
+    "2023": 129,
+    "2024": 158,
+    "2025": 189,
+    "2026": 228,
+    "2027": 7
+  },
+  "sin_doi": 43,
+  "resumen_utilizable": 1086,
+  "duplicados_excedentes": {
+    "EID": 0,
+    "DOI": 0,
+    "Title": 5
+  },
+  "consulta_exacta": "No contenida en CSV; requiere historial de búsqueda.",
+  "advertencia": "Prioridad léxica no equivale a elegibilidad. No se excluyen artículos por prioridad.",
+  "prioridades_lectura": {
+    "ordinaria": 562,
+    "alta": 507,
+    "media": 28
+  }
+}

@@ -12,8 +12,7 @@ from PIL import Image
 from base_modelos import build, CLASSES
 
 EXPECTED = 'd287767a890607533e87ef4958612ceb8a4d77738af698f2e06b26e5a828f9de'
-ROOT = Path.home() / 'Desktop/Proyecto_Deep_Learning'
-DEFAULT_DATA = ROOT / 'NuCLS_DL_Entregable1/data/piloto_interior128/20261105_225210'
+
 
 def save_json(path, data):
     tmp = path.with_suffix(path.suffix + '.tmp')
@@ -202,8 +201,8 @@ def run_one(name, seed, groups, args, device):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument('--datos',type=Path,default=DEFAULT_DATA)
-    p.add_argument('--salida',type=Path,default=ROOT/'NuCLS_Piloto_V1/resultados')
+    p.add_argument('--datos',type=Path,required=True,help='Carpeta del piloto con manifiesto.csv auditado')
+    p.add_argument('--salida',type=Path,default=Path('resultados_reproduccion'))
     p.add_argument('--epocas',type=int,default=25);p.add_argument('--batch',type=int,default=32)
     p.add_argument('--paciencia',type=int,default=5);p.add_argument('--min-epocas',type=int,default=5)
     p.add_argument('--lr',type=float,default=.001)

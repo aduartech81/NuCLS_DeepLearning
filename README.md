@@ -4,6 +4,7 @@
 
 Comparación exploratoria de CNN local, ResNet18 y MobileNetV2 para clasificar recortes nucleares en tres categorías de NuCLS. El análisis comprende 17.999 recortes, 98 pacientes y quince entrenamientos registrados. La partición por paciente separa entrenamiento y validación.
 
+- [Dashboard público](https://nucls-andres-duarte.onrender.com/)
 - [Informe Jupyter Book](https://aduartech81.github.io/NuCLS_DeepLearning/intro.html)
 - [Notebook ejecutado](https://aduartech81.github.io/NuCLS_DeepLearning/07_analisis_ejecutado.html)
 - [Archivo notebook](book/07_analisis_ejecutado.ipynb)
@@ -28,7 +29,7 @@ python app.py
 
 Dirección local: http://127.0.0.1:8050/.
 
-`render.yaml` define un servicio gratuito con verificación `/health`. La configuración está preparada para conectar este repositorio mediante Render Blueprint. El repositorio no registra una URL pública de dashboard verificada.
+`render.yaml` define un servicio gratuito con verificación `/health`. El servicio está publicado en https://nucls-andres-duarte.onrender.com/.
 
 ## Reproducción del análisis
 
@@ -62,4 +63,19 @@ La galería contiene doce ejemplos ilustrativos de entrenamiento, con trazabilid
 
 ## Comprobaciones
 
-Se verificaron las predicciones, las métricas, el emparejamiento de semillas y el cálculo exacto de Wilcoxon mediante enumeración de signos. El JBook compila sin advertencias. El dashboard fue comprobado con el cliente de pruebas de Flask y funciones de sus siete pestañas. Estas pruebas locales no acreditan un despliegue público en Render.
+Se verificaron las predicciones, las métricas, el emparejamiento de semillas y el cálculo exacto de Wilcoxon mediante enumeración de signos. El JBook compila sin advertencias. El dashboard fue comprobado con el cliente de pruebas de Flask y funciones de sus siete pestañas. La validación local y la publicación en Render son comprobaciones distintas.
+
+## Reproducción del piloto de entrenamiento
+
+Python 3.11. El entorno registrado se encuentra en `requirements_entrenamiento.txt`.
+
+```bash
+python -m pip install -r requirements_entrenamiento.txt
+python modelos/entrenar.py --datos /ruta/al/piloto_interior128/20261105_225210 --salida resultados_reproduccion
+```
+
+La ruta se proporciona explícitamente. El entrenador exige el manifiesto original con su hash y conserva las comprobaciones de pacientes y píxeles entre particiones. Este comando reproduce el piloto; no construye una nueva partición confirmatoria ni descarga las imágenes.
+
+## Evidencia bibliográfica
+
+Las exportaciones originales se conservan por separado. `evidencias/literatura/` contiene el inventario bibliográfico, las decisiones de lectura y los conteos de depuración. Los registros por revisar no son estudios incluidos. Los resúmenes completos exportados no se redistribuyen en este repositorio.
