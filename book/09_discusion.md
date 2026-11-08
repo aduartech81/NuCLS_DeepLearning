@@ -1,36 +1,27 @@
-# Discusión y conclusiones del piloto
+# Discusión del diseño y alcance V2
 
-## Hallazgos principales
+## Coherencia entre evidencia y comparación
 
-<div class="nucls-grid">
-<div class="nucls-card"><strong>+10,36 pp</strong><span>Diferencia descriptiva de macro-F1 de MobileNetV2 frente a la CNN local.</span></div>
-<div class="nucls-card"><strong>0,49 pp</strong><span>Diferencia entre MobileNetV2 y ResNet18: pequeña y con intervalo exploratorio que cruza cero.</span></div>
-<div class="nucls-card"><strong>Estroma</strong><span>La clase con menor F1 medio en las tres arquitecturas; principal limitación del desempeño por clase.</span></div>
-</div>
+El experimento V2 compara CNN compacta con BatchNorm, DenseNet121 y ResNet50. Los resultados de CNN local, ResNet18 y MobileNetV2 pertenecen a una partición y un experimento anteriores; se conservan en los anexos históricos y no determinan el baseline V2. La ejecución comunicada de Colab ha alcanzado las corridas finales, pero el repositorio aún no contiene sus resultados finales verificables. No se atribuyen métricas del piloto a las arquitecturas nuevas.
 
-**Respuesta a la pregunta:** las arquitecturas candidatas no obtienen el mismo desempeño descriptivo. ResNet18 y MobileNetV2 superan a la CNN local en este piloto y muestran promedios cercanos entre sí. Esto no establece cuál generaliza mejor a pacientes nuevos: la validación intervino en la selección de épocas.
+## Consecuencias del EDA
 
-## Qué aporta el experimento
+El desarrollo reúne 16.588 recortes de 104 pacientes. La separación por paciente y TSS reduce el solapamiento de procedencia entre particiones. El diagnóstico de dominio muestra que los descriptores de imagen distinguen parcialmente entrenamiento y validación; por tanto, separar los identificadores no vuelve idénticas sus distribuciones. El análisis no establece si esa diferencia procede de tinción, adquisición o composición celular.
 
-El aporte actual es una comparación reproducible de tres implementaciones sobre la misma selección de recortes y la misma partición por paciente, con cinco semillas por modelo. Se verificaron las predicciones y se conservaron curvas, configuración y evidencia numérica. No se afirma una arquitectura nueva ni originalidad metodológica demostrada.
+La clase estromal tiene menor representación en el desarrollo. Macro-F1 evita que la clase tumoral domine por frecuencia el promedio de F1, aunque no corrige el desbalance durante el ajuste ni garantiza una sensibilidad estromal adecuada. La interpretación exige resultados por clase y por paciente, además del promedio global.
 
-## Interpretación del desempeño
+## Reserva y precisión de la evaluación
 
-La menor puntuación estromal puede orientar la revisión de ejemplos y confusiones, pero las métricas por sí solas no identifican una causa. No permiten atribuir los errores a mecanismos biológicos, calidad de anotación, tinción o tamaño nuclear sin análisis adicional.
+La reserva V2 comprende seis pacientes y 969 recortes: 769 tumorales, 130 linfocitarios y 70 estromales, según el control del manifiesto. Es una limitación sustancial de tamaño efectivo y cobertura de clases. La auditoría docente señala que 42 de los 70 recortes estromales proceden de un paciente; esa concentración debe contrastarse con el manifiesto final antes de incorporarla como conteo verificado. La tabla de anotaciones originales no sustituye el inventario de recortes elegibles.
 
-MobileNetV2 utiliza menos parámetros que ResNet18, pero registró mayor tiempo medio en el equipo utilizado. La eficiencia depende de la ejecución y del hardware; el número de parámetros no sustituye una medición controlada de latencia o memoria.
+La agrupación por paciente evita tratar 969 recortes como pacientes independientes, pero seis grupos proporcionan una estimación frágil de la variabilidad poblacional. Las semillas describen variación algorítmica y no compensan esta limitación. Los resultados por TSS tendrán carácter descriptivo y no acreditarán generalización a centros nuevos.
 
-## Límites que condicionan las conclusiones
+## Anotaciones y referencia humana
 
-- **Selección de imágenes:** los recortes sin relleno favorecen núcleos interiores y no representan automáticamente todos los núcleos de QC.
-- **Dependencia y tamaño efectivo:** 3.571 recortes de validación proceden de 19 pacientes; no son 3.571 observaciones clínicas independientes.
-- **Selección del modelo:** la mejor época se eligió con la validación que después se resume. Los intervalos exploratorios no eliminan ese optimismo.
-- **Incertidumbre:** el bootstrap conserva fijas las cinco corridas y no reproduce nuevos entrenamientos. Sus intervalos marginales no tienen corrección múltiple.
-- **Literatura:** la síntesis narrativa contextualiza las familias de redes, pero no estima la frecuencia de uso de las tres arquitecturas exactas. La selección se interpreta como exploratoria.
-- **Alcance:** se clasifican ventanas previamente localizadas. No se ha evaluado detección en lámina completa ni uso clínico.
+La integridad técnica y la ausencia de faltantes no prueban exactitud de las etiquetas. La concordancia del subconjunto multi-rater requiere emparejar anotaciones del mismo núcleo, conservar identidad del evaluador y distinguir etiquetas individuales de consenso. Su resultado describe acuerdo bajo ese protocolo; no es automáticamente un techo de desempeño ni equivale a la exactitud de un experto frente a una verdad biológica independiente.
 
-## Conclusión
+## Alcance de las conclusiones
 
-ResNet18 y MobileNetV2 alcanzaron macro-F1 medios de 81,91% y 82,39%, respectivamente, frente al 72,03% de la CNN local. La proximidad entre las dos primeras, la incertidumbre de la diferencia y la menor sensibilidad estromal de MobileNetV2 impiden resumir el resultado en un único modelo superior. El estudio aporta una comparación reproducible dentro del dominio y la selección evaluados; su alcance es exploratorio y no acredita utilidad clínica ni generalización externa.
+La selección bibliográfica sustenta la pertinencia de las tres referencias, pero no demuestra que sean la tríada más frecuente y sencilla de todo el corpus. Esta restricción permanece explícita. La comparación local deberá establecer desempeño, variabilidad y costo sin inferir superioridad a partir de profundidad o número de parámetros.
 
-La síntesis se basa en las [quince corridas verificadas](08_resultados_piloto.md), no en un entrenamiento adicional ni en resultados simulados.
+El objeto del estudio es clasificar núcleos previamente localizados, no detectar células en láminas completas ni establecer diagnósticos clínicos. Las conclusiones cuantitativas V2 se vincularán exclusivamente a sus predicciones y checkpoints. La [discusión del piloto histórico](anexo_discusion_piloto.md) conserva su propio alcance.

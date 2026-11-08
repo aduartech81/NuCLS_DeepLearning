@@ -1,22 +1,25 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Pregunta y datos
+  - caption: Problema y datos V2
     chapters:
       - file: 01_problema
       - file: 02_datos_eda
       - file: 02_galeria
-      - file: 02_resultados_eda
       - file: 02_desarrollo_v2
-  - caption: Fundamento y experimentación
+      - file: 10_eda_v2
+  - caption: Fundamento y experimento V2
     chapters:
       - file: 03_literatura
       - file: 04_metodologia_v2
-      - file: 04_protocolo
       - file: 05_estadistica
-  - caption: Evidencia e interpretación
-    chapters:
-      - file: 08_resultados_piloto
+      - file: 08_resultados_v2
       - file: 09_discusion
+  - caption: Anexos del piloto histórico
+    chapters:
+      - file: 02_resultados_eda
+      - file: 04_protocolo
+      - file: 08_resultados_piloto
+      - file: anexo_estadistica_piloto
+      - file: anexo_discusion_piloto
       - file: 07_analisis_ejecutado
-      - file: 10_eda_v2

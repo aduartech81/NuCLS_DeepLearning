@@ -1,52 +1,29 @@
-# Aprendizaje profundo para clasificar núcleos
+# Clasificación nuclear con aprendizaje profundo
 
-**Andrés Duarte Chaves · Maestría en Ingeniería Biomédica · Deep Learning**
+**Andrés Duarte Chaves · Maestría en Ingeniería Biomédica · Entregable 1**
 
-<div class="nucls-hero">
-<p class="nucls-kicker">NuCLS · Entregable 1 · Estudio exploratorio</p>
-<h2>De una imagen nuclear a una predicción de clase</h2>
-<p>Se comparan tres redes neuronales para distinguir núcleos tumorales no mitóticos, linfocitos y núcleos estromales anotados. La pregunta central es cuánto mejora la clasificación al cambiar de arquitectura y cuán estable es esa mejora.</p>
-</div>
+El experimento V2 compara una CNN compacta con BatchNorm, DenseNet121 y ResNet50 para clasificar núcleos tumorales no mitóticos, linfocitarios y estromales en recortes RGB de NuCLS. El diseño estudia desempeño, variabilidad y costo bajo una partición común por paciente y procedencia.
 
 <div class="nucls-grid">
-<div class="nucls-card"><strong>17.999</strong><span>recortes: 14.428 de entrenamiento y 3.571 de validación</span></div>
-<div class="nucls-card"><strong>98</strong><span>pacientes: 79 de entrenamiento y 19 de validación</span></div>
-<div class="nucls-card"><strong>15</strong><span>entrenamientos: tres modelos × cinco semillas</span></div>
+<div class="nucls-card"><strong>14.539</strong><span>recortes de entrenamiento · 83 pacientes</span></div>
+<div class="nucls-card"><strong>2.049</strong><span>recortes de validación · 21 pacientes</span></div>
+<div class="nucls-card"><strong>969</strong><span>recortes de reserva · 6 pacientes</span></div>
 </div>
 
-## Imágenes histológicas y unidad de análisis
+## Datos y representación
 
-![Ejemplos reales de entrenamiento de las tres categorías de NuCLS.](figuras/galeria_train.jpg)
+![Composición del desarrollo V2.](figuras/eda_desarrollo_v2.svg)
 
-**La etiqueta corresponde al núcleo objetivo de cada recorte.** La imagen puede contener otros núcleos y fondo. Esta galería ilustra la entrada del clasificador; no presenta predicciones. [Explorar imágenes, procedencia y preparación](02_galeria.md).
+La unidad de predicción es un núcleo previamente localizado en una ventana de 128×128 píxeles. Los recortes de un mismo paciente están correlacionados. La reserva tiene solo 70 recortes estromales y seis pacientes; su tamaño limita la precisión de la evaluación.
 
-## El hallazgo principal
+## Organización
 
-![Macro-F1 de validación: cinco semillas por arquitectura, con media y desviación estándar.](figuras/visual_rendimiento.svg)
+- [EDA V2](02_desarrollo_v2.md): integridad, balance, intensidad, similitud y desplazamiento.
+- [Estado del arte](03_literatura.md): síntesis crítica y fundamento de las referencias.
+- [Metodología](04_metodologia_v2.md): arquitecturas, parámetros y entrenamiento.
+- [Comparación estadística](05_estadistica.md): unidades de análisis e incertidumbre.
+- [Experimento V2](08_resultados_v2.md): estado verificable de la evidencia.
+- [Discusión](09_discusion.md): interpretación del diseño y límites.
+- [Notebook EDA ejecutado](10_eda_v2.ipynb): cálculos y salidas reproducibles.
 
-**MobileNetV2 y ResNet18 alcanzan resultados cercanos.** La diferencia promedio es de 0,49 puntos porcentuales de macro-F1. La CNN local presenta menor desempeño y la clase estromal es la más difícil para las tres arquitecturas.
-
-<div class="nucls-note"><strong>Cómo leer estos resultados.</strong> Son resultados de validación de un piloto; esta misma partición seleccionó las mejores épocas. No representan desempeño confirmado en pacientes nuevos ni una demostración de superioridad clínica.</div>
-
-## Organización del informe
-
-<div class="nucls-grid">
-<div class="nucls-card"><strong>Entender</strong><span>Problema, imágenes y hallazgo principal.</span><p><a href="02_galeria.html">Ver qué recibe la red →</a></p></div>
-<div class="nucls-card"><strong>Evaluar</strong><span>Diseño, resultados, incertidumbre y conclusiones.</span><p><a href="08_resultados_piloto.html">Examinar resultados →</a></p></div>
-<div class="nucls-card"><strong>Reproducir</strong><span>Notebook ejecutado y evidencia numérica.</span><p><a href="07_analisis_ejecutado.html">Abrir análisis →</a></p></div>
-</div>
-
-## Recorrido del informe
-
-- **[Problema y alcance](01_problema.md):** qué predice el modelo y cuál es su unidad de análisis.
-- **[EDA y preprocesamiento](02_resultados_eda.md):** balance, selección de recortes y calidad de imagen, con decisiones derivadas de los datos.
-- **[Estado del arte](03_literatura.md):** antecedentes y alcance de la evidencia sobre las arquitecturas evaluadas.
-- **[Resultados del piloto](08_resultados_piloto.md):** desempeño, errores por clase, aprendizaje, costo e incertidumbre.
-- **[Discusión y conclusiones](09_discusion.md):** hallazgos principales y límites de generalización.
-- **[Análisis ejecutado](07_analisis_ejecutado.ipynb):** cálculos reproducibles y evidencia de ejecución.
-
-## Alcance científico
-
-El estudio evalúa la clasificación de recortes centrados en núcleos previamente anotados de NuCLS. La salida corresponde a las tres categorías seleccionadas: tumoral no mitótica, linfocitaria y estromal. La localización previa del núcleo forma parte de la preparación de los datos; la detección en lámina completa no se evaluó.
-
-El estudio presenta una comparación exploratoria reproducible. La revisión bibliográfica contextualiza las familias de modelos, sin establecer que las tres implementaciones sean las arquitecturas más frecuentes de la literatura. Las conclusiones se circunscriben a la selección de datos y al protocolo evaluados.
+La ejecución V2 está en curso según los registros comunicados por el autor. Los resultados finales no están incorporados en esta versión. Los resultados de CNN local, ResNet18 y MobileNetV2 se conservan como anexos históricos y no sustituyen la comparación V2. El estudio aborda clasificación de recortes, no detección en láminas completas ni uso clínico.

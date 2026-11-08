@@ -2,17 +2,20 @@
 
 **Andrés Duarte Chaves · Maestría en Ingeniería Biomédica · Entregable 1**
 
-Comparación exploratoria de CNN local, ResNet18 y MobileNetV2 para clasificar recortes nucleares en tres categorías de NuCLS. El análisis comprende 17.999 recortes, 98 pacientes y quince entrenamientos registrados. La partición por paciente separa entrenamiento y validación.
+Comparación V2 de CNN compacta con BatchNorm, DenseNet121 y ResNet50 para tres categorías nucleares NuCLS. Entrenamiento: 14.539 recortes / 83 pacientes; validación: 2.049 / 21; reserva: 969 / 6. Los TSS y pacientes son disjuntos entre particiones.
 
-- [Dashboard público](https://nucls-andres-duarte.onrender.com/)
-- [Informe Jupyter Book](https://aduartech81.github.io/NuCLS_DeepLearning/intro.html)
-- [Notebook ejecutado](https://aduartech81.github.io/NuCLS_DeepLearning/07_analisis_ejecutado.html)
-- [Archivo notebook](book/07_analisis_ejecutado.ipynb)
-- [Resultados e incertidumbre](https://aduartech81.github.io/NuCLS_DeepLearning/08_resultados_piloto.html)
+- [Dashboard](https://nucls-andres-duarte.onrender.com/)
+- [Jupyter Book](https://aduartech81.github.io/NuCLS_DeepLearning/intro.html)
+- [EDA ejecutado](book/10_eda_v2.ipynb)
+- [Experimento V2 y evidencia](book/08_resultados_v2.md)
+- [Cuaderno de entrenamiento Colab](colab/Experimento_NuCLS_v2.ipynb)
+- [Anexo: piloto histórico](book/08_resultados_piloto.md)
 
 ## Alcance científico
 
-El piloto compara desempeño, variabilidad entre semillas y tiempo de entrenamiento. La selección de épocas utiliza la validación; los resultados no constituyen evaluación externa. La revisión narrativa contextualiza las familias de redes, pero no demuestra que las tres implementaciones sean los modelos base más recurrentes de la literatura. El sistema clasifica recortes nucleares previamente localizados de NuCLS. La detección en lámina completa no forma parte de la evaluación.
+La selección V2 combina evidencia bibliográfica verificable, capacidad y conectividad. La revisión no acredita que estos sean los tres modelos más frecuentes y sencillos de todo el corpus. Esta restricción no se resuelve cambiando la redacción.
+
+El registro comunicado de Colab ya alcanza las corridas finales, pero sus resultados finales todavía no están incorporados. El cuaderno publicado sin salidas es una plantilla, no evidencia de ejecución completa. Las métricas disponibles de CNN local, ResNet18 y MobileNetV2 son históricas y no determinan el baseline V2. La reserva de seis pacientes y 70 recortes estromales impone una limitación fuerte.
 
 ## Dashboard
 
@@ -53,13 +56,13 @@ El notebook contiene salidas de cálculos ejecutados. La publicación conserva e
 
 - `book/`: capítulos, notebook y figuras.
 - `app.py`, `assets/`: dashboard.
-- `modelos/`: implementaciones y entrenador del piloto.
+- `modelos/`: implementaciones del piloto y del experimento V2.
 - `resultados/`: predicciones comprimidas, curvas y configuración de quince corridas.
 - `resultados_analizados/`: métricas recalculadas, incertidumbre y planificación.
 - `evidencias/`: auditorías, selección, trazabilidad y hashes.
 - `scripts/`: análisis y generación de figuras.
 
-La galería contiene doce ejemplos ilustrativos de entrenamiento, con trazabilidad en `evidencias/galeria_train.json`. El conjunto completo de imágenes y los pesos no se incluyen. Los estadísticos RGB describen campos completos; no son parámetros de normalización de recortes.
+La galería contiene doce ejemplos ilustrativos de entrenamiento, con trazabilidad en `evidencias/galeria_train.json`. El conjunto completo de imágenes y los pesos no se incluyen. El EDA V2 incluye medias y desviaciones RGB de recortes de entrenamiento; los análisis de campos del piloto están identificados por separado.
 
 ## Comprobaciones
 
