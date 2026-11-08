@@ -1,8 +1,11 @@
 title: "NuCLS | Aprendizaje profundo en histología"
 author: "Andrés Duarte Chaves"
+copyright: "2026"
 execute:
   execute_notebooks: "off"
 sphinx:
   config:
+    language: es
     html_static_path: ["_static"]
     html_css_files: ["informe.css"]
+
