@@ -51,13 +51,31 @@ La reconstrucción de las tres exportaciones reprodujo los conteos iniciales y s
 | Fuente metodológica | 50 |
 | Revisión secundaria | 137 |
 | En cola de resumen | 0 |
-| Pendiente de recuperación o aclaración en texto completo | 107 |
-| Con lectura o extracción de secciones del texto documentada | 73 |
+| Pendiente de recuperación o aclaración en texto completo | 14 |
+| Con lectura o extracción de secciones del texto documentada | 165 |
+| Duplicado identificado durante recuperación | 1 |
 | **Total** | **1.330** |
 
-La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 107 + 73**. Los 330 antecedentes no se convierten en exclusiones finales. Los 73 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 107 candidatos de texto y la adjudicación final de elegibilidad. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
+La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 1 + 14 + 165**. Los 330 antecedentes no se convierten en exclusiones finales. Los 165 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 14 informes por recuperar o aclarar. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
 
-El [flujo conciliado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) utiliza las etapas de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram), sin presentarse como revisión sistemática concluida. Siete grupos de títulos coincidentes siguen sin fusión automática. Un artículo y su preprint cuentan como una publicación; una coincidencia de resultados entre artículos diferentes requiere una auditoría adicional de independencia.
+El [flujo conciliado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) utiliza las etapas de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram), sin presentarse como revisión sistemática concluida. De los siete grupos de títulos coincidentes, se confirmó que LIT-1168 y LIT-0602 son el mismo artículo: autores, revista, año, volumen y páginas coinciden; al registro WoS le faltaba el DOI. Se conserva la fila histórica como duplicado tardío, sin contar una lectura adicional. Las demás coincidencias no se fusionan automáticamente. Un artículo y su preprint cuentan como una publicación; una coincidencia de resultados entre artículos diferentes requiere una auditoría adicional de independencia.
+
+<!-- CAPAS_SINTESIS_INICIO -->
+### Asignación a capas de síntesis al corte
+
+La revisión de las decisiones individuales organiza los 165 informes leídos en cinco grupos excluyentes. Esta asignación no altera el nivel de lectura documentado: algunos registros tienen extracción dirigida y no lectura íntegra de apéndices.
+
+| Capa de síntesis | Informes |
+|---|---:|
+| Clasificación nuclear localizada o ablación separable: síntesis focal | 21 |
+| Sistemas conjuntos, contextuales y representaciones relacionadas | 83 |
+| Tareas o modalidades adyacentes, fuera de la comparación focal | 49 |
+| Revisiones, editoriales y comentarios | 11 |
+| Sensibilidad separada por preocupación editorial | 1 |
+| **Total con lectura documentada** | **165** |
+
+La matriz `adjudicacion_sintesis_20261108.csv` identifica cada informe, motivo, limitación y fuente. Los 21 informes focales no son 21 experimentos independientes ni 21 usos de cada arquitectura. Incluyen clasificadores modificados, máscaras, ensambles y subclasificación binaria; sus diferencias se conservan. Las frecuencias de arquitecturas siguen restringidas al subconjunto de comparadores exactos verificados. Los sistemas conjuntos fundamentan la discusión del campo, sin mezclar sus PQ, F1 de detección o métricas por píxel con macro-F1 de recortes. La recuperación permanece abierta para 14 informes; no se declaran inaccesibles definitivamente.
+<!-- CAPAS_SINTESIS_FIN -->
 
 ### Trazabilidad de la selección
 
@@ -257,7 +275,7 @@ El [registro de esta ampliación](https://github.com/aduartech81/NuCLS_DeepLearn
 <!-- AMPLIACION_CIERRE_INICIO -->
 ### Evidencia adicional y relación con los resultados V2
 
-La nueva ampliación contiene 44 lecturas dirigidas, con fuente y secciones identificadas en `evaluaciones_texto_cierre_20261108.csv`. Se distinguen sistemas conjuntos, clasificadores modificados, tareas IHC y fuentes secundarias. Las frecuencias conservadoras anteriores se mantienen restringidas a su conjunto de comparadores verificados; no se presentan como un censo de todas las arquitecturas mencionadas.
+La nueva ampliación contiene 136 lecturas dirigidas, con fuente y secciones identificadas en `evaluaciones_texto_cierre_20261108.csv`. Se distinguen sistemas conjuntos, clasificadores modificados, tareas IHC y fuentes secundarias. Las frecuencias conservadoras anteriores se mantienen restringidas a su conjunto de comparadores verificados; no se presentan como un censo de todas las arquitecturas mencionadas.
 
 | Fuente | Problema y datos | Modelos o representación | Métrica extraída y valor | Consecuencia para NuCLS |
 |---|---|---|---|---|
@@ -284,6 +302,45 @@ El manuscrito de Yousefi y Nie se deriva a contexto IHC/ISH y agrupamiento, y Al
 
 El cierre experimental V2 seleccionó ResNet50 por validación y obtuvo macro-F1 de reserva 0,6378, frente a 0,6052 de DenseNet121 y 0,4542 de la compacta. Esta comparación local comparte partición, tres clases e inicialización desde cero, pero no reproduce las taxonomías ni todas las condiciones de los artículos. La caída de desempeño y el F1 estromal 0,3022 de ResNet50 refuerzan la necesidad de analizar clases y pacientes, sin probar una explicación causal ni superioridad general de una familia arquitectónica. Los [resultados completos](08_resultados_v2.md) distinguen incertidumbre por semillas y por pacientes.
 <!-- AMPLIACION_CIERRE_FIN -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Clasificadores de recortes recuperados mediante la biblioteca
+
+La lectura institucional permite precisar tres estrategias complementarias. [DV-CNNs](https://doi.org/10.1007/978-3-030-03335-4_20) combina recortes de 27×27 y 36×36 con BatchNorm y extracción de varias regiones. Su tabla 2 informa F1 promedio 0,843 y AUC multiclase 0,947 en HistoPhenotypes; el experimento de tres clases alcanza exactitud 90,40%. Estas cifras apoyan investigar el contexto, pero no establecen equivalencia con tres clases mamarias ni con una partición por paciente. Los comparadores tomados de Bayramoglu no constituyen nuevas réplicas independientes.
+
+El [ensamble difuso de CNN](https://doi.org/10.1109/ICCCNT56998.2023.10308315) clasifica recortes PanNuke de 64×64 utilizando DenseNet201, IBN-DenseNet201 y MixNet preentrenadas. La tabla de ablación informa F1 0,788 para DenseNet201 y 0,811 para el ensamble; el promediado no queda inequívocamente identificado. DenseNet201 se distingue de DenseNet121 y el resultado del ensamble no se atribuye a un solo modelo. La eliminación de núcleos pequeños o de borde también modifica la población evaluada.
+
+El [sistema FCRN–CNN](https://doi.org/10.1109/AIPR.2018.8707397) añade a RGB un mapa aprendido de localización nuclear. Obtiene F1 ponderado 0,8526 al transferir el detector desde mama hacia clasificación de colon. La clasificación se entrena en colon: este resultado no demuestra validación externa del clasificador. En conjunto, los tres trabajos muestran que tamaño del recorte, información adicional, transferencia y agregación de predicciones deben registrarse antes de comparar cifras.
+
+Los modelos conjuntos [TexSegNet](https://doi.org/10.1109/EMBC58623.2025.11253497), [ANet](https://doi.org/10.1007/s42979-024-02661-3), [AFINITI](https://doi.org/10.1007/s00521-024-10114-4) y [TRG-Dilated HoVer-Net](https://doi.org/10.1007/s00521-023-08394-3) amplían este contexto mediante atención, mapas de forma o información tisular. Sus puntuaciones incluyen localización, segmentación o entradas adicionales; no se mezclan con el macro-F1 de recortes V2. TRG-Dilated HoVer-Net muestra además que una guía tisular errónea puede inducir errores de tipo nuclear, una razón para evaluar señales de contexto y no asumir que toda mejora de capacidad mejora la generalización.
+
+
+
+
+
 
 
 
@@ -354,3 +411,56 @@ Las referencias se vinculan a su DOI o al texto de autor utilizado. Los antecede
 
 El [inventario y las extracciones](https://github.com/aduartech81/NuCLS_DeepLearning/tree/main/evidencias/literatura) conservan la procedencia y el nivel de lectura. La [tabla de frecuencia](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/frecuencia_comparadores_verificados.csv) contabiliza publicaciones por arquitectura; la sensibilidad separada explora su posible dependencia. Los registros no evaluados permanecen identificados como tales; no se transforman en exclusiones para cerrar artificialmente el flujo de selección.
 
+
+
+### Comparaciones adicionales verificadas en acceso institucional
+
+| Referencia | Problema | Datos | Modelo y función | Métrica | Resultado publicado |
+|---|---|---|---|---|---|
+| [DV-CNN](https://doi.org/10.1007/978-3-030-03335-4_20) | Cuatro tipos nucleares | CRCHistoPhenotypes; vistas 27 y 36 píxeles | CNN de doble vista, fusión de puntuaciones | F1 medio / AUC, tabla 2 | 0,843 / 0,947 |
+| [Ensamble difuso](https://doi.org/10.1109/icccnt56998.2023.10308315) | Cinco tipos nucleares | PanNuke; recortes 64×64 | DenseNet201 / IBN-DenseNet201 / MixNet / ensamble de los tres | F1; promedio no aclarado en esta extracción | 0,788 / 0,789 / 0,781 / 0,811 |
+| [FCRN y CNN](https://ieeexplore.ieee.org/document/8707397) | Cuatro tipos celulares | Colon; 22.444 células | CNN de 14 capas, RGB más mapa de distancia | F1 ponderado | 0,8526 con detector aprendido en mama |
+| [Comparación de arquitecturas profundas](https://doi.org/10.1007/978-981-13-9184-2_33) | Cuatro tipos nucleares | Colon; 22.444 recortes ampliados de 27 a 224 píxeles | AlexNet / VGG16 / VGG19 con ImageNet | F1; promedio no aclarado | 63,52% / 65,41% / 64,39% |
+| [Células inflamatorias](https://doi.org/10.1007/978-981-13-9190-3_73) | Núcleo, linfocito, neutrófilo e impureza | Hígado H&E institucional; 4.522/518 recortes de entrenamiento/prueba | CNN de cuatro convoluciones y salida softmax | Exactitud global | 88,61% |
+| [Forma nuclear mediante esqueletos](https://doi.org/10.1007/978-3-030-66415-2_20) | Tumor/no tumor | BreCaHAD; muestra balanceada | AlexNet ImageNet como extractor y SVM / rasgos MAT y SVM | Exactitud | 0,632 ± 0,001 / 0,850 ± 0,004 |
+
+Estas comparaciones amplían la evidencia de clasificadores de recortes, pero sus valores no forman una clasificación conjunta de eficacia. DV-CNN evalúa contexto a dos escalas; el ensamble difuso combina modelos preentrenados; FCRN añade información de localización; la CNN hepática utiliza una taxonomía distinta. En el estudio de esqueletos se evalúan únicamente los núcleos recuperados por una segmentación previa y se balancea la muestra mediante muestreo con reemplazo. La independencia por paciente no queda acreditada en las secciones consultadas de estos estudios.
+
+La CNN hepática constituye un antecedente adicional de una arquitectura compacta con cuatro convoluciones y softmax. El artículo describe ventanas de 80×80, pero enumera una entrada de 32×32 en su configuración; esa ambigüedad impide presentarlo como una reproducción exacta de nuestra red. Del mismo modo, DenseNet201 no se contabiliza como DenseNet121, y AlexNet utilizada para extraer rasgos no se describe como una red ajustada de extremo a extremo. Las frecuencias de la sección anterior conservan su subconjunto expresamente documentado.
+
+
+### Qué cambia al evaluar pacientes nuevos
+
+El trabajo de [Qu et al.](https://doi.org/10.1109/ISBI.2019.8759457) es particularmente ilustrativo: utiliza 40 imágenes de ocho casos pulmonares y declara que cada partición contiene imágenes de todos los casos. Su exactitud de clasificación se calcula únicamente sobre los núcleos detectados correctamente. Aun cuando las clases tumor, linfocito y estroma parecen cercanas a las de NuCLS, el protocolo mide una condición distinta de la generalización a pacientes nuevos y omite del denominador de clasificación los núcleos no detectados.
+
+[StarDist multiclase](https://ieeexplore.ieee.org/document/9854534) aporta una observación complementaria: el aumento de tinción no parecía tan favorable en la validación interna como en la prueba preliminar del desafío CoNIC. Los autores relacionan esa diferencia con un posible cambio de dominio. Su resultado final combina cuatro modelos, aumentos en inferencia y refinamiento de contornos; se vincula con el informe CoNIC y no se cuenta como una réplica independiente de ese mismo resultado.
+
+Estos antecedentes respaldan dos decisiones del experimento local: separar pacientes y mantener una reserva sin ajustes posteriores. La caída entre validación y reserva observada en los tres modelos debe informarse completa. La literatura ofrece hipótesis sobre contexto, tinción, etiquetas y composición celular; identificar cuál explica nuestros errores requiere análisis específicos y no puede resolverse por semejanza con un artículo.
+
+### Contexto tisular y alcance de la comparación
+
+[HistoMSC (Ahmad et al., 2025)](https://doi.org/10.1016/j.compbiomed.2025.109991) separa localización de clasificación y compara recortes PanNuke con ResNet34, SqueezeNet, ResNet101 y EfficientNet-B5/B7. La tabla 1 informa *weighted accuracy* de 0.83486, 0.83251, 0.84532, 0.84627 y 0.85422, respectivamente. Además de la imagen, el marco coloreado de cada recorte codifica el tipo de tejido. Por ello, estas cifras no constituyen una comparación equivalente con nuestro macro-F1 de tres clases y entrada RGB. En ese trabajo, ResNet50 aparece como parte del detector U-Net; no debe contarse como clasificador evaluado en la tabla. El estudio también encuentra discrepancias al aplicar el sistema a 73 láminas TCGA, reforzando la necesidad de distinguir resultados internos de generalización a nuevas muestras.
+
+
+### Comparación de encoders y adaptación entre tinciones
+
+[SPNet](https://doi.org/10.1016/j.compmedimag.2023.102296) compara encoders dentro de un sistema conjunto basado en HoVer-Net. En CoNSeP, ResNet50 obtiene PQ de 0,516 y ResNet50-SE, 0,526; los cuatro F1 por tipo del segundo son 0,540, 0,669, 0,644 y 0,579. La variante DenseNet169 sólo utiliza preentrenamiento en la primera capa, por lo que su resultado inferior no demuestra inferioridad de la familia DenseNet. Esta comparación tampoco reproduce nuestra DenseNet121 entrenada desde cero. [DRCA-Net](https://doi.org/10.1016/j.bspc.2022.104199) utiliza un ResNet50 modificado, con atención espacial y de canal en los decodificadores, para segmentar y tipificar simultáneamente. Ambos trabajos justifican estudiar representaciones residuales, pero sus F1 incluyen decisiones de detección y sus entradas no son los recortes nucleares independientes de V2.
+
+[ISC-GAN](https://doi.org/10.1016/j.cmpb.2023.107768) estudia transferencia de H&E a IHC mediante CycleGAN, Mask R-CNN y aprendizaje por etapas. Evalúa tumor, estroma y linfocitos en seis imágenes IHC anotadas que contienen 750 células; obtiene AP de segmentación de 39,1 y AJI de 77,1. La coincidencia nominal de clases con NuCLS no vuelve comparables esas métricas con nuestro macro-F1. Además, emplea imágenes del dominio objetivo durante la adaptación: aplicar ese procedimiento a nuestra reserva cambiaría su condición de evaluación externa intacta. Es una línea para un experimento futuro predefinido, no una modificación retrospectiva del cierre actual.
+
+
+### Evidencia en recortes nucleares y sesgo de procedencia
+
+El estudio [Deep Learning for Cell Classification…](https://doi.org/10.1109/bibe60311.2023.00020) reúne aproximadamente 206.000 recortes de 64×64 píxeles: tres clases inmunes de Lizard y dos clases epiteliales/tumorales de PanNuke. Compara ResNet18, ConvNeXt y EfficientNet; ResNet18 preentrenada con entropía cruzada y muestreo ponderado obtiene el mejor resultado, con AUC por clase superiores a 0,97. Sin embargo, los aciertos de neutrófilos y eosinófilos permanecen alrededor de 63–65%, por lo que una AUC alta no elimina el problema de las clases minoritarias. El split aleatorio 70/30 se realiza por recorte y clase, sin separación por paciente documentada. Además, la procedencia de los datos está asociada a la clase. Estos factores limitan la comparación con la reserva independiente por paciente de NuCLS y apoyan reportar métricas por clase, además del promedio. La descripción de ConvNeXt como modificación de ResNet50 en la introducción no constituye una ejecución de ResNet50 estándar.
+
+
+### Refinamiento contextual y límites de la comparación
+
+[Hassan et al.](https://doi.org/10.1109/TIP.2023.3337666) entrenan un clasificador ResNet50 sobre recortes de núcleos y luego retiran su cabeza para construir representaciones de un grafo. El refinamiento utiliza núcleos detectados por HoVer-Net y relaciones entre células: su evaluación combina errores de detección y tipificación. Este trabajo respalda la utilidad de ResNet50 como representación nuclear, pero sus resultados finales no aíslan el clasificador ni constituyen una réplica de nuestro experimento. También muestra una limitación práctica: el grafo no puede recuperar un núcleo que el detector omitió.
+
+Las propuestas recientes [UL-HVNet](https://doi.org/10.1145/3706890.3706921), [MDH-CMambaNet](https://doi.org/10.1109/IJCNN69854.2026.11729110) y [AMN](https://doi.org/10.1109/ICETCI71772.2026.11710727) añaden atención, deformaciones o contexto global a sistemas de segmentación y tipificación. Sus métricas requieren distinguir instancia, píxel y detección: por ejemplo, AMN calcula F1 sobre píxeles e incluye el fondo. El mayor tamaño o complejidad no garantiza transferencia: en su evaluación binaria externa MoNuSeg, AMN reporta F1 de 0,6191 frente a 0,6510 de U-Net. Las inconsistencias internas de algunos artículos y la ausencia de particiones explícitas por paciente se conservan en la matriz de lectura, en lugar de convertirlas en evidencia concluyente.
+
+
+### Tamaño del recorte y agregación de predicciones
+
+El estudio de [clasificación y fusión de características nucleares](https://doi.org/10.1002/ima.22676) compara InceptionV3, InceptionResNetV2 y NASNetLarge preentrenadas en ImageNet sobre CRCHistoPhenotypes. Al ampliar la ventana de 27 a 54 píxeles, InceptionV3 pasa de F1 ponderado 0,773 a 0,816; combinar cuatro tamaños produce 0,832. El ensamble de doce modelos alcanza 0,837. Estos resultados muestran una asociación entre representación contextual y desempeño dentro de ese experimento, sin aislar el efecto causal del contexto ni equivaler a macro-F1. Se excluyen núcleos próximos al borde, y los dos folds se separan por imagen sin independencia por paciente explícita. NuCLS también restringe recortes interiores, por lo que debe conservar esa condición al describir la población analizada. El SoftmaxCNN citado por este artículo no se cuenta como una nueva ejecución independiente.

@@ -35,6 +35,11 @@ def verificar(root, entradas=None):
     assert len(terceras)==len({x['id'] for x in terceras})
     assert all(index[x['id']]['decision']=='texto_completo_revisado' and x['fuente'] and x['secciones_leidas'] for x in terceras)
     posteriores={x['id'] for x in leer('lecturas_texto_ampliadas.csv')+nuevas+terceras}
+    posteriores.update(r['id'] for r in rows if r['decision']=='duplicado_tardio')
+    assert counts.get('duplicado_tardio',0)==f.get('duplicados_tardios',0)
+    adjudicacion=leer('adjudicacion_sintesis_20261108.csv')
+    assert len(adjudicacion)==len({r['id'] for r in adjudicacion})==f['registros_con_lectura_texto_documentada']
+    assert dict(collections.Counter(r['grupo_sintesis'] for r in adjudicacion))==f['capas_sintesis']
     for x in batch:
         if x['id'] not in posteriores:
             assert x['decision'] == index[x['id']]['decision']

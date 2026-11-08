@@ -19,28 +19,36 @@
     "excluir_por_titulo": 723,
     "revision_secundaria": 137,
     "excluir_por_resumen": 97,
-    "recuperar_texto_completo": 107,
+    "texto_completo_revisado": 162,
     "fuente_metodologica": 50,
     "contexto_tarea_distinta": 143,
-    "texto_completo_revisado": 70,
-    "texto_completo_extraido": 3
+    "texto_completo_extraido": 3,
+    "recuperar_texto_completo": 14,
+    "duplicado_tardio": 1
   },
   "con_decision_o_derivacion": 1330,
   "sin_revision": 0,
   "exclusiones_explicitas_titulo_resumen": 820,
   "contexto_y_metodologia": 330,
   "pendientes_resumen": 0,
-  "pendientes_texto_completo": 107,
-  "registros_con_lectura_texto_documentada": 73,
+  "pendientes_texto_completo": 14,
+  "registros_con_lectura_texto_documentada": 165,
   "informes_no_recuperados": null,
   "informes_evaluados_elegibilidad_final": null,
   "estudios_incluidos_finales": null,
-  "nota": "73 registros con lectura dirigida de secciones. Disposiciones preliminares, exclusiones tras lectura y revisiones se conservan dentro de esa etapa, sin doble conteo. No equivalen a estudios incluidos. Sin segundo revisor independiente.",
+  "nota": "Una unidad duplicada tardía se conserva en el inventario histórico pero no es una lectura. La asignación por capas distingue informes focales, contexto y sensibilidad; no representa estudios independientes ni cierre exhaustivo.",
   "fuente_metodologica": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
   "ecuaciones": [
     "1717 = 69 + 318 + 1330",
-    "1330 = 820 + 330 + 107 + 73",
-    "820 = 723 + 97",
-    "330 = 143 + 50 + 137"
-  ]
+    "1330 = 820 + 330 + 1 + 14 + 165",
+    "180 = 1 + 14 + 165"
+  ],
+  "duplicados_tardios": 1,
+  "capas_sintesis": {
+    "sistema_conjunto_o_contextual": 83,
+    "tarea_o_modalidad_adyacente": 49,
+    "sintesis_focal_clasificacion": 21,
+    "fuente_secundaria_o_comentario": 11,
+    "sensibilidad_alerta_editorial": 1
+  }
 }
