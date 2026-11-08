@@ -1,0 +1,15 @@
+modelo,publicaciones,grupos_conservadores,doi,interpretacion
+ResNet50,3,2,10.1007/s11042-020-08891-w; 10.1145/3345318; 10.1155/acis/4540418,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+AlexNet,2,1,10.1007/s11042-020-08891-w; 10.1145/3345318,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+DenseNet121,2,1,10.1007/s11042-020-08891-w; 10.1145/3345318,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+InceptionV3,2,1,10.1007/s11042-020-08891-w; 10.1145/3345318,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+VGG16,2,1,10.1007/s11042-020-08891-w; 10.1145/3345318,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+VGG19,2,1,10.1007/s11042-020-08891-w; 10.1145/3345318,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+AlexNet_adaptada_RCC,1,1,10.1109/icarcv.2018.8581147,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+CIFAR_VGG,1,1,10.1109/icarcv.2018.8581147,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+CNN3L,1,1,10.1145/3345318,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+GoogLeNet_adaptada_RCC,1,1,10.1109/icarcv.2018.8581147,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+ResNet18,1,1,10.1016/j.patcog.2025.112197,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+WRN_adaptada_RCC,1,1,10.1109/icarcv.2018.8581147,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+softmaxCNN_32_BN,1,1,10.1109/icarcv.2018.8581147,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente
+softmaxCNN_IN27_BN,1,1,10.1109/icarcv.2018.8581147,Conteo provisional; corpus incompleto y grupos sin adjudicación independiente

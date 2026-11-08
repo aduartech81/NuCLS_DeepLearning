@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="850" viewBox="0 0 1120 850" role="img" aria-labelledby="title desc">
 <title id="title">Flujo documental parcial compatible con las etapas PRISMA</title>
-<desc id="desc">1717 registros originales; 69 fuera de periodo y 318 duplicados DOI; 1330 unidades: 156 con decisión o derivación y 1174 pendientes. Inclusión final no establecida.</desc>
+<desc id="desc">1717 registros originales; 69 fuera de periodo y 318 duplicados DOI; 1330 unidades: 1330 con decisión o derivación; 167 pendientes de texto. Inclusión final no establecida.</desc>
 <rect width="1120" height="850" fill="#f8fafc"/>
 <style>text{font-family:Arial,sans-serif;fill:#183247} .t{font-size:25px;font-weight:bold} .s{font-size:18px} .h{font-size:20px;font-weight:bold}</style>
 <text x="40" y="45" class="t">Revisión bibliográfica · flujo parcial al 7 nov 2026 (Bogotá)</text>
@@ -13,23 +13,23 @@
 <text x="58" y="244" class="s">En periodo: 1.648 · Tras depuración: 1.330 unidades (1.287 DOI y 43 sin DOI)</text>
 <path d="M560 280 L560 305" stroke="#267887" stroke-width="2" fill="none"/><path d="M555 297 L560 305 L565 297" stroke="#267887" fill="none"/>
 <rect x="40" y="305" width="500" height="75" rx="12" fill="#fff1d6" stroke="#267887"/>
-<text x="58" y="334" class="s">Sin revisión: 1.174</text>
-<text x="58" y="359" class="s">Permanecen pendientes; no son exclusiones</text>
+<text x="58" y="334" class="s">Sin primera decisión: 0</text>
+<text x="58" y="359" class="s">Primera pasada de títulos finalizada</text>
 <rect x="570" y="305" width="510" height="75" rx="12" fill="#e8f4f5" stroke="#267887"/>
-<text x="588" y="334" class="s">Con decisión o derivación: 156</text>
+<text x="588" y="334" class="s">Con decisión o derivación: 1.330</text>
 <text x="588" y="359" class="s">Estados actuales; no estudios incluidos</text>
 <path d="M825 380 L825 405" stroke="#267887" stroke-width="2" fill="none"/><path d="M820 397 L825 405 L830 397" stroke="#267887" fill="none"/>
 <rect x="40" y="405" width="1040" height="185" rx="12" fill="#e8f4f5" stroke="#267887"/>
-<text x="58" y="434" class="s">Distribución de los 156 registros atendidos:</text>
-<text x="58" y="459" class="s">39 exclusiones explícitas: 36 por título y 3 por resumen</text>
-<text x="58" y="484" class="s">49 antecedentes: 43 tarea distinta, 5 metodológicos y 1 revisión secundaria</text>
-<text x="58" y="509" class="s">28 por aclarar mediante resumen · 34 pendientes de texto completo</text>
-<text x="58" y="534" class="s">6 registros con lectura/extracción de texto documentada</text>
+<text x="58" y="434" class="s">Distribución de los 1.330 registros atendidos:</text>
+<text x="58" y="459" class="s">820 exclusiones explícitas: 723 por título y 97 por resumen</text>
+<text x="58" y="484" class="s">330 antecedentes: 143 tarea distinta, 50 metodológicos y 137 revisiones</text>
+<text x="58" y="509" class="s">0 en cola de resumen · 167 pendientes de texto completo</text>
+<text x="58" y="534" class="s">13 registros con lectura/extracción de texto documentada</text>
 <path d="M560 590 L560 615" stroke="#267887" stroke-width="2" fill="none"/><path d="M555 607 L560 615 L565 607" stroke="#267887" fill="none"/>
 <rect x="40" y="615" width="1040" height="115" rx="12" fill="#fff1d6" stroke="#267887"/>
 <text x="58" y="644" class="s">Elegibilidad e inclusión final: NO ESTABLECIDAS</text>
 <text x="58" y="669" class="s">No se ha cerrado el recuento de informes no recuperados ni de estudios incluidos.</text>
-<text x="58" y="694" class="s">Cuatro DOI sustentan la tabla de comparadores; no representan el corpus completo.</text>
+<text x="58" y="694" class="s">Cinco publicaciones con comparadores; posible solapamiento entre dos de ellas.</text>
 <text x="40" y="766" class="s">Siete grupos de títulos coincidentes se conservan sin fusión automática.</text>
 <text x="40" y="795" class="s">Revisión asistida por IA; sin segundo revisor independiente. No es un PRISMA completo.</text>
 <text x="40" y="824" class="s">Referencia de etapas: PRISMA 2020 · prisma-statement.org/prisma-2020-flow-diagram</text>

@@ -16,32 +16,31 @@
     "grupos_titulo_sin_fusion": 7
   },
   "estados_mutuamente_excluyentes": {
-    "excluir_por_titulo": 36,
-    "revisar_resumen": 28,
-    "recuperar_texto_completo": 34,
-    "fuente_metodologica": 5,
-    "contexto_tarea_distinta": 43,
+    "excluir_por_titulo": 723,
+    "revision_secundaria": 137,
+    "excluir_por_resumen": 97,
+    "recuperar_texto_completo": 167,
+    "fuente_metodologica": 50,
+    "contexto_tarea_distinta": 143,
     "texto_completo_extraido": 3,
-    "por_revisar": 1174,
-    "texto_completo_revisado": 3,
-    "excluir_por_resumen": 3,
-    "revision_secundaria": 1
+    "texto_completo_revisado": 10
   },
-  "con_decision_o_derivacion": 156,
-  "sin_revision": 1174,
-  "exclusiones_explicitas_titulo_resumen": 39,
-  "contexto_y_metodologia": 49,
-  "pendientes_resumen": 28,
-  "pendientes_texto_completo": 34,
-  "registros_con_lectura_texto_documentada": 6,
+  "con_decision_o_derivacion": 1330,
+  "sin_revision": 0,
+  "exclusiones_explicitas_titulo_resumen": 820,
+  "contexto_y_metodologia": 330,
+  "pendientes_resumen": 0,
+  "pendientes_texto_completo": 167,
+  "registros_con_lectura_texto_documentada": 13,
   "informes_no_recuperados": null,
   "informes_evaluados_elegibilidad_final": null,
   "estudios_incluidos_finales": null,
-  "nota": "Las categorías de contexto no se convierten en exclusiones finales. Lectura/extracción no equivale a evaluación completa de elegibilidad. null significa no establecido, nunca cero. Cuatro DOI sustentan la tabla parcial de comparadores; no son el total de estudios incluidos.",
+  "nota": "Primera pasada dirigida concluida; 167 candidatos pendientes de texto, no exclusiones. Lectura de secciones no equivale a elegibilidad final. Contexto/metodología/revisiones no se convierten en exclusiones finales. Cinco publicaciones sustentan comparadores; cuatro grupos bajo sensibilidad conservadora de posible solapamiento, no estudios incluidos. null significa no establecido.",
   "fuente_metodologica": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
   "ecuaciones": [
     "1717 = 69 + 318 + 1330",
-    "1330 = 1174 + 156",
-    "156 = 39 + 49 + 28 + 34 + 6"
+    "1330 = 820 + 330 + 167 + 13",
+    "820 = 723 + 97",
+    "330 = 143 + 50 + 137"
   ]
 }

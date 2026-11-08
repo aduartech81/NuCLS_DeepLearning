@@ -1,0 +1,8 @@
+id,doi,url,resultado,siguiente_estado
+LIT-1029,10.1007/978-981-13-9184-2_33,https://link.springer.com/chapter/10.1007/978-981-13-9184-2_33,Solo resumen; editorial requiere suscripción/institución,Pendiente; no declarado no recuperado definitivo
+LIT-1045,10.1007/978-3-030-03335-4_20,https://link.springer.com/chapter/10.1007/978-3-030-03335-4_20,Contenido de suscripción,Pendiente
+LIT-0826,10.1109/bibm52615.2021.9669401,https://ieeexplore.ieee.org/document/9669401,Acceso bloqueado en herramienta,Pendiente
+LIT-0806,10.1109/icccnt56998.2023.10308315,https://ieeexplore.ieee.org/document/10308315,Acceso bloqueado en herramienta,Pendiente
+LIT-1025,10.1109/isbi.2019.8759469,https://doi.org/10.1101/530113,Texto primario no recuperado por la herramienta,Pendiente; buscar repositorio alternativo
+LIT-0115,10.1016/j.media.2025.103905,https://discovery.ucl.ac.uk/id/eprint/10218982/1/1-s2.0-S1361841525004517-main.pdf,PDF excede límite de tamaño de la herramienta,Preprint v2 recuperado y leído; versión editorial por cotejar
+LIT-0668,10.1016/j.media.2024.103143,https://arxiv.org/pdf/2306.15350,PDF excede límite de tamaño de la herramienta,HTML v2 recuperado y leído

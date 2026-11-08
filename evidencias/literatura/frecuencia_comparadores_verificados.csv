@@ -1,15 +1,15 @@
-modelo,estudios_verificados,doi,alcance
-ResNet50,2,10.1145/3345318; 10.1155/acis/4540418,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-AlexNet,1,10.1145/3345318,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-AlexNet_adaptada_RCC,1,10.1109/icarcv.2018.8581147,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-CIFAR_VGG,1,10.1109/icarcv.2018.8581147,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-CNN3L,1,10.1145/3345318,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-DenseNet121,1,10.1145/3345318,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-GoogLeNet_adaptada_RCC,1,10.1109/icarcv.2018.8581147,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-InceptionV3,1,10.1145/3345318,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-ResNet18,1,10.1016/j.patcog.2025.112197,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-VGG16,1,10.1145/3345318,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-VGG19,1,10.1145/3345318,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-WRN_adaptada_RCC,1,10.1109/icarcv.2018.8581147,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-softmaxCNN_32_BN,1,10.1109/icarcv.2018.8581147,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
-softmaxCNN_IN27_BN,1,10.1109/icarcv.2018.8581147,Cuatro DOI con comparadores extraídos; tareas multiclase y binaria separables; no frecuencia del corpus
+modelo,estudios_verificados,doi
+ResNet50,3,10.1007/s11042-020-08891-w; 10.1145/3345318; 10.1155/acis/4540418
+AlexNet,2,10.1007/s11042-020-08891-w; 10.1145/3345318
+DenseNet121,2,10.1007/s11042-020-08891-w; 10.1145/3345318
+InceptionV3,2,10.1007/s11042-020-08891-w; 10.1145/3345318
+VGG16,2,10.1007/s11042-020-08891-w; 10.1145/3345318
+VGG19,2,10.1007/s11042-020-08891-w; 10.1145/3345318
+AlexNet_adaptada_RCC,1,10.1109/icarcv.2018.8581147
+CIFAR_VGG,1,10.1109/icarcv.2018.8581147
+CNN3L,1,10.1145/3345318
+GoogLeNet_adaptada_RCC,1,10.1109/icarcv.2018.8581147
+ResNet18,1,10.1016/j.patcog.2025.112197
+WRN_adaptada_RCC,1,10.1109/icarcv.2018.8581147
+softmaxCNN_32_BN,1,10.1109/icarcv.2018.8581147
+softmaxCNN_IN27_BN,1,10.1109/icarcv.2018.8581147

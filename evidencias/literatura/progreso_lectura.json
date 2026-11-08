@@ -2,20 +2,18 @@
   "fecha": "2026-11-07",
   "registros": 1330,
   "decisiones": {
-    "excluir_por_titulo": 36,
-    "revisar_resumen": 28,
-    "recuperar_texto_completo": 34,
-    "fuente_metodologica": 5,
-    "contexto_tarea_distinta": 43,
+    "excluir_por_titulo": 723,
+    "revision_secundaria": 137,
+    "excluir_por_resumen": 97,
+    "recuperar_texto_completo": 167,
+    "fuente_metodologica": 50,
+    "contexto_tarea_distinta": 143,
     "texto_completo_extraido": 3,
-    "por_revisar": 1174,
-    "texto_completo_revisado": 3,
-    "excluir_por_resumen": 3,
-    "revision_secundaria": 1
+    "texto_completo_revisado": 10
   },
-  "registros_con_decision": 156,
+  "registros_con_decision": 1330,
   "resumenes_adicionales_leidos": 40,
-  "alcance": "156 registros con decisión o derivación; 1174 sin decisión. No equivale a estudios incluidos; cribado parcial.",
+  "alcance": "Primera pasada de títulos completa; lectura de resúmenes completa o dirigida según registro; 167 candidatos pendientes de texto. Elegibilidad final no cerrada.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -31,12 +29,15 @@
     "secciones": "3.3, 5.3, tabla 4",
     "alcance": "Referencia de clasificación epitelial binaria; no equivalencia exacta con tres categorías NuCLS"
   },
-  "registros_sin_decision": 1174,
+  "registros_sin_decision": 0,
   "archivos_decisiones": [
     "cribado_unificado.csv",
     "cribado_adicional_80.csv",
     "cribado_adicional_17.csv",
-    "cribado_adicional_34.csv"
+    "cribado_adicional_34.csv",
+    "cribado_titulos_ampliado.csv",
+    "cribado_resumenes_ampliado.csv",
+    "lecturas_texto_ampliadas.csv"
   ],
   "lote_80": {
     "excluir_por_titulo": 36,
@@ -65,5 +66,17 @@
     "historiografia": "La fecha previa 2026-11-08 se conserva en Git; este corte usa fecha local de Bogotá."
   },
   "nota_conteo_lecturas": "El campo histórico resumenes_adicionales_leidos=40 no integra explícitamente las 17 lecturas del lote anterior; no se suma a un total único sin auditar solapamientos. El lote_34 documenta 34 registros nuevos.",
-  "conciliacion_estados": "conciliacion_estados.csv; LIT-0214 ya tenía extracción; no suma registro nuevo."
+  "conciliacion_estados": "conciliacion_estados.csv; LIT-0214 ya tenía extracción; no suma registro nuevo.",
+  "ampliacion_actual": {
+    "titulos": 1174,
+    "resumenes_o_fragmentos": 364,
+    "niveles": {
+      "resumen exportado completo": 66,
+      "resumen no disponible": 6,
+      "fragmento dirigido del resumen: objetivo/tarea/evaluación; máximo1000caracteres": 39,
+      "fragmento dirigido del resumen: objetivo/tarea/evaluación; máximo750caracteres": 60,
+      "fragmento dirigido del resumen: objetivo/tarea/evaluación; máximo850caracteres": 193
+    },
+    "textos_con_secciones_nuevas": 7
+  }
 }

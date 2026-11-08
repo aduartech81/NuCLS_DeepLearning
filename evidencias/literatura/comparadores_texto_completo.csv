@@ -15,3 +15,9 @@ OLConvNet,10.1145/3345318,DenseNet121,"Clasificación nuclear, cuatro clases","C
 GrEp 2026,10.1016/j.patcog.2025.112197,ResNet18,Subclasificación epitelial binaria,TCGA,F epitelial; F maligno; F normal,87.58±0.97; 90.83±0.84; 82.01±1.22 (%),referencia_ablacion,True
 Sánchez-Torres 2026,10.1155/acis/4540418,ResNet50,"Clasificación nuclear, cinco clases",PanNuke con contexto,F1 por clase (%),82.90; 71.49; 71.98; 71.49; 49.39,comparacion_directa,True
 Sánchez-Torres 2026,10.1155/acis/4540418,ViT_no_especificada,"Clasificación nuclear, cinco clases",PanNuke con contexto,F1 por clase (%),82.19; 69.01; 70.19; 71.59; 47.93,comparacion_directa,False
+Tripathi y Singh; Ensembling 2020,10.1007/s11042-020-08891-w,AlexNet,"Clasificación nuclear, cuatro clases",CRCHistoPhenotypes,F1; AUC multiclase,.8276; .9386,comparador_aislado_tabla5,True
+Tripathi y Singh; Ensembling 2020,10.1007/s11042-020-08891-w,VGG16,"Clasificación nuclear, cuatro clases",CRCHistoPhenotypes,F1; AUC multiclase,.8689; .9744,comparador_aislado_tabla5,True
+Tripathi y Singh; Ensembling 2020,10.1007/s11042-020-08891-w,VGG19,"Clasificación nuclear, cuatro clases",CRCHistoPhenotypes,F1; AUC multiclase,.8578; .9701,comparador_aislado_tabla5,True
+Tripathi y Singh; Ensembling 2020,10.1007/s11042-020-08891-w,InceptionV3,"Clasificación nuclear, cuatro clases",CRCHistoPhenotypes,F1; AUC multiclase,.8175; .9538,comparador_aislado_tabla5,True
+Tripathi y Singh; Ensembling 2020,10.1007/s11042-020-08891-w,ResNet50,"Clasificación nuclear, cuatro clases",CRCHistoPhenotypes,F1; AUC multiclase,.8892; .9799,comparador_aislado_tabla5,True
+Tripathi y Singh; Ensembling 2020,10.1007/s11042-020-08891-w,DenseNet121,"Clasificación nuclear, cuatro clases",CRCHistoPhenotypes,F1; AUC multiclase,.8706; .9756,comparador_aislado_tabla5,True

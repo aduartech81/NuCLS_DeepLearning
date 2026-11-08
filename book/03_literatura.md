@@ -38,34 +38,30 @@ Los estudios de tareas adyacentes pueden fundamentar el contexto metodológico, 
 ![Flujo documental: identificación, depuración y estado de lectura.](figuras/flujo_literatura.svg)
 
 
-### Conciliación del flujo y ampliación de lectura
+### Conciliación del flujo y alcance de la lectura
 
-La reconstrucción de las tres exportaciones originales reprodujo los conteos de identificación y depuración; sus SHA256 coinciden con `procedencia.json`. Se examinaron **34 resúmenes adicionales**, con motivos individuales en [el nuevo lote](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_34.csv). Se incorporó una lectura de secciones del texto completo de HistoNeXt. En paralelo, se corrigió el estado de Sánchez-Torres: su extracción ya figuraba en la tabla de comparadores, aunque el consolidado aún solicitaba texto completo. Esta conciliación no añade un registro cribado ni una nueva lectura.
+La reconstrucción de las tres exportaciones reprodujo los conteos iniciales y sus hashes SHA256. La ampliación examinó los **1.174 títulos antes pendientes** y resolvió la cola de **364 resúmenes** mediante lectura completa o de fragmentos dirigidos a objetivo, tarea y evaluación, según el nivel registrado individualmente. La ausencia o insuficiencia de resumen derivó a texto, no a exclusión. Los fragmentos no se presentan como lectura íntegra. Los motivos son decisiones asistidas por IA sin segunda revisión independiente.
 
-| Estado mutuamente excluyente | Registros |
+| Estado actual mutuamente excluyente | Registros |
 |---|---:|
-| Sin revisión | 1.174 |
-| Exclusión explícita por título | 36 |
-| Exclusión explícita por resumen (volúmenes de actas, no artículos individuales) | 3 |
-| Contexto de tarea distinta | 43 |
-| Fuente metodológica | 5 |
-| Revisión secundaria | 1 |
-| Pendiente de aclaración por resumen | 28 |
-| Pendiente de recuperación o evaluación de texto completo | 34 |
-| Con lectura o extracción de texto completo documentada | 6 |
+| Sin primera decisión | 0 |
+| Exclusión explícita por título | 723 |
+| Exclusión explícita por resumen | 97 |
+| Contexto de tarea distinta | 143 |
+| Fuente metodológica | 50 |
+| Revisión secundaria | 137 |
+| En cola de resumen | 0 |
+| Pendiente de recuperación o aclaración en texto completo | 167 |
+| Con lectura o extracción de secciones del texto documentada | 13 |
 | **Total** | **1.330** |
 
-La contabilidad se verifica mediante **1.717 = 69 + 318 + 1.330** y **1.330 = 1.174 + 156**. Los 156 registros atendidos se descomponen en **39 + 49 + 28 + 34 + 6** según los estados anteriores. Los 49 antecedentes contextuales, metodológicos o secundarios no se convierten en exclusiones definitivas. Los seis registros con lectura de texto completo tampoco equivalen a seis estudios incluidos: comprenden cuatro DOI con comparadores extraídos y dos sistemas estructurales o conjuntos revisados. No se estableció aún el número final de informes no recuperados, informes evaluados para elegibilidad ni estudios incluidos; esas cantidades se conservan como no determinadas, no como cero.
+La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 167 + 13**. Los 330 antecedentes no se convierten en exclusiones finales. Los 13 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 167 candidatos de texto y la adjudicación final de elegibilidad. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
 
-El [registro del flujo parcial](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) separa registros, informes y estudios siguiendo las distinciones de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram). El diagrama informa el avance documental verificable y no acredita una revisión sistemática concluida. Los siete grupos de títulos coincidentes permanecen sin fusión: incluyen actas, documentos con DOI diferentes y posibles pares con DOI ausente que requieren cotejo de metadatos.
+El [flujo conciliado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) utiliza las etapas de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram), sin presentarse como revisión sistemática concluida. Siete grupos de títulos coincidentes siguen sin fusión automática. Un artículo y su preprint cuentan como una publicación; una coincidencia de resultados entre artículos diferentes requiere una auditoría adicional de independencia.
 
 ### Trazabilidad de la selección
 
-Se documentaron decisiones o derivaciones de lectura para 156 registros del inventario. Un lote previo comprende 80 títulos y 16 resúmenes; estos últimos se suman a las 24 lecturas adicionales de resúmenes previamente registradas. Una derivación a lectura de resumen o texto completo no equivale a inclusión definitiva. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.174 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
-
-Una ampliación examinó 17 resúmenes y las secciones metodológicas y comparativas de SENUCLS. Se identificaron nueve candidatos a texto completo, siete antecedentes de tareas o clasificadores distintos y un estudio estructural revisado. El [registro consolidado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_consolidado.csv) reúne las decisiones sin modificar las exportaciones originales.
-
-Las 80 decisiones de ese lote se conservan en [el registro adicional](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_80.csv). Las decisiones previas y su fundamento se conservan en [el registro de lectura](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/revision_adicional_24.csv). La evaluación de calidad distingue información ausente de un defecto demostrado; un resumen insuficiente no constituye evidencia de fuga de datos.
+Las decisiones anteriores se conservan como eventos históricos, aunque una lectura posterior cambie el estado vigente. El consolidado contiene una fila por registro. La ampliación incorpora [1.174 decisiones por título](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_titulos_ampliado.csv), [364 decisiones de resumen o fragmento](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_resumenes_ampliado.csv) y [siete nuevas lecturas de textos](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/lecturas_texto_ampliadas.csv). Los resúmenes originales se identifican por hash y no se redistribuyen. Un resumen insuficiente no demuestra fuga de datos ni ausencia de una evaluación pertinente.
 
 ## 2. Etiquetas, contexto y definición del problema
 
@@ -213,15 +209,35 @@ Estas líneas amplían la representación disponible, pero no invalidan las refe
 
 HistoNeXt utiliza ConvNeXt como codificador preentrenado y decodificadores para segmentación y predicción del tipo nuclear. La descripción de referencia emplea ConvNeXt-Base, entradas de 270×270 y salidas espaciales de 80×80. Las ecuaciones 20–21 distinguen F1 de detección y F1 por tipo, incorporando en este último errores de detección. Por ello, sus puntuaciones no son equivalentes al macro-F1 de recortes previamente localizados de V2. Las conexiones densas del decodificador tampoco constituyen evidencia de uso de DenseNet121. Se registra como sistema conjunto, fuera de la frecuencia de clasificadores aislados. Fuente: [Chen et al., diseño, entrenamiento y métricas](https://link.springer.com/article/10.1186/s12880-025-01550-2).
 
+### Sistemas conjuntos, contexto y modalidades adicionales
+
+HoVer-Net usa un codificador ResNet50 preactivado y modificado, inicializado con ImageNet, con ramas de segmentación, distancias y tipo nuclear. Su PQ de 0,516 en CoNSeP evalúa segmentación de instancias; no equivale al macro-F1 condicionado a recortes localizados. Contar ese codificador como ResNet50 aislada confundiría funciones. [Texto de autor, arquitectura, entrenamiento y tabla V](https://arxiv.org/pdf/1812.06499).
+
+CellViT combina codificadores Transformer con decodificadores nucleares. CellViT-256 utiliza ViT-S preentrenada mediante HIPT; CellViT-SAM-H utiliza el codificador SAM. En PanNuke, la PQ neoplásica es 0,567 y 0,581, respectivamente. Es una comparación dentro del sistema y protocolo publicados, no evidencia de superioridad frente a V2. La versión consultada es el preprint v2 de 2023. [Métodos y tablas 1–2](https://arxiv.org/html/2306.15350v2).
+
+Pérez-Cano et al. refinan HoVer-Net con grafos. En nueve pacientes y 85 imágenes, el macro-F1 que incluye núcleos perdidos pasa de 66,06% a 72,54% con GCN. Se separan pacientes, pero la selección de prueba sin etiquetas inciertas restringe su representatividad. El efecto corresponde a un refinamiento contextual del sistema. [Métodos y tabla 2](https://imatge.upc.edu/web/sites/default/files/pub/aPerez-Cano24.pdf).
+
+Immunocto vincula etiquetas inmunofluorescentes con H&E. Su clasificador adapta ResNet50 con una entrada adicional de máscara: no es el clasificador RGB estándar. El preprint describe 40 pacientes divididos en 35/4/1; la prueba de un paciente limita la cobertura poblacional. La concordancia de expertos pertenece a ese estudio y no valida las etiquetas locales de NuCLS. Se consultó el preprint v2 de febrero de 2025, sin confirmar identidad completa con la versión editorial final. [Métodos III–IV](https://arxiv.org/html/2406.02618v2).
+
+ConvPath clasifica recortes RGB de 80×80 en células tumorales, estromales y linfocitos con una CNN propia. Informa exactitud externa global de 90,1% en SPORE. Es un antecedente cercano por taxonomía y validación externa; no identifica por sí mismo una de las tres arquitecturas V2 ni ofrece una comparación directa de macro-F1. [Métodos y validación externa](https://pmc.ncbi.nlm.nih.gov/articles/PMC6921240/).
+
+Zormpas-Petridis et al. incorporan contexto SLIC a rasgos morfológicos con SVM, no CNN. En melanoma, la exactitud aumenta de 86,4% a 91,6% al añadir contexto y a 92,8% con votación. La comparación muestra que el contexto también modifica métodos clásicos; su taxonomía de cuatro clases y su exactitud no son intercambiables con macro-F1 de NuCLS. [Métodos 2.1–2.4 y tabla 3](https://arxiv.org/pdf/1808.02355).
+
+### Comparadores reutilizados y evidencia independiente
+
+Ensembling evalúa AlexNet, VGG16, VGG19, InceptionV3, ResNet50 y DenseNet121 con transferencia de ImageNet, división aleatoria 70/15/15 y balance mediante ADASYN. La tabla 5 separa CNN aisladas de la combinación de características con MLP de la tabla 6. ResNet50 obtiene F1 0,8892 y DenseNet121 0,8706. Varios pares F1/AUC coinciden exactamente con OLConvNet; se registra posible solapamiento y se presenta sensibilidad por grupos. No se afirma independencia por paciente ni que sean réplicas independientes. [Secciones 3–4 y tablas 5–6, preprint del artículo de 2020](https://arxiv.org/pdf/2202.10694).
+
 ## 6. Selección de arquitecturas y contribución del proyecto
 
-La extracción estructurada cuenta una vez cada DOI por arquitectura y separa variantes adaptadas de versiones estándar. En cuatro textos con comparaciones verificadas (tres multiclase y uno de subclasificación epitelial binaria), ResNet50 aparece en dos estudios; las restantes arquitecturas identificadas aparecen en uno. Estas frecuencias describen el subconjunto extraído y no todo el corpus recuperado. El conteo considera comparadores identificados exactamente; excluye ViT de variante no especificada. No es un censo de todas las arquitecturas propuestas en esos artículos y no suma codificadores de sistemas conjuntos. La ampliación de cribado no modifica por sí sola estas frecuencias. La [tabla completa de comparadores](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/comparadores_texto_completo.csv) conserva problema, conjunto, modelo, métricas y valores por fuente.
+La extracción cuenta una vez cada DOI por arquitectura exacta y separa las variantes adaptadas. **Cinco publicaciones** sustentan la tabla parcial. ResNet50 aparece en tres; DenseNet121, AlexNet, VGG16, VGG19 e InceptionV3, en dos. Las restantes arquitecturas exactas aparecen en una. ViT sin variante identificable y codificadores de sistemas conjuntos no se suman como clasificadores aislados.
 
-| Selección v2 | Estudios verificados | Parámetros, tres clases | Rasgo estructural |
+Ensembling y OLConvNet comparten autores, dataset y varios valores F1/AUC de comparadores. Esto sugiere posible reutilización, sin demostrar que sean el mismo estudio. Una sensibilidad conservadora agrupa ambos: ResNet50 queda en dos grupos y DenseNet121 en uno. Los cinco artículos corresponden a cuatro grupos bajo esa hipótesis, no a cuatro estudios definitivamente adjudicados. Véanse la [tabla por publicación](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/frecuencia_comparadores_verificados.csv) y la [sensibilidad por grupos](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/frecuencia_sensibilidad_estudios.csv). El campo histórico `estudios_verificados` de la primera tabla significa DOI/publicaciones, no independencia experimental demostrada.
+
+| Selección V2 | Publicaciones / grupos conservadores | Parámetros, tres clases | Rasgo estructural |
 |---|---:|---:|---|
-| softmaxCNN con BatchNorm, adaptada | 1 | 898.687 | Convoluciones secuenciales y clasificador pequeño |
-| DenseNet121 | 1 | 6.956.931 | Concatenación densa de representaciones |
-| ResNet50 | 2 | 23.514.179 | Conexiones residuales bottleneck |
+| softmaxCNN con BatchNorm, adaptada | 1 / 1 | 898.687 | Convoluciones secuenciales |
+| DenseNet121 | 2 / 1 | 6.956.931 | Conexiones densas |
+| ResNet50 | 3 / 2 | 23.514.179 | Conexiones residuales |
 
 La selección responde a tres funciones experimentales complementarias. La CNN compacta establece el desempeño alcanzable con menor capacidad; DenseNet121 permite evaluar reutilización de características mediante concatenaciones; ResNet50 incorpora aprendizaje residual y presenta la mayor recurrencia exacta en el subconjunto comparativo extraído. El objetivo es contrastar estas referencias bajo la misma entrada y partición, no identificar retrospectivamente una arquitectura ganadora a partir de puntuaciones de datasets diferentes.
 
@@ -229,9 +245,9 @@ La selección responde a tres funciones experimentales complementarias. La CNN c
 |---|---|---|---|
 | CNN compacta con BatchNorm | Comparador documentado en RCCNet y menor número de parámetros entre las tres implementaciones | ¿Qué rendimiento se obtiene con una representación convolucional secuencial de capacidad reducida? | La adaptación espacial a 128×128 impide tratarla como reproducción exacta del estudio de origen |
 | DenseNet121 | Clasificador aislado cuantificado en OLConvNet; reutilización de características y capacidad intermedia | ¿La conectividad densa mejora el compromiso entre desempeño y número de parámetros? | Menos parámetros que ResNet50 no implica menor latencia ni menor memoria de activaciones |
-| ResNet50 | Comparador multiclase identificado en OLConvNet y PanNuke; conexiones residuales | ¿La mayor capacidad residual aporta una ganancia reproducible frente a las otras referencias? | Su recurrencia en dos textos no demuestra predominio en el corpus completo |
+| ResNet50 | Comparador multiclase identificado en OLConvNet y PanNuke; conexiones residuales | ¿La mayor capacidad residual aporta una ganancia reproducible frente a las otras referencias? | Su recurrencia provisional no demuestra predominio en el corpus completo |
 
-Esta es una selección multicriterio sustentada en evidencia extraída. El criterio de la guía referido a las tres arquitecturas más frecuentes y sencillas no queda demostrado para el corpus completo: la recurrencia disponible se limita a cuatro textos comparativos y la sencillez admite indicadores diferentes. Se informa esta restricción para distinguir la pertinencia científica de las referencias del cumplimiento literal de ese criterio. No se modifica la selección a partir de resultados de entrenamiento observados.
+Esta es una selección multicriterio sustentada en evidencia extraída. El criterio de la guía referido a las tres arquitecturas más frecuentes y sencillas no queda demostrado para el corpus completo: la recurrencia disponible se limita a cinco publicaciones, con posible solapamiento de comparadores y la sencillez admite indicadores diferentes. Se informa esta restricción para distinguir la pertinencia científica de las referencias del cumplimiento literal de ese criterio. No se modifica la selección a partir de resultados de entrenamiento observados.
 
 La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro clases y entrada 27×27. Para utilizar las ventanas comunes de 128×128 se reduce el mapa de 30×30 a una cuadrícula de 5×5 mediante promedios en bloques disjuntos de 6×6, equivalentes al pooling adaptativo de esas dimensiones. Se conservan las dimensiones del clasificador sin añadir parámetros. Esa adaptación modifica la agregación espacial y se declara explícitamente; no constituye reproducción exacta del experimento original. La verificación técnica inicial incluyó propagación y gradientes con tensores sintéticos; esa prueba comprueba ejecutabilidad y no estima capacidad predictiva.
 
@@ -270,5 +286,5 @@ Las referencias se vinculan a su DOI o al texto de autor utilizado. Los antecede
 7. Sánchez-Torres et al. (2026). Estudio comparativo de clasificación nuclear en PanNuke; tablas 6, 11 y 14. [Identificador del artículo](https://doi.org/10.1155/acis/4540418).
 8. Frei et al. (2026). GrEp; Pattern Recognition, 171, 112197; sección 3.3 y tabla 4. [DOI](https://doi.org/10.1016/j.patcog.2025.112197). [Texto de autor](https://aibex.ch/research/papers/Frei2025.pdf).
 
-El [inventario y las extracciones](https://github.com/aduartech81/NuCLS_DeepLearning/tree/main/evidencias/literatura) conservan la procedencia y el nivel de lectura. La [tabla de frecuencia](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/frecuencia_comparadores_verificados.csv) contabiliza estudios únicos por arquitectura. Los registros no evaluados permanecen identificados como tales; no se transforman en exclusiones para cerrar artificialmente el flujo de selección.
+El [inventario y las extracciones](https://github.com/aduartech81/NuCLS_DeepLearning/tree/main/evidencias/literatura) conservan la procedencia y el nivel de lectura. La [tabla de frecuencia](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/frecuencia_comparadores_verificados.csv) contabiliza publicaciones por arquitectura; la sensibilidad separada explora su posible dependencia. Los registros no evaluados permanecen identificados como tales; no se transforman en exclusiones para cerrar artificialmente el flujo de selección.
 
