@@ -51,11 +51,11 @@ La reconstrucción de las tres exportaciones reprodujo los conteos iniciales y s
 | Fuente metodológica | 50 |
 | Revisión secundaria | 137 |
 | En cola de resumen | 0 |
-| Pendiente de recuperación o aclaración en texto completo | 114 |
-| Con lectura o extracción de secciones del texto documentada | 66 |
+| Pendiente de recuperación o aclaración en texto completo | 107 |
+| Con lectura o extracción de secciones del texto documentada | 73 |
 | **Total** | **1.330** |
 
-La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 114 + 66**. Los 330 antecedentes no se convierten en exclusiones finales. Los 66 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 114 candidatos de texto y la adjudicación final de elegibilidad. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
+La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 107 + 73**. Los 330 antecedentes no se convierten en exclusiones finales. Los 73 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 107 candidatos de texto y la adjudicación final de elegibilidad. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
 
 El [flujo conciliado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) utiliza las etapas de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram), sin presentarse como revisión sistemática concluida. Siete grupos de títulos coincidentes siguen sin fusión automática. Un artículo y su preprint cuentan como una publicación; una coincidencia de resultados entre artículos diferentes requiere una auditoría adicional de independencia.
 
@@ -257,7 +257,7 @@ El [registro de esta ampliación](https://github.com/aduartech81/NuCLS_DeepLearn
 <!-- AMPLIACION_CIERRE_INICIO -->
 ### Evidencia adicional y relación con los resultados V2
 
-La nueva ampliación contiene 37 lecturas dirigidas, con fuente y secciones identificadas en `evaluaciones_texto_cierre_20261108.csv`. Se distinguen sistemas conjuntos, clasificadores modificados, tareas IHC y fuentes secundarias. Las frecuencias conservadoras anteriores se mantienen restringidas a su conjunto de comparadores verificados; no se presentan como un censo de todas las arquitecturas mencionadas.
+La nueva ampliación contiene 44 lecturas dirigidas, con fuente y secciones identificadas en `evaluaciones_texto_cierre_20261108.csv`. Se distinguen sistemas conjuntos, clasificadores modificados, tareas IHC y fuentes secundarias. Las frecuencias conservadoras anteriores se mantienen restringidas a su conjunto de comparadores verificados; no se presentan como un censo de todas las arquitecturas mencionadas.
 
 | Fuente | Problema y datos | Modelos o representación | Métrica extraída y valor | Consecuencia para NuCLS |
 |---|---|---|---|---|
@@ -284,6 +284,7 @@ El manuscrito de Yousefi y Nie se deriva a contexto IHC/ISH y agrupamiento, y Al
 
 El cierre experimental V2 seleccionó ResNet50 por validación y obtuvo macro-F1 de reserva 0,6378, frente a 0,6052 de DenseNet121 y 0,4542 de la compacta. Esta comparación local comparte partición, tres clases e inicialización desde cero, pero no reproduce las taxonomías ni todas las condiciones de los artículos. La caída de desempeño y el F1 estromal 0,3022 de ResNet50 refuerzan la necesidad de analizar clases y pacientes, sin probar una explicación causal ni superioridad general de una familia arquitectónica. Los [resultados completos](08_resultados_v2.md) distinguen incertidumbre por semillas y por pacientes.
 <!-- AMPLIACION_CIERRE_FIN -->
+
 
 
 
