@@ -10,7 +10,7 @@ def section(k,title,desc):return html.Div([html.Span(k,className='section-kicker
 def stat(value,label,detail=''):return html.Div([html.Span(label,className='stat-label'),html.Strong(value),html.Small(detail)],className='stat-tile')
 def chart(fig):
  fig.update_layout(template='plotly_white',font=dict(family='Arial',color='#263e49',size=12),paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)',margin=dict(l=45,r=25,t=30,b=65),colorway=COLORS,legend=dict(orientation='h',y=-.2),hoverlabel=dict(bgcolor='white'),height=350)
- return dcc.Graph(figure=fig,config={'displaylogo':False,'responsive':True},className='science-chart')
+ return dcc.Graph(figure=fig,config={'displaylogo':False,'responsive':True},className='science-chart',style={'height':'360px','minHeight':'360px'},responsive=True)
 def box(title,content,caption=None):return html.Section([html.H3(title),content,html.P(caption,className='chart-caption') if caption else None],className='viz-card')
 def detail(title,content):return html.Details([html.Summary(title),html.Div(content,className='detail-body')],className='evidence-detail')
 def data(root):
