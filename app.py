@@ -24,13 +24,17 @@ def md(s):return dcc.Markdown(s)
 def graph(fig):
  fig.update_layout(template='plotly_white',font_family='Arial',margin=dict(l=35,r=20,t=55,b=45),colorway=['#137f87','#d99240','#485994'])
  return dcc.Graph(figure=fig,config={'displaylogo':False})
-app.layout=html.Div([
- html.Header([html.Div('INGENIERÍA BIOMÉDICA · DEEP LEARNING',className='eyebrow'),html.H1('NuCLS: del núcleo al modelo'),html.P('Andrés Duarte Chaves · Entregable 1 · Estudio exploratorio'),html.Div('V2 · tres modelos · cierre de 11 semillas por modelo',className='badge')]),
- html.Div([html.Div([html.Strong(n),html.Span(t)],className='card') for n,t in [('16.588','recortes de desarrollo V2'),('104','pacientes de desarrollo V2'),('969','recortes de reserva'),('3','clases seleccionadas')]],className='cards'),
- dcc.Tabs(id='tabs',value='contexto',children=[dcc.Tab(label=l,value=v) for l,v in [('Problema','contexto'),('Imágenes','imagenes'),('Estado del arte','literatura'),('EDA','eda'),('Modelos y resultados','modelos'),('Discusión','discusion'),('Reproducibilidad','protocolo')]]),
- html.Nav([html.A('Informe JBook',href='https://aduartech81.github.io/NuCLS_DeepLearning/intro.html'),html.A('Notebook ejecutado',href='https://aduartech81.github.io/NuCLS_DeepLearning/10_eda_v2.html'),html.A('Código y evidencias',href='https://github.com/aduartech81/NuCLS_DeepLearning')],className='resource-nav'),html.Main(id='contenido'),html.Footer('NuCLS · Clasificación de recortes previamente localizados · Uso académico')],className='shell')
+from dashboard_v2 import layout, render, seed_figure
+app.layout=layout(R)
 @app.callback(Output('contenido','children'),Input('tabs','value'))
 def page(tab):
+ return render(tab,R,legacy_page(tab))
+
+@app.callback(Output('seed-chart','children'),Input('metric-choice','value'))
+def seed_chart(metric):
+ return seed_figure(R,metric)
+
+def legacy_page(tab):
  if tab=='contexto':return [html.H2('Clasificar núcleos, con una evaluación por paciente'),md('''Entrada: recortes RGB **128×128** centrados en núcleos anotados. Salida: tumor no mitótico, linfocito o estromal no TIL/no macrófago.
 
 **Pregunta V2:** ¿qué desempeño y variabilidad presentan una CNN compacta con BatchNorm, DenseNet121 y ResNet50 en la clasificación de tres categorías nucleares de NuCLS, bajo una partición por paciente y condiciones comunes de entrenamiento?
