@@ -5,7 +5,7 @@ La clasificación nuclear requiere distinguir células con apariencia parcialmen
 El proyecto NuCLS compara tres clasificadores de recortes RGB con contexto: una CNN compacta con BatchNorm, DenseNet121 y ResNet50. La revisión fundamenta esta comparación y examina las condiciones que permiten interpretar sus resultados. La unidad de predicción es el núcleo previamente localizado; los sistemas de segmentación, detección y diagnóstico de láminas se consideran antecedentes relacionados, con objetivos de evaluación diferentes.
 
 
-## 1. Estrategia de búsqueda y alcance de la evidencia
+## 1. Método de la revisión crítica
 
 | Base | Exportación original | Publicación 2018–2026 |
 |---|---:|---:|
@@ -15,6 +15,8 @@ El proyecto NuCLS compara tres clasificadores de recortes RGB con contexto: una 
 | Total | 1.717 | 1.648 |
 
 Se separaron 69 registros por año de publicación fuera de la ventana analítica. La normalización del DOI permitió agrupar 318 registros repetidos y producir 1.330 unidades para cribado: 1.287 con DOI distinto y 43 sin DOI. Siete grupos presentan títulos normalizados coincidentes; no se fusionaron automáticamente porque un título puede corresponder a versiones o documentos distintos. Estas cifras describen identificación y depuración, no inclusión de estudios ni un flujo PRISMA completo.
+
+Se desarrolla una revisión crítica dirigida, apoyada en una búsqueda multibase y en la extracción verificable de estudios pertinentes. La síntesis no constituye una revisión sistemática exhaustiva: sus conclusiones se restringen a las fuentes examinadas. El inventario amplio permite conservar la trazabilidad de la recuperación, mientras que la discusión se organiza alrededor de comparaciones cuya tarea, entrada y métrica pueden identificarse.
 
 La consulta comunicada para la búsqueda fue `(nucle* AND classif*) AND (histolog* OR histopatholog*) AND ("deep learning" OR "convolutional neural network" OR CNN OR transformer*)`, con adaptación por campo en cada plataforma. Las exportaciones permiten verificar registros y fechas de publicación, pero no reconstruyen por sí solas todos los filtros de la interfaz. El historial de consultas constituye una evidencia independiente.
 
@@ -37,11 +39,11 @@ Los estudios de tareas adyacentes pueden fundamentar el contexto metodológico, 
 
 ### Trazabilidad de la selección
 
-Se documentaron decisiones o derivaciones de lectura para 122 registros del inventario. El lote más reciente comprende 80 títulos y 16 resúmenes; estos últimos se suman a las 24 lecturas adicionales de resúmenes previamente registradas. Una derivación a lectura de resumen o texto completo no equivale a inclusión definitiva. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.208 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
+Se documentaron decisiones o derivaciones de lectura para 122 registros del inventario. Un lote previo comprende 80 títulos y 16 resúmenes; estos últimos se suman a las 24 lecturas adicionales de resúmenes previamente registradas. Una derivación a lectura de resumen o texto completo no equivale a inclusión definitiva. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.208 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
 
 Una ampliación examinó 17 resúmenes y las secciones metodológicas y comparativas de SENUCLS. Se identificaron nueve candidatos a texto completo, siete antecedentes de tareas o clasificadores distintos y un estudio estructural revisado. El [registro consolidado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_consolidado.csv) reúne las decisiones sin modificar las exportaciones originales.
 
-Las 80 decisiones nuevas se conservan en [el registro adicional](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_80.csv). Las decisiones previas y su fundamento se conservan en [el registro de lectura](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/revision_adicional_24.csv). La evaluación de calidad distingue información ausente de un defecto demostrado; un resumen insuficiente no constituye evidencia de fuga de datos.
+Las 80 decisiones de ese lote se conservan en [el registro adicional](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_80.csv). Las decisiones previas y su fundamento se conservan en [el registro de lectura](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/revision_adicional_24.csv). La evaluación de calidad distingue información ausente de un defecto demostrado; un resumen insuficiente no constituye evidencia de fuga de datos.
 
 ## 2. Etiquetas, contexto y definición del problema
 
@@ -112,7 +114,7 @@ Jacobs, Brostow, Freeman, Alexander y Panagiotaki (2017), en *Detecting and Clas
 | 5% | 0,761 ± 0,003 | 0,769 ± 0,007 | 0,765 ± 0,008 |
 | 100% | 0,820 ± 0,005 | 0,819 ± 0,002 | 0,825 ± 0,004 |
 
-La ventaja Γ-ladder frente a supervisión completa pasa de 9,9 puntos con 1% etiquetado a 0,5 puntos con todos los datos. La ventaja arquitectónica depende, por tanto, del régimen de supervisión. La dispersión publicada no debe confundirse con un intervalo de confianza. La CNN de este estudio no es idéntica a la CNN local implementada en NuCLS.
+La ventaja Γ-ladder frente a la CNN supervisada, con la misma proporción etiquetada, pasa de 9,9 puntos con 1% etiquetado a 0,5 puntos con todos los datos. La ventaja arquitectónica depende, por tanto, del régimen de supervisión. La dispersión publicada no debe confundirse con un intervalo de confianza. La CNN de este estudio no es idéntica a la CNN local implementada en NuCLS.
 
 Fuente: [texto completo institucional, tabla 3](https://discovery.ucl.ac.uk/id/eprint/1573202/1/LABELS2017_7.pdf).
 
@@ -195,7 +197,15 @@ La extracción estructurada cuenta una vez cada DOI por arquitectura y separa va
 | DenseNet121 | 1 | 6.956.931 | Concatenación densa de representaciones |
 | ResNet50 | 2 | 23.514.179 | Conexiones residuales bottleneck |
 
-ResNet50 se prioriza por recurrencia exacta en clasificación nuclear multiclase. La CNN pequeña aporta una referencia de menor capacidad; DenseNet121 añade otro tipo de conectividad con menos parámetros que las variantes VGG/AlexNet registradas. Esta selección combina frecuencia, complejidad y diversidad estructural; no supone que las tres minimicen simultáneamente todos los criterios. DenseNet121 tiene más profundidad nominal que ResNet50, aunque menos parámetros.
+La selección responde a tres funciones experimentales complementarias. La CNN compacta establece el desempeño alcanzable con menor capacidad; DenseNet121 permite evaluar reutilización de características mediante concatenaciones; ResNet50 incorpora aprendizaje residual y presenta la mayor recurrencia exacta en el subconjunto comparativo extraído. El objetivo es contrastar estas referencias bajo la misma entrada y partición, no identificar retrospectivamente una arquitectura ganadora a partir de puntuaciones de datasets diferentes.
+
+| Referencia | Fundamento de elección | Pregunta que aporta a la comparación | Límite de la justificación |
+|---|---|---|---|
+| CNN compacta con BatchNorm | Comparador documentado en RCCNet y menor número de parámetros entre las tres implementaciones | ¿Qué rendimiento se obtiene con una representación convolucional secuencial de capacidad reducida? | La adaptación espacial a 128×128 impide tratarla como reproducción exacta del estudio de origen |
+| DenseNet121 | Clasificador aislado cuantificado en OLConvNet; reutilización de características y capacidad intermedia | ¿La conectividad densa mejora el compromiso entre desempeño y número de parámetros? | Menos parámetros que ResNet50 no implica menor latencia ni menor memoria de activaciones |
+| ResNet50 | Comparador multiclase identificado en OLConvNet y PanNuke; conexiones residuales | ¿La mayor capacidad residual aporta una ganancia reproducible frente a las otras referencias? | Su recurrencia en dos textos no demuestra predominio en el corpus completo |
+
+Esta es una selección multicriterio sustentada en evidencia extraída. El criterio de la guía referido a las tres arquitecturas más frecuentes y sencillas no queda demostrado para el corpus completo: la recurrencia disponible se limita a cuatro textos comparativos y la sencillez admite indicadores diferentes. Se informa esta restricción para distinguir la pertinencia científica de las referencias del cumplimiento literal de ese criterio. No se modifica la selección a partir de resultados de entrenamiento observados.
 
 La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro clases y entrada 27×27. Para utilizar las ventanas comunes de 128×128 se reduce el mapa de 30×30 a una cuadrícula de 5×5 mediante promedios en bloques disjuntos de 6×6, equivalentes al pooling adaptativo de esas dimensiones. Se conservan las dimensiones del clasificador sin añadir parámetros. Esa adaptación modifica la agregación espacial y se declara explícitamente; no constituye reproducción exacta del experimento original. La verificación técnica inicial incluyó propagación y gradientes con tensores sintéticos; esa prueba comprueba ejecutabilidad y no estima capacidad predictiva.
 
@@ -215,7 +225,11 @@ La pregunta resultante es si, bajo una misma partición y tratamiento de imágen
 
 ### Conclusión
 
-La síntesis documenta evidencia de clasificación nuclear con CNN compactas, redes densas, redes residuales y sistemas que incorporan contexto o refinamiento espacial. Los resultados publicados sostienen la pertinencia de una comparación controlada, pero no una jerarquía universal entre arquitecturas. Las tres implementaciones V2 quedan justificadas como referencias concretas de distinta conectividad y capacidad. La frecuencia extraída corresponde a cuatro textos comparativos y no acredita que sean los tres modelos más frecuentes o más simples de todo el corpus.
+La evidencia examinada converge en una condición metodológica: la comparación de clasificadores nucleares exige controlar simultáneamente la representación de entrada, las etiquetas y la partición. Las diferencias observadas dentro de cada publicación muestran que el contexto, el régimen de supervisión y la combinación de descriptores pueden modificar el rendimiento tanto como el cambio de arquitectura. Por ello, los valores publicados sirven para fundamentar decisiones experimentales, no para anticipar el resultado en NuCLS.
+
+El estudio adopta tres referencias verificables de capacidad y conectividad distintas y las compara sobre los mismos recortes. El EDA aporta la caracterización de balance, integridad y heterogeneidad de procedencia necesaria para interpretar esa comparación. La evaluación deberá establecer si una diferencia de desempeño se acompaña de estabilidad entre ejecuciones y de un costo computacional justificable; ninguna de estas propiedades se presupone por la profundidad de la red.
+
+La revisión crítica queda delimitada a las fuentes y comparaciones documentadas. Su contribución es una síntesis metodológica aplicable al experimento; no acredita exhaustividad bibliográfica ni identifica los tres modelos dominantes de toda la literatura. Esta distinción preserva la trazabilidad entre lo que las fuentes permiten afirmar y lo que el experimento debe responder.
 
 ## 7. Fuentes principales y evidencia reproducible
 
