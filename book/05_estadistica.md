@@ -1,5 +1,11 @@
 # Plan de comparación estadística V2
 
+<!-- PRESENTACION_CAPITULO -->
+<div class="chapter-deck"><p class="book-eyebrow">04 / INCERTIDUMBRE</p><p>Distinguir inicializaciones de unidades biológicas</p><div class="chapter-tags"><span>33 corridas</span><span>6 pacientes de reserva</span><span>Análisis agrupado exploratorio</span></div></div>
+
+<div class="chapter-takeaway"><b>Los recortes no son pacientes independientes.</b> La variación entre semillas y la incertidumbre entre pacientes responden a preguntas distintas. Los intervalos de reserva se condicionan a los ajustes disponibles.</div>
+<!-- FIN_PRESENTACION_CAPITULO -->
+
 ## Unidad de análisis y selección de referencia
 
 Se comparan CNN compacta con BatchNorm, DenseNet121 y ResNet50 sobre la misma partición. Macro-F1 es la métrica primaria. El baseline se selecciona mediante el mayor macro-F1 medio de validación en las corridas finales; los empates se resuelven por menor número de parámetros. No se utiliza la reserva para elegir arquitectura, hiperparámetros ni épocas.

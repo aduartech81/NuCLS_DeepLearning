@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="490" viewBox="0 0 1000 490" role="img" aria-labelledby="t d">
+<title id="t">Macro-F1 medio de validación y reserva</title><desc id="d">Once semillas por modelo. Compacta: 0,757 y 0,454. DenseNet121: 0,778 y 0,605. ResNet50: 0,793 y 0,638. Medias sin intervalos; ver análisis agrupado por pacientes.</desc>
+<rect width="1000" height="490" fill="#fff" rx="14"/><style>text{font-family:Arial,sans-serif;fill:#18333f}</style>
+<text x="36" y="40" font-size="21" font-weight="bold">Tres modelos · un protocolo común</text>
+<text x="36" y="66" font-size="13" fill="#5b707b">Macro-F1 medio · 11 semillas por modelo · escala de 0 a 1</text>
+<path d="M80 370 H950" stroke="#e5ecee"/><text x="52" y="375" font-size="13">0</text>
+<path d="M80 320.0 H950" stroke="#e5ecee"/><text x="52" y="325.0" font-size="13">0.2</text>
+<path d="M80 270.0 H950" stroke="#e5ecee"/><text x="52" y="275.0" font-size="13">0.4</text>
+<path d="M80 220.0 H950" stroke="#e5ecee"/><text x="52" y="225.0" font-size="13">0.6</text>
+<path d="M80 170.0 H950" stroke="#e5ecee"/><text x="52" y="175.0" font-size="13">0.8</text>
+<path d="M80 120 H950" stroke="#e5ecee"/><text x="52" y="125" font-size="13">1</text>
+<rect x="170" y="180.80856091246255" width="70" height="189.19143908753745" fill="#bdcbd8" rx="3"/>
+<text x="205" y="168.80856091246255" font-size="16" text-anchor="middle">0.757</text>
+<rect x="252" y="256.453824566998" width="70" height="113.546175433002" fill="#087e83" rx="3"/>
+<text x="287" y="244.45382456699798" font-size="16" text-anchor="middle">0.454</text>
+<text x="245" y="400" font-size="15" text-anchor="middle">SoftmaxCNN · BN</text>
+<rect x="460" y="175.4359845716617" width="70" height="194.5640154283383" fill="#bdcbd8" rx="3"/>
+<text x="495" y="163.4359845716617" font-size="16" text-anchor="middle">0.778</text>
+<rect x="542" y="218.69344469988238" width="70" height="151.30655530011762" fill="#087e83" rx="3"/>
+<text x="577" y="206.69344469988238" font-size="16" text-anchor="middle">0.605</text>
+<text x="535" y="400" font-size="15" text-anchor="middle">DenseNet121</text>
+<rect x="750" y="171.64893561936435" width="70" height="198.35106438063565" fill="#bdcbd8" rx="3"/>
+<text x="785" y="159.64893561936435" font-size="16" text-anchor="middle">0.793</text>
+<rect x="832" y="210.55713330771442" width="70" height="159.44286669228558" fill="#087e83" rx="3"/>
+<text x="867" y="198.55713330771442" font-size="16" text-anchor="middle">0.638</text>
+<text x="825" y="400" font-size="15" text-anchor="middle">ResNet50</text>
+<rect x="340" y="430" width="14" height="14" fill="#bdcbd8"/><text x="362" y="442" font-size="13">Validación</text><rect x="500" y="430" width="14" height="14" fill="#087e83"/><text x="522" y="442" font-size="13">Reserva</text>
+<text x="36" y="474" font-size="12">Reserva: 969 recortes de 6 pacientes. Medias descriptivas, sin intervalos en esta figura.</text>
+</svg>

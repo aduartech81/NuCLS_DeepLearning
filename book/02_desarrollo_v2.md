@@ -1,5 +1,11 @@
 # Análisis exploratorio del conjunto de desarrollo
 
+<!-- PRESENTACION_CAPITULO -->
+<div class="chapter-deck"><p class="book-eyebrow">02 / ANÁLISIS EXPLORATORIO</p><p>Calidad, composición y procedencia de la muestra</p><div class="chapter-tags"><span>16.588 recortes</span><span>104 pacientes de desarrollo</span><span>Reserva separada</span></div></div>
+
+<div class="chapter-takeaway"><b>Integridad no equivale a representatividad.</b> Las diferencias de balance y apariencia entre grupos condicionan la interpretación del experimento. El EDA de píxeles se restringe al desarrollo.</div>
+<!-- FIN_PRESENTACION_CAPITULO -->
+
 El análisis exploratorio examina tres condiciones que determinan la interpretación del clasificador: la integridad de sus entradas, la representación de las clases y la heterogeneidad entre pacientes y procedencias. El conjunto de desarrollo reúne 16.588 recortes: 14.539 de entrenamiento, procedentes de 83 pacientes, y 2.049 de validación, de 21 pacientes. La separación por paciente y código TSS se mantiene entre particiones. Las mediciones se restringen a estos grupos y preservan la reserva para la evaluación final.
 
 ![Composición por clase, retención e imágenes aportadas por paciente.](figuras/eda_desarrollo_v2.svg)

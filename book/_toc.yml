@@ -1,21 +1,23 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Problema y datos V2
+  - caption: 01 · Problema y estado del arte
     chapters:
       - file: 01_problema
+      - file: 03_literatura
+  - caption: 02 · Datos y análisis exploratorio
+    chapters:
       - file: 02_datos_eda
       - file: 02_galeria
       - file: 02_desarrollo_v2
       - file: 10_eda_v2
-  - caption: Fundamento y experimento V2
+  - caption: 03 · Modelos, resultados y discusión
     chapters:
-      - file: 03_literatura
       - file: 04_metodologia_v2
       - file: 05_estadistica
       - file: 08_resultados_v2
       - file: 09_discusion
-  - caption: Anexos del piloto histórico
+  - caption: Anexos · Piloto histórico
     chapters:
       - file: 02_resultados_eda
       - file: 04_protocolo

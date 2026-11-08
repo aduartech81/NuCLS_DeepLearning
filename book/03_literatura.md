@@ -1,5 +1,11 @@
 # Estado del arte: clasificación nuclear en histología
 
+<!-- PRESENTACION_CAPITULO -->
+<div class="chapter-deck"><p class="book-eyebrow">01 / ESTADO DEL ARTE</p><p>La evidencia que fundamenta la comparación</p><div class="chapter-tags"><span>1.330 registros cribados</span><span>166 lecturas documentadas</span><span>21 informes focales</span></div></div>
+
+<div class="chapter-takeaway"><b>La unidad de comparación importa.</b> Se distinguen clasificadores de recortes, sistemas conjuntos y tareas adyacentes. Los 13 informes no recuperados al corte permanecen identificados; no se cuentan como lecturas.</div>
+<!-- FIN_PRESENTACION_CAPITULO -->
+
 La clasificación nuclear requiere distinguir células con apariencia parcialmente semejante y variaciones de tinción, adquisición y contexto tisular. La literatura aborda el problema mediante representaciones locales, información del entorno y relaciones entre células. El interés de una arquitectura depende tanto de esa representación como de la calidad de las etiquetas y del protocolo de evaluación.
 
 El proyecto NuCLS compara tres clasificadores de recortes RGB con contexto: una CNN compacta con BatchNorm, DenseNet121 y ResNet50. La revisión fundamenta esta comparación y examina las condiciones que permiten interpretar sus resultados. La unidad de predicción es el núcleo previamente localizado; los sistemas de segmentación, detección y diagnóstico de láminas se consideran antecedentes relacionados, con objetivos de evaluación diferentes.

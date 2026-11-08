@@ -1,5 +1,11 @@
 # Discusión del diseño y alcance V2
 
+<!-- PRESENTACION_CAPITULO -->
+<div class="chapter-deck"><p class="book-eyebrow">06 / DISCUSIÓN</p><p>Interpretar los hallazgos dentro de su alcance</p><div class="chapter-tags"><span>Literatura + EDA + experimento</span><span>Sin validación clínica</span><span>Limitaciones explícitas</span></div></div>
+
+<div class="chapter-takeaway"><b>La evidencia no sostiene una superioridad universal.</b> Los resultados corresponden a esta partición, taxonomía y protocolo. Seis pacientes de reserva, cobertura bibliográfica incompleta y tareas pendientes limitan la conclusión.</div>
+<!-- FIN_PRESENTACION_CAPITULO -->
+
 ## Coherencia entre evidencia y comparación
 
 El experimento V2 compara CNN compacta con BatchNorm, DenseNet121 y ResNet50. Los resultados de CNN local, ResNet18 y MobileNetV2 pertenecen a una partición y un experimento anteriores; se conservan en los anexos históricos y no determinan el baseline V2. El cierre de entrega contiene once semillas por modelo y 33 evaluaciones de reserva verificadas. ResNet50 se seleccionó por validación (macro-F1 medio 0,7934) y obtuvo 0,6378 en reserva, frente a 0,6052 de DenseNet121 y0,4542 de la compacta. No se atribuyen métricas del piloto a las arquitecturas nuevas.

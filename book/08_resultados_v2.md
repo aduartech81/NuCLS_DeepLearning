@@ -1,5 +1,11 @@
 # Experimento V2: modelos y evidencia de ejecución
 
+<!-- PRESENTACION_CAPITULO -->
+<div class="chapter-deck"><p class="book-eyebrow">05 / RESULTADOS</p><p>De la validación a la reserva</p><div class="chapter-tags"><span>ResNet50 seleccionado por validación</span><span>Macro-F1 reserva: 0,638</span><span>11 semillas</span></div></div>
+
+<div class="chapter-takeaway"><b>La generalización sigue siendo el desafío.</b> ResNet50 obtiene el mayor macro-F1 medio local, con una caída respecto a validación y F1 estromal de 0,302. Se conservan métricas por clase, incertidumbre y limitaciones.</div>
+<!-- FIN_PRESENTACION_CAPITULO -->
+
 | Arquitectura | Parámetros entrenables, tres clases | Función |
 |---|---:|---|
 | CNN compacta con BatchNorm | 898.687 | Referencia de capacidad reducida |

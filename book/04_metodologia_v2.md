@@ -1,5 +1,11 @@
 # Metodología del experimento v2
 
+<!-- PRESENTACION_CAPITULO -->
+<div class="chapter-deck"><p class="book-eyebrow">03 / IMPLEMENTACIÓN</p><p>Tres modelos bajo condiciones comunes</p><div class="chapter-tags"><span>RGB 128 × 128</span><span>Inicialización desde cero</span><span>11 semillas por modelo</span></div></div>
+
+<div class="chapter-takeaway"><b>Comparación local y trazable.</b> CNN compacta con BatchNorm, DenseNet121 y ResNet50 comparten la tarea y la partición. La enmienda conserva el plan original de 22 semillas y documenta el cierre con 11.</div>
+<!-- FIN_PRESENTACION_CAPITULO -->
+
 ## Objetivo y unidad de análisis
 
 El experimento compara tres redes para clasificar recortes nucleares en las categorías tumoral no mitótica, linfocitaria y estromal. La localización del núcleo procede de las anotaciones; la tarea evalúa clasificación de ventanas previamente seleccionadas. Cada recorte conserva el identificador de paciente y el código TSS para examinar dependencia y procedencia.
