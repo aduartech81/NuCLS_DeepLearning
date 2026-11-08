@@ -1,11 +1,11 @@
 {
-  "alcance": "Asignación de informes leídos a capas de síntesis crítica dirigida; no recuento de estudios independientes ni revisión sistemática exhaustiva. Recuperación aún abierta.",
-  "total_informes_leidos": 165,
+  "alcance": "Asignación de informes leídos a capas de síntesis crítica dirigida; no recuento de estudios independientes ni revisión sistemática exhaustiva. Corte de recuperación para entrega: 13 informes no recuperados, registrados aparte.",
+  "total_informes_leidos": 166,
   "grupos": {
     "sistema_conjunto_o_contextual": 83,
     "tarea_o_modalidad_adyacente": 49,
     "sintesis_focal_clasificacion": 21,
-    "fuente_secundaria_o_comentario": 11,
+    "fuente_secundaria_o_comentario": 12,
     "sensibilidad_alerta_editorial": 1
   },
   "subconjunto_frecuencias": "Comparadores verificados separado; esta asignación no actualiza automáticamente frecuencias ni demuestra independencia entre publicaciones."

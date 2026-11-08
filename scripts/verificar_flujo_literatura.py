@@ -24,7 +24,9 @@ def verificar(root, entradas=None):
     assert f['contexto_y_metodologia'] == sum(counts[k] for k in ['contexto_tarea_distinta','fuente_metodologica','revision_secundaria'])
     assert f['registros_con_lectura_texto_documentada'] == counts['texto_completo_extraido'] + counts['texto_completo_revisado']
     assert f['pendientes_resumen'] == counts.get('revisar_resumen',0)
-    assert f['pendientes_texto_completo'] == counts['recuperar_texto_completo']
+    assert f['pendientes_texto_completo'] == counts.get('recuperar_texto_completo',0)
+    assert len(leer('informes_no_recuperados_20261108.csv')) == counts['no_recuperado_al_corte'] == f['informes_no_recuperados'] == 13
+    assert 166 == sum(f['capas_sintesis'].values())
     index = {r['id']: r for r in rows}
     batch = leer('cribado_adicional_34.csv')
     assert len(batch) == len({x['id'] for x in batch}) == 34
@@ -35,7 +37,12 @@ def verificar(root, entradas=None):
     assert len(terceras)==len({x['id'] for x in terceras})
     assert all(index[x['id']]['decision']=='texto_completo_revisado' and x['fuente'] and x['secciones_leidas'] for x in terceras)
     posteriores={x['id'] for x in leer('lecturas_texto_ampliadas.csv')+nuevas+terceras}
-    posteriores.update(r['id'] for r in rows if r['decision']=='duplicado_tardio')
+    posteriores.update(r['id'] for r in rows if r['decision'] in ['duplicado_tardio','no_recuperado_al_corte'])
+    assert counts.get('duplicado_tardio',0)==f.get('duplicados_tardios',0)
+    adjudicacion=leer('adjudicacion_sintesis_20261108.csv')
+    assert len(adjudicacion)==len({r['id'] for r in adjudicacion})==f['registros_con_lectura_texto_documentada']
+    assert dict(collections.Counter(r['grupo_sintesis'] for r in adjudicacion))==f['capas_sintesis']
+    posteriores.update(r['id'] for r in rows if r['decision'] in ['duplicado_tardio','no_recuperado_al_corte'])
     assert counts.get('duplicado_tardio',0)==f.get('duplicados_tardios',0)
     adjudicacion=leer('adjudicacion_sintesis_20261108.csv')
     assert len(adjudicacion)==len({r['id'] for r in adjudicacion})==f['registros_con_lectura_texto_documentada']
@@ -74,7 +81,7 @@ def verificar(root, entradas=None):
             data = (entradas/x['archivo']).read_bytes()
             assert len(data) == x['bytes']
             assert hashlib.sha256(data).hexdigest() == x['sha256'], x['archivo']
-    print(f"Conciliación correcta: {len(rows)} registros; {p['registros_con_decision']} atendidos; {p['registros_sin_decision']} sin primera decisión; {f['pendientes_texto_completo']} pendientes de texto. Frecuencias exactas verificadas; inclusión final no establecida.")
+    print(f"Conciliación correcta: {len(rows)} registros; {p['registros_con_decision']} atendidos; {p['registros_sin_decision']} sin primera decisión; {f['pendientes_texto_completo']} pendientes de texto. Frecuencias exactas verificadas; corte documental con informes no recuperados registrados por separado.")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

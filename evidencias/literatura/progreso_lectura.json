@@ -5,16 +5,16 @@
     "excluir_por_titulo": 723,
     "revision_secundaria": 137,
     "excluir_por_resumen": 97,
-    "texto_completo_revisado": 162,
+    "texto_completo_revisado": 163,
     "fuente_metodologica": 50,
     "contexto_tarea_distinta": 143,
     "texto_completo_extraido": 3,
-    "recuperar_texto_completo": 14,
+    "no_recuperado_al_corte": 13,
     "duplicado_tardio": 1
   },
   "registros_con_decision": 1330,
   "resumenes_adicionales_leidos": 40,
-  "alcance": "165 lecturas documentadas; 14 informes pendientes y un duplicado tardío confirmado. Asignación a capas de síntesis realizada; recuperación abierta.",
+  "alcance": "Corte de entrega: 166 lecturas dirigidas documentadas, 13 informes no recuperados y un duplicado tardío. Síntesis crítica por capas; no revisión sistemática exhaustiva.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -96,14 +96,14 @@
     "nota": "Todos conservan estado de lectura; la disposición se registra separadamente. Pertinencia preliminar no equivale a inclusión final."
   },
   "tercera_lectura_20261108": {
-    "registros": 136,
+    "registros": 137,
     "disposiciones": {
       "pertinente_con_inconsistencias": 1,
       "contexto_modalidad_ihc": 1,
       "pertinente_sistema_conjunto": 14,
       "pertinente_clasificador_modificado": 2,
       "pertinente_benchmark_conjunto": 1,
-      "revision_secundaria": 5,
+      "revision_secundaria": 6,
       "excluir_editorial": 1,
       "contexto_radiomica_y_segmentacion": 1,
       "contexto_clasificador_no_cnn": 1,

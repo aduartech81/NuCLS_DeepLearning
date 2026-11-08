@@ -51,30 +51,30 @@ La reconstrucción de las tres exportaciones reprodujo los conteos iniciales y s
 | Fuente metodológica | 50 |
 | Revisión secundaria | 137 |
 | En cola de resumen | 0 |
-| Pendiente de recuperación o aclaración en texto completo | 14 |
-| Con lectura o extracción de secciones del texto documentada | 165 |
+| Informe no recuperado al corte de entrega | 13 |
+| Con lectura o extracción de secciones del texto documentada | 166 |
 | Duplicado identificado durante recuperación | 1 |
 | **Total** | **1.330** |
 
-La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 1 + 14 + 165**. Los 330 antecedentes no se convierten en exclusiones finales. Los 165 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 14 informes por recuperar o aclarar. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
+La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 1 + 13 + 166**. De 180 candidatos históricos, uno era duplicado y quedaron 179 informes: 166 con lectura dirigida documentada y 13 no recuperados al corte. Los 330 antecedentes son contexto anterior a la recuperación; no se suman a los 166. El número de estudios independientes no está establecido. La adjudicación por capas se refiere a informes, según el nivel de lectura registrado.
 
 El [flujo conciliado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) utiliza las etapas de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram), sin presentarse como revisión sistemática concluida. De los siete grupos de títulos coincidentes, se confirmó que LIT-1168 y LIT-0602 son el mismo artículo: autores, revista, año, volumen y páginas coinciden; al registro WoS le faltaba el DOI. Se conserva la fila histórica como duplicado tardío, sin contar una lectura adicional. Las demás coincidencias no se fusionan automáticamente. Un artículo y su preprint cuentan como una publicación; una coincidencia de resultados entre artículos diferentes requiere una auditoría adicional de independencia.
 
 <!-- CAPAS_SINTESIS_INICIO -->
 ### Asignación a capas de síntesis al corte
 
-La revisión de las decisiones individuales organiza los 165 informes leídos en cinco grupos excluyentes. Esta asignación no altera el nivel de lectura documentado: algunos registros tienen extracción dirigida y no lectura íntegra de apéndices.
+La revisión de las decisiones individuales organiza los 166 informes leídos en cinco grupos excluyentes. Esta asignación no altera el nivel de lectura documentado: algunos registros tienen extracción dirigida y no lectura íntegra de apéndices.
 
 | Capa de síntesis | Informes |
 |---|---:|
 | Clasificación nuclear localizada o ablación separable: síntesis focal | 21 |
 | Sistemas conjuntos, contextuales y representaciones relacionadas | 83 |
 | Tareas o modalidades adyacentes, fuera de la comparación focal | 49 |
-| Revisiones, editoriales y comentarios | 11 |
+| Revisiones, editoriales y comentarios | 12 |
 | Sensibilidad separada por preocupación editorial | 1 |
-| **Total con lectura documentada** | **165** |
+| **Total con lectura documentada** | **166** |
 
-La matriz `adjudicacion_sintesis_20261108.csv` identifica cada informe, motivo, limitación y fuente. Los 21 informes focales no son 21 experimentos independientes ni 21 usos de cada arquitectura. Incluyen clasificadores modificados, máscaras, ensambles y subclasificación binaria; sus diferencias se conservan. Las frecuencias de arquitecturas siguen restringidas al subconjunto de comparadores exactos verificados. Los sistemas conjuntos fundamentan la discusión del campo, sin mezclar sus PQ, F1 de detección o métricas por píxel con macro-F1 de recortes. La recuperación permanece abierta para 14 informes; no se declaran inaccesibles definitivamente.
+La matriz `adjudicacion_sintesis_20261108.csv` identifica cada informe, motivo, limitación y fuente. Los 21 informes focales no son 21 experimentos independientes ni 21 usos de cada arquitectura. Incluyen clasificadores modificados, máscaras, ensambles y subclasificación binaria; sus diferencias se conservan. Las frecuencias de arquitecturas siguen restringidas al subconjunto de comparadores exactos verificados. Los sistemas conjuntos fundamentan la discusión del campo, sin mezclar sus PQ, F1 de detección o métricas por píxel con macro-F1 de recortes. La recuperación se cierra para esta entrega con 13 informes no recuperados, individualizados en `informes_no_recuperados_20261108.csv`. No se consideran leídos ni excluidos por pertinencia. Podrán recuperarse en una actualización posterior.
 <!-- CAPAS_SINTESIS_FIN -->
 
 ### Trazabilidad de la selección
@@ -268,14 +268,14 @@ Estos trabajos permiten precisar la brecha del proyecto: comparar tres clasifica
 
 El artículo sobre segmentación y clasificación federada, [DOI 10.1371/journal.pone.0322749](https://doi.org/10.1371/journal.pone.0322749), incluye comparadores nucleares, pero tiene una [expresión de preocupación de PLOS del 30 de octubre de 2026](https://doi.org/10.1371/journal.pone.0361682). El aviso se refiere a datos de figuras no aportados y a la indisponibilidad del código original, con código recreado posterior. Se conserva la trazabilidad de la fuente y se mantiene fuera de la tabla principal de frecuencias sin alerta; no se utiliza para reforzar artificialmente la selección.
 
-Se excluyen como comparadores nucleares LIT-0016 (parches mamarios benignos/malignos), LIT-0076 (diagnóstico de imagen gástrica), LIT-0610 (segmentación por píxel) y LIT-0684 (mitosis y primitivas histológicas). LIT-1105 se deriva a revisión secundaria. Estas cinco disposiciones están contenidas en el total de textos leídos: no se suman nuevamente a las exclusiones de título/resumen. La cola de registros pendientes incluye textos todavía no buscados, no recuperados y no aclarados; no se denomina «informes inaccesibles».
+Se excluyen como comparadores nucleares LIT-0016 (parches mamarios benignos/malignos), LIT-0076 (diagnóstico de imagen gástrica), LIT-0610 (segmentación por píxel) y LIT-0684 (mitosis y primitivas histológicas). LIT-1105 se deriva a revisión secundaria. Estas cinco disposiciones están contenidas en el total de textos leídos: no se suman nuevamente a las exclusiones de título/resumen. Los intentos de recuperación se conservan como historial; el estado vigente de los 13 informes no recuperados se documenta por separado.
 
-El [registro de esta ampliación](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/evaluaciones_texto_20261108.csv) permite comprobar cada decisión. El diagrama continúa siendo parcial: cerrar el estado del arte como narrativa no sustituye el cierre de elegibilidad solicitado en la guía.
+El [registro de esta ampliación](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/evaluaciones_texto_20261108.csv) permite comprobar cada decisión. El diagrama presenta el corte de entrega y la adjudicación por capas; la cobertura incompleta y la falta de un segundo revisor impiden presentarlo como revisión sistemática exhaustiva.
 
 <!-- AMPLIACION_CIERRE_INICIO -->
 ### Evidencia adicional y relación con los resultados V2
 
-La nueva ampliación contiene 136 lecturas dirigidas, con fuente y secciones identificadas en `evaluaciones_texto_cierre_20261108.csv`. Se distinguen sistemas conjuntos, clasificadores modificados, tareas IHC y fuentes secundarias. Las frecuencias conservadoras anteriores se mantienen restringidas a su conjunto de comparadores verificados; no se presentan como un censo de todas las arquitecturas mencionadas.
+La nueva ampliación contiene 137 lecturas dirigidas, con fuente y secciones identificadas en `evaluaciones_texto_cierre_20261108.csv`. Se distinguen sistemas conjuntos, clasificadores modificados, tareas IHC y fuentes secundarias. Las frecuencias conservadoras anteriores se mantienen restringidas a su conjunto de comparadores verificados; no se presentan como un censo de todas las arquitecturas mencionadas.
 
 | Fuente | Problema y datos | Modelos o representación | Métrica extraída y valor | Consecuencia para NuCLS |
 |---|---|---|---|---|
@@ -302,6 +302,7 @@ El manuscrito de Yousefi y Nie se deriva a contexto IHC/ISH y agrupamiento, y Al
 
 El cierre experimental V2 seleccionó ResNet50 por validación y obtuvo macro-F1 de reserva 0,6378, frente a 0,6052 de DenseNet121 y 0,4542 de la compacta. Esta comparación local comparte partición, tres clases e inicialización desde cero, pero no reproduce las taxonomías ni todas las condiciones de los artículos. La caída de desempeño y el F1 estromal 0,3022 de ResNet50 refuerzan la necesidad de analizar clases y pacientes, sin probar una explicación causal ni superioridad general de una familia arquitectónica. Los [resultados completos](08_resultados_v2.md) distinguen incertidumbre por semillas y por pacientes.
 <!-- AMPLIACION_CIERRE_FIN -->
+
 
 
 
@@ -464,3 +465,12 @@ Las propuestas recientes [UL-HVNet](https://doi.org/10.1145/3706890.3706921), [M
 ### Tamaño del recorte y agregación de predicciones
 
 El estudio de [clasificación y fusión de características nucleares](https://doi.org/10.1002/ima.22676) compara InceptionV3, InceptionResNetV2 y NASNetLarge preentrenadas en ImageNet sobre CRCHistoPhenotypes. Al ampliar la ventana de 27 a 54 píxeles, InceptionV3 pasa de F1 ponderado 0,773 a 0,816; combinar cuatro tamaños produce 0,832. El ensamble de doce modelos alcanza 0,837. Estos resultados muestran una asociación entre representación contextual y desempeño dentro de ese experimento, sin aislar el efecto causal del contexto ni equivaler a macro-F1. Se excluyen núcleos próximos al borde, y los dos folds se separan por imagen sin independencia por paciente explícita. NuCLS también restringe recortes interiores, por lo que debe conservar esa condición al describir la población analizada. El SoftmaxCNN citado por este artículo no se cuenta como una nueva ejecución independiente.
+
+
+### Cierre de recuperación y alcance de la entrega
+
+La última lectura incorpora la revisión de [Xiong y Guo sobre diagnóstico renal](https://doi.org/10.12354/j.issn.1000-8179.2025.20251345), páginas 1258–1263. Integra imagen radiológica, histología, grado nuclear y pronóstico; es una fuente secundaria, sin experimento propio de clasificación nuclear. Sus modelos citados no incrementan las frecuencias de comparadores.
+
+Los 13 informes no recuperados incluyen barreras editoriales o institucionales, repositorios sin archivo y un resumen de congreso sin informe extenso identificado. El capítulo IGI de 2023 no se da por leído a partir del capítulo homónimo de 2019 con DOI diferente. El acceso institucional no garantiza que todos los títulos estén suscritos. Se conserva título, DOI, fuente consultada y motivo individual. Esta limitación puede sesgar la cobertura y las frecuencias observadas.
+
+La entrega satisface el alcance de una síntesis crítica documentada: comparación de tareas, entradas, particiones, métricas y limitaciones; justificación de tres modelos base; conexión con EDA y resultados. No afirma exhaustividad, revisión humana doble ni equivalencia entre métricas heterogéneas. La clasificación focal reúne 21 informes; los otros 145 informes leídos se distribuyen como contexto, tareas adyacentes, fuentes secundarias o sensibilidad editorial.
