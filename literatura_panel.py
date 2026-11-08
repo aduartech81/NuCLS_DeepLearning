@@ -54,7 +54,14 @@ Estos antecedentes se identificaron en los resúmenes exportados. Sus comparador
 Existen **{p['registros_con_decision']} registros con decisión o derivación de lectura** y **{p['registros_sin_decision']} sin decisión**. Estos conteos no equivalen a estudios incluidos. La revisión sigue siendo dirigida y parcial; no se presenta como revisión sistemática exhaustiva ni como flujo PRISMA completo.
 
 Las tareas de detección, segmentación, diagnóstico de láminas y clasificación nuclear se distinguen durante la selección. Las exclusiones por título y las lecturas de resumen se documentan por separado, sin atribuir una segunda revisión independiente inexistente.'''),
+        html.Img(src='/assets/flujo_literatura.svg', alt='Flujo documental parcial: 156 registros atendidos y 1174 pendientes; inclusión final no establecida', style={'width':'100%','maxWidth':'1120px'}),
+        section('Ampliación y conciliación documental', '''Se examinaron 34 resúmenes nuevos de las exportaciones cuyos hashes fueron verificados. Se concilió el estado de Sánchez-Torres con su extracción previamente documentada; esa corrección no añade una nueva lectura. Los estados distinguen 39 exclusiones explícitas, 49 antecedentes de contexto/metodología/revisión, 28 pendientes de resumen, 34 pendientes de texto y seis registros con lectura o extracción de texto documentada. No son seis estudios incluidos.
+
+La lectura de [HistoNeXt](https://link.springer.com/article/10.1186/s12880-025-01550-2) identifica ConvNeXt como codificador preentrenado de un sistema conjunto. Sus conexiones densas no se contabilizan como DenseNet121. La frecuencia de comparadores aislados continúa limitada a cuatro DOI.
+
+[Decisiones del lote](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_34.csv) · [Flujo parcial conciliado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json)'''),
         html.H3('Aporte del experimento'),
         md('El proyecto evalúa tres clasificadores sobre los mismos recortes y etiquetas, con condiciones comunes y variabilidad entre ejecuciones. Su aporte es una comparación experimental reproducible. La separación por paciente y TSS reduce el riesgo de compartir procedencia entre grupos, pero no acredita por sí sola validez clínica ni generalización a cualquier imagen histológica.'),
         html.A('Consultar el estado del arte completo y sus fuentes',href='https://aduartech81.github.io/NuCLS_DeepLearning/03_literatura.html',className='literature-link')
     ]
+

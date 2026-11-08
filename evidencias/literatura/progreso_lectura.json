@@ -1,20 +1,21 @@
 {
-  "fecha": "2026-11-08",
+  "fecha": "2026-11-07",
   "registros": 1330,
   "decisiones": {
     "excluir_por_titulo": 36,
     "revisar_resumen": 28,
-    "recuperar_texto_completo": 25,
-    "fuente_metodologica": 4,
-    "contexto_tarea_distinta": 24,
-    "texto_completo_extraido": 2,
-    "por_revisar": 1208,
-    "revision_secundaria": 1,
-    "texto_completo_revisado": 2
+    "recuperar_texto_completo": 34,
+    "fuente_metodologica": 5,
+    "contexto_tarea_distinta": 43,
+    "texto_completo_extraido": 3,
+    "por_revisar": 1174,
+    "texto_completo_revisado": 3,
+    "excluir_por_resumen": 3,
+    "revision_secundaria": 1
   },
-  "registros_con_decision": 122,
+  "registros_con_decision": 156,
   "resumenes_adicionales_leidos": 40,
-  "alcance": "122 registros con decisión o derivación; 1208 sin decisión. No equivale a estudios incluidos; cribado parcial.",
+  "alcance": "156 registros con decisión o derivación; 1174 sin decisión. No equivale a estudios incluidos; cribado parcial.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -30,11 +31,12 @@
     "secciones": "3.3, 5.3, tabla 4",
     "alcance": "Referencia de clasificación epitelial binaria; no equivalencia exacta con tres categorías NuCLS"
   },
-  "registros_sin_decision": 1208,
+  "registros_sin_decision": 1174,
   "archivos_decisiones": [
     "cribado_unificado.csv",
     "cribado_adicional_80.csv",
-    "cribado_adicional_17.csv"
+    "cribado_adicional_17.csv",
+    "cribado_adicional_34.csv"
   ],
   "lote_80": {
     "excluir_por_titulo": 36,
@@ -46,5 +48,22 @@
   "lectura_resumen_lote_80": 16,
   "lecturas_resumen_lote_17": 17,
   "registros_nuevos_lote_17": 7,
-  "registros_actualizados_lote_17": 10
+  "registros_actualizados_lote_17": 10,
+  "zona_horaria": "America/Bogota",
+  "lote_34": {
+    "resumenes_examinados": 34,
+    "registros_nuevos": 34,
+    "decisiones": {
+      "contexto_tarea_distinta": 19,
+      "recuperar_texto_completo": 10,
+      "texto_completo_revisado": 1,
+      "excluir_por_resumen": 3,
+      "fuente_metodologica": 1
+    },
+    "resumenes_publicados": false,
+    "fuentes_originales_sha256_verificado": true,
+    "historiografia": "La fecha previa 2026-11-08 se conserva en Git; este corte usa fecha local de Bogotá."
+  },
+  "nota_conteo_lecturas": "El campo histórico resumenes_adicionales_leidos=40 no integra explícitamente las 17 lecturas del lote anterior; no se suma a un total único sin auditar solapamientos. El lote_34 documenta 34 registros nuevos.",
+  "conciliacion_estados": "conciliacion_estados.csv; LIT-0214 ya tenía extracción; no suma registro nuevo."
 }

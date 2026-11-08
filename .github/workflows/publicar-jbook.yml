@@ -19,6 +19,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements_book.txt
+      - run: python scripts/verificar_flujo_literatura.py
       - run: jupyter-book build book
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -33,3 +34,4 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+

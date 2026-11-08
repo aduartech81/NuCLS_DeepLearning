@@ -1,0 +1,2 @@
+id,doi,fuente,secciones,sistema,arquitectura,funcion,entrada,incluir_frecuencia_clasificador_aislado,motivo,elegibilidad_final
+LIT-0116,10.1186/s12880-025-01550-2,https://link.springer.com/article/10.1186/s12880-025-01550-2,"HistoNeXt design/Encoder; Training monitoring; Evaluation metrics, ecuaciones 20–21",HistoNeXt,ConvNeXt-Base,codificador preentrenado del sistema conjunto,270x270 RGB; salida espacial 80x80,False,No ablación de clasificador de recortes aislado; F1 por tipo integra errores de detección.,no establecida

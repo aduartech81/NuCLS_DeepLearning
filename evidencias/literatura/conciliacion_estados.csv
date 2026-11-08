@@ -1,0 +1,2 @@
+id,decision_previa,decision_actual,evidencia,motivo
+LIT-0214,recuperar_texto_completo,texto_completo_extraido,"comparadores_texto_completo.csv; book/03_literatura.md, tablas 6, 11 y 14",Conciliación de extracción previa documentada; no nueva lectura ni nuevo registro cribado.

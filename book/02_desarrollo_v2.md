@@ -102,3 +102,8 @@ La estandarización RGB utiliza exclusivamente estadísticas de entrenamiento. S
 | Distancias multivariadas elevadas | Priorizar inspección, sin excluir pacientes | Indicador exploratorio, sin adjudicación visual |
 
 Las tablas numéricas completas se conservan como evidencia descargable; las figuras del capítulo presentan distribuciones y relaciones, sin repetir íntegramente los mismos valores. El análisis no incorpora imágenes de reserva ni resultados del entrenamiento en curso.
+
+
+## Cierre documental y límite de las etiquetas
+
+La revisión del capítulo y del resumen de cierre confirma que los análisis descritos corresponden al desarrollo V2 y que su incertidumbre se interpreta por paciente. Esta conciliación documental no repite la lectura de píxeles ni aporta nuevas mediciones. Permanece pendiente la concordancia entre evaluadores sobre objetos alineados: se necesitan identificador del mismo núcleo, identificador del evaluador y etiqueta individual previa a la adjudicación. La etiqueta de consenso o la comparación entre predicción y etiqueta no sustituyen esas observaciones. Hasta disponer y verificar ese emparejamiento no se informa un coeficiente de concordancia ni se asume independencia entre anotaciones. Los resultados publicados de concordancia de NuCLS son antecedentes del dataset, no una estimación propia de los recortes seleccionados.

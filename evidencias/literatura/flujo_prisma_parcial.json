@@ -1,0 +1,47 @@
+{
+  "fecha_local": "2026-11-07",
+  "zona_horaria": "America/Bogota",
+  "estado": "PARCIAL; no cierre de revisión sistemática",
+  "identificacion": {
+    "Scopus": 1097,
+    "Web_of_Science": 328,
+    "IEEE_Xplore": 292,
+    "total": 1717,
+    "fuera_periodo": 69,
+    "en_periodo": 1648,
+    "duplicados_doi_retirados": 318,
+    "unidades_cribado": 1330,
+    "doi_distintos": 1287,
+    "sin_doi": 43,
+    "grupos_titulo_sin_fusion": 7
+  },
+  "estados_mutuamente_excluyentes": {
+    "excluir_por_titulo": 36,
+    "revisar_resumen": 28,
+    "recuperar_texto_completo": 34,
+    "fuente_metodologica": 5,
+    "contexto_tarea_distinta": 43,
+    "texto_completo_extraido": 3,
+    "por_revisar": 1174,
+    "texto_completo_revisado": 3,
+    "excluir_por_resumen": 3,
+    "revision_secundaria": 1
+  },
+  "con_decision_o_derivacion": 156,
+  "sin_revision": 1174,
+  "exclusiones_explicitas_titulo_resumen": 39,
+  "contexto_y_metodologia": 49,
+  "pendientes_resumen": 28,
+  "pendientes_texto_completo": 34,
+  "registros_con_lectura_texto_documentada": 6,
+  "informes_no_recuperados": null,
+  "informes_evaluados_elegibilidad_final": null,
+  "estudios_incluidos_finales": null,
+  "nota": "Las categorías de contexto no se convierten en exclusiones finales. Lectura/extracción no equivale a evaluación completa de elegibilidad. null significa no establecido, nunca cero. Cuatro DOI sustentan la tabla parcial de comparadores; no son el total de estudios incluidos.",
+  "fuente_metodologica": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
+  "ecuaciones": [
+    "1717 = 69 + 318 + 1330",
+    "1330 = 1174 + 156",
+    "156 = 39 + 49 + 28 + 34 + 6"
+  ]
+}

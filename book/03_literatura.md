@@ -37,9 +37,31 @@ Los estudios de tareas adyacentes pueden fundamentar el contexto metodológico, 
 
 ![Flujo documental: identificación, depuración y estado de lectura.](figuras/flujo_literatura.svg)
 
+
+### Conciliación del flujo y ampliación de lectura
+
+La reconstrucción de las tres exportaciones originales reprodujo los conteos de identificación y depuración; sus SHA256 coinciden con `procedencia.json`. Se examinaron **34 resúmenes adicionales**, con motivos individuales en [el nuevo lote](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_34.csv). Se incorporó una lectura de secciones del texto completo de HistoNeXt. En paralelo, se corrigió el estado de Sánchez-Torres: su extracción ya figuraba en la tabla de comparadores, aunque el consolidado aún solicitaba texto completo. Esta conciliación no añade un registro cribado ni una nueva lectura.
+
+| Estado mutuamente excluyente | Registros |
+|---|---:|
+| Sin revisión | 1.174 |
+| Exclusión explícita por título | 36 |
+| Exclusión explícita por resumen (volúmenes de actas, no artículos individuales) | 3 |
+| Contexto de tarea distinta | 43 |
+| Fuente metodológica | 5 |
+| Revisión secundaria | 1 |
+| Pendiente de aclaración por resumen | 28 |
+| Pendiente de recuperación o evaluación de texto completo | 34 |
+| Con lectura o extracción de texto completo documentada | 6 |
+| **Total** | **1.330** |
+
+La contabilidad se verifica mediante **1.717 = 69 + 318 + 1.330** y **1.330 = 1.174 + 156**. Los 156 registros atendidos se descomponen en **39 + 49 + 28 + 34 + 6** según los estados anteriores. Los 49 antecedentes contextuales, metodológicos o secundarios no se convierten en exclusiones definitivas. Los seis registros con lectura de texto completo tampoco equivalen a seis estudios incluidos: comprenden cuatro DOI con comparadores extraídos y dos sistemas estructurales o conjuntos revisados. No se estableció aún el número final de informes no recuperados, informes evaluados para elegibilidad ni estudios incluidos; esas cantidades se conservan como no determinadas, no como cero.
+
+El [registro del flujo parcial](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) separa registros, informes y estudios siguiendo las distinciones de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram). El diagrama informa el avance documental verificable y no acredita una revisión sistemática concluida. Los siete grupos de títulos coincidentes permanecen sin fusión: incluyen actas, documentos con DOI diferentes y posibles pares con DOI ausente que requieren cotejo de metadatos.
+
 ### Trazabilidad de la selección
 
-Se documentaron decisiones o derivaciones de lectura para 122 registros del inventario. Un lote previo comprende 80 títulos y 16 resúmenes; estos últimos se suman a las 24 lecturas adicionales de resúmenes previamente registradas. Una derivación a lectura de resumen o texto completo no equivale a inclusión definitiva. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.208 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
+Se documentaron decisiones o derivaciones de lectura para 156 registros del inventario. Un lote previo comprende 80 títulos y 16 resúmenes; estos últimos se suman a las 24 lecturas adicionales de resúmenes previamente registradas. Una derivación a lectura de resumen o texto completo no equivale a inclusión definitiva. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.174 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
 
 Una ampliación examinó 17 resúmenes y las secciones metodológicas y comparativas de SENUCLS. Se identificaron nueve candidatos a texto completo, siete antecedentes de tareas o clasificadores distintos y un estudio estructural revisado. El [registro consolidado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_consolidado.csv) reúne las decisiones sin modificar las exportaciones originales.
 
@@ -187,9 +209,13 @@ Lou et al. (2024), en *Structure Embedded Nucleus Classification for Histopathol
 
 Estas líneas amplían la representación disponible, pero no invalidan las referencias convolucionales. Un modelo que recibe máscaras, relaciones celulares o información multiescala responde a una pregunta distinta de un clasificador alimentado únicamente con un recorte RGB. Su comparación requiere una ablación que separe la contribución de la entrada, la arquitectura y el entrenamiento. Por ello, la complejidad de un sistema reciente no se interpreta como evidencia suficiente de superioridad para el problema delimitado.
 
+### Sistema conjunto frente a clasificador aislado: HistoNeXt
+
+HistoNeXt utiliza ConvNeXt como codificador preentrenado y decodificadores para segmentación y predicción del tipo nuclear. La descripción de referencia emplea ConvNeXt-Base, entradas de 270×270 y salidas espaciales de 80×80. Las ecuaciones 20–21 distinguen F1 de detección y F1 por tipo, incorporando en este último errores de detección. Por ello, sus puntuaciones no son equivalentes al macro-F1 de recortes previamente localizados de V2. Las conexiones densas del decodificador tampoco constituyen evidencia de uso de DenseNet121. Se registra como sistema conjunto, fuera de la frecuencia de clasificadores aislados. Fuente: [Chen et al., diseño, entrenamiento y métricas](https://link.springer.com/article/10.1186/s12880-025-01550-2).
+
 ## 6. Selección de arquitecturas y contribución del proyecto
 
-La extracción estructurada cuenta una vez cada DOI por arquitectura y separa variantes adaptadas de versiones estándar. En cuatro textos con comparaciones verificadas, ResNet50 aparece en dos estudios; las restantes arquitecturas identificadas aparecen en uno. Estas frecuencias describen el subconjunto extraído y no todo el corpus recuperado. La [tabla completa de comparadores](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/comparadores_texto_completo.csv) conserva problema, conjunto, modelo, métricas y valores por fuente.
+La extracción estructurada cuenta una vez cada DOI por arquitectura y separa variantes adaptadas de versiones estándar. En cuatro textos con comparaciones verificadas (tres multiclase y uno de subclasificación epitelial binaria), ResNet50 aparece en dos estudios; las restantes arquitecturas identificadas aparecen en uno. Estas frecuencias describen el subconjunto extraído y no todo el corpus recuperado. El conteo considera comparadores identificados exactamente; excluye ViT de variante no especificada. No es un censo de todas las arquitecturas propuestas en esos artículos y no suma codificadores de sistemas conjuntos. La ampliación de cribado no modifica por sí sola estas frecuencias. La [tabla completa de comparadores](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/comparadores_texto_completo.csv) conserva problema, conjunto, modelo, métricas y valores por fuente.
 
 | Selección v2 | Estudios verificados | Parámetros, tres clases | Rasgo estructural |
 |---|---:|---:|---|
@@ -245,3 +271,4 @@ Las referencias se vinculan a su DOI o al texto de autor utilizado. Los antecede
 8. Frei et al. (2026). GrEp; Pattern Recognition, 171, 112197; sección 3.3 y tabla 4. [DOI](https://doi.org/10.1016/j.patcog.2025.112197). [Texto de autor](https://aibex.ch/research/papers/Frei2025.pdf).
 
 El [inventario y las extracciones](https://github.com/aduartech81/NuCLS_DeepLearning/tree/main/evidencias/literatura) conservan la procedencia y el nivel de lectura. La [tabla de frecuencia](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/frecuencia_comparadores_verificados.csv) contabiliza estudios únicos por arquitectura. Los registros no evaluados permanecen identificados como tales; no se transforman en exclusiones para cerrar artificialmente el flujo de selección.
+

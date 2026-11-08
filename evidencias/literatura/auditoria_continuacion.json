@@ -1,0 +1,16 @@
+{
+  "commit_base": "883f566b9eee8ff6b17884df3b8216ca1f786676",
+  "verificacion_exportaciones": "Tres SHA256 coinciden con procedencia.json; originales localizados en Descargas; no redistribuidos.",
+  "reconstruccion": "scripts/unificar_literatura.py reproduce 1717/1648/318/1330/43/7; los 1330 títulos coinciden en orden con el consolidado.",
+  "lote_nuevo": 34,
+  "nuevos_textos_con_secciones_leidas": [
+    "10.1186/s12880-025-01550-2"
+  ],
+  "texto_localizado_pendiente_extraccion": {
+    "doi": "10.1016/j.media.2025.103905",
+    "url": "https://discovery.ucl.ac.uk/id/eprint/10218982/"
+  },
+  "frecuencia": "Recalculada una vez por DOI/modelo exacto con arquitectura_identificada=True; 14 modelos, cuatro DOI. ViT no especificada excluida. No ranking del corpus.",
+  "eda": "Capítulo y resumen de cierre revisados; conserva 104 pacientes de desarrollo, 5000 remuestreos, límites dHash y reserva cerrada. No nueva ejecución de píxeles. Concordancia requiere anotaciones alineadas; no calculada.",
+  "colab": "No accedido ni modificado; finalización no verificada."
+}
