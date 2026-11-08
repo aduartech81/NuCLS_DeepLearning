@@ -1,5 +1,5 @@
 {
-  "fecha_local": "2026-11-07",
+  "fecha_local": "2026-11-08",
   "zona_horaria": "America/Bogota",
   "estado": "PARCIAL; no cierre de revisión sistemática",
   "identificacion": {
@@ -19,27 +19,27 @@
     "excluir_por_titulo": 723,
     "revision_secundaria": 137,
     "excluir_por_resumen": 97,
-    "recuperar_texto_completo": 167,
+    "recuperar_texto_completo": 151,
     "fuente_metodologica": 50,
     "contexto_tarea_distinta": 143,
-    "texto_completo_extraido": 3,
-    "texto_completo_revisado": 10
+    "texto_completo_revisado": 26,
+    "texto_completo_extraido": 3
   },
   "con_decision_o_derivacion": 1330,
   "sin_revision": 0,
   "exclusiones_explicitas_titulo_resumen": 820,
   "contexto_y_metodologia": 330,
   "pendientes_resumen": 0,
-  "pendientes_texto_completo": 167,
-  "registros_con_lectura_texto_documentada": 13,
+  "pendientes_texto_completo": 151,
+  "registros_con_lectura_texto_documentada": 29,
   "informes_no_recuperados": null,
   "informes_evaluados_elegibilidad_final": null,
   "estudios_incluidos_finales": null,
-  "nota": "Primera pasada dirigida concluida; 167 candidatos pendientes de texto, no exclusiones. Lectura de secciones no equivale a elegibilidad final. Contexto/metodología/revisiones no se convierten en exclusiones finales. Cinco publicaciones sustentan comparadores; cuatro grupos bajo sensibilidad conservadora de posible solapamiento, no estudios incluidos. null significa no establecido.",
+  "nota": "El estado de lectura incluye 16 nuevas evaluaciones dirigidas: cuatro exclusiones de tarea y una revisión secundaria están dentro de los 29 textos, no se suman nuevamente. Las disposiciones restantes son preliminares y no cierran inclusión. Cinco publicaciones sustentan comparadores exactos; la fuente con preocupación editorial se registra separadamente. No hay segundo revisor independiente.",
   "fuente_metodologica": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
   "ecuaciones": [
     "1717 = 69 + 318 + 1330",
-    "1330 = 820 + 330 + 167 + 13",
+    "1330 = 820 + 330 + 151 + 29",
     "820 = 723 + 97",
     "330 = 143 + 50 + 137"
   ]

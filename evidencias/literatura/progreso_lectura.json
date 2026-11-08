@@ -1,19 +1,19 @@
 {
-  "fecha": "2026-11-07",
+  "fecha": "2026-11-08",
   "registros": 1330,
   "decisiones": {
     "excluir_por_titulo": 723,
     "revision_secundaria": 137,
     "excluir_por_resumen": 97,
-    "recuperar_texto_completo": 167,
+    "recuperar_texto_completo": 151,
     "fuente_metodologica": 50,
     "contexto_tarea_distinta": 143,
-    "texto_completo_extraido": 3,
-    "texto_completo_revisado": 10
+    "texto_completo_revisado": 26,
+    "texto_completo_extraido": 3
   },
   "registros_con_decision": 1330,
   "resumenes_adicionales_leidos": 40,
-  "alcance": "Primera pasada de títulos completa; lectura de resúmenes completa o dirigida según registro; 167 candidatos pendientes de texto. Elegibilidad final no cerrada.",
+  "alcance": "Primera pasada concluida; 151 candidatos pendientes de texto; 29 con lectura de secciones documentada. Elegibilidad final no cerrada.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -37,7 +37,8 @@
     "cribado_adicional_34.csv",
     "cribado_titulos_ampliado.csv",
     "cribado_resumenes_ampliado.csv",
-    "lecturas_texto_ampliadas.csv"
+    "lecturas_texto_ampliadas.csv",
+    "evaluaciones_texto_20261108.csv"
   ],
   "lote_80": {
     "excluir_por_titulo": 36,
@@ -78,5 +79,18 @@
       "fragmento dirigido del resumen: objetivo/tarea/evaluación; máximo850caracteres": 193
     },
     "textos_con_secciones_nuevas": 7
+  },
+  "segunda_lectura_20261108": {
+    "registros": 16,
+    "disposiciones": {
+      "excluir_texto_completo": 4,
+      "elegible_con_alerta_editorial": 1,
+      "revision_secundaria": 1,
+      "elegible_sistema_conjunto": 6,
+      "elegible_clasificacion_contextual": 2,
+      "elegible_dataset_sistema_conjunto": 1,
+      "elegible_clasificacion_binaria_no_cnn": 1
+    },
+    "nota": "Todos conservan estado de lectura; la disposición se registra separadamente. Pertinencia preliminar no equivale a inclusión final."
   }
 }

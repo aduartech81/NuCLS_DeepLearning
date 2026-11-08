@@ -51,11 +51,11 @@ La reconstrucción de las tres exportaciones reprodujo los conteos iniciales y s
 | Fuente metodológica | 50 |
 | Revisión secundaria | 137 |
 | En cola de resumen | 0 |
-| Pendiente de recuperación o aclaración en texto completo | 167 |
-| Con lectura o extracción de secciones del texto documentada | 13 |
+| Pendiente de recuperación o aclaración en texto completo | 151 |
+| Con lectura o extracción de secciones del texto documentada | 29 |
 | **Total** | **1.330** |
 
-La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 167 + 13**. Los 330 antecedentes no se convierten en exclusiones finales. Los 13 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 167 candidatos de texto y la adjudicación final de elegibilidad. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
+La contabilidad cumple **1.717 = 69 + 318 + 1.330** y **1.330 = 820 + 330 + 151 + 29**. Los 330 antecedentes no se convierten en exclusiones finales. Los 29 textos documentados tampoco equivalen a estudios incluidos. La primera pasada está resuelta, pero permanecen 151 candidatos de texto y la adjudicación final de elegibilidad. No se estableció el total de informes no recuperados ni de estudios incluidos; se conserva como no determinado, no cero.
 
 El [flujo conciliado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/flujo_prisma_parcial.json) utiliza las etapas de [PRISMA 2020](https://www.prisma-statement.org/prisma-2020-flow-diagram), sin presentarse como revisión sistemática concluida. Siete grupos de títulos coincidentes siguen sin fusión automática. Un artículo y su preprint cuentan como una publicación; una coincidencia de resultados entre artículos diferentes requiere una auditoría adicional de independencia.
 
@@ -195,7 +195,7 @@ La lectura adicional de resúmenes identifica una transición desde clasificador
 |---|---|---|
 | Textura y atención | TexSegNet, DOI 10.1109/EMBC58623.2025.11253497 | Distinguir desempeño conjunto de detección/clasificación del desempeño condicionado a conocer la ubicación del núcleo |
 | Contexto, escala y orientación | MOSAIC, DOI 10.1016/j.cmpb.2026.109334; BDCNet, DOI 10.1016/j.eswa.2026.132123 | Las relaciones espaciales y la fusión multiescala requieren entradas y módulos diferentes de los tres clasificadores V2 |
-| Generalización y categorías diversas | HistoPLUS, DOI 10.1016/j.jpi.2026.100696; KongNet, DOI 10.1016/j.media.2026.104233 | La evaluación externa y la cobertura de clases deben documentarse; no se infieren a partir de un F1 elevado |
+| Generalización y categorías diversas | KongNet, DOI 10.1016/j.media.2026.104233 | La evaluación externa y la cobertura de clases deben documentarse; no se infieren a partir de un F1 elevado |
 | Balance y aprendizaje multitarea | AFINITI, DOI 10.1007/s00521-024-10114-4; aumento copy-paste, DOI 10.1007/s10278-024-01018-9 | La mejora de clases minoritarias depende del objetivo y del procedimiento; no justifica trasladar automáticamente una técnica al conjunto NuCLS |
 | Clasificación con contexto y representación de láminas | HistoMSC, DOI 10.1016/j.compbiomed.2025.109991 | Separar la red de localización de los clasificadores de recortes antes de atribuir resultados a una arquitectura |
 
@@ -226,6 +226,33 @@ Zormpas-Petridis et al. incorporan contexto SLIC a rasgos morfológicos con SVM,
 ### Comparadores reutilizados y evidencia independiente
 
 Ensembling evalúa AlexNet, VGG16, VGG19, InceptionV3, ResNet50 y DenseNet121 con transferencia de ImageNet, división aleatoria 70/15/15 y balance mediante ADASYN. La tabla 5 separa CNN aisladas de la combinación de características con MLP de la tabla 6. ResNet50 obtiene F1 0,8892 y DenseNet121 0,8706. Varios pares F1/AUC coinciden exactamente con OLConvNet; se registra posible solapamiento y se presenta sensibilidad por grupos. No se afirma independencia por paciente ni que sean réplicas independientes. [Secciones 3–4 y tablas 5–6, preprint del artículo de 2020](https://arxiv.org/pdf/2202.10694).
+
+### Ampliación de textos del 8 de noviembre
+
+Se añadieron 16 evaluaciones dirigidas de secciones de texto completo. El registro individual conserva fuente, secciones examinadas, decisión y limitaciones; cuando la consulta fue mediante texto indexado de la fuente primaria, se identifica expresamente. Cuatro trabajos se descartan como comparadores de tipificación nuclear por abordar otra unidad o tarea; uno es revisión secundaria. Los demás aportan antecedentes pertinentes, con distintos grados de comparabilidad. Esta clasificación preliminar no cierra la inclusión del corpus ni acredita lectura integral de suplementos.
+
+| Antecedente | Aporte a la comparación | Límite y consecuencia |
+|---|---|---|
+| [SuperCRF](https://doi.org/10.3389/fonc.2019.01045) | CNN con refinamiento espacial; exactitud 84,63% frente a 96,48% en el experimento celular | Cuatro tipos de melanoma; exactitud no equivale a macro-F1. La ganancia corresponde al contexto añadido |
+| [Cell Graph Transformer](https://doi.org/10.1609/aaai.v38i4.28179) | En NuCLS, Favg de HoVer-Net 0,337 y CGT+HoVer-Net 0,377 | Cuatro superclases y dependencia de detecciones; no comparar directamente con los tres tipos V2 |
+| [Lizard](https://doi.org/10.1109/ICCVW54120.2021.00082) | Evaluación nuclear con separación por paciente y prueba externa TCGA | Aporta diseño de validación; multi-PQ combina identificación y segmentación |
+| [AER-Net](https://doi.org/10.3390/s24227208) | ResNet50 modificado con atención, ramas y refinamiento | Su codificador no se contabiliza como ResNet50 aislada |
+| [SBC-UNet3+](https://doi.org/10.5220/0013232900003912) | Combina contornos, segmentación y clasificación | Inconsistencias entre texto y tabla en métricas de segmentación; evitar ranking cuantitativo |
+| [Bai et al.](https://doi.org/10.1093/bioinformatics/btac167) | Combina varios campos de visión con contexto | Separar resultados H&E de Ki67; suplemento H&E no extraído |
+| [Abel et al.](https://doi.org/10.1038/s41698-024-00623-9) | Segmentación seguida de clasificación PathExplore | ResNet50 pertenece al segmentador; no prueba un clasificador RGB independiente |
+| [HistoPLUS](https://doi.org/10.1016/j.jpi.2026.100696) | CellViT con codificador H0-mini y validación externa de 13 tipos | Tres folds con semilla fija no son tres inicializaciones; taxonomía y entrada difieren de V2 |
+| [Altini et al.](https://doi.org/10.3390/bioengineering10040396) | NuCLS: Mask-RCNN conjunto frente a detector y SVM/ANN de características | Fusiona categorías en tumor/no tumor; AP y evaluación binaria no equivalen al macro-F1 V2 |
+| [Verdicchio et al.](https://doi.org/10.1016/j.heliyon.2023.e14371) | Clasifica TIL/no-TIL con características manuales y modelos clásicos | Referencia de contexto; no candidato CNN. Agrupación por paciente no acreditada en la descripción revisada |
+
+Estos trabajos permiten precisar la brecha del proyecto: comparar tres clasificadores de recortes RGB manteniendo constantes taxonomía, contexto, partición y ajuste. Las ganancias de sistemas con máscaras o grafos no permiten atribuir una mejora únicamente a su codificador. La validación externa y la separación por paciente son dimensiones adicionales al cambio de arquitectura.
+
+#### Alerta editorial y límites de inclusión
+
+El artículo sobre segmentación y clasificación federada, [DOI 10.1371/journal.pone.0322749](https://doi.org/10.1371/journal.pone.0322749), incluye comparadores nucleares, pero tiene una [expresión de preocupación de PLOS del 30 de octubre de 2026](https://doi.org/10.1371/journal.pone.0361682). El aviso se refiere a datos de figuras no aportados y a la indisponibilidad del código original, con código recreado posterior. Se conserva la trazabilidad de la fuente y se mantiene fuera de la tabla principal de frecuencias sin alerta; no se utiliza para reforzar artificialmente la selección.
+
+Se excluyen como comparadores nucleares LIT-0016 (parches mamarios benignos/malignos), LIT-0076 (diagnóstico de imagen gástrica), LIT-0610 (segmentación por píxel) y LIT-0684 (mitosis y primitivas histológicas). LIT-1105 se deriva a revisión secundaria. Estas cinco disposiciones están contenidas en el total de textos leídos: no se suman nuevamente a las exclusiones de título/resumen. La cola de 151 registros incluye textos todavía no buscados, no recuperados y no aclarados; no se denomina «151 informes inaccesibles».
+
+El [registro de esta ampliación](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/evaluaciones_texto_20261108.csv) permite comprobar cada decisión. El diagrama continúa siendo parcial: cerrar el estado del arte como narrativa no sustituye el cierre de elegibilidad solicitado en la guía.
 
 ## 6. Selección de arquitecturas y contribución del proyecto
 

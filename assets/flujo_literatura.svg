@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="850" viewBox="0 0 1120 850" role="img" aria-labelledby="title desc">
 <title id="title">Flujo documental parcial compatible con las etapas PRISMA</title>
-<desc id="desc">1717 registros originales; 69 fuera de periodo y 318 duplicados DOI; 1330 unidades: 1330 con decisión o derivación; 167 pendientes de texto. Inclusión final no establecida.</desc>
+<desc id="desc">1717 registros originales; 69 fuera de periodo y 318 duplicados DOI; 1330 unidades: 1330 con decisión o derivación; 151 pendientes de texto. Inclusión final no establecida.</desc>
 <rect width="1120" height="850" fill="#f8fafc"/>
 <style>text{font-family:Arial,sans-serif;fill:#183247} .t{font-size:25px;font-weight:bold} .s{font-size:18px} .h{font-size:20px;font-weight:bold}</style>
-<text x="40" y="45" class="t">Revisión bibliográfica · flujo parcial al 7 nov 2026 (Bogotá)</text>
+<text x="40" y="45" class="t">Revisión bibliográfica · flujo parcial al 8 nov 2026 (Bogotá)</text>
 <rect x="40" y="75" width="1040" height="90" rx="12" fill="#e8f4f5" stroke="#267887"/>
 <text x="58" y="104" class="s">Identificados: 1.717 registros</text>
 <text x="58" y="129" class="s">Scopus 1.097 · Web of Science 328 · IEEE Xplore 292</text>
@@ -23,8 +23,8 @@
 <text x="58" y="434" class="s">Distribución de los 1.330 registros atendidos:</text>
 <text x="58" y="459" class="s">820 exclusiones explícitas: 723 por título y 97 por resumen</text>
 <text x="58" y="484" class="s">330 antecedentes: 143 tarea distinta, 50 metodológicos y 137 revisiones</text>
-<text x="58" y="509" class="s">0 en cola de resumen · 167 pendientes de texto completo</text>
-<text x="58" y="534" class="s">13 registros con lectura/extracción de texto documentada</text>
+<text x="58" y="509" class="s">0 en cola de resumen · 151 pendientes de texto completo</text>
+<text x="58" y="534" class="s">29 registros con lectura/extracción de texto documentada</text>
 <path d="M560 590 L560 615" stroke="#267887" stroke-width="2" fill="none"/><path d="M555 607 L560 615 L565 607" stroke="#267887" fill="none"/>
 <rect x="40" y="615" width="1040" height="115" rx="12" fill="#fff1d6" stroke="#267887"/>
 <text x="58" y="644" class="s">Elegibilidad e inclusión final: NO ESTABLECIDAS</text>

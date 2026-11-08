@@ -44,7 +44,7 @@ F1 ponderado, macro-F1, F1 por clase y métricas de segmentación responden a pr
 Estas diferencias son descriptivas, no pruebas de significación. **No predicen la mejora de una arquitectura en NuCLS**. La pregunta experimental es si la conectividad densa o residual mejora de forma reproducible la referencia compacta bajo condiciones comunes, y con qué costo.
 
 [Tablas de origen y evaluación metodológica](https://aduartech81.github.io/NuCLS_DeepLearning/03_literatura.html).'''),
-        section('Tendencias recientes identificadas en resúmenes', '''TexSegNet incorpora textura y atención; MOSAIC combina escala y orientación; BDCNet incorpora relaciones espaciales; HistoPLUS y KongNet amplían la caracterización celular y la evaluación entre conjuntos. HistoMSC describe clasificación de parches con contexto y representación de láminas.
+        section('Tendencias recientes identificadas en resúmenes', '''TexSegNet incorpora textura y atención; MOSAIC combina escala y orientación; BDCNet incorpora relaciones espaciales; KongNet amplía la caracterización celular y la evaluación entre conjuntos. HistoMSC describe clasificación de parches con contexto y representación de láminas.
 
 Estos antecedentes se identificaron en los resúmenes exportados. Sus comparadores exactos y protocolos requieren lectura de texto completo; **no se agregan al conteo de arquitecturas verificadas**. La distinción evita atribuir a una red aislada el rendimiento de un sistema completo de detección, segmentación y clasificación.
 
@@ -54,10 +54,10 @@ Estos antecedentes se identificaron en los resúmenes exportados. Sus comparador
 Existen **{p['registros_con_decision']} registros con decisión o derivación de lectura** y **{p['registros_sin_decision']} sin decisión**. Estos conteos no equivalen a estudios incluidos. La revisión sigue siendo dirigida y parcial; no se presenta como revisión sistemática exhaustiva ni como flujo PRISMA completo.
 
 Las tareas de detección, segmentación, diagnóstico de láminas y clasificación nuclear se distinguen durante la selección. Las exclusiones por título y las lecturas de resumen se documentan por separado, sin atribuir una segunda revisión independiente inexistente.'''),
-        html.Img(src='/assets/flujo_literatura.svg', alt='Flujo parcial: 1330 registros atendidos; 167 textos pendientes; inclusión final no establecida', style={'width':'100%','maxWidth':'1120px'}),
-        section('Ampliación y conciliación documental', """Primera pasada de los 1.330 registros resuelta: 820 exclusiones explícitas (723 por título y 97 por resumen), 330 antecedentes de contexto/metodología/revisión, 167 pendientes de texto y 13 con lectura o extracción de secciones documentada. La ampliación registra 364 decisiones basadas en resúmenes completos o fragmentos dirigidos, distinguiendo el nivel de lectura. No son 13 estudios incluidos.
+        html.Img(src='/assets/flujo_literatura.svg', alt='Flujo parcial: 1330 registros atendidos; 151 textos pendientes; inclusión final no establecida', style={'width':'100%','maxWidth':'1120px'}),
+        section('Ampliación y conciliación documental', """Primera pasada de los 1.330 registros resuelta: 820 exclusiones explícitas (723 por título y 97 por resumen), 330 antecedentes de contexto/metodología/revisión, 151 pendientes de texto y 29 con lectura o extracción de secciones documentada. La ampliación registra 364 decisiones basadas en resúmenes completos o fragmentos dirigidos, distinguiendo el nivel de lectura. No son 29 estudios incluidos.
 
-Los nuevos textos abarcan Ensembling, ConvPath, HoVer-Net, CellViT, Immunocto, refinamiento con grafos y contexto mediante SVM. Los codificadores ResNet50 modificados, las entradas de máscara y los sistemas conjuntos se distinguen del clasificador RGB V2.
+El 8 de noviembre se añadieron 16 evaluaciones, incluyendo CGT, HistoPLUS, SuperCRF y Altini sobre NuCLS. Cuatro exclusiones de tarea y una revisión secundaria permanecen dentro del total de 29 lecturas, sin doble conteo. La fuente PLOS con preocupación editorial se registra separadamente. Los codificadores ResNet50 modificados, las entradas de máscara y los sistemas conjuntos se distinguen del clasificador RGB V2.
 
 Cinco publicaciones sustentan comparadores exactos. OLConvNet y Ensembling podrían compartir resultados: bajo agrupación conservadora, ResNet50 aparece en dos grupos y DenseNet121 en uno. No se establece un ranking del corpus.
 

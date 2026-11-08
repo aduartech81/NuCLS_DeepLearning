@@ -28,7 +28,10 @@ def verificar(root, entradas=None):
     index = {r['id']: r for r in rows}
     batch = leer('cribado_adicional_34.csv')
     assert len(batch) == len({x['id'] for x in batch}) == 34
-    posteriores={x['id'] for x in leer('lecturas_texto_ampliadas.csv')}
+    nuevas=leer('evaluaciones_texto_20261108.csv')
+    assert len(nuevas)==len({x['id'] for x in nuevas})==16
+    assert all(index[x['id']]['decision']=='texto_completo_revisado' and x['fuente'] and x['secciones_leidas'] for x in nuevas)
+    posteriores={x['id'] for x in leer('lecturas_texto_ampliadas.csv')+nuevas}
     for x in batch:
         if x['id'] not in posteriores:
             assert x['decision'] == index[x['id']]['decision']
@@ -39,7 +42,8 @@ def verificar(root, entradas=None):
     assert len(titulos)==len({x['id'] for x in titulos})==1174
     assert len(resumenes)==len({x['id'] for x in resumenes})==364
     for x in resumenes:
-        assert x['decision']==index[x['id']]['decision']
+        if x['id'] not in posteriores:
+            assert x['decision']==index[x['id']]['decision']
         assert len(x['sha256_resumen'])==64
     assert len(leer('lecturas_texto_ampliadas.csv'))==7
     exact = collections.defaultdict(set)
