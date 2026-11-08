@@ -1,0 +1,9 @@
+{
+  "doi": "10.1109/TMI.2024.3388328",
+  "fuente": "https://guanbinli.com/papers/Structure_Embedded_Nucleus_Classification_for_Histopathology_Images.pdf",
+  "sha256": "5a70d762967f72d2cd4f3b6e0f637979d4e7f880926e61d1bf7af2d6315ba7aa",
+  "secciones": "IV: experimentos, métricas y comparadores; V: discusión",
+  "comparadores": "SRDNet, HoVer-Net, Triple U-net, MCSpatNet, TSFD-net, Mask2former",
+  "decision": "Contexto estructural; no suma a frecuencia de clasificadores de recortes RGB",
+  "motivo": "El estudio incorpora máscaras y distingue instancias predichas de instancias de referencia."
+}

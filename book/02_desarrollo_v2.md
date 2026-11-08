@@ -60,9 +60,19 @@ Se construyeron diez descriptores de color y textura por recorte. Para evitar qu
 
 ![Matrices de confusión de los diagnósticos, con predicciones fuera del pliegue.](figuras/diagnosticos_pixeles_v2.svg)
 
-Los descriptores permitieron identificar la partición de 61 de 83 pacientes de entrenamiento y de 13 de 21 pacientes de validación. La AUC de 0,7097 muestra una separación parcial entre ambos grupos y aporta evidencia descriptiva de heterogeneidad visual. Su origen no puede atribuirse a un único factor: la composición celular, el tejido, la adquisición y la procedencia pueden contribuir conjuntamente. Al carecer de intervalo de confianza, este diagnóstico se interpreta como exploratorio. La partición por TSS controla el solapamiento de procedencia, mientras que el diagnóstico caracteriza las diferencias que persisten entre grupos.
+Los descriptores permitieron identificar la partición de 61 de 83 pacientes de entrenamiento y de 13 de 21 pacientes de validación. La AUC de 0,7097 muestra una separación parcial entre ambos grupos y aporta evidencia descriptiva de heterogeneidad visual. Su origen no puede atribuirse a un único factor: la composición celular, el tejido, la adquisición y la procedencia pueden contribuir conjuntamente. La AUC se interpreta como exploratoria; los intervalos posteriores corresponden a exactitud balanceada, no a AUC. La partición por TSS controla el solapamiento de procedencia, mientras que el diagnóstico caracteriza las diferencias que persisten entre grupos.
 
 El diagnóstico de procedencia incluyó únicamente los ocho TSS de entrenamiento con al menos tres pacientes. Su exactitud balanceada de 0,3983 supera descriptivamente la referencia uniforme de 0,125 para ocho categorías. Esto indica que los descriptores contienen señal asociada al TSS; no demuestra que una CNN entrenada para clasificar núcleos utilice esa señal. Tampoco estima rendimiento en TSS nuevos. Se mantiene la separación por paciente y TSS, y se evita interpretar la normalización RGB como solución demostrada a este desplazamiento.
+
+## Incertidumbre y heterogeneidad multivariada
+
+![Intervalos de los diagnósticos y distancias robustas por paciente.](figuras/eda_incertidumbre_v2.svg)
+
+Se obtuvieron intervalos percentiles del 95 % para la exactitud balanceada mediante 5.000 remuestreos de pacientes, estratificados por la etiqueta real y con semilla 4101. El intervalo del diagnóstico de partición fue **0,5579–0,7846** y el de procedencia **0,2937–0,5038**. Se mantuvieron fijas las predicciones fuera del pliegue: los intervalos describen variación de composición de pacientes condicionada al ajuste realizado, sin incluir reentrenamiento ni incertidumbre entre centros. No se infiere significación estadística a partir de estos intervalos exploratorios.
+
+El análisis multivariado utiliza las medianas por paciente de diez descriptores RGB, saturación, fondo, Laplaciano y entropía. Se aplica log(1+x) al Laplaciano y se ajustan mediana, IQR y covarianza robusta Minimum Covariance Determinant exclusivamente con los 83 pacientes de entrenamiento. El percentil 95 empírico de sus distancias prioriza **cinco pacientes de entrenamiento y uno de validación**. No se eliminan recortes ni se modifican las particiones. Una distancia elevada expresa una combinación infrecuente de descriptores; no demuestra artefacto, error de etiqueta ni enfermedad distinta.
+
+Estos resultados corresponden a V2. La priorización de cuatro pacientes entre 79, descrita en el análisis histórico de campos, utiliza otra población y otros indicadores. Ambos diagnósticos se conservan identificados para evitar una equivalencia incorrecta.
 
 ## Similitud perceptual entre entrenamiento y validación
 
@@ -79,3 +89,16 @@ No se utilizaron imágenes de reserva. Las mediciones de calidad de campos del p
 El EDA fundamenta tres decisiones del experimento. Primero, la selección de ventanas interiores define la población de recortes sobre la que son válidos los resultados. Segundo, el desequilibrio y el cambio de composición entre particiones justifican priorizar macro-F1 y acompañarlo de sensibilidad, precisión y F1 por clase. Tercero, la contribución desigual de los pacientes y la señal de procedencia obligan a conservar la agrupación en la evaluación y a interpretar con cautela la generalización.
 
 La estandarización RGB utiliza exclusivamente estadísticas de entrenamiento. Su función es establecer una escala común de entrada; no se le atribuye la corrección del desplazamiento de dominio. La integridad de archivos y la ausencia de candidatos de alta similitud bajo el criterio aplicado respaldan controles concretos del conjunto, pero la validez de las etiquetas requiere evidencia específica de anotación.
+
+## Decisiones analíticas derivadas de los datos
+
+| Evidencia | Decisión aplicada | Alcance |
+|---|---|---|
+| Identificadores y hashes completos | Mantener vinculación a paciente y TSS; no imputar identidad ni etiqueta | Integridad del manifiesto seleccionado |
+| Diferencias de balance y retención | Macro-F1 y métricas por categoría; pérdida común sin ponderación | No demuestra que el desbalance esté corregido |
+| Ventanas interiores elegibles | Entrada RGB 128×128 sin relleno | Población condicionada a la selección geométrica |
+| Heterogeneidad RGB | Estandarización con media y DE de entrenamiento | No equivale a normalización de tinción |
+| Señal de partición y TSS | Conservar separación por procedencia y evaluación agrupada | No identifica por sí sola la causa del desplazamiento |
+| Distancias multivariadas elevadas | Priorizar inspección, sin excluir pacientes | Indicador exploratorio, sin adjudicación visual |
+
+Las tablas numéricas completas se conservan como evidencia descargable; las figuras del capítulo presentan distribuciones y relaciones, sin repetir íntegramente los mismos valores. El análisis no incorpora imágenes de reserva ni resultados del entrenamiento en curso.

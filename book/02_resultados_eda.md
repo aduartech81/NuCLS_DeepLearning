@@ -1,4 +1,6 @@
-# Resultados del EDA y decisiones de preprocesamiento
+# EDA histórico de campos y recortes
+
+Este capítulo conserva la auditoría del piloto anterior. Sus conteos y estadísticas no corresponden a V2. El [análisis vigente del conjunto de desarrollo](02_desarrollo_v2.md) reúne integridad, balance, histogramas, similitud, procedencia e incertidumbre de la nueva partición.
 
 ## Procedencia y unidad de análisis
 Se integran los archivos aportados por el autor: `CONTROL_PILOTO_QC_20261105_225210.zip`, `COMPARACION_RECORTES_QC.zip`, `EDA_BORDES_QC.zip` y la auditoría de calidad de originales. Son salidas reales de auditoría, no resultados predictivos. Los campos de entrenamiento analizados son **1.182**, de **79 pacientes**. Las mediciones de textura describen campos completos, no exclusivamente núcleos.

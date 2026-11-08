@@ -1,20 +1,20 @@
 {
-  "fecha": "2026-11-07",
+  "fecha": "2026-11-08",
   "registros": 1330,
   "decisiones": {
-    "texto_completo_extraido": 2,
-    "recuperar_texto_completo": 25,
-    "contexto_tarea_distinta": 18,
-    "fuente_metodologica": 4,
-    "revision_secundaria": 1,
-    "texto_completo_revisado": 1,
     "excluir_por_titulo": 36,
     "revisar_resumen": 28,
-    "por_revisar": 1215
+    "recuperar_texto_completo": 25,
+    "fuente_metodologica": 4,
+    "contexto_tarea_distinta": 24,
+    "texto_completo_extraido": 2,
+    "por_revisar": 1208,
+    "revision_secundaria": 1,
+    "texto_completo_revisado": 2
   },
-  "registros_con_decision": 115,
+  "registros_con_decision": 122,
   "resumenes_adicionales_leidos": 40,
-  "alcance": "115 registros con decisión o derivación de lectura; 1215 sin decisión. No equivalen a 115 estudios incluidos; cribado parcial.",
+  "alcance": "122 registros con decisión o derivación; 1208 sin decisión. No equivale a estudios incluidos; cribado parcial.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -30,10 +30,11 @@
     "secciones": "3.3, 5.3, tabla 4",
     "alcance": "Referencia de clasificación epitelial binaria; no equivalencia exacta con tres categorías NuCLS"
   },
-  "registros_sin_decision": 1215,
+  "registros_sin_decision": 1208,
   "archivos_decisiones": [
     "cribado_unificado.csv",
-    "cribado_adicional_80.csv"
+    "cribado_adicional_80.csv",
+    "cribado_adicional_17.csv"
   ],
   "lote_80": {
     "excluir_por_titulo": 36,
@@ -42,5 +43,8 @@
     "fuente_metodologica": 1,
     "contexto_tarea_distinta": 5
   },
-  "lectura_resumen_lote_80": 16
+  "lectura_resumen_lote_80": 16,
+  "lecturas_resumen_lote_17": 17,
+  "registros_nuevos_lote_17": 7,
+  "registros_actualizados_lote_17": 10
 }
