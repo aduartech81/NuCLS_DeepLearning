@@ -1,0 +1,13 @@
+modelo,semilla,repeticion_registro,fase,epocas,val_max_impreso,primera_epoca_max_impreso,segundos_epocas_sumados,lr,weight_decay
+softmaxcnn_bn,4001,1,busqueda,18,0.7516,13,926.6999999999999,0.0001,0.0
+softmaxcnn_bn,4001,2,busqueda,18,0.7516,13,930.5,0.0001,0.0001
+softmaxcnn_bn,4001,3,busqueda,16,0.7456,11,836.4,0.001,0.0
+softmaxcnn_bn,4001,4,busqueda,16,0.7902,11,823.6,0.001,0.0001
+densenet121,4001,1,busqueda,6,0.7352,1,663.6,0.0001,0.0
+densenet121,4001,2,busqueda,6,0.7352,1,664.5,0.0001,0.0001
+densenet121,4001,3,busqueda,10,0.7834,5,1109.0,0.001,0.0
+densenet121,4001,4,busqueda,13,0.7811,8,1456.8000000000002,0.001,0.0001
+resnet50,4001,1,busqueda,10,0.7796,5,1064.4,0.0001,0.0
+resnet50,4001,2,busqueda,10,0.7796,5,1069.7,0.0001,0.0001
+resnet50,4001,3,busqueda,13,0.7973,8,1370.4999999999998,0.001,0.0
+resnet50,4001,4,busqueda,11,0.7893,6,1140.0,0.001,0.0001

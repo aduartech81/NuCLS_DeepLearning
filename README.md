@@ -8,14 +8,17 @@ Comparación V2 de CNN compacta con BatchNorm, DenseNet121 y ResNet50 para tres 
 - [Jupyter Book](https://aduartech81.github.io/NuCLS_DeepLearning/intro.html)
 - [EDA ejecutado](book/10_eda_v2.ipynb)
 - [Experimento V2 y evidencia](book/08_resultados_v2.md)
-- [Cuaderno de entrenamiento Colab](colab/Experimento_NuCLS_v2.ipynb)
+- [Notebook Colab ejecutado, con salidas](colab/Experimento_NuCLS_v2_ejecutado_cierre11.ipynb)
+- [Plantilla de entrenamiento](colab/Experimento_NuCLS_v2.ipynb)
+- [Estadística V2 y umbral de mejora](book/05_estadistica.md)
+- [Curvas, búsqueda, piloto y tiempos recuperados](resultados_analizados/auditoria_v2/)
 - [Anexo: piloto histórico](book/08_resultados_piloto.md)
 
 ## Alcance científico
 
 La selección V2 combina evidencia bibliográfica verificable, capacidad y conectividad. La revisión no acredita que estos sean los tres modelos más frecuentes y sencillos de todo el corpus. Esta restricción no se resuelve cambiando la redacción.
 
-El registro comunicado de Colab ya alcanza las corridas finales, pero sus resultados finales todavía no están incorporados. El cuaderno publicado sin salidas es una plantilla, no evidencia de ejecución completa. Las métricas disponibles de CNN local, ResNet18 y MobileNetV2 son históricas y no determinan el baseline V2. La reserva de seis pacientes y 70 recortes estromales impone una limitación fuerte.
+V2 está cerrado con 11 semillas por modelo (33 corridas). ResNet50 fue seleccionado por validación antes de evaluar la reserva. El notebook ejecutado conserva 805 registros de épocas del desarrollo y cierre; las curvas, tiempos y validación por semilla se reconstruyeron de su stdout redondeado. El plan original exigía 22 semillas: la reducción limita la potencia. En reserva ResNet50 y DenseNet121 no se distinguen por semillas; el bootstrap por pacientes responde a otra fuente de incertidumbre. Solo hay seis pacientes y 70 recortes estromales.
 
 ## Dashboard
 
@@ -34,7 +37,7 @@ Dirección local: http://127.0.0.1:8050/.
 
 `render.yaml` define un servicio gratuito con verificación `/health`. El servicio está publicado en https://nucls-andres-duarte.onrender.com/.
 
-## Reproducción del análisis
+## Reproducción del análisis histórico
 
 En un entorno separado del entrenamiento:
 
@@ -50,14 +53,14 @@ jupyter nbconvert --to notebook --execute --inplace book/07_analisis_ejecutado.i
 jupyter-book build book
 ```
 
-El notebook contiene salidas de cálculos ejecutados. La publicación conserva esas salidas y compila el libro sin ejecutar nuevos entrenamientos. Los scripts analíticos no acceden a imágenes de prueba o reserva.
+El notebook contiene salidas de cálculos ejecutados. La publicación conserva esas salidas y compila el libro sin ejecutar nuevos entrenamientos. Los análisis V2 adicionales consumen predicciones de reserva ya guardadas, sin ejecutar inferencia.
 
 ## Organización y procedencia
 
 - `book/`: capítulos, notebook y figuras.
 - `app.py`, `assets/`: dashboard.
 - `modelos/`: implementaciones del piloto y del experimento V2.
-- `resultados/`: predicciones comprimidas, curvas y configuración de quince corridas.
+- `resultados/`: predicciones comprimidas, curvas y configuración de quince corridas históricas.
 - `resultados_analizados/`: métricas recalculadas, incertidumbre y planificación.
 - `evidencias/`: auditorías, selección, trazabilidad y hashes.
 - `scripts/`: análisis y generación de figuras.
@@ -66,7 +69,7 @@ La galería contiene doce ejemplos ilustrativos de entrenamiento, con trazabilid
 
 ## Comprobaciones
 
-Se verificaron las predicciones, las métricas, el emparejamiento de semillas y el cálculo exacto de Wilcoxon mediante enumeración de signos. El JBook compila sin advertencias. El dashboard fue comprobado con el cliente de pruebas de Flask y funciones de sus siete pestañas. La validación local y la publicación en Render son comprobaciones distintas.
+Se verificaron las predicciones, las métricas, el emparejamiento de semillas y el cálculo exacto de Wilcoxon mediante enumeración de signos. La publicación del JBook se verifica mediante GitHub Actions. El dashboard fue comprobado con el cliente de pruebas de Flask y funciones de sus siete pestañas. La validación local y la publicación en Render son comprobaciones distintas.
 
 ## Reproducción del piloto de entrenamiento
 
@@ -82,3 +85,8 @@ La ruta se proporciona explícitamente. El entrenador exige el manifiesto origin
 ## Evidencia bibliográfica
 
 Las exportaciones originales se conservan por separado. `evidencias/literatura/` contiene el inventario bibliográfico, las decisiones de lectura y los conteos de depuración. Los registros por revisar no son estudios incluidos. Los resúmenes completos exportados no se redistribuyen en este repositorio.
+
+
+## Auditoría V2
+
+`python scripts/auditoria_estadistica_v2.py` reconstruye curvas y contrastes de las salidas conservadas. `python scripts/robustez_reserva_v2.py /ruta/al/cierre/reserva` calcula sensibilidad por paciente/TSS y pruebas exploratorias agrupadas. Latencia de inferencia y Grad-CAM siguen pendientes: los tiempos de época no son latencia.

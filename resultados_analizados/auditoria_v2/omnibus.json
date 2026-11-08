@@ -1,0 +1,95 @@
+{
+  "validacion_redondeada": {
+    "friedman_Q": 8.909090909090907,
+    "p_chi2_aproximado": 0.01162560303883851,
+    "p_permutacion_exacta": 0.011181176729284153,
+    "kendall_W": 0.4049586776859503,
+    "rangos_medios": {
+      "softmaxcnn_bn": 2.6363636363636362,
+      "densenet121": 2.0,
+      "resnet50": 1.3636363636363635
+    },
+    "nemenyi_aproximado": [
+      {
+        "A": "resnet50",
+        "B": "densenet121",
+        "diferencia_rangos": 0.6363636363636365,
+        "p_nemenyi": 0.29453954847799035
+      },
+      {
+        "A": "resnet50",
+        "B": "softmaxcnn_bn",
+        "diferencia_rangos": 1.2727272727272727,
+        "p_nemenyi": 0.007986561220090449
+      },
+      {
+        "A": "densenet121",
+        "B": "softmaxcnn_bn",
+        "diferencia_rangos": 0.6363636363636362,
+        "p_nemenyi": 0.2945395484779906
+      }
+    ]
+  },
+  "reserva": {
+    "friedman_Q": 11.454545454545467,
+    "p_chi2_aproximado": 0.0032559449856857945,
+    "p_permutacion_exacta": 0.0020417034475605006,
+    "kendall_W": 0.520661157024794,
+    "rangos_medios": {
+      "softmaxcnn_bn": 2.8181818181818183,
+      "densenet121": 1.7272727272727273,
+      "resnet50": 1.4545454545454546
+    },
+    "nemenyi_aproximado": [
+      {
+        "A": "resnet50",
+        "B": "densenet121",
+        "diferencia_rangos": 0.2727272727272727,
+        "p_nemenyi": 0.7982370772117076
+      },
+      {
+        "A": "resnet50",
+        "B": "softmaxcnn_bn",
+        "diferencia_rangos": 1.3636363636363638,
+        "p_nemenyi": 0.003954850142666055
+      },
+      {
+        "A": "densenet121",
+        "B": "softmaxcnn_bn",
+        "diferencia_rangos": 1.090909090909091,
+        "p_nemenyi": 0.02835415910323047
+      }
+    ]
+  },
+  "AUC_reserva": {
+    "friedman_Q": 13.27272727272728,
+    "p_chi2_aproximado": 0.0013117887221641214,
+    "p_permutacion_exacta": 0.0006463779022506732,
+    "kendall_W": 0.6033057851239673,
+    "rangos_medios": {
+      "softmaxcnn_bn": 2.8181818181818183,
+      "densenet121": 1.9090909090909092,
+      "resnet50": 1.2727272727272727
+    },
+    "nemenyi_aproximado": [
+      {
+        "A": "resnet50",
+        "B": "densenet121",
+        "diferencia_rangos": 0.6363636363636365,
+        "p_nemenyi": 0.29453954847799035
+      },
+      {
+        "A": "resnet50",
+        "B": "softmaxcnn_bn",
+        "diferencia_rangos": 1.5454545454545456,
+        "p_nemenyi": 0.0008456837224568581
+      },
+      {
+        "A": "densenet121",
+        "B": "softmaxcnn_bn",
+        "diferencia_rangos": 0.9090909090909092,
+        "p_nemenyi": 0.08346196696342534
+      }
+    ]
+  }
+}

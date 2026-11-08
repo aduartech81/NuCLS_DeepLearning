@@ -1,0 +1,10 @@
+{
+  "notebook_sha256": "de082938df30fd9006b3e317d009134beba3b79b785a256f8d8bf3439c3c50bd",
+  "epocas_impresas": 805,
+  "corridas_cierre": 33,
+  "piloto": 15,
+  "busqueda": 12,
+  "precision_f1_loss": 4,
+  "precision_segundos": 1,
+  "limitacion": "Reconstrucción del stdout, no archivos historia.json originales. Máximo impreso valida las medias a tolerancia 0.00005; puede no resolver empates de época. Segundos suman épocas train+validación, excluyen gastos externos; no latencia de inferencia. Semilla 6112 excluida del cierre."
+}

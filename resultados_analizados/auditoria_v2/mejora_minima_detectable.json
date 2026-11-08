@@ -1,0 +1,32 @@
+[
+  {
+    "A": "softmaxcnn_bn",
+    "B": "densenet121",
+    "sd_piloto": 0.01719576941508776,
+    "R": 11,
+    "alpha_por_par": 0.016666666666666666,
+    "potencia_objetivo": 0.8,
+    "mejora_minima_detectable": 0.01966832933716265,
+    "potencia_para_delta_002": 0.8146324079985376
+  },
+  {
+    "A": "softmaxcnn_bn",
+    "B": "resnet50",
+    "sd_piloto": 0.02663393267102482,
+    "R": 11,
+    "alpha_por_par": 0.016666666666666666,
+    "potencia_objetivo": 0.8,
+    "mejora_minima_detectable": 0.03046359524092637,
+    "potencia_para_delta_002": 0.39930408315380544
+  },
+  {
+    "A": "densenet121",
+    "B": "resnet50",
+    "sd_piloto": 0.018123600408532583,
+    "R": 11,
+    "alpha_por_par": 0.016666666666666666,
+    "potencia_objetivo": 0.8,
+    "mejora_minima_detectable": 0.020729572082851446,
+    "potencia_para_delta_002": 0.7672755556150883
+  }
+]

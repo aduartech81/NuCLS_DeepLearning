@@ -81,3 +81,21 @@ Quedan pendientes la ampliación a 22 según el plan, la inferencia conjunta de 
 ## Separación del experimento anterior
 
 Las corridas de CNN local, ResNet18 y MobileNetV2 corresponden al [piloto histórico](08_resultados_piloto.md). No se mezclan con los resultados V2.
+
+## Evidencia ejecutada y curvas recuperadas
+
+El [notebook ejecutado](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/colab/Experimento_NuCLS_v2_ejecutado_cierre11.ipynb) conserva salidas en diez celdas de código y 805 registros de épocas: búsqueda (12 configuraciones), piloto V2 (15 corridas), cierre (33 corridas) y la semilla 6112 excluida. No se han rellenado artificialmente los contadores de ejecución faltantes. La procedencia y el hash se conservan en `procedencia_stdout.json`.
+
+![Curvas de las once semillas de cada modelo](figuras/curvas_entrenamiento_v2.svg)
+
+Cada línea es una corrida; el final de la línea refleja parada temprana. Las métricas están redondeadas como en stdout. El máximo por corrida aproxima el checkpoint seleccionado; puede no resolver empates por redondeo.
+
+| modelo | corridas | epocas | minutos_epocas |
+|---|---|---|---|
+| densenet121 | 11 | 124 | 226.9 |
+| resnet50 | 11 | 169 | 297.8 |
+| softmaxcnn_bn | 11 | 165 | 142.4 |
+
+Los tiempos suman épocas de entrenamiento y validación; no incluyen todos los gastos de guardado, preparación y ejecución. **No son latencia de inferencia ni duración total de la sesión.** Los CSV permiten consultar cada corrida, las cuatro configuraciones por modelo y las cinco semillas piloto.
+
+La [comparación estadística](05_estadistica.md) presenta Holm, efectos, Friedman/Nemenyi, normalidad, McNemar diagnóstico y AUC agrupada. ResNet50 sigue siendo el baseline por validación; no se afirma superioridad sobre DenseNet121 entre semillas de reserva. La robustez por paciente/TSS y exclusión de grupos está en los CSV de auditoría.
