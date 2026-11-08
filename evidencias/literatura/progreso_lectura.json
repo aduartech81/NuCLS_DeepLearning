@@ -2,17 +2,19 @@
   "fecha": "2026-11-07",
   "registros": 1330,
   "decisiones": {
-    "por_revisar": 1295,
     "texto_completo_extraido": 2,
-    "recuperar_texto_completo": 15,
-    "contexto_tarea_distinta": 13,
-    "fuente_metodologica": 3,
+    "recuperar_texto_completo": 25,
+    "contexto_tarea_distinta": 18,
+    "fuente_metodologica": 4,
     "revision_secundaria": 1,
-    "texto_completo_revisado": 1
+    "texto_completo_revisado": 1,
+    "excluir_por_titulo": 36,
+    "revisar_resumen": 28,
+    "por_revisar": 1215
   },
-  "registros_con_decision": 35,
-  "resumenes_adicionales_leidos": 24,
-  "alcance": "Selección dirigida de candidatos; no cribado completo ni estimación de frecuencia del corpus",
+  "registros_con_decision": 115,
+  "resumenes_adicionales_leidos": 40,
+  "alcance": "115 registros con decisión o derivación de lectura; 1215 sin decisión. No equivalen a 115 estudios incluidos; cribado parcial.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -27,5 +29,18 @@
     "sha256_pdf": "d34945b6f34d504681b9510e3ccfdbbda5b3f096b1941614700d248b421f25ca",
     "secciones": "3.3, 5.3, tabla 4",
     "alcance": "Referencia de clasificación epitelial binaria; no equivalencia exacta con tres categorías NuCLS"
-  }
+  },
+  "registros_sin_decision": 1215,
+  "archivos_decisiones": [
+    "cribado_unificado.csv",
+    "cribado_adicional_80.csv"
+  ],
+  "lote_80": {
+    "excluir_por_titulo": 36,
+    "revisar_resumen": 28,
+    "recuperar_texto_completo": 10,
+    "fuente_metodologica": 1,
+    "contexto_tarea_distinta": 5
+  },
+  "lectura_resumen_lote_80": 16
 }
