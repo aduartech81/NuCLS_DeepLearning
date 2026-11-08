@@ -5,15 +5,15 @@
     "excluir_por_titulo": 723,
     "revision_secundaria": 137,
     "excluir_por_resumen": 97,
-    "recuperar_texto_completo": 141,
+    "recuperar_texto_completo": 124,
     "fuente_metodologica": 50,
     "contexto_tarea_distinta": 143,
-    "texto_completo_revisado": 36,
+    "texto_completo_revisado": 53,
     "texto_completo_extraido": 3
   },
   "registros_con_decision": 1330,
   "resumenes_adicionales_leidos": 40,
-  "alcance": "Primera pasada concluida; 141 pendientes de texto y 39 con lectura de secciones documentada. Inclusión final no cerrada.",
+  "alcance": "Primera pasada concluida; 124 pendientes de texto y 56 con lectura de secciones documentada. Inclusión final no cerrada.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -95,15 +95,28 @@
     "nota": "Todos conservan estado de lectura; la disposición se registra separadamente. Pertinencia preliminar no equivale a inclusión final."
   },
   "tercera_lectura_20261108": {
-    "registros": 10,
+    "registros": 27,
     "disposiciones": {
       "pertinente_con_inconsistencias": 1,
       "contexto_modalidad_ihc": 1,
-      "pertinente_sistema_conjunto": 4,
+      "pertinente_sistema_conjunto": 7,
       "pertinente_clasificador_modificado": 1,
       "pertinente_benchmark_conjunto": 1,
-      "revision_secundaria": 1,
-      "excluir_editorial": 1
+      "revision_secundaria": 2,
+      "excluir_editorial": 1,
+      "contexto_radiomica_y_segmentacion": 1,
+      "contexto_clasificador_no_cnn": 1,
+      "excluir_comentario_otro_objetivo": 1,
+      "pertinente_deteccion_y_tipificacion": 1,
+      "contexto_citologia_multietiqueta": 1,
+      "pertinente_dataset_y_sistema_conjunto": 1,
+      "pertinente_robustez_anotaciones": 1,
+      "pertinente_transferencia_y_multitarea": 1,
+      "contexto_multitarea_y_clasificacion_tisular": 1,
+      "contexto_sintesis_y_conteo": 1,
+      "pertinente_clasificacion_y_visualizacion": 1,
+      "contexto_modalidad_y_objetivo_distintos": 1,
+      "pertinente_grafo_multitarea": 1
     }
   }
 }

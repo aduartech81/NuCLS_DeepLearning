@@ -16,7 +16,7 @@ El análisis por paciente conserva juntos los recortes de cada individuo. El rem
 
 ## Métricas complementarias y errores
 
-Se examinarán matrices de confusión, precisión, sensibilidad y F1 por clase, MCC, AP macro, AUC y calibración cuando las clases presentes permitan estimarlos. Las métricas indefinidas en pacientes o TSS sin alguna categoría se identificarán como tales. McNemar sobre recortes correlacionados no se interpretará como inferencia poblacional independiente; la dependencia por paciente debe incorporarse en la comparación de errores.
+El cierre incorpora matrices de confusión, F1 por clase, MCC, AP macro, AUC y calibración descriptiva de reserva a partir de las probabilidades guardadas. Las métricas indefinidas en pacientes o TSS sin alguna categoría se identificarán como tales. McNemar sobre recortes correlacionados no se interpretará como inferencia poblacional independiente; la dependencia por paciente debe incorporarse en la comparación de errores.
 
 La galería de errores y Grad-CAM se construirán sobre validación con criterios de selección explícitos. Grad-CAM describe sensibilidad espacial del modelo y no demuestra causalidad ni corrección biológica. La medición de inferencia registrará dispositivo, lote, calentamiento y sincronización. Los resultados por paciente y TSS acompañarán el promedio global para mostrar heterogeneidad.
 

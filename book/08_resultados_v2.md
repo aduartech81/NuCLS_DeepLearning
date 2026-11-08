@@ -46,11 +46,31 @@ Se enumeraron las 46.656 remuestras ordenadas posibles de seis pacientes con ree
 
 Para ResNet50 menos DenseNet121, la diferencia observada es 0,0325 y el intervalo pareado exploratorio 95 es [0,0015; 0,0618]. Este intervalo nominal no está ajustado por las tres comparaciones, depende de solo seis pacientes y condiciona a los once ajustes disponibles. Su extremo inferior no supera el margen operativo de 0,02; no acredita una mejora práctica de al menos dos puntos ni una superioridad poblacional confirmatoria. El remuestreo no reproduce el entrenamiento, no aumenta el número de pacientes y no es un ensayo de validación externa independiente.
 
+## Métricas complementarias de reserva
+
+Calculadas después del cierre sobre las probabilidades guardadas, sin entrenar, modificar umbrales ni recalibrar. Se informa la media de once métricas individuales; no es un ensemble. La dispersión por semilla y los valores completos están en `metricas_reserva_por_semilla.csv` y `metricas_complementarias.json`.
+
+| Modelo | Exactitud | Exactitud balanceada | MCC | AUC macro OvR | AP macro OvR | Brier | ECE |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| CNN compacta BN | 0,5135 | 0,6384 | 0,3497 | 0,8276 | 0,6394 | 0,7135 | 0,2662 |
+| DenseNet121 | 0,7246 | 0,6937 | 0,5123 | 0,8631 | 0,7042 | 0,4089 | 0,1103 |
+| ResNet50 | 0,7342 | 0,7496 | 0,5255 | 0,9024 | 0,7378 | 0,3582 | 0,0645 |
+
+AUC se calcula por clase frente al resto y se promedia sin ponderar. AP es *average precision*, no área trapezoidal bajo la curva precisión–recall. Brier suma el error cuadrático de las tres probabilidades por recorte y luego promedia (rango 0–2; menor es mejor). ECE utiliza diez intervalos iguales de confianza máxima; depende del particionado y no acredita calibración de cada clase. Estas son medidas descriptivas de la misma reserva de seis pacientes; no proporcionan 969 observaciones independientes para inferencia.
+
+![Matrices de confusión de reserva, promedio de once matrices normalizadas por fila](figuras/confusion_reserva_cierre11.svg)
+
+La matriz muestra el origen de muchos falsos positivos estromales: ResNet50 asigna a estroma el 22,9% de los recortes tumorales, mientras recupera el 62,2% del estroma real. Como hay 769 recortes tumorales frente a 70 estromales, la sensibilidad estromal no basta para garantizar precisión ni F1 altos. La AUC elevada tampoco sustituye la evaluación de la decisión final por clase.
+
+![Diagramas de confiabilidad por semilla sobre reserva](figuras/calibracion_reserva_cierre11.svg)
+
+Cada curva corresponde a un ajuste; los intervalos vacíos se omiten y los conteos se conservan en el JSON. Una curva bajo la diagonal indica confianza superior a la fracción de aciertos. ResNet50 presenta menor ECE medio en este conjunto, pero las curvas muestran variación entre semillas. No se ajustó una calibración usando estos resultados.
+
 ## Evidencia y trabajo pendiente
 
 Los resultados agregados y el análisis reproducible están en `resultados_analizados/cierre_11`. El cuaderno ejecutado de Colab debe acompañar la entrega; la comprobación del ZIP no demuestra por sí sola que ese cuaderno esté adjunto. Las curvas y los pesos se conservan en el entrenamiento original y no se reconstruyen a partir de este ZIP.
 
-Quedan pendientes la ampliación a 22 según el plan, la inferencia conjunta de semillas y pacientes, las métricas probabilísticas complementarias, la galería de errores/Grad-CAM y la medición controlada de latencia. Ninguno de estos elementos se presenta como ya completado. La ampliación posterior mantendrá arquitectura e hiperparámetros fijados antes de la reserva.
+Quedan pendientes la ampliación a 22 según el plan, la inferencia conjunta de semillas y pacientes, la galería de errores/Grad-CAM y la medición controlada de latencia. Ninguno de estos elementos se presenta como ya completado. La ampliación posterior mantendrá arquitectura e hiperparámetros fijados antes de la reserva.
 
 ## Separación del experimento anterior
 
