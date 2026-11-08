@@ -1,0 +1,57 @@
+{
+  "modelos": [
+    "softmaxcnn_bn",
+    "densenet121",
+    "resnet50"
+  ],
+  "grid": [
+    {
+      "lr": 0.0001,
+      "weight_decay": 0.0
+    },
+    {
+      "lr": 0.0001,
+      "weight_decay": 0.0001
+    },
+    {
+      "lr": 0.001,
+      "weight_decay": 0.0
+    },
+    {
+      "lr": 0.001,
+      "weight_decay": 0.0001
+    }
+  ],
+  "semilla_busqueda": 4001,
+  "semillas_piloto": [
+    5101,
+    5102,
+    5103,
+    5104,
+    5105
+  ],
+  "semilla_inicial_final": 6101,
+  "epocas_maximas": 25,
+  "paciencia": 5,
+  "min_epocas": 5,
+  "batch": 32,
+  "delta": 0.02,
+  "alpha_planificacion": 0.016666666666666666,
+  "potencia": 0.8,
+  "max_corridas_por_modelo": 50,
+  "manifest_sha256": "623adf36520751addc324e44cd1b89d95e47842e53cda494914c0248a8be86d4",
+  "codigo_sha256": "ded095f538408ede724b3309111e9f3e39a0a6a0de87528035e70ffcd6b5850d",
+  "entrada": "RGB 128x128; estandarización con medias y SD de train; rotaciones 90 y reflexión horizontal solo train",
+  "preentrenamiento": false,
+  "criterio_checkpoint": "Mayor macro-F1 de validación; empate conserva primera época",
+  "criterio_hiperparametros": "Mayor macro-F1 validación; empate menor lr, luego menor weight_decay",
+  "criterio_baseline": "Mayor media final de macro-F1 validación; empate menor número de parámetros",
+  "reserva": "Una evaluación por checkpoint final dentro de un lote predefinido después de fijar todos los modelos; no selecciona modelos",
+  "device": "cuda",
+  "determinismo": "warn_only en MPS; estricto en CPU/CUDA, sujeto a entorno",
+  "torch": "2.14.1+cu130",
+  "torchvision": "0.29.1+cu130",
+  "numpy": "2.4.6",
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "platform": "Linux-6.6.159+-x86_64-with-glibc2.39"
+}

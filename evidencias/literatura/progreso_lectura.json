@@ -5,15 +5,15 @@
     "excluir_por_titulo": 723,
     "revision_secundaria": 137,
     "excluir_por_resumen": 97,
-    "recuperar_texto_completo": 151,
+    "recuperar_texto_completo": 141,
     "fuente_metodologica": 50,
     "contexto_tarea_distinta": 143,
-    "texto_completo_revisado": 26,
+    "texto_completo_revisado": 36,
     "texto_completo_extraido": 3
   },
   "registros_con_decision": 1330,
   "resumenes_adicionales_leidos": 40,
-  "alcance": "Primera pasada concluida; 151 candidatos pendientes de texto; 29 con lectura de secciones documentada. Elegibilidad final no cerrada.",
+  "alcance": "Primera pasada concluida; 141 pendientes de texto y 39 con lectura de secciones documentada. Inclusión final no cerrada.",
   "olconvnet": {
     "fuente": "https://arxiv.org/pdf/2202.10177",
     "sha256_pdf": "5d9628644076c0b32c46b6908d09ae66ef1a2433668b315db245707bf4b25537",
@@ -38,7 +38,8 @@
     "cribado_titulos_ampliado.csv",
     "cribado_resumenes_ampliado.csv",
     "lecturas_texto_ampliadas.csv",
-    "evaluaciones_texto_20261108.csv"
+    "evaluaciones_texto_20261108.csv",
+    "evaluaciones_texto_cierre_20261108.csv"
   ],
   "lote_80": {
     "excluir_por_titulo": 36,
@@ -92,5 +93,17 @@
       "elegible_clasificacion_binaria_no_cnn": 1
     },
     "nota": "Todos conservan estado de lectura; la disposición se registra separadamente. Pertinencia preliminar no equivale a inclusión final."
+  },
+  "tercera_lectura_20261108": {
+    "registros": 10,
+    "disposiciones": {
+      "pertinente_con_inconsistencias": 1,
+      "contexto_modalidad_ihc": 1,
+      "pertinente_sistema_conjunto": 4,
+      "pertinente_clasificador_modificado": 1,
+      "pertinente_benchmark_conjunto": 1,
+      "revision_secundaria": 1,
+      "excluir_editorial": 1
+    }
   }
 }

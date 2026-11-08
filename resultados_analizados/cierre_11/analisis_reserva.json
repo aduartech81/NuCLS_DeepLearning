@@ -1,0 +1,149 @@
+{
+  "procedencia": "ZIP descargado por el usuario; contraste de 33 CSV y 33 JSON",
+  "sha256_zip": "008833bd4580eba069ee5057941325388fa9de950dd78772b4b0a0c57c1e9b2e",
+  "n_imagenes": 969,
+  "n_pacientes": 6,
+  "R": 11,
+  "metodo": "Bootstrap agrupado por paciente exhaustivo, 46656 remuestras ordenadas de seis pacientes con reemplazo. Once ajustes fijos por modelo; media del macro-F1 agrupado por remuestra. Percentiles 2.5 y 97.5; clases fijas y cero si denominador cero. Comparaciones pareadas con mismos pacientes. Análisis posterior al cierre, exploratorio; no remuestrea entrenamiento ni semillas.",
+  "modelos": {
+    "softmaxcnn_bn": {
+      "macro_f1_reserva_media": 0.45418470173200803,
+      "IC95_pacientes_inf": 0.2586236145781008,
+      "IC95_pacientes_sup": 0.5716289557432584,
+      "clases": [
+        {
+          "clase": "tumor_nonMitotic",
+          "soporte": 769,
+          "f1_media": 0.6002697096670112
+        },
+        {
+          "clase": "lymphocyte",
+          "soporte": 130,
+          "f1_media": 0.5324831047168855
+        },
+        {
+          "clase": "nonTILnonMQ_stromal",
+          "soporte": 70,
+          "f1_media": 0.22980129081212733
+        }
+      ]
+    },
+    "densenet121": {
+      "macro_f1_reserva_media": 0.6052262212004703,
+      "IC95_pacientes_inf": 0.44146370731030765,
+      "IC95_pacientes_sup": 0.673754221618617,
+      "clases": [
+        {
+          "clase": "tumor_nonMitotic",
+          "soporte": 769,
+          "f1_media": 0.7981549925487424
+        },
+        {
+          "clase": "lymphocyte",
+          "soporte": 130,
+          "f1_media": 0.7655235050474982
+        },
+        {
+          "clase": "nonTILnonMQ_stromal",
+          "soporte": 70,
+          "f1_media": 0.2520001660051706
+        }
+      ]
+    },
+    "resnet50": {
+      "macro_f1_reserva_media": 0.6377714667691423,
+      "IC95_pacientes_inf": 0.46026675295323477,
+      "IC95_pacientes_sup": 0.7166947307711834,
+      "clases": [
+        {
+          "clase": "tumor_nonMitotic",
+          "soporte": 769,
+          "f1_media": 0.812328845416284
+        },
+        {
+          "clase": "lymphocyte",
+          "soporte": 130,
+          "f1_media": 0.7988311785410253
+        },
+        {
+          "clase": "nonTILnonMQ_stromal",
+          "soporte": 70,
+          "f1_media": 0.3021543763501176
+        }
+      ]
+    }
+  },
+  "diferencias": [
+    {
+      "A": "resnet50",
+      "B": "densenet121",
+      "diferencia": 0.032545245568672,
+      "IC95_inf": 0.0014974771731993686,
+      "IC95_sup": 0.061779802356402125
+    },
+    {
+      "A": "resnet50",
+      "B": "softmaxcnn_bn",
+      "diferencia": 0.18358676503713428,
+      "IC95_inf": 0.05524708167845083,
+      "IC95_sup": 0.3059032506894412
+    },
+    {
+      "A": "densenet121",
+      "B": "softmaxcnn_bn",
+      "diferencia": 0.15104151946846228,
+      "IC95_inf": 0.04140601059940352,
+      "IC95_sup": 0.26500752156829865
+    }
+  ],
+  "soporte_pacientes": [
+    {
+      "paciente": "TCGA-A7-A6VY",
+      "clases": [
+        8,
+        1,
+        0
+      ]
+    },
+    {
+      "paciente": "TCGA-AN-A0AR",
+      "clases": [
+        60,
+        13,
+        0
+      ]
+    },
+    {
+      "paciente": "TCGA-AO-A0J2",
+      "clases": [
+        290,
+        0,
+        42
+      ]
+    },
+    {
+      "paciente": "TCGA-AO-A0J6",
+      "clases": [
+        257,
+        0,
+        1
+      ]
+    },
+    {
+      "paciente": "TCGA-AO-A124",
+      "clases": [
+        77,
+        54,
+        11
+      ]
+    },
+    {
+      "paciente": "TCGA-AO-A129",
+      "clases": [
+        77,
+        62,
+        16
+      ]
+    }
+  ]
+}

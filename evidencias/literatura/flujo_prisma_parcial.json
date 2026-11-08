@@ -19,10 +19,10 @@
     "excluir_por_titulo": 723,
     "revision_secundaria": 137,
     "excluir_por_resumen": 97,
-    "recuperar_texto_completo": 151,
+    "recuperar_texto_completo": 141,
     "fuente_metodologica": 50,
     "contexto_tarea_distinta": 143,
-    "texto_completo_revisado": 26,
+    "texto_completo_revisado": 36,
     "texto_completo_extraido": 3
   },
   "con_decision_o_derivacion": 1330,
@@ -30,16 +30,16 @@
   "exclusiones_explicitas_titulo_resumen": 820,
   "contexto_y_metodologia": 330,
   "pendientes_resumen": 0,
-  "pendientes_texto_completo": 151,
-  "registros_con_lectura_texto_documentada": 29,
+  "pendientes_texto_completo": 141,
+  "registros_con_lectura_texto_documentada": 39,
   "informes_no_recuperados": null,
   "informes_evaluados_elegibilidad_final": null,
   "estudios_incluidos_finales": null,
-  "nota": "El estado de lectura incluye 16 nuevas evaluaciones dirigidas: cuatro exclusiones de tarea y una revisión secundaria están dentro de los 29 textos, no se suman nuevamente. Las disposiciones restantes son preliminares y no cierran inclusión. Cinco publicaciones sustentan comparadores exactos; la fuente con preocupación editorial se registra separadamente. No hay segundo revisor independiente.",
+  "nota": "39 registros con lectura dirigida de secciones. Disposiciones preliminares, exclusiones tras lectura y revisiones se conservan dentro de esa etapa, sin doble conteo. No equivalen a estudios incluidos. Sin segundo revisor independiente.",
   "fuente_metodologica": "https://www.prisma-statement.org/prisma-2020-flow-diagram",
   "ecuaciones": [
     "1717 = 69 + 318 + 1330",
-    "1330 = 820 + 330 + 151 + 29",
+    "1330 = 820 + 330 + 141 + 39",
     "820 = 723 + 97",
     "330 = 143 + 50 + 137"
   ]

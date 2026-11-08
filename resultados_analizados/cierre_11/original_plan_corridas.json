@@ -1,0 +1,26 @@
+{
+  "comparaciones": [
+    {
+      "A": "softmaxcnn_bn",
+      "B": "densenet121",
+      "sd_diferencias": 0.01719576941508776,
+      "R_requerido": 11
+    },
+    {
+      "A": "softmaxcnn_bn",
+      "B": "resnet50",
+      "sd_diferencias": 0.02663393267102482,
+      "R_requerido": 22
+    },
+    {
+      "A": "densenet121",
+      "B": "resnet50",
+      "sd_diferencias": 0.018123600408532583,
+      "R_requerido": 12
+    }
+  ],
+  "R_por_modelo": 22,
+  "regla": "Máximo R para detectar delta .02 en tres diferencias pareadas con alpha .05/3 y potencia .8; mínimo cinco",
+  "limitacion": "Estimación basada en solo cinco pares; no incluye variabilidad entre pacientes",
+  "aprobado_por_limite_computacional": true
+}

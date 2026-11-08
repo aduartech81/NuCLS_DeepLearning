@@ -1,0 +1,7 @@
+{
+  "estado": "CIERRE_11_COMPLETADO_PLAN_22_PENDIENTE",
+  "baseline": "resnet50",
+  "R": 11,
+  "R_plan_original": 22,
+  "advertencia": "IC por semillas condicionados a validación. Seis pacientes de reserva requieren análisis agrupado adicional; no son 969 pacientes."
+}

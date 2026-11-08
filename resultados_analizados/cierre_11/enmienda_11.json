@@ -1,0 +1,24 @@
+{
+  "R_original": 22,
+  "R_entrega": 11,
+  "semillas_entrega": [
+    6101,
+    6102,
+    6103,
+    6104,
+    6105,
+    6106,
+    6107,
+    6108,
+    6109,
+    6110,
+    6111
+  ],
+  "motivo": "Límite de tiempo de entrega; autorizado por el autor antes de abrir reserva",
+  "criterio": "Primeras 11 semillas de cada modelo, sin selección por rendimiento",
+  "continuacion": "6101–6122 fijadas para extensión; no adaptar modelos ni hiperparámetros a reserva",
+  "limitacion": "No se declara alcanzada la potencia del plan de 22. Evaluación de entrega intermedia.",
+  "origen": "/content/drive/MyDrive/NuCLS_V2_RESULTADOS_pool_corregido",
+  "codigo_original_sha256": "ded095f538408ede724b3309111e9f3e39a0a6a0de87528035e70ffcd6b5850d",
+  "script_cierre_sha256": "f32840d966f483866626604c7fe67cacf949f8ac5b74fc2fafaf0fbd5ddec0cd"
+}

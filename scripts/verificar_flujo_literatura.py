@@ -31,7 +31,10 @@ def verificar(root, entradas=None):
     nuevas=leer('evaluaciones_texto_20261108.csv')
     assert len(nuevas)==len({x['id'] for x in nuevas})==16
     assert all(index[x['id']]['decision']=='texto_completo_revisado' and x['fuente'] and x['secciones_leidas'] for x in nuevas)
-    posteriores={x['id'] for x in leer('lecturas_texto_ampliadas.csv')+nuevas}
+    terceras=leer('evaluaciones_texto_cierre_20261108.csv')
+    assert len(terceras)==len({x['id'] for x in terceras})
+    assert all(index[x['id']]['decision']=='texto_completo_revisado' and x['fuente'] and x['secciones_leidas'] for x in terceras)
+    posteriores={x['id'] for x in leer('lecturas_texto_ampliadas.csv')+nuevas+terceras}
     for x in batch:
         if x['id'] not in posteriores:
             assert x['decision'] == index[x['id']]['decision']

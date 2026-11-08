@@ -26,4 +26,8 @@ La concordancia multi-rater es una referencia distinta de un límite teórico de
 
 ## Evidencia disponible
 
-Los contrastes ya calculados para CNN local, ResNet18 y MobileNetV2 se conservan en el [anexo estadístico histórico](anexo_estadistica_piloto.md). No constituyen resultados V2. Las cifras de V2 se obtendrán de sus propias predicciones, curvas y configuración; el cuaderno de Colab publicado como plantilla no sustituye un cuaderno ejecutado con salidas.
+Los contrastes ya calculados para CNN local, ResNet18 y MobileNetV2 se conservan en el [anexo estadístico histórico](anexo_estadistica_piloto.md). No constituyen resultados V2. El cierre V2 verificó 33 archivos de predicciones y sus resúmenes. Se incorporó un remuestreo exhaustivo exploratorio por paciente, manteniendo fijas las once semillas de cada modelo, descrito en el [capítulo de resultados](08_resultados_v2.md). Este análisis no sustituye los contrastes y la potencia planificados; el cuaderno de Colab publicado como plantilla no sustituye un cuaderno ejecutado con salidas.
+
+## Cierre intermedio y precisión
+
+El piloto requirió 11, 22 y 12 semillas para las parejas compacta–DenseNet121, compacta–ResNet50 y DenseNet121–ResNet50; se adoptó 22. El cierre autorizado utilizó 11 por modelo y no satisface ese máximo. La potencia objetivo no se deduce de la significación observada. Los intervalos agrupados por paciente son exploratorios, posteriores al cierre y nominales, sin ajuste por multiplicidad; no constituyen evidencia confirmatoria de superioridad.
