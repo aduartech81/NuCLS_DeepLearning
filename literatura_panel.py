@@ -33,6 +33,17 @@ La selección combina evidencia de uso, complejidad y diversidad estructural. **
 | [GrEp, Frei et al.](https://doi.org/10.1016/j.patcog.2025.112197) | Ablación de ResNet18 sin refinamiento por grafo | Clasificación epitelial binaria con preentrenamiento; antecedente, no modelo V2 |
 
 F1 ponderado, macro-F1, F1 por clase y métricas de segmentación responden a preguntas distintas. No se construye un ranking entre estudios con protocolos incompatibles.'''),
+        section('Magnitud de las diferencias publicadas', '''| Comparación dentro de un mismo estudio | Diferencia observada | Interpretación |
+|---|---:|---|
+| OLConvNet: sistema híbrido frente a ResNet50 aislada | +7,85 puntos de F1 | Cambian la representación y el clasificador |
+| PanNuke: ResNet50 con frente a sin contexto | +8,28 puntos de F1 conectivo | Efecto específico de entrada y categoría |
+| Jacobs: Γ-ladder frente a CNN, 1% etiquetado | +9,90 puntos de macro-F1 | Régimen de supervisión escasa |
+| Jacobs: Γ-ladder frente a CNN, 100% etiquetado | +0,50 puntos de macro-F1 | La ventaja depende de la disponibilidad de etiquetas |
+| Alom: DCRN frente a DenseNet | +1,70 puntos de F1 | Comparación bajo validación cruzada |
+
+Estas diferencias son descriptivas, no pruebas de significación. **No predicen la mejora de una arquitectura en NuCLS**. La pregunta experimental es si la conectividad densa o residual mejora de forma reproducible la referencia compacta bajo condiciones comunes, y con qué costo.
+
+[Tablas de origen y evaluación metodológica](https://aduartech81.github.io/NuCLS_DeepLearning/03_literatura.html).'''),
         section('Tendencias recientes identificadas en resúmenes', '''TexSegNet incorpora textura y atención; MOSAIC combina escala y orientación; BDCNet incorpora relaciones espaciales; HistoPLUS y KongNet amplían la caracterización celular y la evaluación entre conjuntos. HistoMSC describe clasificación de parches con contexto y representación de láminas.
 
 Estos antecedentes se identificaron en los resúmenes exportados. Sus comparadores exactos y protocolos requieren lectura de texto completo; **no se agregan al conteo de arquitecturas verificadas**. La distinción evita atribuir a una red aislada el rendimiento de un sistema completo de detección, segmentación y clasificación.

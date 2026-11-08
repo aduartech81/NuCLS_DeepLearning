@@ -1,11 +1,11 @@
 # Estado del arte: clasificación nuclear en histología
 
-La evidencia revisada sitúa el problema en tres líneas: clasificación por textura local, incorporación del contexto alrededor del núcleo y uso de relaciones entre células. La comparación de arquitecturas solo es interpretable si se distinguen estas representaciones y se mantiene una evaluación independiente del ajuste. El presente estudio adopta recortes RGB con contexto y tres categorías; no evalúa segmentación ni reconstrucción de relaciones celulares.
+La clasificación nuclear requiere distinguir células con apariencia parcialmente semejante y variaciones de tinción, adquisición y contexto tisular. La literatura aborda el problema mediante representaciones locales, información del entorno y relaciones entre células. El interés de una arquitectura depende tanto de esa representación como de la calidad de las etiquetas y del protocolo de evaluación.
+
+El proyecto NuCLS compara tres clasificadores de recortes RGB con contexto: una CNN compacta con BatchNorm, DenseNet121 y ResNet50. La revisión fundamenta esta comparación y examina las condiciones que permiten interpretar sus resultados. La unidad de predicción es el núcleo previamente localizado; los sistemas de segmentación, detección y diagnóstico de láminas se consideran antecedentes relacionados, con objetivos de evaluación diferentes.
 
 
-La revisión distingue clasificación de recortes nucleares, segmentación y detección. El 7 de noviembre de 2026 se recibieron exportaciones de Scopus, Web of Science e IEEE Xplore obtenidas mediante acceso institucional. La síntesis de antecedentes se complementa con un inventario reproducible de registros y decisiones de lectura.
-
-## Recuperación y depuración bibliográfica
+## 1. Estrategia de búsqueda y alcance de la evidencia
 
 | Base | Exportación original | Publicación 2018–2026 |
 |---|---:|---:|
@@ -20,50 +20,6 @@ La consulta comunicada para la búsqueda fue `(nucle* AND classif*) AND (histolo
 
 La extracción distingue arquitectura exacta, función del modelo, representación de entrada, conjunto de datos, unidad de partición y métrica. La lectura de títulos y resúmenes identifica candidatos para texto completo; la prioridad automática no determina exclusión ni calidad. La revisión asistida por IA no representa dos revisores independientes.
 
-## Alcance de la lectura documental
-
-Se documentaron decisiones o derivaciones de lectura para 115 registros del inventario. El lote más reciente comprende 80 títulos y 16 resúmenes; estos últimos se suman a las 24 lecturas adicionales de resúmenes previamente registradas. Una derivación a lectura de resumen o texto completo no equivale a inclusión definitiva. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.215 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
-
-Las 80 decisiones nuevas se conservan en [el registro adicional](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_80.csv). Las decisiones previas y su fundamento se conservan en [el registro de lectura](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/revision_adicional_24.csv). La evaluación de calidad distingue información ausente de un defecto demostrado; un resumen insuficiente no constituye evidencia de fuga de datos.
-
-## Calidad de las anotaciones y pertinencia de NuCLS
-
-Amgad et al. (2022) sitúan la generación de etiquetas en el centro del problema: NuCLS reúne anotaciones de estudiantes y patólogos sobre histología mamaria H&E de TCGA. El trabajo distingue anotaciones individuales y múltiples, e incorpora inferencia de etiquetas y evaluación de concordancia. Por tanto, una etiqueta disponible no equivale a una observación exenta de incertidumbre.
-
-Para este proyecto, la consecuencia es metodológica: verificar archivos, dimensiones y valores faltantes acredita integridad técnica, pero no mide concordancia diagnóstica. La selección de tres categorías y de recortes interiores también delimita la población evaluada. Las métricas obtenidas deben interpretarse respecto a esas etiquetas y reglas de selección, sin extenderlas a todas las células presentes en una lámina.
-
-Fuente: [Amgad et al., descripción de datos, concordancia y limitaciones](https://pmc.ncbi.nlm.nih.gov/articles/PMC9112766/).
-
-## Tendencias recientes y criterios de comparabilidad
-
-La lectura adicional de resúmenes identifica una transición desde clasificadores de ventanas hacia sistemas que resuelven conjuntamente localización, segmentación y tipo nuclear. Esa evolución amplía las capacidades del sistema, pero también cambia el significado de sus métricas. Los siguientes registros se utilizan para orientar la recuperación de textos completos; sus cifras no se incorporan al ranking de clasificadores ni al conteo de arquitecturas verificadas.
-
-| Línea | Estudios identificados en los resúmenes exportados | Implicación para el experimento |
-|---|---|---|
-| Textura y atención | TexSegNet, DOI 10.1109/EMBC58623.2025.11253497 | Distinguir desempeño conjunto de detección/clasificación del desempeño condicionado a conocer la ubicación del núcleo |
-| Contexto, escala y orientación | MOSAIC, DOI 10.1016/j.cmpb.2026.109334; BDCNet, DOI 10.1016/j.eswa.2026.132123 | Las relaciones espaciales y la fusión multiescala requieren entradas y módulos diferentes de los tres clasificadores V2 |
-| Generalización y categorías diversas | HistoPLUS, DOI 10.1016/j.jpi.2026.100696; KongNet, DOI 10.1016/j.media.2026.104233 | La evaluación externa y la cobertura de clases deben documentarse; no se infieren a partir de un F1 elevado |
-| Balance y aprendizaje multitarea | AFINITI, DOI 10.1007/s00521-024-10114-4; aumento copy-paste, DOI 10.1007/s10278-024-01018-9 | La mejora de clases minoritarias depende del objetivo y del procedimiento; no justifica trasladar automáticamente una técnica al conjunto NuCLS |
-| Clasificación con contexto y representación de láminas | HistoMSC, DOI 10.1016/j.compbiomed.2025.109991 | Separar la red de localización de los clasificadores de recortes antes de atribuir resultados a una arquitectura |
-
-La evidencia de resumen permite reconocer líneas de investigación, pero no comprobar particiones, ablaciones ni todas las arquitecturas de comparación. La extracción de F1 por clase, Dice, AP o calidad panóptica exige conservar su definición: responden a objetivos distintos y no pueden ordenarse en una única escala de rendimiento.
-
-## Antecedentes y comparabilidad
-
-| Fuente primaria | Tarea / evidencia identificada | Consecuencia |
-|---|---|---|
-| Sirinukunwattana et al. (2016), Locality Sensitive Deep Learning. https://doi.org/10.1109/TMI.2016.2525803 ; https://pubmed.ncbi.nlm.nih.gov/26863654/ | Detección y clasificación nuclear en histología de colon; CNN y contexto vecinal. Consulta de resumen. | Apoya estudiar CNN en este problema; la CNN local implementada no es reproducción exacta del artículo. |
-| Amgad et al. (2022), NuCLS. https://pmc.ncbi.nlm.nih.gov/articles/PMC9112766/ | Dataset mamario y adaptación de Mask R-CNN; la fuente se utiliza para documentar la procedencia, no para contabilizar una arquitectura de clasificación aislada. | Fuente de procedencia; no contar como uso de ResNet18 standalone ni de MobileNetV2. |
-| Sánchez-Torres et al. (2026), A Comparative Analysis… https://doi.org/10.1155/acis/4540418 | Clasificación nuclear con ResNet50 y ViT sobre PanNuke. | Evidencia pertinente de familias, no frecuencia de ResNet18. |
-| NDG-CAM (2022). https://pmc.ncbi.nlm.nih.gov/articles/PMC9495364/ | ResNet18, ResNet50 y MobileNetV2 como backbones de DeepLab v3+ para segmentación/detección. | Tarea adyacente; **excluir del conteo de baselines de clasificación nuclear aislada**. |
-| Nuclei Classification in ER-IHC Stained Histopathology Images using Deep Learning Models. https://shdl.mmu.edu.my/11229/ | Resumen institucional: comparación de 32 modelos preentrenados; familias MobileNet y ResNet entre otras, intensidad ER-IHC. | Tinción y objetivo distintos; el resumen consultado no permite establecer la lista exacta de arquitecturas comparadas. |
-| SENUCLS, implementación oficial. https://github.com/Lewislou/SENUCLS | GNN con máscaras de instancia y contexto estructural. | Sesgo distinto pero requiere otro pipeline y no es automáticamente baseline simple. |
-
-## Antecedentes del piloto exploratorio
-El piloto histórico contrastó una CNN local de baja capacidad, ResNet18 con conexiones residuales y MobileNetV2 con convoluciones separables y bloques residuales invertidos. Estas diferencias permiten explorar la relación entre capacidad, aprendizaje y costo. Sin embargo, la evidencia recopilada no establece que sean los tres modelos exactos más frecuentes de la tarea. En particular, el uso de MobileNetV2 como extractor en segmentación no valida por sí solo su selección como referencia de clasificación nuclear.
-
-## Alcance y criterios de selección de estudios
-
 La revisión se centra en modelos que asignan una categoría celular a un núcleo previamente localizado en una imagen histológica. Este alcance permite identificar referencias comparables con la tarea NuCLS y distinguirlas de sistemas cuyo resultado principal es detectar núcleos, delimitar sus contornos o diagnosticar una imagen completa.
 
 | Criterio | Aplicación en la revisión |
@@ -77,83 +33,23 @@ La revisión se centra en modelos que asignan una categoría celular a un núcle
 
 Los estudios de tareas adyacentes pueden fundamentar el contexto metodológico, pero no se contabilizan automáticamente como usos de un clasificador nuclear independiente. La selección por pertinencia tampoco equivale a una evaluación de calidad: ambas decisiones se documentan por separado. Estos criterios organizan la lectura dirigida realizada; no se presentan como criterios prerregistrados antes de las búsquedas ni como evidencia de que todos los registros recuperados hayan sido evaluados.
 
-## Evidencia cuantitativa y comparabilidad
+### Trazabilidad de la selección
 
-Sánchez-Torres et al. (2026) compararon ResNet50 y ViT en PanNuke con cinco clases. La tabla 6 distingue núcleos con contexto y núcleos aislados:
+Se documentaron decisiones o derivaciones de lectura para 115 registros del inventario. El lote más reciente comprende 80 títulos y 16 resúmenes; estos últimos se suman a las 24 lecturas adicionales de resúmenes previamente registradas. Una derivación a lectura de resumen o texto completo no equivale a inclusión definitiva. La selección dirigida identificó estudios de clasificación nuclear y separó tareas adyacentes: mitosis, intensidad inmunohistoquímica, graduación de atipia y diagnóstico de imágenes completas. Estas tareas aportan contexto, pero sus arquitecturas no se contabilizan como comparadores equivalentes de clasificación fenotípica en H&E. El inventario conserva 1.215 registros sin decisión; por ello, no se atribuye exhaustividad a la síntesis ni se estima una frecuencia poblacional de arquitecturas.
 
-| Modelo y entrada | F1 neoplásico (%) | F1 conectivo (%) | F1 inflamatorio (%) | F1 epitelial (%) | F1 muerto (%) |
-|---|---:|---:|---:|---:|---:|
-| ResNet50 con contexto | 82,90 | 71,49 | 71,98 | 71,49 | 49,39 |
-| ResNet50 sin contexto | 78,71 | 63,21 | 68,99 | 64,39 | 41,13 |
-| ViT con contexto | 82,19 | 69,01 | 70,19 | 71,59 | 47,93 |
+Las 80 decisiones nuevas se conservan en [el registro adicional](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/cribado_adicional_80.csv). Las decisiones previas y su fundamento se conservan en [el registro de lectura](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/revision_adicional_24.csv). La evaluación de calidad distingue información ausente de un defecto demostrado; un resumen insuficiente no constituye evidencia de fuga de datos.
 
-La tabla no presenta dispersión. La mejora conectiva de ResNet50 al conservar contexto es de 8,28 puntos; su extrapolación a NuCLS requiere cautela. Las clases, particiones y redes difieren. Además, la tabla 14 combina valores de distintos tratamientos: para núcleos muertos muestra 51,66%, asociado al sobremuestreo en la tabla 11, frente a 49,39% en la tabla 6. Se conserva una única configuración para esta extracción.
+## 2. Etiquetas, contexto y definición del problema
 
-Fuente: [Sánchez-Torres et al., tablas 6, 11 y 14](https://doi.org/10.1155/acis/4540418).
+Amgad et al. (2022) sitúan la generación de etiquetas en el centro del problema: NuCLS reúne anotaciones de estudiantes y patólogos sobre histología mamaria H&E de TCGA. El trabajo distingue anotaciones individuales y múltiples, e incorpora inferencia de etiquetas y evaluación de concordancia. Por tanto, una etiqueta disponible no equivale a una observación exenta de incertidumbre.
 
-### Implicación para el presente estudio
+Para este proyecto, la consecuencia es metodológica: verificar archivos, dimensiones y valores faltantes acredita integridad técnica, pero no mide concordancia diagnóstica. La selección de tres categorías y de recortes interiores también delimita la población evaluada. Las métricas obtenidas deben interpretarse respecto a esas etiquetas y reglas de selección, sin extenderlas a todas las células presentes en una lámina.
 
-El piloto utiliza ventanas que incluyen contexto, pero no contiene una ablación que separe núcleo y entorno. En consecuencia, no permite determinar qué proporción del desempeño procede de morfología nuclear, células vecinas o tinción. Tampoco se interpreta la proximidad numérica con un resultado publicado como reproducción: una comparación válida requiere coincidencia de etiquetas, partición, métrica y tratamiento de imágenes.
+Fuente: [Amgad et al., descripción de datos, concordancia y limitaciones](https://pmc.ncbi.nlm.nih.gov/articles/PMC9112766/).
 
-La evidencia consultada respalda el interés de estudiar representaciones convolucionales y contexto. CNN local, ResNet18 y MobileNetV2 corresponden al piloto histórico; la selección V2 se fundamenta más adelante mediante comparadores exactos y adaptaciones explícitas.
+La independencia de los recortes constituye otra condición central: muchos núcleos pueden proceder de un mismo paciente o campo histológico. Por ello, el número de imágenes no equivale al número de observaciones biológicas independientes. La comparación experimental utiliza agrupación por paciente y procedencia, y distingue variabilidad entre inicializaciones de variabilidad entre pacientes. Esta decisión responde al diseño de la evaluación; no elimina por sí sola los efectos de selección del conjunto de datos.
 
-## Modelos comparativos en estudios de clasificación nuclear
-
-### Supervisión limitada y transferencia entre tejidos
-
-Jacobs, Brostow, Freeman, Alexander y Panagiotaki (2017), en *Detecting and Classifying Nuclei on a Budget*, compararon una CNN supervisada, su ajuste por transferencia y una CNN Γ-ladder semisupervisada. La clasificación utiliza ventanas de 27×27 píxeles y tres categorías prostáticas. Se incluye como antecedente metodológico anterior al intervalo reciente de búsqueda.
-
-| Proporción etiquetada | Macro-F1 CNN supervisada | Macro-F1 CNN ajustada | Macro-F1 Γ-ladder |
-|---|---:|---:|---:|
-| 1% | 0,639 ± 0,021 | 0,695 ± 0,061 | 0,738 ± 0,019 |
-| 3% | 0,725 ± 0,012 | 0,752 ± 0,008 | 0,762 ± 0,010 |
-| 5% | 0,761 ± 0,003 | 0,769 ± 0,007 | 0,765 ± 0,008 |
-| 100% | 0,820 ± 0,005 | 0,819 ± 0,002 | 0,825 ± 0,004 |
-
-La ventaja Γ-ladder frente a supervisión completa pasa de 9,9 puntos con 1% etiquetado a 0,5 puntos con todos los datos. La ventaja arquitectónica depende, por tanto, del régimen de supervisión. La dispersión publicada no debe confundirse con un intervalo de confianza. La CNN de este estudio no es idéntica a la CNN local implementada en NuCLS.
-
-Fuente: [texto completo institucional, tabla 3](https://discovery.ucl.ac.uk/id/eprint/1573202/1/LABELS2017_7.pdf).
-
-### Conexiones densas y recurrencia convolucional
-
-Alom, Asari, Parwani y Taha (2022) evaluaron clasificación, segmentación y detección en experimentos separados. Para clasificación de núcleos de colon compararon DenseNet y DCRN, con resultados F1 de **0,7941** y **0,8111**, respectivamente, en el apartado de análisis. La diferencia es de 1,70 puntos. El trabajo describe validación cruzada de cinco particiones.
-
-Su comparación incluye la referencia softmax CNN con predictor de vecindad; no corresponde a una evaluación de MobileNetV2 como clasificador aislado. Los resultados de Dice de R2U-Net y F1 de detección de UD-Net pertenecen a otras tareas y se excluyen de la comparación de clasificación. Las cinco particiones no equivalen a cinco semillas y, sin equiparar agrupación y protocolo, la diferencia publicada no es directamente comparable con el piloto NuCLS.
-
-Referencia: Alom, Z., Asari, V. K., Parwani, A. y Taha, T. M. (2022). *Microscopic nuclei classification, segmentation, and detection with improved deep convolutional neural networks (DCNN).* Diagnostic Pathology, 17, 38. [doi:10.1186/s13000-022-01189-5](https://doi.org/10.1186/s13000-022-01189-5).
-
-## Síntesis crítica de los protocolos
-
-| Estudio | Problema y conjunto | Comparadores identificados | Evidencia cuantitativa | Condición que limita la comparación |
-|---|---|---|---|---|
-| Jacobs et al. (2017) | Clasificación prostática; tres clases | CNN supervisada, ajuste por transferencia y Γ-ladder | Macro-F1 y dispersión, tabla anterior | Cambia la fracción etiquetada; tamaño de ventana y tejido distintos de NuCLS |
-| Alom et al. (2022) | Clasificación nuclear de colon | DenseNet, DCRN y referencia CNN con vecindad | F1 0,7941 y 0,8111 para DenseNet y DCRN | Cinco particiones de validación cruzada; no son repeticiones por semilla |
-| Sánchez-Torres et al. (2026) | Clasificación PanNuke; cinco clases | ResNet50 y ViT | F1 por clase, tabla anterior | Contexto y balance cambian los resultados; sin dispersión en la tabla extraída |
-| Amgad et al. (2022), NuCLS | Clasificación, localización y segmentación mamaria | Adaptación de Mask R-CNN | Fuente de datos y diseño de tareas | Un detector con clasificación no equivale a un clasificador de recortes |
-| NDG-CAM (2022) | Detección mediante segmentación | U-Net, SegNet y DeepLab v3+ con diferentes extractores | No se incorpora su Dice al F1 de clasificación | ResNet18 y MobileNetV2 aparecen como componentes de otra tarea |
-
-La coincidencia de un nombre de familia no acredita coincidencia de arquitectura. Una CNN supervisada con ventanas de 27×27 no constituye evidencia específica de la configuración 32–64–128 implementada aquí. De igual modo, los resultados de ResNet50 no se trasladan a ResNet18. Tampoco se interpreta la existencia de comparadores publicados como ausencia demostrada de fuga de datos: la unidad de partición, el acceso a validación y la selección de hiperparámetros deben establecerse para cada protocolo.
-
-## Relación con la selección del piloto
-
-La literatura examinada muestra tres dimensiones relevantes: capacidad de representación, aprovechamiento del contexto y cantidad de supervisión. El piloto estudia principalmente la primera mediante tres redes convolucionales entrenadas desde cero, manteniendo fijos contexto y etiquetas. No reproduce las comparaciones semisupervisadas ni las arquitecturas con grafos o máscaras de instancia.
-
-El hallazgo bibliográfico central es una limitación de correspondencia: **la evidencia recuperada no sustenta todavía una selección por frecuencia de las tres arquitecturas exactas del piloto**. No se convierte una frecuencia de familias en frecuencia de modelos, ni se sustituye una revisión sistemática por el número de enlaces recuperados. En consecuencia, estos resultados establecen una referencia experimental para las implementaciones evaluadas, sin acreditar que constituyan las tres referencias más recurrentes del campo.
-
-La búsqueda adicional del 7 de noviembre de 2026 utilizó las consultas web `"nuclei classification" "ResNet18" baseline NuCLS`, `"nuclei classification" "MobileNetV2"` y `"nucleus classification" "CNN" comparative baseline histology`. Estas consultas complementan la revisión narrativa y no se presentan como búsquedas ejecutadas dentro de WoS, Scopus o IEEE Xplore. La selección no contó con un segundo revisor independiente; no se atribuye un procedimiento de consenso inexistente.
-
-## CNN de complejidad moderada: RCCNet
-
-Basha et al. compararon RCCNet con softmaxCNN_IN27, una variante softmaxCNN, AlexNet adaptada, CIFAR-VGG, GoogLeNet adaptada y WRN. RCCNet utiliza entradas RGB de 32×32, cuatro convoluciones de 32, 32, 64 y 64 filtros, dos reducciones espaciales y capas densas de 512, 512 y cuatro salidas. El entrenamiento incorpora BatchNorm y dropout.
-
-En CRCHistoPhenotypes se informa una partición 80/20 de 22.444 recortes y un F1 ponderado de 0,7887. El texto no establece en esa descripción separación por paciente; tampoco presenta dispersión entre semillas en la tabla comparativa. Además, muestra curvas de exactitud de prueba durante el entrenamiento. Estos aspectos limitan la interpretación de generalización y requieren distinguir seguimiento de prueba de selección de modelos.
-
-El estudio aporta una arquitectura verificable y comparadores concretos, pero su métrica, resolución, tejido y clases difieren del piloto NuCLS. Su presencia no prueba que RCCNet sea uno de los tres modelos más frecuentes.
-
-Fuente: Basha et al., ICARCV 2018, [texto completo de autor, secciones II–IV](https://arxiv.org/html/1810.02797v3), [DOI](https://doi.org/10.1109/ICARCV.2018.8581147).
-
-
-## Clasificadores independientes y sistemas híbridos: OLConvNet
+## 3. Evidencia cuantitativa de los modelos de referencia
 
 El texto de autor de OLConvNet permite separar dos resultados: CNN con salida softmax y fusión de características profundas con descriptores manuales. La tabla 1 corresponde al primer caso.
 
@@ -173,14 +69,58 @@ La sección 4.1 describe generación sintética antes de una división 70/15/15.
 
 Fuente: [texto de autor, sección 4.1 y tablas 1–4](https://arxiv.org/pdf/2202.10177); [DOI 10.1145/3345318](https://doi.org/10.1145/3345318).
 
-## Justificación metodológica derivada de la revisión
+### Capacidad y referencias compactas
 
-La evidencia permite formular tres decisiones para NuCLS. Primero, las comparaciones deben mantener la misma unidad de entrada y salida: recortes RGB y categorías nucleares. Segundo, las transformaciones aprendidas y el balanceo se estiman únicamente con entrenamiento, después de fijar la partición. Tercero, la complejidad y el rendimiento se documentan para la implementación exacta; una familia residual no equivale a una profundidad concreta ni un extractor a un sistema completo.
+Basha et al. compararon RCCNet con softmaxCNN_IN27, una variante softmaxCNN, AlexNet adaptada, CIFAR-VGG, GoogLeNet adaptada y WRN. RCCNet utiliza entradas RGB de 32×32, cuatro convoluciones de 32, 32, 64 y 64 filtros, dos reducciones espaciales y capas densas de 512, 512 y cuatro salidas. El entrenamiento incorpora BatchNorm y dropout.
 
-El aporte del experimento se sitúa en una comparación reproducible bajo separación por paciente y centro de origen, con incertidumbre entre ejecuciones y entre pacientes. Esta delimitación evita presentar diferencias entre publicaciones como superioridad de una red, cuando también cambian el tejido, las etiquetas, el contexto, el balanceo y la evaluación.
+En CRCHistoPhenotypes se informa una partición 80/20 de 22.444 recortes y un F1 ponderado de 0,7887. El texto no establece en esa descripción separación por paciente; tampoco presenta dispersión entre semillas en la tabla comparativa. Además, muestra curvas de exactitud de prueba durante el entrenamiento. Estos aspectos limitan la interpretación de generalización y requieren distinguir seguimiento de prueba de selección de modelos.
+
+El estudio aporta una arquitectura verificable y comparadores concretos, pero su métrica, resolución, tejido y clases difieren del piloto NuCLS. Su presencia no prueba que RCCNet sea uno de los tres modelos más frecuentes.
+
+Fuente: Basha et al., ICARCV 2018, [texto completo de autor, secciones II–IV](https://arxiv.org/html/1810.02797v3), [DOI](https://doi.org/10.1109/ICARCV.2018.8581147).
+
+### Efecto del contexto
+
+Sánchez-Torres et al. (2026) compararon ResNet50 y ViT en PanNuke con cinco clases. La tabla 6 distingue núcleos con contexto y núcleos aislados:
+
+| Modelo y entrada | F1 neoplásico (%) | F1 conectivo (%) | F1 inflamatorio (%) | F1 epitelial (%) | F1 muerto (%) |
+|---|---:|---:|---:|---:|---:|
+| ResNet50 con contexto | 82,90 | 71,49 | 71,98 | 71,49 | 49,39 |
+| ResNet50 sin contexto | 78,71 | 63,21 | 68,99 | 64,39 | 41,13 |
+| ViT con contexto | 82,19 | 69,01 | 70,19 | 71,59 | 47,93 |
+
+La tabla no presenta dispersión. La mejora conectiva de ResNet50 al conservar contexto es de 8,28 puntos; su extrapolación a NuCLS requiere cautela. Las clases, particiones y redes difieren. Además, la tabla 14 combina valores de distintos tratamientos: para núcleos muertos muestra 51,66%, asociado al sobremuestreo en la tabla 11, frente a 49,39% en la tabla 6. Se conserva una única configuración para esta extracción.
+
+Fuente: [Sánchez-Torres et al., tablas 6, 11 y 14](https://doi.org/10.1155/acis/4540418).
 
 
-## Referencia residual explícita: GrEp
+
+### Supervisión y conectividad
+
+#### Supervisión limitada y transferencia entre tejidos
+
+Jacobs, Brostow, Freeman, Alexander y Panagiotaki (2017), en *Detecting and Classifying Nuclei on a Budget*, compararon una CNN supervisada, su ajuste por transferencia y una CNN Γ-ladder semisupervisada. La clasificación utiliza ventanas de 27×27 píxeles y tres categorías prostáticas. Se incluye como antecedente metodológico anterior al intervalo reciente de búsqueda.
+
+| Proporción etiquetada | Macro-F1 CNN supervisada | Macro-F1 CNN ajustada | Macro-F1 Γ-ladder |
+|---|---:|---:|---:|
+| 1% | 0,639 ± 0,021 | 0,695 ± 0,061 | 0,738 ± 0,019 |
+| 3% | 0,725 ± 0,012 | 0,752 ± 0,008 | 0,762 ± 0,010 |
+| 5% | 0,761 ± 0,003 | 0,769 ± 0,007 | 0,765 ± 0,008 |
+| 100% | 0,820 ± 0,005 | 0,819 ± 0,002 | 0,825 ± 0,004 |
+
+La ventaja Γ-ladder frente a supervisión completa pasa de 9,9 puntos con 1% etiquetado a 0,5 puntos con todos los datos. La ventaja arquitectónica depende, por tanto, del régimen de supervisión. La dispersión publicada no debe confundirse con un intervalo de confianza. La CNN de este estudio no es idéntica a la CNN local implementada en NuCLS.
+
+Fuente: [texto completo institucional, tabla 3](https://discovery.ucl.ac.uk/id/eprint/1573202/1/LABELS2017_7.pdf).
+
+#### Conexiones densas y recurrencia convolucional
+
+Alom, Asari, Parwani y Taha (2022) evaluaron clasificación, segmentación y detección en experimentos separados. Para clasificación de núcleos de colon compararon DenseNet y DCRN, con resultados F1 de **0,7941** y **0,8111**, respectivamente, en el apartado de análisis. La diferencia es de 1,70 puntos. El trabajo describe validación cruzada de cinco particiones.
+
+Su comparación incluye la referencia softmax CNN con predictor de vecindad; no corresponde a una evaluación de MobileNetV2 como clasificador aislado. Los resultados de Dice de R2U-Net y F1 de detección de UD-Net pertenecen a otras tareas y se excluyen de la comparación de clasificación. Las cinco particiones no equivalen a cinco semillas y, sin equiparar agrupación y protocolo, la diferencia publicada no es directamente comparable con el piloto NuCLS.
+
+Referencia: Alom, Z., Asari, V. K., Parwani, A. y Taha, T. M. (2022). *Microscopic nuclei classification, segmentation, and detection with improved deep convolutional neural networks (DCNN).* Diagnostic Pathology, 17, 38. [doi:10.1186/s13000-022-01189-5](https://doi.org/10.1186/s13000-022-01189-5).
+
+### Referencias residuales y refinamiento espacial
 
 Frei et al. (2026) evaluaron ResNet18 aislada en la ablación de GrEp, una propuesta de refinamiento mediante grafos. La comparación corresponde a células epiteliales normales y malignas.
 
@@ -192,26 +132,19 @@ La implementación parte de ImageNet, incorpora pooling adaptativo y salida bina
 
 Fuente: [Frei et al., texto completo de autor, sección 3.3 y tabla 4](https://aibex.ch/research/papers/Frei2025.pdf); [DOI](https://doi.org/10.1016/j.patcog.2025.112197).
 
+## 4. Magnitud de las diferencias y calidad metodológica
 
-## Frecuencia de comparadores y selección operativa v2
+Las diferencias siguientes se calculan dentro de una misma publicación y conservan su configuración de referencia. Se expresan en puntos porcentuales: para métricas en escala 0–1, Δ = 100 × (resultado del método − resultado del comparador). Describen diferencias observadas; no constituyen pruebas de significación ni estimaciones del efecto esperado en NuCLS.
 
-La extracción estructurada cuenta una vez cada DOI por arquitectura y separa variantes adaptadas de versiones estándar. En cuatro textos con comparaciones verificadas, ResNet50 aparece en dos estudios; las restantes arquitecturas identificadas aparecen en uno. Estas frecuencias describen el subconjunto extraído y no todo el corpus recuperado. La [tabla completa de comparadores](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/comparadores_texto_completo.csv) conserva problema, conjunto, modelo, métricas y valores por fuente.
+| Comparación interna | Métrica y condición | Referencia | Alternativa | Δ (puntos) | Interpretación |
+|---|---|---:|---:|---:|---|
+| OLConvNet: ResNet50 aislada frente a su sistema híbrido | F1, cuatro clases | 0,8892 | 0,9677 | +7,85 | Cambian representación y clasificador; la diferencia no se atribuye solo a ResNet50 |
+| PanNuke: ResNet50 sin y con contexto | F1 conectivo | 63,21% | 71,49% | +8,28 | El contexto modifica el desempeño de esta categoría bajo el protocolo publicado |
+| Jacobs: CNN supervisada frente a Γ-ladder | Macro-F1, 1% etiquetado | 0,639 | 0,738 | +9,90 | Ventaja observada en un régimen de supervisión escasa |
+| Jacobs: CNN supervisada frente a Γ-ladder | Macro-F1, 100% etiquetado | 0,820 | 0,825 | +0,50 | La ventaja se reduce al aumentar la supervisión |
+| Alom: DenseNet frente a DCRN | F1 de clasificación | 0,7941 | 0,8111 | +1,70 | Diferencia bajo validación cruzada; no equivale a una comparación local por semillas |
 
-| Selección v2 | Estudios verificados | Parámetros, tres clases | Rasgo estructural |
-|---|---:|---:|---|
-| softmaxCNN con BatchNorm, adaptada | 1 | 898.687 | Convoluciones secuenciales y clasificador pequeño |
-| DenseNet121 | 1 | 6.956.931 | Concatenación densa de representaciones |
-| ResNet50 | 2 | 23.514.179 | Conexiones residuales bottleneck |
-
-ResNet50 se prioriza por recurrencia exacta en clasificación nuclear multiclase. La CNN pequeña aporta una referencia de menor capacidad; DenseNet121 añade otro tipo de conectividad con menos parámetros que las variantes VGG/AlexNet registradas. Esta selección combina frecuencia, complejidad y diversidad estructural; no supone que las tres minimicen simultáneamente todos los criterios. DenseNet121 tiene más profundidad nominal que ResNet50, aunque menos parámetros.
-
-La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro clases y entrada 27×27. Para utilizar las ventanas comunes de 128×128 se reduce el mapa de 30×30 a una cuadrícula de 5×5 mediante promedios en bloques disjuntos de 6×6, equivalentes al pooling adaptativo de esas dimensiones. Se conservan las dimensiones del clasificador sin añadir parámetros. Esa adaptación modifica la agregación espacial y se declara explícitamente; no constituye reproducción exacta del experimento original. Las tres implementaciones superaron pruebas de propagación y gradientes con tensores sintéticos, sin entrenamiento sobre NuCLS v2.
-
-El protocolo contempla inicialización desde cero y condiciones comunes, a diferencia de algunos estudios que emplean transferencia. La función de estas redes como referencia es comparable a la de un modelo logístico en una evaluación clásica: establecer un desempeño reproducible que deba superarse. No implica igualdad de capacidad ni supuestos lineales.
-
-La selección y sus adaptaciones se describen en [el protocolo v2](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/seleccion_modelos_v2.md). El [flujo experimental](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/ejecucion_integrada_v2.md) separa búsqueda, piloto, planificación de corridas, evaluación final y reserva. Los resultados de CNN local, ResNet18 y MobileNetV2 siguen correspondiendo al piloto anterior.
-
-## Evaluación crítica de los antecedentes principales
+La disminución de la diferencia en Jacobs muestra que una ventaja arquitectónica depende del régimen de datos. En OLConvNet, la mejora corresponde a un sistema híbrido completo. En PanNuke, la modificación de la entrada produce cambios por categoría. En conjunto, estos hallazgos justifican mantener constantes entrada, etiquetas y presupuesto de ajuste al comparar las redes del proyecto.
 
 La evaluación se organiza por aspectos que afectan la comparabilidad; no se asigna una puntuación agregada que convierta información no reportada en un defecto demostrado.
 
@@ -224,7 +157,47 @@ La evaluación se organiza por aspectos que afectan la comparabilidad; no se asi
 
 Las referencias y las tablas de origen se identifican en las secciones anteriores. La incertidumbre por semillas, la separación por paciente y la unidad de cálculo del F1 no se consideran intercambiables entre publicaciones.
 
-## Síntesis de la evidencia y brecha de investigación
+### Incertidumbre, reproducibilidad y costo
+
+Jacobs presenta dispersión para sus condiciones de supervisión y GrEp la informa en la ablación residual. La tabla de contexto de PanNuke y la comparación extraída de RCCNet no ofrecen una dispersión equivalente. La ausencia de esa información en una tabla no demuestra que el artículo carezca de todo análisis de variabilidad. Tampoco permite reconstruir intervalos de confianza o pruebas pareadas a partir de medias aisladas.
+
+Los tiempos publicados no se ordenan como si procedieran de un mismo equipo: dependen de hardware, resolución, lote, épocas e implementación. El número de parámetros describe almacenamiento y capacidad, pero no determina por sí solo latencia o memoria de activaciones. En el experimento NuCLS, costo y rendimiento deben medirse bajo condiciones comunes y atribuirse a la implementación exacta.
+
+## 5. Desarrollo reciente del campo
+
+La lectura adicional de resúmenes identifica una transición desde clasificadores de ventanas hacia sistemas que resuelven conjuntamente localización, segmentación y tipo nuclear. Esa evolución amplía las capacidades del sistema, pero también cambia el significado de sus métricas. Los siguientes registros se utilizan para orientar la recuperación de textos completos; sus cifras no se incorporan al ranking de clasificadores ni al conteo de arquitecturas verificadas.
+
+| Línea | Estudios identificados en los resúmenes exportados | Implicación para el experimento |
+|---|---|---|
+| Textura y atención | TexSegNet, DOI 10.1109/EMBC58623.2025.11253497 | Distinguir desempeño conjunto de detección/clasificación del desempeño condicionado a conocer la ubicación del núcleo |
+| Contexto, escala y orientación | MOSAIC, DOI 10.1016/j.cmpb.2026.109334; BDCNet, DOI 10.1016/j.eswa.2026.132123 | Las relaciones espaciales y la fusión multiescala requieren entradas y módulos diferentes de los tres clasificadores V2 |
+| Generalización y categorías diversas | HistoPLUS, DOI 10.1016/j.jpi.2026.100696; KongNet, DOI 10.1016/j.media.2026.104233 | La evaluación externa y la cobertura de clases deben documentarse; no se infieren a partir de un F1 elevado |
+| Balance y aprendizaje multitarea | AFINITI, DOI 10.1007/s00521-024-10114-4; aumento copy-paste, DOI 10.1007/s10278-024-01018-9 | La mejora de clases minoritarias depende del objetivo y del procedimiento; no justifica trasladar automáticamente una técnica al conjunto NuCLS |
+| Clasificación con contexto y representación de láminas | HistoMSC, DOI 10.1016/j.compbiomed.2025.109991 | Separar la red de localización de los clasificadores de recortes antes de atribuir resultados a una arquitectura |
+
+La evidencia de resumen permite reconocer líneas de investigación, pero no comprobar particiones, ablaciones ni todas las arquitecturas de comparación. La extracción de F1 por clase, Dice, AP o calidad panóptica exige conservar su definición: responden a objetivos distintos y no pueden ordenarse en una única escala de rendimiento.
+
+Estas líneas amplían la representación disponible, pero no invalidan las referencias convolucionales. Un modelo que recibe máscaras, relaciones celulares o información multiescala responde a una pregunta distinta de un clasificador alimentado únicamente con un recorte RGB. Su comparación requiere una ablación que separe la contribución de la entrada, la arquitectura y el entrenamiento. Por ello, la complejidad de un sistema reciente no se interpreta como evidencia suficiente de superioridad para el problema delimitado.
+
+## 6. Selección de arquitecturas y contribución del proyecto
+
+La extracción estructurada cuenta una vez cada DOI por arquitectura y separa variantes adaptadas de versiones estándar. En cuatro textos con comparaciones verificadas, ResNet50 aparece en dos estudios; las restantes arquitecturas identificadas aparecen en uno. Estas frecuencias describen el subconjunto extraído y no todo el corpus recuperado. La [tabla completa de comparadores](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/comparadores_texto_completo.csv) conserva problema, conjunto, modelo, métricas y valores por fuente.
+
+| Selección v2 | Estudios verificados | Parámetros, tres clases | Rasgo estructural |
+|---|---:|---:|---|
+| softmaxCNN con BatchNorm, adaptada | 1 | 898.687 | Convoluciones secuenciales y clasificador pequeño |
+| DenseNet121 | 1 | 6.956.931 | Concatenación densa de representaciones |
+| ResNet50 | 2 | 23.514.179 | Conexiones residuales bottleneck |
+
+ResNet50 se prioriza por recurrencia exacta en clasificación nuclear multiclase. La CNN pequeña aporta una referencia de menor capacidad; DenseNet121 añade otro tipo de conectividad con menos parámetros que las variantes VGG/AlexNet registradas. Esta selección combina frecuencia, complejidad y diversidad estructural; no supone que las tres minimicen simultáneamente todos los criterios. DenseNet121 tiene más profundidad nominal que ResNet50, aunque menos parámetros.
+
+La CNN pequeña reproduce el conteo publicado de 899.200 parámetros para cuatro clases y entrada 27×27. Para utilizar las ventanas comunes de 128×128 se reduce el mapa de 30×30 a una cuadrícula de 5×5 mediante promedios en bloques disjuntos de 6×6, equivalentes al pooling adaptativo de esas dimensiones. Se conservan las dimensiones del clasificador sin añadir parámetros. Esa adaptación modifica la agregación espacial y se declara explícitamente; no constituye reproducción exacta del experimento original. La verificación técnica inicial incluyó propagación y gradientes con tensores sintéticos; esa prueba comprueba ejecutabilidad y no estima capacidad predictiva.
+
+El protocolo contempla inicialización desde cero y condiciones comunes, a diferencia de algunos estudios que emplean transferencia. Las redes establecen referencias experimentales con mecanismos de conectividad distintos, sin asumir igualdad de capacidad.
+
+La selección y sus adaptaciones se describen en [el protocolo v2](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/seleccion_modelos_v2.md). El [flujo experimental](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/protocolo/ejecucion_integrada_v2.md) separa búsqueda, piloto, planificación de corridas, evaluación final y reserva. Los resultados de CNN local, ResNet18 y MobileNetV2 siguen correspondiendo al piloto anterior.
+
+### Brecha experimental
 
 Los clasificadores convolucionales constituyen referencias pertinentes porque aprenden características locales directamente de los píxeles. Sin embargo, la evidencia revisada no sostiene una arquitectura universalmente superior. Las puntuaciones dependen del tejido, de las categorías, del contexto incluido, del preentrenamiento y de la forma de dividir los datos. El resultado de un sistema híbrido tampoco equivale al de su red extractora utilizada aisladamente.
 
@@ -232,8 +205,23 @@ La comparación de PanNuke muestra que retirar contexto puede disminuir el F1 de
 
 La brecha que aborda este entregable es una comparación controlada de tres referencias sobre la misma selección de recortes NuCLS, con preprocesamiento ajustado en entrenamiento, esfuerzo de búsqueda común y variabilidad entre ejecuciones. Se trata de una contribución experimental dentro del proyecto académico, no de una afirmación de novedad mundial ni de una arquitectura original. El baseline resultante deberá expresarse con su incertidumbre y su alcance poblacional.
 
-## Conclusión de la revisión dirigida
+La pregunta resultante es si, bajo una misma partición y tratamiento de imágenes, la conectividad densa o residual ofrece una mejora reproducible frente a una referencia compacta y qué costo implica. La literatura aporta antecedentes para formular la pregunta; la respuesta corresponde al experimento local. No se presupone que la red de mayor tamaño deba ganar.
 
-La extracción disponible respalda el uso de una CNN compacta con BatchNorm y de redes con conexiones densas o residuales como comparadores técnicamente diferenciados. La selección v2 queda vinculada a implementaciones concretas y adaptaciones explícitas. Su respaldo documental no demuestra que sean los tres modelos más básicos o más frecuentes de todo el campo: esa afirmación requeriría completar el cribado y contrastar las alternativas del corpus.
+### Conclusión
 
-La síntesis permite fundamentar el diseño actual y formular sus límites. El inventario bibliográfico permanece como un proceso de selección parcial; los registros aún no evaluados no se cuentan como exclusiones ni como estudios incluidos. Por tanto, el flujo de identificación y depuración no se presenta como un PRISMA completo.
+La síntesis documenta evidencia de clasificación nuclear con CNN compactas, redes densas, redes residuales y sistemas que incorporan contexto o refinamiento espacial. Los resultados publicados sostienen la pertinencia de una comparación controlada, pero no una jerarquía universal entre arquitecturas. Las tres implementaciones V2 quedan justificadas como referencias concretas de distinta conectividad y capacidad. La frecuencia extraída corresponde a cuatro textos comparativos y no acredita que sean los tres modelos más frecuentes o más simples de todo el corpus.
+
+## 7. Fuentes principales y evidencia reproducible
+
+Las referencias se vinculan a su DOI o al texto de autor utilizado. Los antecedentes de 2016 y 2017 se conservan como fundamentos históricos externos a la ventana reciente. El artículo OLConvNet y su preprint constituyen una sola unidad de estudio. No se asignan cuartiles bibliométricos sin verificar la revista, categoría y año correspondientes.
+
+1. Sirinukunwattana et al. (2016). *Locality Sensitive Deep Learning for Detection and Classification of Nuclei in Routine Colon Cancer Histology Images*. [DOI](https://doi.org/10.1109/TMI.2016.2525803). Antecedente de detección y clasificación; consulta de resumen.
+2. Jacobs et al. (2017). *Detecting and Classifying Nuclei on a Budget*. [Texto institucional](https://discovery.ucl.ac.uk/id/eprint/1573202/1/LABELS2017_7.pdf). Evidencia de supervisión limitada, tabla 3.
+3. Basha et al. (2018). *RCCNet: An Efficient Convolutional Neural Network for Histological Routine Colon Cancer Nuclei Classification*. [DOI](https://doi.org/10.1109/ICARCV.2018.8581147). [Texto de autor](https://arxiv.org/html/1810.02797v3).
+4. Tripathi y Singh (2020). *Cell nuclei classification in histopathological images using hybrid OLConvNet*. [DOI](https://doi.org/10.1145/3345318). [Preprint de 2022](https://arxiv.org/abs/2202.10177).
+5. Alom et al. (2022). *Microscopic nuclei classification, segmentation, and detection with improved deep convolutional neural networks (DCNN)*. Diagnostic Pathology, 17, 38. [DOI](https://doi.org/10.1186/s13000-022-01189-5).
+6. Amgad et al. (2022). *NuCLS: A scalable crowdsourcing approach and dataset for nucleus classification and segmentation in breast cancer*. GigaScience, 11, giac037. [DOI](https://doi.org/10.1093/gigascience/giac037).
+7. Sánchez-Torres et al. (2026). Estudio comparativo de clasificación nuclear en PanNuke; tablas 6, 11 y 14. [Identificador del artículo](https://doi.org/10.1155/acis/4540418).
+8. Frei et al. (2026). GrEp; Pattern Recognition, 171, 112197; sección 3.3 y tabla 4. [DOI](https://doi.org/10.1016/j.patcog.2025.112197). [Texto de autor](https://aibex.ch/research/papers/Frei2025.pdf).
+
+El [inventario y las extracciones](https://github.com/aduartech81/NuCLS_DeepLearning/tree/main/evidencias/literatura) conservan la procedencia y el nivel de lectura. La [tabla de frecuencia](https://github.com/aduartech81/NuCLS_DeepLearning/blob/main/evidencias/literatura/frecuencia_comparadores_verificados.csv) contabiliza estudios únicos por arquitectura. Los registros no evaluados permanecen identificados como tales; no se transforman en exclusiones para cerrar artificialmente el flujo de selección.
