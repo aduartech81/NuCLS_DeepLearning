@@ -74,7 +74,7 @@ Cada curva corresponde a un ajuste; los intervalos vacíos se omiten y los conte
 
 ## Evidencia y trabajo pendiente
 
-Los resultados agregados y el análisis reproducible están en `resultados_analizados/cierre_11`. El cuaderno ejecutado de Colab debe acompañar la entrega; la comprobación del ZIP no demuestra por sí sola que ese cuaderno esté adjunto. Las curvas y los pesos se conservan en el entrenamiento original y no se reconstruyen a partir de este ZIP.
+Los resultados agregados y el análisis reproducible están en `resultados_analizados/cierre_11`. El cuaderno ejecutado está incorporado al repositorio y al ZIP. Sus salidas permiten reconstruir las curvas y tiempos con la precisión impresa; los JSON de historia originales y los pesos permanecen en Drive.
 
 Quedan pendientes la ampliación a 22 según el plan, la inferencia conjunta de semillas y pacientes, la galería de errores/Grad-CAM y la medición controlada de latencia. Ninguno de estos elementos se presenta como ya completado. La ampliación posterior mantendrá arquitectura e hiperparámetros fijados antes de la reserva.
 
@@ -99,3 +99,15 @@ Cada línea es una corrida; el final de la línea refleja parada temprana. Las m
 Los tiempos suman épocas de entrenamiento y validación; no incluyen todos los gastos de guardado, preparación y ejecución. **No son latencia de inferencia ni duración total de la sesión.** Los CSV permiten consultar cada corrida, las cuatro configuraciones por modelo y las cinco semillas piloto.
 
 La [comparación estadística](05_estadistica.md) presenta Holm, efectos, Friedman/Nemenyi, normalidad, McNemar diagnóstico y AUC agrupada. ResNet50 sigue siendo el baseline por validación; no se afirma superioridad sobre DenseNet121 entre semillas de reserva. La robustez por paciente/TSS y exclusión de grupos está en los CSV de auditoría.
+
+## Sensibilidad por sitio de origen (TSS)
+
+Macro-F1 con las tres clases fijas, media ± DE de once ajustes. Las diferencias de composición limitan la comparación entre grupos; el número de pacientes total sigue siendo seis.
+
+| TSS | Recortes | Clases presentes | CNN-BN | DenseNet121 | ResNet50 |
+|---|---:|---:|---:|---:|---:|
+| A7 | 9 | 2 | 0.538 ± 0.178 | 0.502 ± 0.185 | 0.536 ± 0.177 |
+| AN | 73 | 2 | 0.477 ± 0.057 | 0.453 ± 0.070 | 0.458 ± 0.082 |
+| AO | 887 | 3 | 0.444 ± 0.076 | 0.619 ± 0.123 | 0.652 ± 0.055 |
+
+Las tablas por paciente y las sensibilidades al excluir un paciente o un TSS se conservan en `robustez_grupos_resumen.csv`; no se usaron para retirar casos ni volver a elegir modelos.

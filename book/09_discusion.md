@@ -20,7 +20,7 @@ La clase estromal tiene menor representación en el desarrollo. Macro-F1 evita q
 
 La reserva V2 comprende seis pacientes y 969 recortes: 769 tumorales, 130 linfocitarios y 70 estromales, según el control del manifiesto. Es una limitación sustancial de tamaño efectivo y cobertura de clases. Las predicciones exportadas confirman que 42 de los 70 recortes estromales proceden de un paciente. El F1 estromal medio de ResNet50 es 0,3022; una media global superior no resuelve esta debilidad. La tabla de anotaciones originales no sustituye el inventario de recortes elegibles.
 
-La agrupación por paciente evita tratar 969 recortes como pacientes independientes, pero seis grupos proporcionan una estimación frágil de la variabilidad poblacional. Las semillas describen variación algorítmica y no compensan esta limitación. Los resultados por TSS tendrán carácter descriptivo y no acreditarán generalización a centros nuevos.
+La agrupación por paciente evita tratar 969 recortes como pacientes independientes, pero seis grupos proporcionan una estimación frágil de la variabilidad poblacional. Las semillas describen variación algorítmica y no compensan esta limitación. Los resultados por TSS tienen carácter descriptivo y no acreditan generalización a centros nuevos.
 
 ## Anotaciones y referencia humana
 
