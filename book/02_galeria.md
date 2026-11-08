@@ -21,11 +21,11 @@
 
 La galería ilustra el problema, pero no establece que una etiqueta sea correcta o incorrecta.
 
-## Preprocesamiento aplicado
+## Preprocesamiento V2 y antecedente del piloto
 
 <div class="nucls-grid">
 <div class="nucls-card"><strong>128 × 128</strong><span>Ventana centrada y completamente contenida en la imagen. Se descartan recortes que necesitan relleno.</span></div>
-<div class="nucls-card"><strong>RGB / 255</strong><span>Reescalado fijo de intensidad. Sin CLAHE, normalización de tinción ni estandarización por canal.</span></div>
+<div class="nucls-card"><strong>RGB / 255 + estandarización</strong><span>V2 estandariza cada canal con media y desviación calculadas solo en train. El piloto histórico solo dividía por 255. Sin CLAHE ni normalización de tinción.</span></div>
 <div class="nucls-card"><strong>Solo train</strong><span>Rotaciones en múltiplos de 90° y reflexión horizontal durante entrenamiento.</span></div>
 </div>
 
@@ -36,3 +36,4 @@ La galería ilustra el problema, pero no establece que una etiqueta sea correcta
 La galería contiene imágenes de entrenamiento y no constituye un análisis visual de errores de validación. Las [matrices de confusión](08_resultados_piloto.md) cuantifican esos errores a partir de las predicciones registradas. La ausencia de una revisión conjunta de cada predicción y su recorte limita la atribución de los fallos a características morfológicas concretas.
 
 El estudio no incluye mapas de atribución, como Grad-CAM. Por tanto, las imágenes ilustran la entrada del sistema, pero no identifican las regiones que determinaron sus predicciones.
+

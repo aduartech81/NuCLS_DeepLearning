@@ -9,9 +9,9 @@
 <div class="book-actions"><a class="book-button" href="08_resultados_v2.html">Explorar los resultados →</a><a class="book-button secondary" href="https://nucls-andres-duarte.onrender.com/">Dashboard interactivo ↗</a></div>
 </div>
 <div class="book-atlas">
-<figure><img src="figuras/galeria/tumor_nonMitotic_00.png" alt="Ejemplo anotado de núcleo tumoral de entrenamiento"><figcaption>Tumoral</figcaption></figure>
-<figure><img src="figuras/galeria/lymphocyte_02.png" alt="Ejemplo anotado de linfocito de entrenamiento"><figcaption>Linfocito</figcaption></figure>
-<figure><img src="figuras/galeria/nonTILnonMQ_stromal_01.png" alt="Ejemplo anotado de núcleo estromal de entrenamiento"><figcaption>Estromal</figcaption></figure>
+<figure><img src="_static/galeria/tumor_nonMitotic_00.png" alt="Ejemplo anotado de núcleo tumoral de entrenamiento"><figcaption>Tumoral</figcaption></figure>
+<figure><img src="_static/galeria/lymphocyte_02.png" alt="Ejemplo anotado de linfocito de entrenamiento"><figcaption>Linfocito</figcaption></figure>
+<figure><img src="_static/galeria/nonTILnonMQ_stromal_01.png" alt="Ejemplo anotado de núcleo estromal de entrenamiento"><figcaption>Estromal</figcaption></figure>
 <p>H&E · RGB 128 × 128<br>Ejemplos ilustrativos de entrenamiento, no predicciones.</p>
 </div>
 </div>
